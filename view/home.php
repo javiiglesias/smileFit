@@ -6,26 +6,29 @@ require('header.php');
   <div class="flexslider">
   <ul class="slides">
     <li>
-      <img src="original.png" />
+      <img src="images/original.png" />
     </li>
     <li>
-      <img src="original.png" />
+      <img src="images/original.png" />
     </li>
     <li>
-      <img src="original.png" />
+      <img src="images/original.png" />
     </li>
     <li>
-      <img src="original.png" />
+      <img src="images/original.png" />
     </li>
   </ul>
 </div>
 
 <script type="text/javascript">
-	$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide"
+ $( document ).ready(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      slideshowSpeed: 6000,
+      animationSpeed: 1000
+    });
   });
-});
+
 </script>
 
 <?php
