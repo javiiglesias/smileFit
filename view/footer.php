@@ -4,7 +4,7 @@
 
 		</div>
 		<div class="col-lg-6 col-xs-12 foter">
-			<span class="fz20">Taller realitzat per Alba Casas</span>
+			<span class="fz20">Smile Fit</span>
 		</div>
 </footer>
 </body>

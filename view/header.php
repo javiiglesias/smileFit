@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -10,10 +11,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="../css/estils.css" rel="stylesheet" type="text/css">
+<link href="css/estils.css" rel="stylesheet" type="text/css">
 	<title>Guia de continguts</title>
 </head>
 <body>
+ 
 <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -23,9 +25,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="taller.php">Taller Bottstrap</a>
+          
           </div>
           <div id="navbar" class="navbar-collapse collapse">
+             <div class="col-xs-2">
+                  <a class="" href="taller.php"><img class="img-responsive" src="images/original.png"/></a>
+              </div>
             <ul class="nav navbar-nav">
               <li class="active"><a href="maquetacioweb.php">Maquetació WEB</a></li>
               <li class="dropdown">
