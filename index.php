@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/Alba
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,8 @@ header("Location:view/home.php");
 </body>
 </html>
 =======
+=======
+>>>>>>> master
 <?php
 
 require_once("controller/function_AutoLoad.php");
@@ -148,4 +151,7 @@ switch ($ctl) {
         break;
 }
 ?>
+<<<<<<< HEAD
 >>>>>>> Añadido el login-Parte Inicial
+=======
+>>>>>>> master
