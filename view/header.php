@@ -16,6 +16,7 @@
 </head>
 <body>
  
+
 <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -25,49 +26,27 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-             <div class="col-xs-2">
-                  <a class="" href="taller.php"><img class="img-responsive" src="images/original.png"/></a>
+           <div class="col-xs-2">
+                  <a class="" href="home"><img class="img-responsive" src="images/original.png"/></a>
               </div>
+        
+          <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="maquetacioweb.php">Maquetació WEB</a></li>
+            <li class=""><a href="elementsNavegacio.php">Sobre nosotros</a></li>
+              <li class="active"><a href="home">Home</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Grid <span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trabajos anteriores <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="columnes.php">col</a></li>
-                  <li><a href="colirow.php">col & row</a></li>
-                  <li><a href="offset.php">offset</a></li>
-                  <li><a href="hiddeVisible.php">hidde & visble</a></li>
-                  <li><a href="container.php">container</a></li>
-                  <li><a href="containerFluid.php">container-fluid vs w100</a></li>
-
-                  <li><a href="pullPush.php">pull & push</a></li>
-
-                  <li><a href="tot.php">container & col</a></li>
+                  <li><a href="#">Dietetica</a></li>
+                  
+                  <li><a href="#">Entrenamiento</a></li>
 
                 </ul>
               </li>
-                 <li class=""><a href="media.php">@mediaQuery</a></li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clases i utilitats importants<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="tipografies.php">Tipografia & text-align</a></li>
-                  <li><a href="HelperClasses.php">Helper Classes</a></li>
-                  <li><a href="botons.php">Botons</a></li>
-
-                </ul>
-              </li>
-               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tractament continguts<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="formularis.php">Formularis</a></li>
-                  <li><a href="imatges.php">Imatges</a></li>
-                  <li><a href="taules.php">Taules</a></li>
-                </ul>
-              </li>
-              <li class=""><a href="elementsNavegacio.php">Elements de navegació</a></li>
+              <li class=""><a href="#">Dietas</a></li>
+              <li class=""><a href="#">Entrenamientos</a></li>
+              <li class=""><a href="#">Trabaja con nosotros</a></li>
+              <li class=""><a href="#">Contacta</a></li>
             </ul>
         </div>
     </div>
