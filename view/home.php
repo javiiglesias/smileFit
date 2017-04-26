@@ -17,6 +17,9 @@ require('header.php');
     <li>
       <img class="img-responsive" src="images/ejercicio4.jpg" />
     </li>
+     <li>
+      <img class="img-responsive" src="images/fitnes.jpg" />
+    </li>
   </ul>
 </div>
 
