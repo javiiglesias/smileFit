@@ -1,3 +1,3 @@
 <?php
-	$GLOBALS['bd'] = "firaIglesiasJavier";
+	$GLOBALS['bd'] = "smilefit_condatos";
 ?>
