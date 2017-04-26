@@ -1,24 +1,23 @@
 <?php
-require('header.php');
 ?>
 
 <div class="w100">
   <div class="flexslider">
   <ul class="slides">
     <li>
-      <img class="img-responsive" src="images/ejercicio1.jpg" />
+      <img class="img-responsive" src="view/images/ejercicio1.jpg" />
     </li>
     <li>
-      <img class="img-responsive" src="images/ejercicio2.jpg" />
+      <img class="img-responsive" src="view/images/ejercicio2.jpg" />
     </li>
     <li>
-      <img class="img-responsive" src="images/ejercicio3.jpg" />
+      <img class="img-responsive" src="view/images/ejercicio3.jpg" />
     </li>
     <li>
-      <img class="img-responsive" src="images/ejercicio4.jpg" />
+      <img class="img-responsive" src="view/images/ejercicio4.jpg" />
     </li>
      <li>
-      <img class="img-responsive" src="images/fitnes.jpg" />
+      <img class="img-responsive" src="view/images/fitnes.jpg" />
     </li>
   </ul>
 </div>
@@ -35,5 +34,4 @@ require('header.php');
 </script>
 
 <?php
-require('footer.php');
 ?>
