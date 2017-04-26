@@ -1,0 +1,67 @@
+html,body
+{
+    padding: 0 0 0px;
+    margin: 0;
+}
+footer
+{
+    width: 100%;
+    bottom: 0;
+    margin-top: 15px
+    
+}
+.navbar-default{    background-color: rgba(12, 85, 64, 0.19)!important;
+    border-radius: 0px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), -1px 5px 5px rgb(0, 77, 54);
+    border: none;
+    background-image: none;
+}
+.pAbsoluteB0{position: absolute; bottom: 0; width: 100%}
+.fz20{font-size: 30px;}
+.foter{    text-align: right;
+    margin-top: 105px;
+    color: #5D294F;}
+/*-----------------*/
+/*   BackGrounds */
+/*----------------*/
+.bGfooter{background-color: #fff!important;
+    box-shadow: 0px 0px 68px 0px rgba(255,255,255,.15), 1px -6px 15px 0px rgb(0, 77, 54);
+    border-radius: 0px;
+
+}
+
+.bgVerd{background-color: green;}
+.bgGris{background-color: grey;}
+
+.bgOpacitat{background-color: pink; opacity: 0.8}
+.bgOpacitat1{background-color: #A5DCA8; opacity: 0.8}
+.bgOpacitat2{background-color: pink; opacity: 0.8}
+.bgOpacitat3{background-color: #6784BC; opacity: 0.8}
+.bgOpacitat4{background-color:#F5C366;opacity: 0.8}
+/*--------------*/
+/*    Border   */
+/*------------*/
+.bTronge{border:2px solid orange;}
+.bBlau{border: 2px solid blue;}
+.bBlau2{border: 2px solid blue;}
+.bVerd{border: 2px solid green;}
+.blila{border: 2px solid purple;}
+/*-------------*/
+/* Grandàries */
+/*-----------*/
+.w100{width: 100%}
+
+.mT20{margin-top: 20px;}
+.mB15{margin-bottom: 15px;}
+.mB50{margin-bottom: 50px;}
+.mAuto{left: 0; margin: auto; position: absolute; right: 0;}
+.prelative{position: relative;}
+
+.pT15{padding-top: 15px;padding-bottom: 15px}
+.pB15{padding-bottom: 120px;display: block;}
+@media(max-width: 992px){
+	.bBlau2{background-color: red!important;}
+}
+@media(max-width: 992px){
+	.foter{text-align: center;margin-top: 10px;}
+}
