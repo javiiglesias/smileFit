@@ -1,16 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
-<body>
-<?
-header("Location:view/home.php");
-?>
-</body>
-</html>
-
 <?php
 
 require_once("controller/function_AutoLoad.php");
