@@ -6,16 +6,16 @@ require('header.php');
   <div class="flexslider">
   <ul class="slides">
     <li>
-      <img src="images/original.png" />
+      <img class="img-responsive" src="images/ejercicio1.jpg" />
     </li>
     <li>
-      <img src="images/original.png" />
+      <img class="img-responsive" src="images/ejercicio2.jpg" />
     </li>
     <li>
-      <img src="images/original.png" />
+      <img class="img-responsive" src="images/ejercicio3.jpg" />
     </li>
     <li>
-      <img src="images/original.png" />
+      <img class="img-responsive" src="images/ejercicio4.jpg" />
     </li>
   </ul>
 </div>
