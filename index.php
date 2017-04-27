@@ -29,13 +29,11 @@ switch ($ctl) {
                 break;
         }
         break;
+        
 
-//    case "agencia":
-//        switch ($act){
-//            case "detall":
-//                include "controller/Agencia_ctl.php";
-//                break;
-//        }
+    case "contacta":
+        include "controller/contacta_ctl.php";
+    break;
 //
 //
 //
