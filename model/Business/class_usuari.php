@@ -99,6 +99,7 @@ class usuari
 
 
         if($arrayUsuaris!=0){
+            echo $usuari->getUserName();
             $ok = true;
         }else{
             header("location:index.php?ctl=usuari&act=login");
