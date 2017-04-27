@@ -50,9 +50,10 @@
               <li class=""><a href="#">Dietas</a></li>
               <li class=""><a href="#">Entrenamientos</a></li>
               <li class=""><a href="#">Trabaja con nosotros</a></li>
-              <li class=""><a href="view/contacta.php">Contacta</a></li>
-                <li class=""><a href="?ctl=usuari&act=login">Login</a></li>
+              <li class=""><a href="?ctl=contacta">Contacta</a></li>
+               <li class=""><a href="?ctl=usuari&act=login">Login</a></li>
             </ul>
         </div>
     </div>
+  </div>
 </nav>
