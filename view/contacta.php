@@ -11,7 +11,7 @@
 <div class="container" id="main">
 
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 mT5" >
-       <img  class="img-responsive bR5" src="http://www.ascensors-serra.com/templates/web/img/form.png"/>
+       <img  class="img-responsive bR5" src="images/gymdiet.jpg"/>
    </div>
 
     <div class="col-xs-8">
@@ -40,11 +40,13 @@
 
       <div class="col-lg-12 ">
         <textarea class="form-control lite required" rows="5" name="observaciones" id="observaciones" placeholder="Observaciones"></textarea>
+        </div>
       <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 mT10 mB70 mB15 text-center pR0">
         <input type="submit" name="enviar" id="enviar" value="enviar"  class="btn bold bcolor w100 font14 mayus h42">
       </div>
     </form>   
   </div>
+</div>
 
   <?php
 ?>
