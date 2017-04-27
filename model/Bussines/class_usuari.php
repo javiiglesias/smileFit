@@ -2,7 +2,7 @@
 
 require_once("controller/function_AutoLoad.php");
 
-class Usuari
+class usuari
 {
     private $id;
     private $UserName;
@@ -93,16 +93,23 @@ class Usuari
     }
 
     public function validateUser($name, $pass) {
-        $usuari = new Usuaridb;
-        $arrayUsuaris= $usuari->consultarUsuarisdb();
+        $usuari = new usuaridb;
+        $arrayUsuaris= $usuari->consultarUsuarisdb($name, $pass);
         $ok = false;
 
-        foreach ($arrayUsuaris as $usuari) {
 
-            if($usuari->getUserName() == $name && $usuari->getPassword() == $pass){
-                $ok = true;
-            }
+        if($arrayUsuaris!=0){
+            $ok = true;
+        }else{
+            header("location:index.php?ctl=usuari&act=login");
         }
+
+//        foreach ($arrayUsuaris as $usuari) {
+//
+//            if($usuari->getUserName() == $name && $usuari->getPassword() == $pass){
+//                $ok = true;
+//            }
+//        }
         return $ok;
     }
 
