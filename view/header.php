@@ -52,7 +52,7 @@
               <li class=""><a href="?ctl=entrenamientos">Entrenamientos</a></li>
               <li class=""><a href="?ctl=trabaja-con-nosotros">Trabaja con nosotros</a></li>
               <li class=""><a href="?ctl=contacta">Contacta</a></li>
-               <li class=""><a href="?ctl=usuari&act=login">Login</a></li>
+              <li class=""><a href="?ctl=usuari&act=login">Login</a></li>
             </ul>
         </div>
     </div>
