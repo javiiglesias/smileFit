@@ -29,6 +29,7 @@ switch ($ctl) {
                 break;
         }
         break;
+        
 
     case "contacta":
         include "controller/contacta_ctl.php";
