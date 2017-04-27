@@ -4,7 +4,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<script defer src="js/jquery.flexslider-min.js"></script>
+<script defer src="view/js/jquery.flexslider-min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
@@ -13,8 +13,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="css/flexslider.css" rel="stylesheet" type="text/css">
-<link href="css/estils.css" rel="stylesheet" type="text/css">
+<link href="view/css/flexslider.css" rel="stylesheet" type="text/css">
+<link href="view/css/estils.css" rel="stylesheet" type="text/css">
 
 	<title>Guia de continguts</title>
 </head>
@@ -31,7 +31,7 @@
               <span class="icon-bar"></span>
             </button>
            <div class="col-xs-2">
-                  <a class="" href="home"><img class="img-responsive" src="images/original.png"/></a>
+                  <a class="" href="home"><img class="img-responsive" src="view/images/original.png"/></a>
               </div>
         
           <div id="navbar" class="navbar-collapse collapse">
@@ -50,7 +50,8 @@
               <li class=""><a href="#">Dietas</a></li>
               <li class=""><a href="#">Entrenamientos</a></li>
               <li class=""><a href="#">Trabaja con nosotros</a></li>
-              <li class=""><a href="#">Contacta</a></li>
+              <li class=""><a href="view/contacta.php">Contacta</a></li>
+                <li class=""><a href="?ctl=usuari&act=login">Login</a></li>
             </ul>
         </div>
     </div>
