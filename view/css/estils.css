@@ -29,7 +29,8 @@ footer
     border-radius: 0px;
 
 }
-
+.w100{width: 100%}
+.h75{height: 20%}
 .bgVerd{background-color: green;}
 .bgGris{background-color: grey;}
 
