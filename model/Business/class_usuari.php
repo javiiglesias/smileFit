@@ -97,9 +97,9 @@ class usuari
         $arrayUsuaris= $usuari->consultarUsuarisdb($name, $pass);
         $ok = false;
 
+        $numero_registro=$arrayUsuaris->rowCount();
+        if($numero_registro!=0){
 
-        if($arrayUsuaris!=0){
-            echo $usuari->getUserName();
             $ok = true;
         }else{
             header("location:index.php?ctl=usuari&act=login");
