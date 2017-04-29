@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2017 a las 14:35:18
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Servidor: localhost
+-- Tiempo de generación: 25-04-2017 a las 17:36:25
+-- Versión del servidor: 10.1.10-MariaDB
+-- Versión de PHP: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -380,9 +380,7 @@ INSERT INTO `usuario` (`Id`, `Descripcion`, `UserName`, `Password`) VALUES
 (4, 'Trabajador', 'marc', '1234'),
 (5, 'cliente', 'marta', '1234'),
 (6, 'cliente', 'pablo', '1234'),
-(7, 'administrador', 'admin', '1234'),
-(9, 'cliente', 'prueba', '$2y$10$EBL5vNNgD57Tq'),
-(10, 'cliente', 'prueba2', '$2y$10$291XWg0P0j5TK');
+(7, 'administrador', 'admin', '1234');
 
 --
 -- Índices para tablas volcadas
@@ -579,7 +577,7 @@ ALTER TABLE `trabajador`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --

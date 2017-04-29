@@ -14,8 +14,8 @@ if (isset($_REQUEST['recordarUsuari'])) {
 require_once 'view/header.php';
 
 if (isset($_REQUEST['Submit'])) {
-    $usuari = htmlentities(addslashes($_REQUEST['usuari']));
-    $clau = htmlentities(addslashes($_REQUEST['pass']));
+    $usuari = $_REQUEST['usuari'];
+    $clau = $_REQUEST['pass'];
     $usuariValidat = $Usuaris->validateUser($usuari, $clau);
     if ($usuariValidat == true) {
         $_SESSION["login"] = true;
