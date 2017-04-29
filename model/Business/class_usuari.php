@@ -114,6 +114,10 @@ class usuari
         return $ok;
     }
 
+    function registrarUsuari($nom, $pas) {
+        $this->llista[] = new Usuari($nom, $pas);
+    }
+
 
 
 }
