@@ -8,7 +8,7 @@
               <span class="icon-bar"></span>
             </button>
            <div class="col-xs-2">
-                  <a class="" href="?ctl=inici"><img class="img-responsive" src="view/images/original.png"/></a>
+                  <a class="" href="?ctl=inici"><img class="img-responsive" src="view/images/original2.png"/></a>
               </div>
 
               <div id="navbar" class="navbar-collapse collapse">
