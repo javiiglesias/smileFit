@@ -105,24 +105,17 @@ class usuari
             header("location:index.php?ctl=usuari&act=login");
         }
 
+//        foreach ($arrayUsuaris as $usuari) {
+//
+//            if($usuari->getUserName() == $name && $usuari->getPassword() == $pass){
+//                $ok = true;
+//            }
+//        }
         return $ok;
     }
 
-    function registrarUsuari($name, $pass) {
-        $usuari = new usuaridb;
-        $arrayUsuaris= $usuari->consultarUsuarisdb($name);
-        $ok = false;
-        $numero_registro=$arrayUsuaris->rowCount();
-        if($numero_registro==0){
-
-            $ok = true;
-            $arrayUsuaris= $usuari->insertarUsuarisdb($name, $pass);
-        }else{
-            header("location:index.php?ctl=usuari&act=registre");
-            $ok = false;
-        }
-        return $ok;
-//        $this->llista[] = new Usuari($nom, $pas);
+    function registrarUsuari($nom, $pas) {
+        $this->llista[] = new Usuari($nom, $pas);
     }
 
 
