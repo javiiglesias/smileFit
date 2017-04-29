@@ -48,7 +48,8 @@ class db extends PDO {
     }
 	
     private function connect() {
-		$dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname;
+//		$dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname . ';charset=utf8mb4';
         parent::__construct($dsn,$this->getUsername(),$this->getPassword());       
     	//$this->link = new PDO($this->getServer(),$this->getUsername(),$this->getPassword());        
     }
