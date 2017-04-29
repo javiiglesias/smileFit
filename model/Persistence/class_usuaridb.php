@@ -23,7 +23,8 @@ class usuaridb {
         $resultado->bindValue(":password", $password);
         $resultado->execute();
 
-       $numero_registro=$resultado->rowCount(); //devuelve el número de registros que devuelve la consulta, 0 si no coincide el user y password y 1 si coincide
+//       $numero_registro=$resultado->rowCount(); //devuelve el número de registros que devuelve la consulta, 0 si no coincide el user y password y 1 si coincide
+
 //        if($numero_registro!=0){
 //            echo "USUARIO CORRECTO";
 //        }else{
@@ -36,7 +37,8 @@ class usuaridb {
 		$con = null;
 
 //        $usuaris=$arrayDeUsuaris;
-		return $numero_registro;
+//		return $numero_registro;
+        return $resultado;
                 
     }
 }

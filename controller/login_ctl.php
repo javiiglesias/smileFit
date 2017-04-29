@@ -1,9 +1,9 @@
 <?php
 require_once("controller/function_AutoLoad.php");
-//require_once ("../model/Bussines/class_usuari.php");
+//require_once ("../model/Business/class_usuari.php");
 
 $titlePage = "Iniciar Sessio";
-$Usuaris = new Usuari();
+$Usuaris = new usuari();
 
 if (isset($_REQUEST['recordarUsuari'])) {
     setcookie("usuari", $_REQUEST['usuari'], time() + 3600, "/");
