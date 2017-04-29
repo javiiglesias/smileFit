@@ -25,7 +25,7 @@ switch ($ctl) {
                 include "controller/registreusuari_ctl.php";
                 break;
             case"sortir";
-                include "controller/logout.php";
+                include "controller/logout_ctl.php";
                 break;
         }
         break;
