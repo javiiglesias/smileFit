@@ -5,7 +5,7 @@ if (isset($_COOKIE['usuari'])) {
 }
 ?>
 <html>
-<body class="body-login">
+<body class="login">
 <div class="container-fluid">
     <div class="container">
         <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-4">
@@ -13,8 +13,8 @@ if (isset($_COOKIE['usuari'])) {
         </div>
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
-                <form action="?ctl=login" method="POST">
-                    <h1 class="text-center">Iniciar Sessió</h1>
+                <form action="?ctl=login" method="POST" class="login-form">
+                    <h1 class="text-center transparent-heading">Iniciar Sessió</h1>
                     <div class="form-group">
                         <label><strong>Usuari:</strong></label>
                         <input type="text" name="usuari" value="<?php echo $guardarUsuari; ?>" class="form-control">
