@@ -21,24 +21,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="registrarUser_ctl.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/registrarUser_ctl.php">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/login.php">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="493">
-              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-=======
-            <state relative-caret-position="442">
-              <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
->>>>>>> Stashed changes
+            <state relative-caret-position="476">
+              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_usuari.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Dropbox/AgenciaM14/model/business/class_usuari.php">
+      <file leaf-file-name="registrarUser_ctl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/registrarUser_ctl.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="493">
+<<<<<<< HEAD
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+=======
+            <state relative-caret-position="442">
+              <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+>>>>>>> Stashed changes
+=======
+              <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registro.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/registro.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+>>>>>>> Test
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <state relative-caret-position="325">
               <caret line="65" column="3" lean-forward="true" selection-start-line="65" selection-start-column="3" selection-end-line="67" selection-end-column="5" />
@@ -86,29 +111,39 @@
             <state relative-caret-position="-1224">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> Stashed changes
+=======
+            <state relative-caret-position="1275">
+              <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+>>>>>>> Test
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_usuaridb.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Persistence/class_usuaridb.php">
+      <file leaf-file-name="estils.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/css/estils.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="34">
 <<<<<<< Updated upstream
               <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
               <folding>
                 <marker date="1493455351159" expanded="true" signature="317:418" ph="SELECT id, u... usuario" />
               </folding>
+=======
+            <state relative-caret-position="359">
+              <caret line="71" column="106" lean-forward="false" selection-start-line="71" selection-start-column="106" selection-end-line="71" selection-end-column="106" />
+              <folding />
+>>>>>>> Test
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_usuari.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Business/class_usuari.php">
+      <file leaf-file-name="login_ctl.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/login_ctl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
               <folding />
 =======
               <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
@@ -129,7 +164,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/controller/function_AutoLoad.php" />
-        <option value="$PROJECT_DIR$/view/login.php" />
         <option value="$PROJECT_DIR$/view/footer.php" />
         <option value="$PROJECT_DIR$/view/inici.php" />
         <option value="$PROJECT_DIR$/model/Persistence/class_db.php" />
@@ -144,6 +178,8 @@
         <option value="$PROJECT_DIR$/model/Business/class_usuari.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/registrarUser_ctl.php" />
+        <option value="$PROJECT_DIR$/view/css/estils.css" />
+        <option value="$PROJECT_DIR$/view/login.php" />
       </list>
     </option>
   </component>
@@ -206,6 +242,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smileFit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smileFit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,18 +467,26 @@
       <workItem from="1493452884927" duration="1081000" />
 <<<<<<< Updated upstream
       <workItem from="1493455944014" duration="756000" />
+<<<<<<< HEAD
 =======
       <workItem from="1493456162453" duration="997000" />
 >>>>>>> Stashed changes
+=======
+      <workItem from="1493469901236" duration="744000" />
+>>>>>>> Test
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="7051000" />
+=======
+    <option name="totallyTimeSpent" value="9326000" />
+>>>>>>> Test
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1922" height="1033" extended-state="0" />
+    <frame x="-1" y="24" width="1922" height="1033" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25655824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -474,6 +536,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/registrarUser_ctl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/registro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/css/estils.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="106" lean-forward="false" selection-start-line="71" selection-start-column="106" selection-end-line="71" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/view/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -670,6 +772,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/css/estils.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -678,6 +781,8 @@
       </provider>
     </entry>
 <<<<<<< Updated upstream
+=======
+>>>>>>> Test
     <entry file="file://$PROJECT_DIR$/controller/inici_ctl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -772,6 +877,7 @@
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/model/usuaris.class.php" />
     <entry file="file://$PROJECT_DIR$/model/Bussines/class_usuari.php" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/controller/login_ctl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -787,6 +893,8 @@
       </provider>
     </entry>
 <<<<<<< Updated upstream
+=======
+>>>>>>> Test
     <entry file="file://$PROJECT_DIR$/view/inici.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -829,6 +937,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/controller/inici_ctl.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
@@ -850,6 +959,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Test
     <entry file="file://$PROJECT_DIR$/controller/function_AutoLoad.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
@@ -863,6 +974,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/view/login.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -879,11 +991,12 @@
       </provider>
     </entry>
 <<<<<<< Updated upstream
+=======
+>>>>>>> Test
     <entry file="file://$USER_HOME$/Dropbox/AgenciaM14/view/registre.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,15 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/registro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="63" lean-forward="true" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="65" column="3" lean-forward="true" selection-start-line="65" selection-start-column="3" selection-end-line="67" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,9 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1489677343000" expanded="true" signature="304:350" ph="SELECT id, u... usuari" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -957,16 +1057,37 @@
     <entry file="file://$PROJECT_DIR$/controller/registrarUser_ctl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
+<<<<<<< HEAD
           <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
 =======
     <entry file="file://$PROJECT_DIR$/model/Persistence/class_db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+=======
+          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/registro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+>>>>>>> Test
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/model/Persistence/class_usuaridb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -981,15 +1102,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1224">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/view/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/css/estils.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="71" column="106" lean-forward="false" selection-start-line="71" selection-start-column="106" selection-end-line="71" selection-end-column="106" />
+>>>>>>> Test
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/login_ctl.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="17">
           <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
 >>>>>>> Stashed changes
+=======
+        <state relative-caret-position="374">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+>>>>>>> Test
           <folding />
         </state>
       </provider>
