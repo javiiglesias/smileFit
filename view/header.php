@@ -20,7 +20,7 @@
 	<title>Guia de continguts</title>
 </head>
 <body>
-<div class="container-fluid">
+<div class="w100">
   <?php
   require_once 'menu.php';
   ?>
