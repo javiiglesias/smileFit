@@ -1,6 +1,6 @@
 <?php
 require_once("controller/function_AutoLoad.php");
-class usuari
+class usuario
 {
     private $id;
     private $UserName;
