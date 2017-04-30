@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once("controller/function_AutoLoad.php");
 //require_once ("../model/Business/class_usuari.php");
 
@@ -33,4 +34,5 @@ if (isset($_REQUEST['Submit'])) {
 } else {
     require_once 'view/login.php';
 }
+ob_end_flush();
 ?>
