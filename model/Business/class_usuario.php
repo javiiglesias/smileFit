@@ -107,7 +107,9 @@ class usuario
             $arrayUsuarios= $usuario->insertarUsuariosdb($name, $pass);
         }else{
             header("location:index.php?ctl=usuario&act=registro");
-            $ok = false;
+
+//            $ok = false;
+
         }
         return $ok;
 //        $this->llista[] = new Usuari($nom, $pas);
