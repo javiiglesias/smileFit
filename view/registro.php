@@ -1,14 +1,6 @@
 <html>
 <head>
     <title><?php echo $titlePage ?></title>
-    <!-- Estils -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!--<link rel="stylesheet" type="text/css" href="view/css/tema.css"/>--->
-    <link rel="stylesheet" type="text/css" href="view/css/estil.css"/>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <!-- Meta -->
-    <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="body-login">
 <div class="container-fluid">
@@ -18,12 +10,12 @@
         </div>
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
-                <form action="?ctl=usuari&act=registre" method="post">
+                <form action="?ctl=usuario&act=registro" method="post">
                     <h1 class="text-center">Registrarse</h1>
                     <small class="col-md-offset-1">Por favor,rellenar todos los campos. </small>
                     <div class="form-group space-top">
                         <label>Nombre de Usuario:</label>
-                        <input type="text" name="nou_usuari" class="form-control">
+                        <input type="text" name="nuevo_usuario" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Introduce una  Contraseña:</label>

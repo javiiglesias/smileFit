@@ -11,10 +11,10 @@ if (isset($_COOKIE['usuario'])) {
         <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-4">
 
         </div>
-        <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
+        <div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3 ">
             <div class="container-login">
                 <form action="?ctl=login" method="POST" class="login-form">
-                    <img src="view/images/original2.png" class="imagen-login">
+                    <img src="view/images/original2.png" class="img-responsive">
                     <h1 class="text-center transparent-heading">Iniciar Sesión</h1>
                     <div class="form-group">
                         <label><strong>Usuario:</strong></label>
@@ -26,7 +26,7 @@ if (isset($_COOKIE['usuario'])) {
                     </div>
                     <p>Recordar usuario <input type="checkbox" name="recordarUsuario"><p>
                     <p><a href="?ctl=usuari&act=registre">Registrarse como  usuario</a></p>
-                    <div class="col-xs-10 col-md-9 col-md-offset-3 col-xs-offset-2">
+                    <div class="text-center">
                         <button name="Submit" class="btn btn-warning"> Entrar <image class="btn-icon imagen-button-login"  src="view/images/login.ico"/> </button>
                     </div>
                     <form>
