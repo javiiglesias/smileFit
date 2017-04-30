@@ -1,6 +1,6 @@
 <?php
 require_once("controller/function_AutoLoad.php");
-class usuari
+class usuario
 {
     private $id;
     private $UserName;
@@ -80,10 +80,10 @@ class usuari
         $this->Descripcion = $Descripcion;
     }
     public function validateUser($name, $pass) {
-        $usuari = new usuaridb;
-        $arrayUsuaris= $usuari->consultarUsuarisdb($name, $pass);
+        $usuario = new usuariodb;
+        $arrayUsuarios= $usuario->consultarUsuariosdb($name, $pass);
         $ok = false;
-        $numero_registro=$arrayUsuaris->rowCount();
+        $numero_registro=$arrayUsuarios->rowCount();
         if($numero_registro!=0){
             $ok = true;
         }else{
@@ -97,14 +97,14 @@ class usuari
 //        }
         return $ok;
     }
-    function registrarUsuari($name, $pass) {
-        $usuari = new usuaridb;
-        $arrayUsuaris= $usuari->consultarUsuarisdb($name);
+    function registrarUsuario($name, $pass) {
+        $usuario = new usuariodb;
+        $arrayUsuarios= $usuario->consultarUsuariosdb($name);
         $ok = false;
-        $numero_registro=$arrayUsuaris->rowCount();
+        $numero_registro=$arrayUsuarios->rowCount();
         if($numero_registro==0){
             $ok = true;
-            $arrayUsuaris= $usuari->insertarUsuarisdb($name, $pass);
+            $arrayUsuarios= $usuario->insertarUsuariosdb($name, $pass);
         }else{
             header("location:index.php?ctl=usuari&act=registre");
             $ok = false;

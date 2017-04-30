@@ -95,3 +95,14 @@ footer
     color: #FFF;
     text-decoration: none;
 }
+
+.imagen-login{
+    height: 150px;
+    width: 150px;
+    align:center;
+
+}
+.imagen-button-login{
+    height: 15px;
+    width: 15px;
+}
