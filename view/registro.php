@@ -19,19 +19,19 @@
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
                 <form action="?ctl=usuari&act=registre" method="post">
-                    <h1 class="text-center">Registrar-se</h1>
-                    <small class="col-md-offset-1">Si us plau, ompliu tots els camps. </small>
+                    <h1 class="text-center">Registrarse</h1>
+                    <small class="col-md-offset-1">Por favor,rellenar todos los campos. </small>
                     <div class="form-group space-top">
-                        <label>Nom d'usuari:</label>
+                        <label>Nombre de Usuario:</label>
                         <input type="text" name="nou_usuari" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Introdueix Contrasenya:</label>
+                        <label>Introduce una  Contraseña:</label>
                         <input type="password" name="pass" class="form-control">
                     </div>
-                    <p><a href="?ctl=usuari&act=login">Iniciar Sessió</a></p>
+                    <p><a href="?ctl=usuari&act=login">Iniciar Sesión</a></p>
                     <div class="col-md-offset-3 col-xs-offset-2">
-                        <button name="Submit" class="btn btn-info">  Registrar-se    <image class="btn-icon" src="view/images/registre.png"/></button>
+                        <button name="Submit" class="btn btn-info">  Registrarse    <image class="btn-icon" src="view/images/registre.png"/></button>
                     </div>
                 </form>
             </div>
