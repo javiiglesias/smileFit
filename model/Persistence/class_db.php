@@ -1,80 +1,66 @@
 <?php
-
 class db extends PDO {
     private $server;
-	private $username;
-	private $password;
-	private $dbname;
-	private $link;
-	    
+    private $username;
+    private $password;
+    private $dbname;
+    private $link;
+
     public function __construct() {
         $this->setServer($GLOBALS['server']);
-		$this->setUsername($GLOBALS['USER']);
-		$this->setPassword($GLOBALS['PASS']);
-		$this->setDbname($GLOBALS['bd']);
+        $this->setUsername($GLOBALS['USER']);
+        $this->setPassword($GLOBALS['PASS']);
+        $this->setDbname($GLOBALS['bd']);
         $this->connect();
     }
-
     public function getServer(){
-		return $this->server;
-	}
-
-	public function setServer($value){
-		$this->server = $value;
-	}
-	
-	public function getUsername() {
-		return $this->username;
-	}
-
-	public function setUsername($value) {
-		$this->username = $value;
-	}
-	
-	public function getPassword() {
-		return $this->password;
-	}
-
-	public function setPassword($value) {
-		$this->password = $value;
-	}
-    
-	public function getDbName(){
-        return $this->dbname;
+        return $this->server;
+    }
+    public function setServer($value){
+        $this->server = $value;
     }
 
+    public function getUsername() {
+        return $this->username;
+    }
+    public function setUsername($value) {
+        $this->username = $value;
+    }
+
+    public function getPassword() {
+        return $this->password;
+    }
+    public function setPassword($value) {
+        $this->password = $value;
+    }
+
+    public function getDbName(){
+        return $this->dbname;
+    }
     public function setDbName($value){
         return $this->dbname=$value;
     }
-	
+
     private function connect() {
-<<<<<<< HEAD
-//		$dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname;
+//    $dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname;
         $dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname . ';charset=utf8mb4';
-        parent::__construct($dsn,$this->getUsername(),$this->getPassword());       
-=======
-        $dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname . ';charset=utf8mb4';
-//        $dsn = 'mysql:host=' . $this->server . ';dbname=' . $this->dbname;
         parent::__construct($dsn,$this->getUsername(),$this->getPassword());
->>>>>>> Miguel
-    	//$this->link = new PDO($this->getServer(),$this->getUsername(),$this->getPassword());        
+        //$this->link = new PDO($this->getServer(),$this->getUsername(),$this->getPassword());
     }
-    
+
     public function getLink() {
-		return $this->link;
-	}
+        return $this->link;
+    }
 
-	
-	public function consulta($query){
+    public function consulta($query){
         $query->execute();
-    }	 
-	
-	//get data of database
-	public function consultarTravels($query) {
+    }
 
-	    $query->execute();
-	    $result = $query->FetchAll(PDO::FETCH_ASSOC);
-	    return $result;
-	}	
+    //get data of database
+    public function consultarTravels($query) {
+        $query->execute();
+        $result = $query->FetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
 ?>
