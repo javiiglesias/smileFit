@@ -1,3 +1,3 @@
 <?php
-	$GLOBALS['bd'] = "smilefit_condatos";
+	$GLOBALS['bd'] = "smilefit";
 ?>
