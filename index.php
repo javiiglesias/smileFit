@@ -1,7 +1,7 @@
 <?php
 
 require_once("controller/function_AutoLoad.php");
-//require_once('model/business/class_usuari.php');
+//require_once('model/business/class_usuario.php');
 //require_once('model/business/class_obra.php');
 session_start();
 
@@ -22,10 +22,10 @@ switch ($ctl) {
                 include "controller/login_ctl.php";
                 break;
             case "registre":
-                include "controller/registreusuari_ctl.php";
+                include "controller/registrarUser_ctl.php";
                 break;
             case"sortir";
-                include "controller/logout.php";
+                include "controller/logout_ctl.php";
                 break;
         }
         break;
