@@ -20,41 +20,57 @@
 	<title>Guia de continguts</title>
 </head>
 <body>
+<div class="container-fluid">
+  <?php
+  require_once 'menu.php';
+  ?>
+  <?php if ($titlePage != "Inici" && $titlePage != "Iniciar Sessio" && $titlePage != "Registrar-se") { ?>
+    <header class="container-header">
+      <div class="container">
+        <h1><?php echo $titlePage ?></h1>
+        <hr class="featurette-divider">
+      </div>
+    </header>
+  <?php } ?>
+
+
+
+
  
 
-<nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-           <div class="col-xs-2">
-                  <a class="" href="?ctl=inici"><img class="img-responsive" src="view/images/original.png"/></a>
-              </div>
-        
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-            <li class=""><a href="elementsNavegacio.php">Sobre nosotros</a></li>
-              <li class="active"><a href="?ctl=inici">Home</a></li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trabajos anteriores <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="?ctl=anteriores&act=dietetica">Dietetica</a></li>
-                  
-                  <li><a href="?ctl=anteriores&act=entrenamientos">Entrenamiento</a></li>
-
-                </ul>
-              </li>
-              <li class=""><a href="?ctl=dietas">Dietas</a></li>
-              <li class=""><a href="?ctl=entrenamientos">Entrenamientos</a></li>
-              <li class=""><a href="?ctl=trabaja-con-nosotros">Trabaja con nosotros</a></li>
-              <li class=""><a href="?ctl=contacta">Contacta</a></li>
-               <li class=""><a href="?ctl=usuari&act=login">Login</a></li>
-            </ul>
-        </div>
-    </div>
-  </div>
-</nav>
+<!--<nav class="navbar navbar-default">-->
+<!--        <div class="container-fluid">-->
+<!--          <div class="navbar-header">-->
+<!--            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+<!--              <span class="sr-only">Toggle navigation</span>-->
+<!--              <span class="icon-bar"></span>-->
+<!--              <span class="icon-bar"></span>-->
+<!--              <span class="icon-bar"></span>-->
+<!--            </button>-->
+<!--           <div class="col-xs-2">-->
+<!--                  <a class="" href="?ctl=inici"><img class="img-responsive" src="view/images/original.png"/></a>-->
+<!--              </div>-->
+<!--        -->
+<!--          <div id="navbar" class="navbar-collapse collapse">-->
+<!--            <ul class="nav navbar-nav">-->
+<!--            <li class=""><a href="elementsNavegacio.php">Sobre nosotros</a></li>-->
+<!--              <li class="active"><a href="?ctl=inici">Home</a></li>-->
+<!--              <li class="dropdown">-->
+<!--                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trabajos anteriores <span class="caret"></span></a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li><a href="?ctl=anteriores&act=dietetica">Dietetica</a></li>-->
+<!--                  -->
+<!--                  <li><a href="?ctl=anteriores&act=entrenamientos">Entrenamiento</a></li>-->
+<!---->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li class=""><a href="?ctl=dietas">Dietas</a></li>-->
+<!--              <li class=""><a href="?ctl=entrenamientos">Entrenamientos</a></li>-->
+<!--              <li class=""><a href="?ctl=trabaja-con-nosotros">Trabaja con nosotros</a></li>-->
+<!--              <li class=""><a href="?ctl=contacta">Contacta</a></li>-->
+<!--              <li class=""><a href="?ctl=usuari&act=login">Login</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->

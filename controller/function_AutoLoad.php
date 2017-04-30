@@ -8,7 +8,7 @@ function __autoload($class_name) {
 
     $nomFile = "class_" . $class_name . ".php";
     $arxiuPersistence = "model/Persistence/" . $nomFile;
-    $arxiuBusiness = "model/business/" . $nomFile;
+    $arxiuBusiness = "model/Business/" . $nomFile;
 
     if (file_exists($arxiuPersistence)) {
         require_once $arxiuPersistence;

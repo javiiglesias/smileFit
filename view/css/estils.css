@@ -29,7 +29,8 @@ footer
     border-radius: 0px;
 
 }
-
+.w100{width: 100%}
+.h75{height: 20%}
 .bgVerd{background-color: green;}
 .bgGris{background-color: grey;}
 
@@ -64,4 +65,33 @@ footer
 }
 @media(max-width: 992px){
 	.foter{text-align: center;margin-top: 10px;}
+}
+
+
+.login {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/gym.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+.transparent-heading {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    margin: 100px auto 0px auto;
+}
+
+.login-form {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #FFF;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.login-form a,
+.login-form a:hover {
+    color: #FFF;
+    text-decoration: none;
 }
