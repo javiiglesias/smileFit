@@ -35,6 +35,7 @@
                             <li><a href="?ctl=agencia&act=detall">Dietas</a></li>
                         <?php } ?>
 
+
                         <?php if ($titlePage == "Qui som?") { ?>
                             <li class="active"><a href="?ctl=quisom">Entrenamiento</a></li>
                         <?php } else { ?>
@@ -81,6 +82,7 @@
                             </ul>
                             <?php } ?>
                 </div>
+
             </div>
         </div>
     </nav>
