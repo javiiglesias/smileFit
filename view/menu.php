@@ -57,6 +57,7 @@
                               <ul class="dropdown-menu">
                                   <?php } ?>
                                   <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+                                      <li><a href="?ctl=usuario&act=panel">Ir al Panel de Administración</a></li>
                                       <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
                                   <?php } else { ?>
                                       <li><a href="?ctl=usuario&act=login">Iniciar Sesión</a></li>
