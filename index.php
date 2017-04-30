@@ -5,7 +5,7 @@ require_once("controller/function_AutoLoad.php");
 //require_once('model/business/class_obra.php');
 session_start();
 
-$ctl = "inici";
+$ctl = "inicio";
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
@@ -16,23 +16,23 @@ if (isset($_REQUEST['ctl'])) {
 }
 
 switch ($ctl) {
-    case"usuari":
+    case"usuario":
         switch ($act) {
             case "login":
                 include "controller/login_ctl.php";
                 break;
-            case "registre":
+            case "registro":
                 include "controller/registrarUser_ctl.php";
                 break;
-            case"sortir";
+            case"salir";
                 include "controller/logout_ctl.php";
                 break;
         }
         break;
         
 
-    case "contacta":
-        include "controller/contacta_ctl.php";
+    case "contacto":
+        include "controller/contacto_ctl.php";
     break;
 //
 //

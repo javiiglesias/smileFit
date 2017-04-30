@@ -2,12 +2,12 @@
 require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
-class usuaridb {
+class usuariodb {
     private $usuaris;
     public function __construct() {
         $usuaris = array();
     }
-    public function consultarUsuarisdb() {
+    public function consultarUsuariosdb() {
         $con = new db();
         switch (func_num_args()) {
             case 2:
@@ -44,7 +44,7 @@ class usuaridb {
         $con = null;
         return $resultado;
     }
-    public function insertarUsuarisdb($name, $pass){
+    public function insertarUsuariosdb($name, $pass){
         $description = "cliente";
         $query = "INSERT INTO usuario (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
         $con = new db();
