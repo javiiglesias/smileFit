@@ -27,6 +27,9 @@ switch ($ctl) {
             case"salir";
                 include "controller/logout_ctl.php";
                 break;
+            case "panel":
+                include "controller/panel_ctl.php";
+                break;
         }
         break;
         
@@ -34,6 +37,20 @@ switch ($ctl) {
     case "contacto":
         include "controller/contacto_ctl.php";
     break;
+
+   case"menu":
+      switch ($act) {
+            case "admin":
+              include "controller/menuAdmin_ctl.php";
+              break;
+//           case "registro":
+//               include "controller/registrarUser_ctl.php";
+//               break;
+//           case"salir";
+//               include "controller/logout_ctl.php";
+//              break;
+       }
+        break;
 //
 //
 //
