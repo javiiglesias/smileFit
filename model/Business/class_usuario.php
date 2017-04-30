@@ -87,7 +87,7 @@ class usuario
         if($numero_registro!=0){
             $ok = true;
         }else{
-            header("location:index.php?ctl=usuari&act=login");
+            header("location:index.php?ctl=usuario&act=login");
         }
 //        foreach ($arrayUsuaris as $usuari) {
 //
@@ -106,8 +106,8 @@ class usuario
             $ok = true;
             $arrayUsuarios= $usuario->insertarUsuariosdb($name, $pass);
         }else{
-            header("location:index.php?ctl=usuari&act=registre");
-            $ok = false;
+            header("location:index.php?ctl=usuario&act=registro");
+//            $ok = false;
         }
         return $ok;
 //        $this->llista[] = new Usuari($nom, $pas);
