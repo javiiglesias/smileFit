@@ -27,6 +27,9 @@ switch ($ctl) {
             case"salir";
                 include "controller/logout_ctl.php";
                 break;
+            case "panel":
+                include "controller/panel_ctl.php";
+                break;
         }
         break;
         
