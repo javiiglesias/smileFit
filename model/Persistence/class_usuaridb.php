@@ -49,19 +49,45 @@ class usuaridb {
         $con = null;
         return $resultado;
     }
+<<<<<<< HEAD
     public function insertarUsuarisdb($name, $pass){
         $description = "cliente";
         $query = "INSERT INTO usuario (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
         $con = new db();
         $resultado = $con->prepare($query);
+=======
+
+    public function insertarUsuarisdb($name, $pass){
+        $description = "cliente";
+        $query ="INSERT INTO usuario (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
+        $con = new db();
+        $resultado=$con->prepare($query);
+>>>>>>> Miguel
         $user = $name;
         $password = $pass;
         $resultado->bindValue(":user", $user);
         $resultado->bindValue(":password", $password);
         $resultado->bindValue(":description", $description);
         $resultado->execute();
+<<<<<<< HEAD
         $con = null;
+=======
+//       $numero_registro=$resultado->rowCount(); //devuelve el número de registros que devuelve la consulta, 0 si no coincide el user y password y 1 si coincide
+//        if($numero_registro!=0){
+//            echo "USUARIO CORRECTO";
+//        }else{
+//
+//            header("location:index.php?ctl=usuari&act=login");
+//            echo "USUARIO NO ENCONTRADO";
+//        }
+        $con = null;
+//    $arrayDeUsuaris = $con->consultarUsuari($query);
+//        $con = null;
+//        $usuaris=$arrayDeUsuaris;
+//    return $numero_registro;
+>>>>>>> Miguel
         return $resultado;
     }
 }
+
 ?>
