@@ -6,7 +6,6 @@
  * Time: 13:33
  */
 $titlePage = "MenuAdministrador";
-
 require_once 'view/header.php';
 require_once 'view/menuAdministrador.php';
 require_once 'view/footer.php';

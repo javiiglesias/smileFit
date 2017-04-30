@@ -12,10 +12,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="view/js/test.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link href="view/css/flexslider.css" rel="stylesheet" type="text/css">
 <link href="view/css/estils.css" rel="stylesheet" type="text/css">
+    <link href="view/css/prueba.css" rel="stylesheet" type="text/css">
 
 
     <title>Guia de continguts</title>
@@ -23,7 +25,9 @@
 <body>
 <div class="container-fluid">
   <?php
-  require_once 'menu.php';
+
+     require_once 'menu.php';
+
   ?>
   <?php if ($titlePage != "Inicio" && $titlePage != "Iniciar Sesión" && $titlePage != "Registrarse") { ?>
     <header class="container-header">
