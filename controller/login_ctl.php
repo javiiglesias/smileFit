@@ -2,18 +2,14 @@
 ob_start();
 require_once("controller/function_AutoLoad.php");
 //require_once ("../model/Business/class_usuari.php");
-
 $titlePage = "Iniciar Sessio";
 $Usuaris = new usuari();
-
 if (isset($_REQUEST['recordarUsuari'])) {
     setcookie("usuari", $_REQUEST['usuari'], time() + 3600, "/");
 } else {
     setcookie("usuari", "", time() - 3600, "/");
 }
-
 require_once 'view/header.php';
-
 if (isset($_REQUEST['Submit'])) {
 //    $usuari = $_REQUEST['usuari'];
 //    $clau = $_REQUEST['pass'];
