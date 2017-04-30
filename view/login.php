@@ -14,7 +14,7 @@ if (isset($_COOKIE['usuario'])) {
         <div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3 ">
             <div class="container-login">
                 <form action="?ctl=login" method="POST" class="login-form">
-                    <img src="view/images/original2.png" class="img-responsive">
+                    <img src="view/images/original3.png" class="img-responsive">
                     <h1 class="text-center transparent-heading">Iniciar Sesión</h1>
                     <div class="form-group">
                         <label><strong>Usuario:</strong></label>
