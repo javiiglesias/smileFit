@@ -1,4 +1,5 @@
 <?php
+
 $guardarUsuari = "";
 if (isset($_COOKIE['usuari'])) {
     $guardarUsuari = $_COOKIE['usuari'];
