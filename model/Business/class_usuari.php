@@ -1,14 +1,11 @@
 <?php
-
 require_once("controller/function_AutoLoad.php");
-
-class Usuari
+class usuari
 {
     private $id;
     private $UserName;
     private $Password;
     private $Descripcion;
-
     public function __construct()
     {
         switch (func_num_args()) {
@@ -24,10 +21,8 @@ class Usuari
                 $this->setPassword(func_get_arg(2));
                 $this->setDescripcion(func_get_arg(3));
                 break;
-
         }
     }
-
     /**
      * @return mixed
      */
@@ -35,7 +30,6 @@ class Usuari
     {
         return $this->id;
     }
-
     /**
      * @param mixed $id
      */
@@ -43,7 +37,6 @@ class Usuari
     {
         $this->id = $id;
     }
-
     /**
      * @return mixed
      */
@@ -51,7 +44,6 @@ class Usuari
     {
         return $this->UserName;
     }
-
     /**
      * @param mixed $UserName
      */
@@ -59,7 +51,6 @@ class Usuari
     {
         $this->UserName = $UserName;
     }
-
     /**
      * @return mixed
      */
@@ -67,7 +58,6 @@ class Usuari
     {
         return $this->Password;
     }
-
     /**
      * @param mixed $Password
      */
@@ -75,7 +65,6 @@ class Usuari
     {
         $this->Password = $Password;
     }
-
     /**
      * @return mixed
      */
@@ -83,7 +72,6 @@ class Usuari
     {
         return $this->Descripcion;
     }
-
     /**
      * @param mixed $Descripcion
      */
@@ -91,24 +79,38 @@ class Usuari
     {
         $this->Descripcion = $Descripcion;
     }
-
     public function validateUser($name, $pass) {
-        $usuari = new Usuaridb;
-        $arrayUsuaris= $usuari->consultarUsuarisdb();
+        $usuari = new usuaridb;
+        $arrayUsuaris= $usuari->consultarUsuarisdb($name, $pass);
         $ok = false;
-
-        foreach ($arrayUsuaris as $usuari) {
-
-            if($usuari->getUserName() == $name && $usuari->getPassword() == $pass){
-                $ok = true;
-            }
+        $numero_registro=$arrayUsuaris->rowCount();
+        if($numero_registro!=0){
+            $ok = true;
+        }else{
+            header("location:index.php?ctl=usuari&act=login");
         }
+//        foreach ($arrayUsuaris as $usuari) {
+//
+//            if($usuari->getUserName() == $name && $usuari->getPassword() == $pass){
+//                $ok = true;
+//            }
+//        }
         return $ok;
     }
-
-
-
+    function registrarUsuari($name, $pass) {
+        $usuari = new usuaridb;
+        $arrayUsuaris= $usuari->consultarUsuarisdb($name);
+        $ok = false;
+        $numero_registro=$arrayUsuaris->rowCount();
+        if($numero_registro==0){
+            $ok = true;
+            $arrayUsuaris= $usuari->insertarUsuarisdb($name, $pass);
+        }else{
+            header("location:index.php?ctl=usuari&act=registre");
+            $ok = false;
+        }
+        return $ok;
+//        $this->llista[] = new Usuari($nom, $pas);
+    }
 }
-
-
 ?>

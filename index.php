@@ -22,10 +22,10 @@ switch ($ctl) {
                 include "controller/login_ctl.php";
                 break;
             case "registre":
-                include "controller/registreusuari_ctl.php";
+                include "controller/registrarUser_ctl.php";
                 break;
             case"sortir";
-                include "controller/logout.php";
+                include "controller/logout_ctl.php";
                 break;
         }
         break;
