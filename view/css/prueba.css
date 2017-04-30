@@ -27,6 +27,7 @@ html { height: 100%;}
 #sidebar-wrapper {
     z-index: 1000;
     left: 220px;
+    top:213px;
     width: 0;
     height: 100%;
     margin-left: -220px;
@@ -170,7 +171,7 @@ html { height: 100%;}
 
 .hamburger {
     position: fixed;
-    top: 20px;
+    top: 222px;
     z-index: 999;
     display: block;
     width: 32px;
