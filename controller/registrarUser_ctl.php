@@ -1,30 +1,30 @@
 <?php
 ob_start();
-$titlePage = "Registrar-se";
+$titlePage = "Registrarse";
 //$UsuarisDA0 = new UsuarisDAO();
-$Usuaris = new usuari();
-$usuari = null;
-$clau = null;
+$Usuarios = new usuario();
+$usuario = null;
+$password = null;
 require_once 'view/header.php';
 if (isset($_REQUEST['Submit'])) {
-    if (isset($_REQUEST['nou_usuari'])) {
+    if (isset($_REQUEST['nuevo_usuario'])) {
         //$usuari = $_REQUEST['nou_usuari'];
-        $usuari = htmlentities(addslashes($_REQUEST['nou_usuari']));
+        $usuario = htmlentities(addslashes($_REQUEST['nuevo_usuario']));
     }
     if (isset($_REQUEST['pass'])) {
 //        $clau = $_REQUEST['pass'];
-        $clau = htmlentities(addslashes($_REQUEST['pass']));
-        $clau = password_hash($clau, PASSWORD_DEFAULT);
+        $password = htmlentities(addslashes($_REQUEST['pass']));
+        $password = password_hash($password, PASSWORD_DEFAULT);
     }
-    if ($usuari != null && $clau != null) {
+    if ($usuario != null && $password != null) {
 //        $UsuarisDA0->registrarUsuari($usuari, $clau);
-        $Usuaris->registrarUsuari($usuari, $clau);
+        $Usuarios->registrarUsuario($usuario, $password);
         require_once 'view/header.php';
         $missatge = "T'has registrat Correctament! Ja pots iniciar Sessió";
         require_once 'view/confirmacion.php';
         require_once 'view/footer.php';
     } else {
-        $missatge = "No s'ha pogut realitzar el registre! ";
+        $mensaje = "No se ha podido realizar el Registro! ";
         require_once 'view/error.php';
 //        require_once 'view/registro.php';
     }
