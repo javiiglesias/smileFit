@@ -16,6 +16,7 @@ footer
     border: none;
     background-image: none;
 }
+.navbar-default .navbar-nav>li>a{color:#fff;font-size: 20px;line-height: 180px;font-weight: bold;}
 .pAbsoluteB0{position: absolute; bottom: 0; width: 100%}
 .fz20{font-size: 30px;}
 .foter{    text-align: right;
@@ -26,8 +27,11 @@ footer
 .bgSlide2{background-image: url('../images/ejercicio2.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.tophome{ position: absolute; top: 0;  z-index: 9; 
+    background-image: url('../images/sporthome.jpg');height: 1000px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%
+}
 .clear{clear: both;}
-.mb614{    margin-bottom: 614px;}
+.mb614{    margin-bottom: 800px;}
 .recuadro {-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
