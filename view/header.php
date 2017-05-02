@@ -19,7 +19,6 @@
 <link href="view/css/estils.css" rel="stylesheet" type="text/css">
     <link href="view/css/prueba.css" rel="stylesheet" type="text/css">
 
-
     <title>Guia de continguts</title>
 </head>
 <body>

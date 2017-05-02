@@ -9,7 +9,6 @@ if (isset($_COOKIE['usuario'])) {
 <div class="container-fluid">
     <div class="container">
         <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-4">
-
         </div>
         <div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3 ">
             <div class="container-login">
