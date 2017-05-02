@@ -83,8 +83,6 @@ class usuario
         $usuarioDB = new usuariodb;
         $usuario= $usuarioDB->consultarUsuarioDB($name);
 
-        $a = 1;
-        $b=2;
         if ($usuario->getPassword() == $pass){
             return true;
         }else{
@@ -109,28 +107,33 @@ class usuario
         $user = $usuarioDB->consultarUsuarioDB($name);
         return $user->getDescripcion();
     }
-    public function getRol($name,$pass){
-        $rol="";
-        $usuario->getUser($name,$pass);
-        return $rol[3];
-    }
 
     function registrarUsuario($name, $pass) {
-        $usuario = new usuariodb;
-        $arrayUsuarios= $usuario->consultarUsuariosdb($name);
-        $ok = false;
-        $numero_registro=$arrayUsuarios->rowCount();
-        if($numero_registro==0){
-            $ok = true;
-            $arrayUsuarios= $usuario->insertarUsuariosdb($name, $pass);
-        }else{
+        $usuarioDB = new usuariodb;
+        $usuario= $usuarioDB->consultarUsuarioDB($name);
+
+        if ($usuario == null){
+            $usuarioDB->insertarUsuariosdb($name, $pass);
+            return true;
+        }else {
             header("location:index.php?ctl=usuario&act=registro");
+        }
+
+//        $usuarioDB = new usuariodb;
+//        $usuario= $usuarioDB->consultarUsuarioDB($name);
+//        if($usuario->getPassword() == $pass){
+//            h
+//
+//        }else{
+//
+//            return true;
+//
 
 //            $ok = false;
 
         }
-        return $ok;
+
 //        $this->llista[] = new Usuari($nom, $pas);
-    }
+
 }
 ?>
