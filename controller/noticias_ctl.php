@@ -5,12 +5,15 @@ $titlePage = "Noticias";
 require_once 'view/header.php';
 
 
-$noticias = new noticia();
+	$noticias = new noticia();
 
 
     $noticia = $noticias->muestraNoticias();
 
 
+
+
+include('view/noticias.php');
 
 require_once 'view/footer.php';
 ob_end_flush();
