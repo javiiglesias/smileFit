@@ -1,8 +1,8 @@
 <?php
-$titlePage = "Contacta";
+$titlePage = "Inicio";
 
 require_once 'view/header.php';
-require_once 'view/contacta.php';
+require_once 'view/inicio.php';
 require_once 'view/footer.php';
 
 ?>

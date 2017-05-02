@@ -1,11 +1,11 @@
 <?php
 
 require_once("controller/function_AutoLoad.php");
-//require_once('model/business/class_usuari.php');
+//require_once('model/business/class_usuario.php');
 //require_once('model/business/class_obra.php');
 session_start();
 
-$ctl = "inici";
+$ctl = "inicio";
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
@@ -16,24 +16,41 @@ if (isset($_REQUEST['ctl'])) {
 }
 
 switch ($ctl) {
-    case"usuari":
+    case"usuario":
         switch ($act) {
             case "login":
                 include "controller/login_ctl.php";
                 break;
-            case "registre":
-                include "controller/registreusuari_ctl.php";
+            case "registro":
+                include "controller/registrarUser_ctl.php";
                 break;
-            case"sortir";
-                include "controller/logout.php";
+            case"salir";
+                include "controller/logout_ctl.php";
+                break;
+            case "panel":
+                include "controller/panel_ctl.php";
                 break;
         }
         break;
         
 
-    case "contacta":
-        include "controller/contacta_ctl.php";
+    case "contacto":
+        include "controller/contacto_ctl.php";
     break;
+
+   case"menu":
+      switch ($act) {
+            case "admin":
+              include "controller/menuAdmin_ctl.php";
+              break;
+//           case "registro":
+//               include "controller/registrarUser_ctl.php";
+//               break;
+//           case"salir";
+//               include "controller/logout_ctl.php";
+//              break;
+       }
+        break;
 //
 //
 //
