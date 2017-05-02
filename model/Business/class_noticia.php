@@ -3,17 +3,30 @@ require_once("controller/function_AutoLoad.php");
 class noticia
 {
     private $id;
-    private $titiulo;
+    private $titulo;
     private $imagen;
     private $descripcion;
     private $contenido;
     public function __construct()
     {
-       $this->setId(null);
-       $this->setTitiulo(null);
-       $this->setImagen(null);
-       $this->setDescripcion(null);
-        $this->setContenido(null);
+
+        switch (func_num_args()) {
+            case 4:
+                $this->setId(null);
+                $this->setTitulo(func_get_arg(0));
+                $this->setImagen(func_get_arg(1));
+                $this->setDescripcion(func_get_arg(2));
+                $this->setContenido(func_get_arg(3));
+                break;
+            case 5:
+               $this->setId(func_get_arg(0));
+                $this->setTitulo(func_get_arg(1));
+                $this->setImagen(func_get_arg(2));
+                $this->setDescripcion(func_get_arg(3));
+                $this->setContenido(func_get_arg(4));
+                break;
+        }
+
       
     }
     /**
@@ -35,12 +48,12 @@ class noticia
      */
     public function getTitulo()
     {
-        return $this->titiulo;
+        return $this->titulo;
     }
     /**
      * @param mixed $titulo
      */
-    public function setTitiulo($titulo)
+    public function setTitulo($titulo)
     {
         $this->titulo = $titulo;
     }
@@ -91,31 +104,9 @@ class noticia
     public function muestraNoticias() {
         $noticia = new noticiasdb;
         $arrayNoticias= $noticia->mostrarNoticiasdb();
-        var_dump($arrayNoticias);//l'array sale vacia, seguido debemos hacer un  array
-//        foreach ($arrayUsuaris as $usuari) {
-//
-//            if($usuari->getUserName() == $name && $usuari->getPassword() == $pass){
-//                $ok = true;
-//            }
-//        }
+
         return $arrayNoticias;
     }
-  /*  function registrarUsuario($name, $pass) {
-        $usuario = new usuariodb;
-        $arrayUsuarios= $usuario->consultarUsuariosdb($name);
-        $ok = false;
-        $numero_registro=$arrayUsuarios->rowCount();
-        if($numero_registro==0){
-            $ok = true;
-            $arrayUsuarios= $usuario->insertarUsuariosdb($name, $pass);
-        }else{
-            header("location:index.php?ctl=usuario&act=registro");
-
-//            $ok = false;
-
-        }
-        return $ok;
-//        $this->llista[] = new Usuari($nom, $pas);
-    }*/
+  
 }
 ?>
