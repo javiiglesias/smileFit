@@ -5,8 +5,6 @@
 //
 ////    http_redirect("");
 //}else {
-
-
     ?>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -78,10 +76,12 @@
                                 <ul class="dropdown-menu">
                                     <?php } ?>
                                     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-                                       <?php if (isset($_SESSION['usuario'])=="administrador") { ?>
-                                        <li><a href="?ctl=menu&act=admin">Menu Admin</a></li>
+                                       <?php if (isset($_SESSION['test']) && $_SESSION['test'] =="administrador") { ?>
+                                        <li><a href="?ctl=menu&act=admin"> Ir al Panel de Administracion</a></li>
                                         <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
-                                           <?php } ?>
+                                           <?php }else{ ?>
+                                           <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
+                                         <?php } ?>
                                     <?php } else { ?>
                                         <li><a href="?ctl=usuario&act=login">Iniciar Sesión</a></li>
                                         <li><a href="?ctl=usuario&act=registro">Registrarse</a></li>
