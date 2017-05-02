@@ -9,12 +9,12 @@
 		
 		<div class="col-xs-12 col-md-8 col-sm-6 col-lg-8pB35">
 			<a href="http://localhost/M12/smileFit/view/meriendas-saludables.php">
-				<h2 class="fz24 bold colorRed">Meriendas saludables</h2><br>
+				<h2 class="fz24 bold colorRed">Noticia 1</h2><br>
 			</a>	
 			
 
 			<span class="normal mB20 fz13">28-04-2017</span>	<br>	
-			<span class="lite fz13">Para mantener una alimentación equilibrada es muy importante distribuir bien la ingesta de alimentos durante el día.</span><br>
+			<span class="lite fz13">Descripción Noticia 1</span><br>
 			<a href="http://localhost/M12/smileFit/view/meriendas-saludables.php">
 				<span class="pT20 bold colorRed dInlineB fz13">Leer más</span>
 			</a>
@@ -29,12 +29,12 @@
 			
 			<div class="col-xs-12 col-md-8 col-sm-6 col-lg-8pB35">
 				<a href="http://www.ascensors-serra.com/ca/noticies/gener-2017-2/trailwalker-2017-7.htm" >
-					<h2 class="fz24 bold colorRed">Trailwalker 2017</h2><br>
+					<h2 class="fz24 bold colorRed">Noticia 2</h2><br>
 				</a>	
 				
 
 				<span class="normal mB20 fz13">06-04-2017</span>	<br>	
-				<span class="lite fz13">Felicitats a l'equip d'ASCENSORS SERRA, per haver finalitzat amb &egrave;xit la OXFAM TRAILWALKER 2017</span><br>
+				<span class="lite fz13">Descripción Noticia 1</span><br>
 				<a href="http://www.ascensors-serra.com/ca/noticies/gener-2017-2/trailwalker-2017-7.htm" >
 					<span class="pT20 bold colorRed dInlineB fz13">Llegir més</span>
 				</a>
@@ -43,18 +43,18 @@
 	
 		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 mT50nXS borderGris pL0">
 			
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pLR0noxs mB15<">
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pLR0noxs mB15<">
 					<img  class=" mT8nsm mb8 img-responsive mAutoNoticies borderRadius6" src="http://www.ascensors-serra.com/img/galeria/1-56.jpg"/>
 				</div>
 			
 			<div class="col-xs-12 col-md-8 col-sm-6 col-lg-8pB35">
 				<a href="http://www.ascensors-serra.com/ca/noticies/desembre-16-3/ascensors-serra-nou-patrocinador-unio-esportiva-olot-6.htm" >
-					<h2 class="fz24 bold colorRed">Ascensors Serra, nou patrocinador de la Unió Esportiva Olot</h2><br>
+					<h2 class="fz24 bold colorRed">Noticia 3</h2><br>
 				</a>	
 				
 
 				<span class="normal mB20 fz13">27-01-2017</span>	<br>	
-				<span class="lite fz13">L&rsquo;empresa olotina Ascensors Serra es converteix en el patrocinador m&eacute;s important de la Uni&oacute; Esportiva Olot. Es tracta d&rsquo;una empresa dedicada a la fabricaci&oacute;...</span><br>
+				<span class="lite fz13">Descripción Noticia 3</span><br>
 				<a href="http://www.ascensors-serra.com/ca/noticies/desembre-16-3/ascensors-serra-nou-patrocinador-unio-esportiva-olot-6.htm" >
 					<span class="pT20 bold colorRed dInlineB fz13">Llegir més</span>
 				</a>
