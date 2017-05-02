@@ -80,13 +80,21 @@ class usuario
         $this->Descripcion = $Descripcion;
     }
     public function validateUser($name, $pass) {
-        $usuario = new usuariodb;
-        $arrayUsuarios= $usuario->consultarUsuariosdb($name, $pass);
-        $ok = false;
-        $numero_registro=$arrayUsuarios->rowCount();
-        if($numero_registro!=0){
-            $ok = true;
+        $usuarioDB = new usuariodb;
+        $usuario= $usuarioDB->consultarUsuarioDB($name);
+
+        $a = 1;
+        $b=2;
+        if ($usuario->getPassword() == $pass){
+            return true;
         }else{
+
+        //$usuario= $usuarioDB->consultarUsuariosdb($name, $pass);
+        //$ok = false;
+
+        //if($usuario!=null){
+        //    $ok = true;
+        //}else{
             header("location:index.php?ctl=usuario&act=login");
         }
 //        foreach ($arrayUsuaris as $usuari) {
@@ -95,8 +103,18 @@ class usuario
 //                $ok = true;
 //            }
 //        }
-        return $ok;
     }
+    public function getUser($name){
+        $usuarioDB = new usuariodb;
+        $user = $usuarioDB->consultarUsuarioDB($name);
+        return $user->getDescripcion();
+    }
+    public function getRol($name,$pass){
+        $rol="";
+        $usuario->getUser($name,$pass);
+        return $rol[3];
+    }
+
     function registrarUsuario($name, $pass) {
         $usuario = new usuariodb;
         $arrayUsuarios= $usuario->consultarUsuariosdb($name);
