@@ -9,7 +9,7 @@
 		<img  class="img-responsive" src="view/images/<?echo $noticias->getImagen();?>"></div>
 		<div class="col-xs-12 col-sm-6"><span ><? echo $noticias->getDescripcion();?></span></div>
 		<!--echo $noticias->getContenido();-->
-		
+		<a href="?ctl=alumne&act=eliminar&param=<?php echo $data->dni?>
 		</div>
 	 <?endforeach ?>
 	  
