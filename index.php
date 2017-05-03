@@ -13,6 +13,9 @@ if (isset($_REQUEST['ctl'])) {
     if (isset($_REQUEST['act'])) {
         $act = $_REQUEST['act'];
     }
+    if(isset($_REQUEST['param'])){
+        $parm=($_REQUEST['param']);
+    }
 }
 
 switch ($ctl) {
