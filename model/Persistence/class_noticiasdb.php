@@ -2,12 +2,12 @@
 require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
-class usuariodb {
-    private $usuaris;
+class noticiasdb {
+    private $noticias;
     public function __construct() {
-        $usuaris = array();
+        $noticias = array();
     }
-    public function consultarNoticiasdb() {
+  /* public function consultarNoticiasdb() {
         $con = new db();
         switch (func_num_args()) {
             case 2:
@@ -29,7 +29,7 @@ class usuariodb {
                 $resultado->bindValue(":user", $user);
                 $resultado->execute();
                 break;
-        }
+        }*/
 //        if($pass ==null){
 //            $query="SELECT id, username, password, descripcion FROM usuario WHERE UserName= :user;";
 //        }else{
@@ -41,10 +41,10 @@ class usuariodb {
 //        $resultado->bindValue(":user", $user);
 //        $resultado->bindValue(":password", $password);
 //        $resultado->execute();
-        $con = null;
+      /*  $con = null;
         return $resultado;
-    }
-    public function insertarNoticiasdb($name, $pass){
+    }*/
+   /* public function insertarNoticiasdb($name, $pass){
         $description = "cliente";
         $query = "INSERT INTO usuario (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
         $con = new db();
@@ -57,6 +57,33 @@ class usuariodb {
         $resultado->execute();
         $con = null;
         return $resultado;
+    }*/
+    public function mostrarNoticiasdb(){
+        $con = new db();
+        $query = $con->prepare("SELECT * FROM noticias");
+
+        $noticias = array();
+        
+        $resultado=$con->consultarObjectes($query);
+      
+        foreach ($resultado as $row) {
+                $id=$row["Id"];
+                $titulo = $row["Titulo"];
+                $imagen = $row["Imagen"];
+                $descripcion = $row["Descripcion"];    
+                $contenido = $row["Contenido"];             
+                $noticia = new noticia($id,$titulo,$imagen,$descripcion,$contenido);
+                array_push($noticias,$noticia);
+
+
+
+        }
+
+        $con = null;
+        
+        return $noticias;
     }
+
+
 }
 ?>

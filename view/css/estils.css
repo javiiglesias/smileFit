@@ -12,24 +12,15 @@ footer
 }
 .navbar-default{      z-index: 99;  background-color: rgba(12, 85, 64, 0.19)!important;
     border-radius: 0px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), -1px 5px 5px rgb(0, 77, 54);
+;
     border: none;
     background-image: none;
 }
 .navbar-default .navbar-nav>li>a{color:#fff;font-size: 20px;line-height: 180px;font-weight: bold;}
 .pAbsoluteB0{position: absolute; bottom: 0; width: 100%}
 .fz20{font-size: 30px;}
-.foter{    text-align: right;
-    margin-top: 105px;
-    color: #5D294F;}
+.foter{    text-align: right; margin-top: 105px;color: #5D294F;}
 .topflexslide{   position: absolute; top: 0;  z-index: 9;  }
-.bgSlide1{background-image: url('../images/ejercicio1.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.bgSlide2{background-image: url('../images/ejercicio2.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.tophome{ position: absolute; top: 0;  z-index: 9; 
-    background-image: url('../images/sporthome.jpg');height: 1000px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%
-}
 .clear{clear: both;}
 .mb614{    margin-bottom: 800px;}
 .recuadro {-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -38,15 +29,17 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 /*-----------------*/
 /*   BackGrounds */
 /*----------------*/
-.bGfooter{background-color: #fff!important;
-    box-shadow: 0px 0px 68px 0px rgba(255,255,255,.15), 1px -6px 15px 0px rgb(0, 77, 54);
-    border-radius: 0px;
+.bGfooter{background-color: #fff!important; box-shadow: 0px 0px 68px 0px rgba(255,255,255,.15), 1px -6px 15px 0px rgb(0, 77, 54); border-radius: 0px;}
 
-}
-.w100{width: 100%}
-.h75{height: 20%}
+
 .bgVerd{background-color: green;}
 .bgGris{background-color: grey;}
+
+.bgSlide1{background-image: url('../images/ejercicio1.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.bgSlide2{background-image: url('../images/ejercicio2.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.tophome{ position: absolute; top: 0;  z-index: 9;  background-image: url('../images/sporthome.jpg');height: 1000px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%}
 
 .bgOpacitat{background-color: pink; opacity: 0.8}
 .bgOpacitat1{background-color: #A5DCA8; opacity: 0.8}
@@ -65,9 +58,16 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 /* Grandàries */
 /*-----------*/
 .w100{width: 100%}
-
+.h75{height: 20%}
+/*--------------*/
+/* pd i mg     */
+/*------------*/
+.mT10{margin-top: 10px}
 .mT20{margin-top: 20px;}
+.mB60{margin-bottom: 60px}
+.mTB20{margin-top:20px;margin-bottom: 20px;}
 .mB15{margin-bottom: 15px;}
+.mB70{margin-bottom: 70px}
 .mB50{margin-bottom: 50px;}
 .mAuto{left: 0; margin: auto; position: absolute; right: 0;}
 .prelative{position: relative;}
@@ -76,6 +76,8 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 .pB15{padding-bottom: 120px;display: block;}
 @media(max-width: 992px){
 	.bBlau2{background-color: red!important;}
+    .pL0sm{padding-left: 0px;}
+    .pR0-sm {padding-right: 0px;}
 }
 @media(max-width: 992px){
 	.foter{text-align: center;margin-top: 10px;}
