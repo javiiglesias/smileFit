@@ -107,6 +107,13 @@ class noticia
 
         return $arrayNoticias;
     }
+
+    public function muestraNoticia($nNoticia) {
+        $noticia = new noticiasdb;
+        $arrayNoticias= $noticia->mostrarNoticiadb($nNoticia);
+
+        return $arrayNoticias;
+    }
   
 }
 ?>

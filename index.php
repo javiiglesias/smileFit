@@ -54,7 +54,17 @@ switch ($ctl) {
 //              break;
        }
         break;
-//
+
+     case"noticas":
+       switch ($act) {
+            case "detalle":
+              include "controller/noticiasDetalle_ctl.php";
+              break;
+            default:
+                include"controller/noticias_ctl.php";
+                break;
+            }
+        break;
 //
 //
 //    case "obra":
