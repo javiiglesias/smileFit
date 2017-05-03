@@ -20,7 +20,7 @@ if (isset($_REQUEST['Submit'])) {
 //        $UsuarisDA0->registrarUsuari($usuari, $clau);
         $Usuarios->registrarUsuario($usuario, $password);
         require_once 'view/header.php';
-        $missatge = "T'has registrat Correctament! Ja pots iniciar Sessió";
+        $mensaje = "Te has registrado correctamente, Puedes iniciar Session";
         require_once 'view/confirmacion.php';
         require_once 'view/footer.php';
     } else {

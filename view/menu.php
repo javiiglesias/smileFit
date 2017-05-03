@@ -5,8 +5,6 @@
 //
 ////    http_redirect("");
 //}else {
-
-
     ?>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -37,15 +35,20 @@
                         <?php } ?>
 
 
-                        <?php if ($titlePage == "Qui som?") { ?>
-                            <li class="active"><a href="?ctl=quisom">Entrenamiento</a></li>
+                        <?php if ($titlePage == "Entrenamientos") { ?>
+                            <li class="active"><a href="?ctl=entrenamientos">Entrenamientos</a></li>
                         <?php } else { ?>
-                            <li><a href="?ctl=quisom">Entrenamiento?</a></li>
+                            <li><a href="?ctl=entrenamientos">Entrenamientos</a></li>
                         <?php } ?>
-                        <?php if ($titlePage == "Actors") { ?>
-                            <li class="active"><a href="?ctl=actors">Trabaja con nosotros</a></li>
+                        <?php if ($titlePage == "Noticias") { ?>
+                            <li class="active"><a href="?ctl=noticias">Noticias</a></li>
                         <?php } else { ?>
-                            <li><a href="?ctl=actors">Trabaja con nosotros</a></li>
+                            <li><a href="?ctl=noticias">Noticias</a></li>
+                        <?php } ?>
+                        <?php if ($titlePage == "Trabaja con nosotros") { ?>
+                            <li class="active"><a href="?ctl=trabaja-con-nosotros">Trabaja con nosotros</a></li>
+                        <?php } else { ?>
+                            <li><a href="?ctl=trabaja-con-nosotros">Trabaja con nosotros</a></li>
                         <?php } ?>
                         <?php if ($titlePage == "Contacto") { ?>
                             <li class="active"><a href="?ctl=contacto">Contacto</a></li>
@@ -73,10 +76,12 @@
                                 <ul class="dropdown-menu">
                                     <?php } ?>
                                     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-                                       <?php if (isset($_SESSION['usuario'])=="administrador") { ?>
-                                        <li><a href="?ctl=menu&act=admin">Menu Admin</a></li>
+                                       <?php if (isset($_SESSION['test']) && $_SESSION['test'] =="administrador") { ?>
+                                        <li><a href="?ctl=menu&act=admin"> Ir al Panel de Administracion</a></li>
                                         <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
-                                           <?php } ?>
+                                           <?php }else{ ?>
+                                           <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
+                                         <?php } ?>
                                     <?php } else { ?>
                                         <li><a href="?ctl=usuario&act=login">Iniciar Sesión</a></li>
                                         <li><a href="?ctl=usuario&act=registro">Registrarse</a></li>
