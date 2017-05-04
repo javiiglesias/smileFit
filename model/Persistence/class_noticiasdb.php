@@ -8,8 +8,9 @@ class noticiasdb {
         $noticias = array();
     }
   
-    public function mostrarNoticiasdb(){
+  /*  public function mostrarNoticiasdb(){
         $con = new db();
+
         $query = $con->prepare("SELECT * FROM noticias");
 
         $noticias = array();
@@ -32,11 +33,14 @@ class noticiasdb {
         $con = null;
         
         return $noticias;
-    }
+    }*/
      public function mostrarNoticiadb($nNoticia){
         $con = new db();
+if($nNoticia== null){
+	 $query = $con->prepare("SELECT * FROM noticias");
+}else{
         $query = $con->prepare("SELECT * FROM noticias where id=".$nNoticia);
-
+}
         $noticias = array();
         
         $resultado=$con->consultarObjectes($query);

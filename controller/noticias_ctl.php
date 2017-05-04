@@ -8,7 +8,7 @@ require_once 'view/header.php';
 	$noticias = new noticia();
 
 
-    $noticia = $noticias->muestraNoticias();
+    $noticia = $noticias->muestraNoticia();
 
 
 
