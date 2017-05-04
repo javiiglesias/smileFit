@@ -26,4 +26,4 @@ require_once 'view/noticiaDetalle.php';
 require_once 'view/footer.php';
 ob_end_flush();
 ?>
-?>
+
