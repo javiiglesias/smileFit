@@ -17,11 +17,14 @@ class usuariodb{
         if($resutado){
 
 //Cambiado por if($resultat)-> si hay datos entrará si no no debolverá nada, tal y como lo hacemos aqui recorremos con un foreach un tan solo un resultado, ya que el return para la interacción. por loq ue estamos usando un foreach para recorrer 1 vez, cosa que con un if lo tenemos igual.(solo hará una iteracion aunque encuentres 200000 usuarios ...valdría con un if y entrando en el valor del primer elemento del array) antes   foreach ($resutalt as $row)
-            $id = $resutado[0]["id"];
+      /*      $id = $resutado[0]["id"];
             $username = $resutado[0]["username"];
             $password = $resutado[0]["password"];
             $descripcion = $resutado[0]["descripcion"];
-            return $user = new usuario($id, $username, $password, $descripcion);
+
+            return $user = new usuario($id, $username, $password, $descripcion);*/
+$user = $resutado[0];
+return  new usuario($user['id'], $user['username'], $user['password'], $user['descripcion']);
         }
 
         return false;
