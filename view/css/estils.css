@@ -54,6 +54,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 .bBlau2{border: 2px solid blue;}
 .bVerd{border: 2px solid green;}
 .blila{border: 2px solid purple;}
+.borderGris{border-bottom: 1px solid #dddddd}
 /*-------------*/
 /* Grandàries */
 /*-----------*/
@@ -74,6 +75,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 
 .pT15{padding-top: 15px;padding-bottom: 15px}
 .pB15{padding-bottom: 120px;display: block;}
+.h226{height: 226px;}
 @media(max-width: 992px){
 	.bBlau2{background-color: red!important;}
     .pL0sm{padding-left: 0px;}
@@ -82,9 +84,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 @media(max-width: 992px){
 	.foter{text-align: center;margin-top: 10px;}
 }
-@media(max-width: 768px){
-.mB15xs{margin-bottom: 15px;}
+@media(max-width: 767px){
+.mB15xs{margin-bottom: 15px}
 .pB20xs{padding-bottom: 20px}
+.mT50nXS{margin-top: 0px}
+.pL0 {padding-left: 0px}
+}
+.mT50nXS {
+    margin-top: 50px;
 }
 .dInlineB{display: inline-block;}
 .pT20{padding-top: 20px;}
