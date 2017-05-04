@@ -13,6 +13,9 @@ if (isset($_REQUEST['ctl'])) {
     if (isset($_REQUEST['act'])) {
         $act = $_REQUEST['act'];
     }
+    if(isset($_REQUEST['param'])){
+        $parm=($_REQUEST['param']);
+    }
 }
 
 switch ($ctl) {
@@ -51,7 +54,17 @@ switch ($ctl) {
 //              break;
        }
         break;
-//
+
+     case"noticas":
+       switch ($act) {
+            case "detalle":
+              include "controller/noticiasDetalle_ctl.php";
+              break;
+            default:
+                include"controller/noticias_ctl.php";
+                break;
+            }
+        break;
 //
 //
 //    case "obra":
