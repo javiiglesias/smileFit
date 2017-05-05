@@ -8,7 +8,7 @@ require_once 'view/header.php';
 	$noticias = new noticia();
 
 
-    $noticia = $noticias->muestraNoticias();
+    $noticia = $noticias->muestraNoticia();
 
 
 
@@ -17,5 +17,4 @@ include('view/noticias.php');
 
 require_once 'view/footer.php';
 ob_end_flush();
-?>
 ?>
