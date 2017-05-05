@@ -10,8 +10,10 @@
 <div class="container mB90 text-center">
     <h2>Últimas noticias</h2>
 
+
 <?php foreach ($noticia as $noticias ): ?>
   <?var_dump($noticias)?>
+
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mB15xs ">
     <div class="recuadro">
      <img class="img-responsive" src="view/images/<? echo $noticias->getImagen();?>" />
@@ -20,9 +22,9 @@
       <span class="pT20 pB20xs dInlineB normal fz14">leer mas</span>
     </div>
   </div>
+
 <?php endforeach ?>
 
   </div>
 
-
-</div>
+  </div>
