@@ -37,7 +37,7 @@
   ?>
   <?php if ($titlePage != "Inicio" && $titlePage != "Iniciar Sesión" && $titlePage != "Registrarse") { ?>
     <header class="container-header">
-      <div class="container">
+      <div class="container bgGreenTitle">
         <h1><?php echo $titlePage ?></h1>
         <hr class="featurette-divider">
       </div>

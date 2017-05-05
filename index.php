@@ -55,7 +55,7 @@ switch ($ctl) {
        }
         break;
 
-     case"noticas":
+     case"noticias":
        switch ($act) {
             case "detalle":
               include "controller/noticiasDetalle_ctl.php";
