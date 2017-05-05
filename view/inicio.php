@@ -9,7 +9,7 @@
 <div class="w100">
 <div class="container mB90 text-center">
     <h2>Últimas noticias</h2>
-</div>
+
   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mB15xs ">
     <div class="recuadro">
      <img class="img-responsive" src="view/images/fitness.jpg" />
@@ -44,9 +44,7 @@
     </div>
   </div>
   </div>
-
-
-
+</div>
 
 <?php
 ?>
