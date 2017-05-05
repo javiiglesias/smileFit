@@ -24,7 +24,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 
 .bgVerd{background-color: green;}
 .bgGris{background-color: grey;}
-
+.bgGreenTitle{background-color: #77c679}
 .bgSlide1{background-image: url('../images/ejercicio1.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .bgSlide2{background-image: url('../images/ejercicio2.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
