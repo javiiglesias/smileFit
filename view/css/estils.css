@@ -1,52 +1,35 @@
-html,body
-{
-    padding: 0 0 0px;
-    margin: 0;
-}
-footer
-{
-    width: 100%;
-    bottom: 0;
-    margin-top: 15px
-    
-}
-.navbar-default{      z-index: 99;  background-color: rgba(12, 85, 64, 0.19)!important;
-    border-radius: 0px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), -1px 5px 5px rgb(0, 77, 54);
-    border: none;
-    background-image: none;
-}
-.navbar-default .navbar-nav>li>a{color:#fff;font-size: 20px;line-height: 180px;font-weight: bold;}
+html,body{padding: 0 0 0px;margin: 0;font-family: 'Muli', sans-serif;}
+footer{width: 100%;bottom: 0; margin-top: 15px}
+
+h1{font-family: 'Gloria Hallelujah', cursive;}
+
+/*font-family: 'Josefin Sans', sans-serif;*//*usarla para descripcion*/
+
+
+.navbar-default{z-index: 99;  background-color: rgba(12, 85, 64, 0.19)!important;border-radius: 0px;border: none; background-image: none;}
+.navbar-default .navbar-nav>li>a{color:#fff;font-size: 20px;line-height: 125px;font-weight: bold;}
 .pAbsoluteB0{position: absolute; bottom: 0; width: 100%}
 .fz20{font-size: 30px;}
-.foter{    text-align: right;
-    margin-top: 105px;
-    color: #5D294F;}
+.foter{text-align: right; margin-top: 105px;color: #5D294F;}
 .topflexslide{   position: absolute; top: 0;  z-index: 9;  }
-.bgSlide1{background-image: url('../images/ejercicio1.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.bgSlide2{background-image: url('../images/ejercicio2.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
-.tophome{ position: absolute; top: 0;  z-index: 9; 
-    background-image: url('../images/sporthome.jpg');height: 1000px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%
-}
 .clear{clear: both;}
-.mb614{    margin-bottom: 800px;}
+.mb614{margin-bottom: 800px;}
 .recuadro {-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 /*-----------------*/
 /*   BackGrounds */
 /*----------------*/
-.bGfooter{background-color: #fff!important;
-    box-shadow: 0px 0px 68px 0px rgba(255,255,255,.15), 1px -6px 15px 0px rgb(0, 77, 54);
-    border-radius: 0px;
+.bGfooter{background-color: rgba(12, 85, 64, 0.19)!important;border-radius: 0px;border: none;background-image: none; height: 160px;margin-top: 50px;padding-top: 10px;}
 
-}
-.w100{width: 100%}
-.h75{height: 20%}
 .bgVerd{background-color: green;}
 .bgGris{background-color: grey;}
+.bgGreenTitle{background-color: #77c679}
+.bgSlide1{background-image: url('../images/ejercicio1.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.bgSlide2{background-image: url('../images/ejercicio2.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
+.tophome{ position: absolute; top: 0;  z-index: 9;  background-image: url('../images/playa.jpg');height: 930px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%}
 
 .bgOpacitat{background-color: pink; opacity: 0.8}
 .bgOpacitat1{background-color: #A5DCA8; opacity: 0.8}
@@ -61,67 +44,53 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 .bBlau2{border: 2px solid blue;}
 .bVerd{border: 2px solid green;}
 .blila{border: 2px solid purple;}
+.borderGris{border-bottom: 1px solid #dddddd}
 /*-------------*/
 /* Grandàries */
 /*-----------*/
 .w100{width: 100%}
-
+.h75{height: 20%}
+/*--------------*/
+/* pd i mg     */
+/*------------*/
+.mT10{margin-top: 10px}
 .mT20{margin-top: 20px;}
+.mT35{margin-top: 35px}
+.mB60{margin-bottom: 60px}
+.mTB20{margin-top:20px;margin-bottom: 20px;}
 .mB15{margin-bottom: 15px;}
+.mB70{margin-bottom: 70px}
 .mB50{margin-bottom: 50px;}
 .mAuto{left: 0; margin: auto; position: absolute; right: 0;}
 .prelative{position: relative;}
-
+.mL15{margin-left: 15px;}
 .pT15{padding-top: 15px;padding-bottom: 15px}
 .pB15{padding-bottom: 120px;display: block;}
+.h226{height: 226px;}
 @media(max-width: 992px){
 	.bBlau2{background-color: red!important;}
+    .pL0sm{padding-left: 0px;}
+    .pR0-sm {padding-right: 0px;}
 }
 @media(max-width: 992px){
 	.foter{text-align: center;margin-top: 10px;}
 }
-@media(max-width: 768px){
-.mB15xs{margin-bottom: 15px;}
+@media(max-width: 767px){
+.mB15xs{margin-bottom: 15px}
 .pB20xs{padding-bottom: 20px}
+.mT50nXS{margin-top: 0px}
+.pL0 {padding-left: 0px}
+}
+.mT50nXS {
+    margin-top: 50px;
 }
 .dInlineB{display: inline-block;}
 .pT20{padding-top: 20px;}
 .colorGrey{color: grey;}
-.login {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/gym.jpg') no-repeat center fixed;
-    background-size: cover;
-}
+.login {background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/gym.jpg') no-repeat center fixed; background-size: cover;}
 
-.transparent-heading {
-   /* width: 600px;*/
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #FFF;
-    padding: 10px;
-    text-align: center;
-   /* margin: 100px auto 0px auto;*/
-}
-
-.login-form {
-   /* width: 600px;*/
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #FFF;
-    padding: 15px;
-    margin: 0 auto;
-}
-
-.login-form a,
-.login-form a:hover {
-    color: #FFF;
-    text-decoration: none;
-}
-
-.imagen-login{
-    height: 150px;
-    width: 150px;
-    text-align:center;
-
-}
-.imagen-button-login{
-    height: 15px;
-    width: 15px;
-}
+.transparent-heading {background-color: rgba(255, 255, 255, 0.15);color: #FFF;padding: 10px;text-align: center;}
+.login-form {background-color: rgba(255, 255, 255, 0.3);color: #FFF;padding: 15px; margin: 0 auto;}
+.login-form a,.login-form a:hover {color: #FFF;text-decoration: none;}
+.imagen-login{height: 150px; width: 150px;text-align:center;}
+.imagen-button-login{height: 15px; width: 15px;}
