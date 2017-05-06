@@ -1,32 +1,11 @@
-<<<<<<< HEAD
-<<<<<<< refs/remotes/origin/Alba
-<!DOCTYPE html>
-<html>
-<head>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</head>
-<body>
-<?
-header("Location:view/home.php");
-?>
-</body>
-</html>
-=======
-=======
->>>>>>> master
 <?php
 
 require_once("controller/function_AutoLoad.php");
-//require_once('model/business/class_usuari.php');
+//require_once('model/business/class_usuario.php');
 //require_once('model/business/class_obra.php');
 session_start();
 
-$ctl = "inici";
+$ctl = "inicio";
 
 if (isset($_REQUEST['ctl'])) {
     $ctl = $_REQUEST['ctl'];
@@ -34,37 +13,63 @@ if (isset($_REQUEST['ctl'])) {
     if (isset($_REQUEST['act'])) {
         $act = $_REQUEST['act'];
     }
+    if(isset($_REQUEST['param'])){
+        $parm=($_REQUEST['param']);
+    }
 }
 
 switch ($ctl) {
-    case"usuari":
+    case"usuario":
         switch ($act) {
             case "login":
                 include "controller/login_ctl.php";
                 break;
-            case "registre":
-                include "controller/registreusuari_ctl.php";
+            case "registro":
+                include "controller/registrarUser_ctl.php";
                 break;
-            case"sortir";
-                include "controller/logout.php";
+            case"salir";
+                include "controller/logout_ctl.php";
+                break;
+            case "panel":
+                include "controller/panel_ctl.php";
                 break;
         }
         break;
+        
 
-//    case "agencia":
-//        switch ($act){
-//            case "detall":
-//                include "controller/Agencia_ctl.php";
-//                break;
-//        }
-//
-//
-//
-//    case "obra":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirObra_ctl.php";
-//                break;
+    case "contacto":
+        include "controller/contacto_ctl.php";
+    break;
+
+   case"menu":
+      switch ($act) {
+            case "admin":
+              include "controller/menuAdmin_ctl.php";
+              break;
+//           case "registro":
+//               include "controller/registrarUser_ctl.php";
+//               break;
+//           case"salir";
+//               include "controller/logout_ctl.php";
+//              break;
+       }
+        break;
+
+    case"noticias":
+        switch ($act) {
+            case "detalle":
+                include "controller/noticiasDetalle_ctl.php";
+                break;
+            default:
+                include"controller/noticias_ctl.php";
+                break;
+            }
+    break;
+    case "admin":
+        switch ($act) {
+            case "altaTrabajador":
+                include "controller/altaTrabajador_ctl.php";
+                break;
 //            case "cercar":
 //                include "controller/cercarObra_ctl.php";
 //                break;
@@ -77,8 +82,8 @@ switch ($ctl) {
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
-//        }
-//        break;
+        }
+        break;
 //
 //    case "director":
 //        switch ($act) {
@@ -151,7 +156,3 @@ switch ($ctl) {
         break;
 }
 ?>
-<<<<<<< HEAD
->>>>>>> Añadido el login-Parte Inicial
-=======
->>>>>>> master
