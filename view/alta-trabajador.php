@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="container">
-        <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-2 col-sm-offset-4 col-md-offset-4">
-            <img src="view/images/original3.png" class="img-responsive img-Logologin">
+        <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-5">
+            <img src="view/images/Logo.png" class="img-responsive img-Logologin">
         </div>
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
