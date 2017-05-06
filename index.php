@@ -55,23 +55,21 @@ switch ($ctl) {
        }
         break;
 
-     case"noticias":
-       switch ($act) {
+    case"noticias":
+        switch ($act) {
             case "detalle":
-              include "controller/noticiasDetalle_ctl.php";
-              break;
+                include "controller/noticiasDetalle_ctl.php";
+                break;
             default:
                 include"controller/noticias_ctl.php";
                 break;
             }
-        break;
-//
-//
-//    case "obra":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirObra_ctl.php";
-//                break;
+    break;
+    case "admin":
+        switch ($act) {
+            case "altaTrabajador":
+                include "controller/altaTrabajador_ctl.php";
+                break;
 //            case "cercar":
 //                include "controller/cercarObra_ctl.php";
 //                break;
@@ -84,8 +82,8 @@ switch ($ctl) {
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
-//        }
-//        break;
+        }
+        break;
 //
 //    case "director":
 //        switch ($act) {
