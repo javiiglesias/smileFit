@@ -46,12 +46,12 @@ switch ($ctl) {
             case "admin":
               include "controller/menuAdmin_ctl.php";
               break;
-//           case "registro":
-//               include "controller/registrarUser_ctl.php";
-//               break;
-//           case"salir";
-//               include "controller/logout_ctl.php";
-//              break;
+           case "cliente":
+               include "controller/menuCliente_ctl.php";
+               break;
+           case"salir";
+               include "controller/logout_ctl.php";
+              break;
        }
         break;
 
@@ -84,6 +84,31 @@ switch ($ctl) {
 //                break;
         }
         break;
+
+    case "cliente":
+        switch ($act) {
+            case "MostrarDatos":
+                include "controller/MostrarDatosCliente_ctl.php";
+                break;
+//            case "cercar":
+//                include "controller/cercarObra_ctl.php";
+//                break;
+//            case "modificar":
+//                include "controller/modificarObra_ctl.php";
+//                break;
+//            case "detalls":
+//                include "controller/detallObra_ctl.php";
+//                break;
+//            case "eliminar":
+//                include "controller/eliminarObra_ctl.php";
+//                break;
+        }
+        break;
+
+
+
+
+
 //
 //    case "director":
 //        switch ($act) {
