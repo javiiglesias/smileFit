@@ -70,12 +70,12 @@ switch ($ctl) {
             case "altaTrabajador":
                 include "controller/altaTrabajador_ctl.php";
                 break;
-//            case "cercar":
-//                include "controller/cercarObra_ctl.php";
-//                break;
-//            case "modificar":
-//                include "controller/modificarObra_ctl.php";
-//                break;
+            case "registro-trabajador":
+                include "controller/registro-trabajador_ctl.php";
+                break;
+            case "completa-registro":    
+                include "controller/completa-registro_ctl.php";
+                break;
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;
