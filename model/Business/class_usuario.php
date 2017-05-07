@@ -107,6 +107,11 @@ class usuario
         $user = $usuarioDB->consultarUsuarioDB($name);
         return $user->getDescripcion();
     }
+    public function getIDUser($name){
+        $usuarioDB = new usuariodb;
+        $user = $usuarioDB->consultarUsuarioDB($name);
+        return $user->getId();
+    }
 
     function registrarUsuario($name, $pass) {
         $usuarioDB = new usuariodb;
