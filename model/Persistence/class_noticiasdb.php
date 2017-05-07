@@ -36,11 +36,11 @@ class noticiasdb {
     }*/
      public function mostrarNoticiadb($nNoticia){
         $con = new db();
-if($nNoticia== null){
-	 $query = $con->prepare("SELECT * FROM noticias");
-}else{
-        $query = $con->prepare("SELECT * FROM noticias where id=".$nNoticia);
-}
+        if($nNoticia== null){
+        	 $query = $con->prepare("SELECT * FROM noticias");
+        }else{
+                $query = $con->prepare("SELECT * FROM noticias where id=".$nNoticia);
+        }
         $noticias = array();
         
         $resultado=$con->consultarObjectes($query);
@@ -53,9 +53,6 @@ if($nNoticia== null){
                 $contenido = $row["Contenido"];             
                 $noticia = new noticia($id,$titulo,$imagen,$descripcion,$contenido);
                 array_push($noticias,$noticia);
-
-
-
         }
   
         $con = null;
