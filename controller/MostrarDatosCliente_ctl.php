@@ -9,11 +9,12 @@ $clientes = new cliente();
 
 if(isset($_SESSION["test2"])){
    $rol2= $_SESSION["test2"];
+   echo $rol2;
 }
 
-$clientes->getCliente($rol2);
+$client=$clientes->getCliente($rol2);
 
-
+var_dump($client);
 
 require_once 'view/header.php';
 require_once 'view/mostrarDatosCliente.php';

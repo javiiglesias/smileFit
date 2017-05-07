@@ -132,7 +132,8 @@ class cliente{
     public function getCliente($cliente){
         $clienteDB = new clientedb();
         $cliente = $clienteDB->consultarClienteDB($cliente);
-        return var_dump($cliente);
+        var_dump($cliente);
+        return $cliente;
     }
 
 
