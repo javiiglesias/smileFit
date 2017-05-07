@@ -9,7 +9,6 @@ $clientes = new cliente();
 
 if(isset($_SESSION["test2"])){
    $rol2= $_SESSION["test2"];
-   echo $rol2;
 }
 
 $cliente=$clientes->getCliente($rol2);
