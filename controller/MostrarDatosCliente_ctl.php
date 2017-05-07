@@ -12,13 +12,13 @@ if(isset($_SESSION["test2"])){
    echo $rol2;
 }
 
-$client=$clientes->getCliente($rol2);
+$cliente=$clientes->getCliente($rol2);
 
-var_dump($client);
+
 
 require_once 'view/header.php';
 require_once 'view/mostrarDatosCliente.php';
-
+require_once 'view/footer.php';
 
 
 
