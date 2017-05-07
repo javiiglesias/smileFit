@@ -79,8 +79,18 @@ return  new usuario($user['id'], $user['username'], $user['password'], $user['de
 //        $con = null;
 //        return $resultado;
 //    }
-    public function insertarUsuariosdb($name, $pass){
-        $description = "cliente";
+
+
+    public function insertarUsuariosdb($name, $pass,$rol=null){
+        if($rol!=null){
+         
+           $descr=$rol;
+           $description=$descr;
+               
+        }else{
+             $description = "cliente";  
+        }
+     
         $query = "INSERT INTO usuario (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
         $con = new db();
         $resultado = $con->prepare($query);
@@ -92,5 +102,16 @@ return  new usuario($user['id'], $user['username'], $user['password'], $user['de
         $resultado->execute();
         $con = null;
     }
+        public function consultarRol($rol){
+        $con = new db();
+       
+        $query=$con->prepare("SELECT Descripcion from rol where id=".$rol);
+        $resutado = $con->consultarObjectes($query);
+        var_dump($resutado);
+      
+        return $resutado;
+
+    }
 }
+
 ?>

@@ -4,14 +4,16 @@
             <?php if (strpos($mensaje, "modificado") || strpos($mensaje, "eliminat")) { ?>
                 <div class="alert alert-dismissible alert-success text-center">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <h3> <?php echo $mensaje; ?>  <img src="view/images/confirm.png" class="icon"</h3>
+                    <h3> <?php echo $mensaje; ?>  <img src="view/images/confirm.png" class="icon"></h3>
+                      <a href="?ctl=trabajador&act=completa-registro">completa registro</a>
                     <p><a class="alert-link" href='?ctl=login&act=login'>Volver a la lista</a></p>
                 </div>
             <?php } ?>
             <?php if (strpos($mensaje, "registrado")) { ?>
                 <div class="alert alert-dismissible alert-success text-center">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <h3> <?php echo $mensaje; ?>  <img src="view/images/confirm.png" class="icon"</h3>
+                    <h3> <?php echo $mensaje; ?>  <img src="view/images/confirm.png" class="icon"></h3>
+                      <a href='?ctl=trabajador&act=completa-registro&param=$rol'>completa registro</a>
                     <p><a class="alert-link" href='?ctl=login&act=login'>Iniciar Sesion</a></p>
                 </div>
             <?php } ?>
@@ -19,6 +21,7 @@
                 <div class="alert alert-dismissible alert-success text-center">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <h3> <?php echo $mensaje; ?>  <img src="view/images/confirm.png" class="icon"</h3>
+                    <a href="?ctl=trabajador&act=completa-registro">completa registro</a>
                     <p><a class="alert-link" href='?ctl=login&act=login'>Volver a la lista</a></p>
                 </div>
             <?php } ?>

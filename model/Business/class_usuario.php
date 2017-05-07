@@ -113,12 +113,31 @@ class usuario
         return $user->getId();
     }
 
-    function registrarUsuario($name, $pass) {
+    /*Metodo para comparar si los paswords introducidos en el registro de los diferentes tipos de usuarios, es igual
+      Devuelve true o false */
+
+    function compPass($pass,$pass2){
+        if($pass == $pass2){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function registrarUsuario($name, $pass,$rol=null) {
+        $descripcion=null;
         $usuarioDB = new usuariodb;
         $usuario= $usuarioDB->consultarUsuarioDB($name);
 
         if ($usuario == null){
-            $usuarioDB->insertarUsuariosdb($name, $pass);
+            $descr= $usuarioDB->consultarRol($rol);
+                if($descr!=null){
+            $descripcion=implode($descr[0]);
+
+        }
+            
+        
+            $usuarioDB->insertarUsuariosdb($name, $pass,$descripcion);
             return true;
         }else {
             header("location:index.php?ctl=usuario&act=registro");

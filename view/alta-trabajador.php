@@ -5,18 +5,29 @@
         </div>
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
-                <form action="?ctl=usuario&act=registro" method="post">
+                <form action="?ctl=admin&act=registro-trabajador" method="post">
                     <h1 class="text-center">Registrarse</h1>
                     <small class="col-md-offset-1">Por favor,rellenar todos los campos. </small>
+
+                    <span> <? if(isset($error)){echo $error;}?></span>
                     <div class="form-group space-top">
                         <label>Nombre de Usuario:</label>
-                        <input type="text" name="nuevo_usuario" class="form-control">
+                        <input type="text" name="nuevo_Trabajador" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Introduce una  Contraseña:</label>
                         <input type="password" name="pass" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label>Introduce nuevamente una  Contraseña:</label>
+                        <input type="password" name="pass2" class="form-control">
+                    </div>
                     <p><a href="?ctl=usuari&act=login">Iniciar Sesión</a></p>
+                     <select name="rol">
+                      <option value="2">Dietista</option>
+                      <option value="1">Entrenador</option>
+                     
+                    </select>
                     <div class="col-md-offset-3 col-xs-offset-2">
                         <button name="Submit" class="btn btn-info">  Registrarse    <image class="btn-icon" src="view/images/registre.png"/></button>
                     </div>
