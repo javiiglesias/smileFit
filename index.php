@@ -46,32 +46,30 @@ switch ($ctl) {
             case "admin":
               include "controller/menuAdmin_ctl.php";
               break;
-//           case "registro":
-//               include "controller/registrarUser_ctl.php";
-//               break;
-//           case"salir";
-//               include "controller/logout_ctl.php";
-//              break;
+           case "cliente":
+               include "controller/menuCliente_ctl.php";
+               break;
+           case"salir";
+               include "controller/logout_ctl.php";
+              break;
        }
         break;
 
-     case"noticias":
-       switch ($act) {
+    case"noticias":
+        switch ($act) {
             case "detalle":
-              include "controller/noticiasDetalle_ctl.php";
-              break;
+                include "controller/noticiasDetalle_ctl.php";
+                break;
             default:
                 include"controller/noticias_ctl.php";
                 break;
             }
-        break;
-//
-//
-//    case "obra":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirObra_ctl.php";
-//                break;
+    break;
+    case "admin":
+        switch ($act) {
+            case "altaTrabajador":
+                include "controller/altaTrabajador_ctl.php";
+                break;
 //            case "cercar":
 //                include "controller/cercarObra_ctl.php";
 //                break;
@@ -84,8 +82,33 @@ switch ($ctl) {
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
-//        }
-//        break;
+        }
+        break;
+
+    case "cliente":
+        switch ($act) {
+            case "MostrarDatos":
+                include "controller/MostrarDatosCliente_ctl.php";
+                break;
+//            case "cercar":
+//                include "controller/cercarObra_ctl.php";
+//                break;
+//            case "modificar":
+//                include "controller/modificarObra_ctl.php";
+//                break;
+//            case "detalls":
+//                include "controller/detallObra_ctl.php";
+//                break;
+//            case "eliminar":
+//                include "controller/eliminarObra_ctl.php";
+//                break;
+        }
+        break;
+
+
+
+
+
 //
 //    case "director":
 //        switch ($act) {
