@@ -1,7 +1,7 @@
 <div id="wrapper">
     <div class="overlay"></div>
 
-    <?include("navigationCliente.php");?>
+    <? require_once("navigationCliente.php"); ?>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -9,10 +9,12 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <h1>info trabajadores</h1>
+                <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>
                 <?require_once('partials/contentNews.php');?>
             </div>
             <div class="col-xs-12 col-md-6">
                 <h1>Aqui podras ver información varia.</h1>
+
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

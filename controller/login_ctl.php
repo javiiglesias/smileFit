@@ -18,9 +18,11 @@ if (isset($_REQUEST['Submit'])) {
     $usuarioValidado = $Usuarios->validateUser($usuario, $password);
     if ($usuarioValidado == true) {
         $rol= $Usuarios->getUser($usuario,$password);
+        $rol2=$Usuarios->getIDUser($usuario,$password);
         $_SESSION["login"] = true;
         $_SESSION["usuario"] = $usuario;
         $_SESSION["test"]=$rol;
+        $_SESSION["test2"]=$rol2;
         header("Location: index.php");
     } else {
         $_SESSION["usuario"] = "";
