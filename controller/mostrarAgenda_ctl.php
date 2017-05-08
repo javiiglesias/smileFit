@@ -6,11 +6,14 @@ $titlePage = "Mi Agenda";
 
 require_once 'view/header.php';
 
-require_once 'view/mostrarAgendaCliente.php';
-require_once'view/partials/header-calendar.php';
+require_once 'view/mostrarAgenda.php';
+require_once 'view/partials/header-calendar.php';
 
 $eventos = new evento();
-//$evento = $eventos->muestraEvento();
+$cliente = new cliente();
+
+
+$evento = $eventos->muestraEvento();
 
 
 

@@ -17,6 +17,10 @@
 
 		<h3></h3>
 		<!-- <small>To see example with events navigate to march 2013</small> -->
+		<a href="?ctl=altaEvento">
+			<button class="btn btn-warning">Añadir Evento</button>
+		</a>
+		
 	</div>
 
 	<div class="row">
