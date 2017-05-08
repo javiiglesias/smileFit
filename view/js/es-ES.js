@@ -5,7 +5,7 @@ window.calendar_languages['es-ES'] = {
 	error_noview:     'Calendario: Vista {0} no encontrada',
 	error_dateformat: 'Calendario: Formato de fecha inválido {0}. Debe ser "now" o "yyyy-mm-dd"',
 	error_loadurl:    'Calendario: URL de carga de eventos no configurada',
-	error_where:      'Calendario: Dirección de navegación incorrecta {0}. Los valores correctos son "next" o "prev" o "today"',
+	error_where:      'Calendario: Dirección de navegación incorrecta {0}. Los valores correctos son "siguiente" o "anterior" o "hoy"',
 	error_timedevide: 'Calendario: parámetro para el separador de hora debe dividir 60 por un entero. Por ejemplo 10, 15, 30',
 
 	no_events_in_day: 'No hay eventos hoy',

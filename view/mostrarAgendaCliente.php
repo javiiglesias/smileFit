@@ -1,17 +1,27 @@
-<?require_once("controller/mostrarAgendaCliente_ctl.php");?>
-<div class="page-header">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar component</title>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="css/calendar.css">
+</head>
+<body>
+	<div class="page-header">
 
 		<div class="pull-right form-inline">
 			<div class="btn-group">
-				<button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
-				<button class="btn" data-calendar-nav="today">Today</button>
-				<button class="btn btn-primary" data-calendar-nav="next">Next >></button>
+				<button class="btn btn-primary" data-calendar-nav="prev"><< Anterior</button>
+				<button class="btn" data-calendar-nav="today">Hoy</button>
+				<button class="btn btn-primary" data-calendar-nav="next">Siguiente >></button>
 			</div>
 			<div class="btn-group">
-				<button class="btn btn-warning" data-calendar-view="year">Year</button>
-				<button class="btn btn-warning active" data-calendar-view="month">Month</button>
-				<button class="btn btn-warning" data-calendar-view="week">Week</button>
-				<button class="btn btn-warning" data-calendar-view="day">Day</button>
+				<button class="btn btn-warning" data-calendar-view="year">Año</button>
+				<button class="btn btn-warning active" data-calendar-view="month">Mes</button>
+				<button class="btn btn-warning" data-calendar-view="week">Semana</button>
+				<button class="btn btn-warning" data-calendar-view="day">Día</button>
 			</div>
 		</div>
 
@@ -31,8 +41,8 @@
 					<option value="1">First day of week is Monday</option>
 				</select>
 				<select id="language" class="span12">
-					<option value="">Select Language (default: en-US)</option>					
-					<option value="es-ES">Spanish (Spain)</option>					
+					<option value="">Select Language (default: en-US)</option>
+					<option value="es-ES">Español</option>
 				</select>
 				<label class="checkbox">
 					<input type="checkbox" value="#events-modal" id="events-in-modal"> Open events in modal window
@@ -54,7 +64,7 @@
 		</div>
 	</div>
 
-	<div id="disqus_thread"></div>
+<!-- 	<div id="disqus_thread"></div>
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 	<div class="modal hide fade" id="events-modal">
@@ -67,15 +77,16 @@
 		<div class="modal-footer">
 			<a href="#" data-dismiss="modal" class="btn">Close</a>
 		</div>
-	</div>
+	</div> -->
 
-	<script type="text/javascript" src="components/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="components/underscore/underscore-min.js"></script>
-	<script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
-	<script type="text/javascript" src="view/js/calendar/es-ES.js"></script>
-	<script type="text/javascript" src="view/js/calendar/calendar.js"></script>
-	<script type="text/javascript" src="view/js/calendar/app.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jstz.min.js"></script> -->
+	<script type="text/javascript" src="js/es-ES.js"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 
 </div>
-
+</body>
+</html>

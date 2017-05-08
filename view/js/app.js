@@ -2,12 +2,25 @@
 
 	"use strict";
 
+	var date = new Date();
+
+	var day = date.getDate();
+	if(day < 10){
+		day='0'+day;
+	}
+	var month = date.getMonth();
+	month++;
+	if(month < 10){
+		month='0'+month;
+	}
+	var year = date.getFullYear();
+
 	var options = {
 		events_source: 'events.json.php',
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,
-		day: '2013-03-12',
+		day: year+'-'+month+'-'+day,
 		onAfterEventsLoad: function(events) {
 			if(!events) {
 				return;
