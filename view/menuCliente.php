@@ -9,7 +9,7 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <h1>info trabajadores</h1>
-              
+                <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>
                 <?require_once('partials/contentNews.php');?>
             </div>
             <div class="col-xs-12 col-md-6">
