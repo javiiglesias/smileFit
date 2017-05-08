@@ -26,7 +26,7 @@
 <link href="view/css/estils.css" rel="stylesheet" type="text/css">
 <link href="view/css/prueba.css" rel="stylesheet" type="text/css">
 
-    <title>Guia de continguts</title>
+    <title>Smile Fit S.L</title>
 </head>
 <body>
 <div class="w100">
@@ -38,8 +38,8 @@
   <?php if ($titlePage != "Inicio" && $titlePage != "Iniciar Sesión" && $titlePage != "Registrarse") { ?>
     <header class="container-header">
       <div class="container">
-        <h1><?php echo $titlePage ?></h1>
-        <hr class="featurette-divider">
+        <h1 class="bgGreenTitle"><?php echo $titlePage ?></h1>
+<!--        <hr class="featurette-divider">-->
       </div>
     </header>
   <?php } ?>
