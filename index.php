@@ -90,6 +90,9 @@ switch ($ctl) {
             case "MostrarDatos":
                 include "controller/MostrarDatosCliente_ctl.php";
                 break;
+            case "mostrarAgenda":
+                include "controller/mostrarAgendaCliente_ctl.php";
+                break;
             case "cercar":
                 include "controller/test.php";
                 break;

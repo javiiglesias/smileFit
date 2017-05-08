@@ -16,9 +16,9 @@
 	var year = date.getFullYear();
 
 	var options = {
-		events_source: 'events.json.php',
+		events_source: 'view/events.json.php',
 		view: 'month',
-		tmpl_path: 'tmpls/',
+		tmpl_path: 'view/tmpls/',
 		tmpl_cache: false,
 		day: year+'-'+month+'-'+day,
 		onAfterEventsLoad: function(events) {
@@ -62,17 +62,17 @@
 		});
 	});
 
-	$('#first_day').change(function(){
-		var value = $(this).val();
-		value = value.length ? parseInt(value) : null;
-		calendar.setOptions({first_day: value});
-		calendar.view();
-	});
+	// $('#first_day').change(function(){
+	// 	var value = $(this).val();
+	// 	value = value.length ? parseInt(value) : null;
+	// 	calendar.setOptions({first_day: value});
+	// 	calendar.view();
+	// });
 
-	$('#language').change(function(){
-		calendar.setLanguage($(this).val());
-		calendar.view();
-	});
+	// $('#language').change(function(){
+	// 	calendar.setLanguage($(this).val());
+	// 	calendar.view();
+	// });
 
 	$('#events-in-modal').change(function(){
 		var val = $(this).is(':checked') ? $(this).val() : null;
