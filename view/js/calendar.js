@@ -167,7 +167,7 @@ if(!String.prototype.formatNum) {
 	};
 
 	var defaults_extended = {
-		first_day: 2,
+		first_day: 1,
 		week_numbers_iso_8601: false,
 		holidays: {
 			// January 1
@@ -194,59 +194,59 @@ if(!String.prototype.formatNum) {
 	};
 
 	var strings = {
-		error_noview: 'Calendar: View {0} not found',
-		error_dateformat: 'Calendar: Wrong date format {0}. Should be either "now" or "yyyy-mm-dd"',
-		error_loadurl: 'Calendar: Event URL is not set',
-		error_where: 'Calendar: Wrong navigation direction {0}. Can be only "next" or "prev" or "today"',
-		error_timedevide: 'Calendar: Time split parameter should divide 60 without decimals. Something like 10, 15, 30',
+		error_noview: 'Agenda: Vista {0} no encontrada',
+		error_dateformat: 'Agenda: Wrong date format {0}. Should be either "now" or "yyyy-mm-dd"',
+		error_loadurl: 'Agenda: Evento URL no está insertado',
+		error_where: 'Agenda: Wrong navigation direction {0}. Can be only "next" or "prev" or "today"',
+		error_timedevide: 'Agenda: Time split parameter should divide 60 without decimals. Something like 10, 15, 30',
 
-		no_events_in_day: 'No events in this day.',
+		no_events_in_day: 'No hay eventos para éste día.',
 
 		title_year: '{0}',
 		title_month: '{0} {1}',
 		title_week: 'week {0} of {1}',
 		title_day: '{0} {1} {2}, {3}',
 
-		week: 'Week {0}',
-		all_day: 'All day',
-		time: 'Time',
-		events: 'Events',
-		before_time: 'Ends before timeline',
-		after_time: 'Starts after timeline',
+		week: 'Semana {0}',
+		all_day: 'Todo el día',
+		time: 'Tiempo',
+		events: 'Eventos',
+		before_time: 'Finaliza antes de la línea de tiempo',
+		after_time: 'Empieza después de la línea de tiempo',
 
-		m0: 'January',
-		m1: 'February',
-		m2: 'March',
-		m3: 'April',
-		m4: 'May',
-		m5: 'June',
-		m6: 'July',
-		m7: 'August',
-		m8: 'September',
-		m9: 'October',
-		m10: 'November',
-		m11: 'December',
+		m0: 'Enero',
+		m1: 'Febrero',
+		m2: 'Marzo',
+		m3: 'Abril',
+		m4: 'Mayo',
+		m5: 'Junio',
+		m6: 'Julio',
+		m7: 'Agosto',
+		m8: 'Septiembre',
+		m9: 'Octubre',
+		m10: 'Noviembre',
+		m11: 'Diciembre',
 
-		ms0: 'Jan',
+		ms0: 'Ene',
 		ms1: 'Feb',
 		ms2: 'Mar',
-		ms3: 'Apr',
+		ms3: 'Abr',
 		ms4: 'May',
 		ms5: 'Jun',
 		ms6: 'Jul',
-		ms7: 'Aug',
+		ms7: 'Ago',
 		ms8: 'Sep',
 		ms9: 'Oct',
 		ms10: 'Nov',
-		ms11: 'Dec',
+		ms11: 'Dic',
 
-		d0: 'Sunday',
-		d1: 'Monday',
-		d2: 'Tuesday',
-		d3: 'Wednesday',
-		d4: 'Thursday',
-		d5: 'Friday',
-		d6: 'Saturday'
+		d0: 'Domingo',
+		d1: 'Lunes',
+		d2: 'Martes',
+		d3: 'Miércoles',
+		d4: 'Jueves',
+		d5: 'Viernes',
+		d6: 'Sábado'
 	};
 
 	var browser_timezone = '';

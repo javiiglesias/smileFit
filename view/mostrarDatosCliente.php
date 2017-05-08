@@ -1,21 +1,1 @@
-<?require_once("controller/MostrarDatosCliente_ctl.php");?>
-<?php foreach ($clientes as $data): ?>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0">
-
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pLR0noxs mB15">
-            <img class="img-responsive" src="view/images/<?echo $data->getNombre();?>"/>
-        </div>
-
-<!--        <div class="col-xs-12 col-md-8 col-sm-6 col-lg-8pB35 h226 mB15">-->
-<!--            <a href="?ctl=noticias&act=detalle&param=--><?php //echo $noticias->getId();?><!--" >-->
-<!--                <h1> --><?//echo $noticias->getTitulo();?><!--</h1><br>-->
-<!--            </a>-->
-<!--            <span class="lite fz13">--><?// echo $noticias->getDescripcion();?><!--</span><br>-->
-<!--            <a href="?ctl=noticias&act=detalle&param=--><?php //echo $noticias->getId();?><!--">-->
-<!--                <span class="pT20 bold colorRed dInlineB fz13">Leer más</span>-->
-<!--            </a>-->
-<!--        </div>-->
-    </div>
-    <!--echo $noticias->getContenido();-->
-<? endforeach ?>
-
+<?php if($cliente){?>    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">    <form >        <fieldset>            <div class="form-group">              Nombre:  <input id="name" class="form-control" type="text" value="<?php echo $cliente->getNombre() ?>" readonly>                Apellidos:  <input id="lastname"class="form-control" type="text" value="<?php echo $cliente->getApellidos() ?>" readonly>                Edad:  <input id="age" class="form-control" type="text" value="<?php echo $cliente->getEdad() ?>" readonly>                Email:  <input id="email" class="form-control" type="text" value="<?php echo $cliente->getEmail() ?>" readonly>                Telefono:  <input id="telefono"class="form-control" type="text" value="<?php echo $cliente->getTelefono() ?>" readonly>                Foto:   <img src="/intranet/uploads/<?php echo $cliente->getFoto(); ?>" alt="" /> </br>                <div>                    <input id="button" class="btn btn-default" onclick="can()" value="Modificar Datos"/> </br>                    <input id="submit" class="btn btn-default" value="Guardar los Cambios" href="?ctl=cliente&act=ModificarDatos&param=<?php echo $cliente->getId();?>" style="visibility : hidden" />                </div>            </div>        </fieldset>    </form>    </div>    <script type="application/javascript">        function can() {            document.getElementById("name").readOnly=false;            document.getElementById("lastname").readOnly=false;            document.getElementById("age").readOnly=false;            document.getElementById("email").readOnly=false;            document.getElementById("telefono").readOnly=false;            document.getElementById("button").style.visibility='hidden';            document.getElementById("submit").style.visibility='visible';        }    </script><?}?>

@@ -101,12 +101,7 @@ class noticia
         return $this->contenido;
     }
 
-   /* public function muestraNoticias() {
-        $noticia = new noticiasdb;
-        $arrayNoticias= $noticia->mostrarNoticiasdb();
-
-        return $arrayNoticias;
-    }*/
+ 
 
     public function muestraNoticia($nNoticia=null) {
         $noticia = new noticiasdb;

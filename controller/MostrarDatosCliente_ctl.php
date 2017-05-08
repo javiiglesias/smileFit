@@ -11,13 +11,13 @@ if(isset($_SESSION["test2"])){
    $rol2= $_SESSION["test2"];
 }
 
-$clientes->getCliente($rol2);
+$cliente=$clientes->getCliente($rol2);
 
 
 
 require_once 'view/header.php';
 require_once 'view/mostrarDatosCliente.php';
-
+require_once 'view/footer.php';
 
 
 

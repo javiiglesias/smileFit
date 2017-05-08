@@ -25,10 +25,11 @@ class clientedb{
 //        private $telefono;
 //        private $foto;
 //        private $idUsuario;
-
+    
 
         if($resutado){
             $cliente = $resutado[0];
+
             return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto']);
         }
 
@@ -36,6 +37,7 @@ class clientedb{
     }
 
 
-
+/*
+*/
 
 }
