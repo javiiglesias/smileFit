@@ -8,12 +8,14 @@ class eventosdb {
         $eventos = array();
     }
   
-    public function mostrarNoticiadb($nEvento){
+    public function mostrarEventodb($nEvento){
         $con = new db();
         if($nEvento== null){
-             $query = $con->prepare("SELECT * FROM eventos");
+            echo "nevento == null";
+            $query = $con->prepare("SELECT * FROM eventos");
         }else{
-                $query = $con->prepare("SELECT * FROM eventos where id=".$nEvento);
+            echo "nevento != null";
+            $query = $con->prepare("SELECT * FROM eventos where id=".$nEvento);
         }
         $eventos = array();
         
@@ -26,13 +28,13 @@ class eventosdb {
                 $fechaFin = $row["FechaFin"];    
                 $clase = $row["Clase"];             
                 $url = $row["Url"];
-                $clienteId = $row["IdCliente"];
-                $trabajadorId = $row["IdTrabajador"];
-                array_push($eventos,$evento);
+                $clienteId = $row["ClienteId"];
+                $trabajadorId = $row["TrabajadorId"];
+                //array_push($eventos,$evento);
         }
         
         $con = null;
-        
+        echo json_encode(array('success' => 1, 'result' => $result));
         return $eventos;
     }
 
