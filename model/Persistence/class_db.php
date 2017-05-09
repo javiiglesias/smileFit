@@ -53,7 +53,7 @@ class db extends PDO {
     }
 
     public function consulta($query){
-        $query->execute();
+        return $query->execute();
     }
 
     //get data of database
