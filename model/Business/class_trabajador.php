@@ -136,7 +136,10 @@ class trabajador{
         return $cliente;
     }
 
-
-
-
+    public function getTrabajadorPorIdUser($idUser){
+        $trabajadorDB = new trabajadordb();
+        $trabajador = $trabajadorDB->consultarTrabajadorPorUserIdDB($idUser); 
+        var_dump($trabajador);
+        return $trabajador->getId();
+    }
 }
