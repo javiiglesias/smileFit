@@ -1,6 +1,13 @@
 <?php
 ?>
-  
+    <script src="view/js/validaContacto.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="view/css/validaciones.css" media="screen" />
+<!--    <style type="text/css">-->
+<!--        .errorMsg {-->
+<!--            color: red;-->
+<!--            display: none;-->
+<!--        }-->
+<!--    </style>-->
  <div class="container " id="main">
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mT30 mR0 mB35" id="contactar">  
@@ -8,20 +15,24 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mT10" >
         <input type="text" class="form-control lite required" id="nom" name="nom" placeholder="Nombre y Apellidos">
+          <span id='nom_error' class=errorMsg >Introduce un nombre valido, solo letras</span>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mT10" >
         <input type="text" class="form-control lite required" id="telefon" name="telefon" placeholder="Teléfono">
+          <span id='telefon_error' class=errorMsg >Introduce un numero de telefono valido</span>
       </div>
 
     </div>
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mT10" >
           <input type="text" class="form-control lite email required" id="email" name="email" placeholder="Email de contacto">
+            <span id='email_error' class=errorMsg>Introduce un email valido</span>
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mT10" >
           <input type="text" class="form-control lite required" id="poblacio" name="poblacio" placeholder="Población">
+            <span id='poblacio_error' class=errorMsg>Introduce un nombre de poblacion valida</span>
         </div>
       </div>
       
@@ -51,9 +62,9 @@
 
 </div>
 <div class="clear"></div>
-<script type="text/javascript">
-  $('#form').validate();
-</script> 
+<!--<script type="text/javascript">-->
+<!--  $('#form').validate();-->
+<!--</script> -->
  
 
 
