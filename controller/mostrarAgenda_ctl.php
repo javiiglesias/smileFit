@@ -22,7 +22,7 @@ $usuarioRol = $usuarios->getUserPorId($idUser);
 //si es trabajador
 if($usuarioRol == 'Trabajador')
 {
-	echo " (es trabajador)";
+	echo " (es trabajador)<br>";
 	//buscar idTrabajador para buscar sus eventos
 	$trabajadores = new trabajador();
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);
