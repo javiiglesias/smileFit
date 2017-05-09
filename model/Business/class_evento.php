@@ -143,7 +143,13 @@ class evento
      * @return mixed
      */
 
+    public function getEventosPorTrabajador($idTrabajador){
 
+        $evento = new eventosdb;
+        $arrayEventos= $evento->getEventosPorTrabajadordb($idTrabajador);
+        var_dump($arrayEventos);
+        return $arrayEventos;
+    }
 
 
     public function muestraEvento($nEvento=null) {

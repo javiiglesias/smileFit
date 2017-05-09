@@ -1,4 +1,6 @@
-<?$titlePage = "Crear un nuevo evento";
+<?
+
+$titlePage = "Crear un nuevo evento";
 
 require_once 'view/header.php';
 require_once("controller/function_AutoLoad.php");

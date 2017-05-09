@@ -38,6 +38,20 @@ class eventosdb {
         return $eventos;
     }
 
+    public function getEventosPorTrabajadordb($trabajador){
+        $con = new db();
 
+        $query = $con->prepare("SELECT id,descripcion,fechaInicio,fechaFin,clase,url,clienteId,trabajadorId FROM eventos where trabajadorId=".$trabajador);
+        $query->bindValue(":user", $user);
+        $resutado = $con->consultarObjectes($query);
+        $eventos = array();
+      
+        if($resutado){
+            $trabajador = $resutado[0];
+            return new evento($trabajador['id'], $trabajador['descripcion'], $trabajador['fechaInicio'], $trabajador['fechaFin'], $trabajador['clase'], $trabajador['url'], $trabajador['clienteId'], $trabajador['trabajadorId']);
+        }
+
+        return false;
+    }
 }
 ?>

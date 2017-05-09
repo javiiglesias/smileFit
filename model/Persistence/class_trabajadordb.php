@@ -3,15 +3,15 @@ require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class clientedb{
+class trabajadordb{
 
-    private $clientes;
+    private $trabajadores;
     public function __construct() {
-        $clientes = array();
+        $trabajadores = array();
     }
 
 
-    public function consultarTrabajadoreDB($trabajador){
+    public function consultarTrabajadorDB($trabajador){
         $con = new db();
         $query=$con->prepare("SELECT nombre,apellidos,edad,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
         $query->bindValue(":trabajador", $trabajador);
@@ -31,8 +31,8 @@ class clientedb{
             $trabajador = $resutado[0];
 
             return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['edad'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
-      
-        return false;
+        }
+        return false;      
     }
 
     public function insertarUsuariosdb($name, $pass,$rol){
@@ -54,7 +54,8 @@ class clientedb{
         $resultado->execute();
         $con = null;
     }
-        public function consultarRol($rol){
+    
+    public function consultarRol($rol){
         $con = new db();
        
         $query=$con->prepare("SELECT Descripcion from rol where id=".$rol);
@@ -63,6 +64,30 @@ class clientedb{
       
         return $resutado;
 
+    }
+
+    public function consultarTrabajadorPorUserIdDB($user){
+        $con = new db();
+        $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM trabajador WHERE IdUsuario= :user");
+        $query->bindValue(":user", $user);
+        $resutado = $con->consultarObjectes($query);
+        var_dump($resutado);
+//        private $id;
+//        private $nombre;
+//        private $apellidos;
+//        private $edad;
+//        private $email;
+//        private $telefono;
+//        private $foto;
+//        private $idUsuario;
+    
+
+        if($resutado){
+            $user = $resutado[0];
+
+            return  new trabajador($user['nombre'], $user['apellidos'], $user['edad'], $user['email'],$user['telefono'],$user['foto']);
+        }
+        return false;
     }
 
 /*
