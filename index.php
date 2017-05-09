@@ -90,8 +90,34 @@ switch ($ctl) {
             case "MostrarDatos":
                 include "controller/MostrarDatosCliente_ctl.php";
                 break;
+
+            case "mostrarAgenda":
+                include "controller/mostrarAgenda_ctl.php";
+                break;
+            case "cercar":
+                include "controller/test.php";
+
             case "ModificarDatos":
                 include "controller/ModificarDatosCliente_ctl.php";
+
+                break;            
+//            case "detalls":
+//                include "controller/detallObra_ctl.php";
+//                break;
+//            case "eliminar":
+//                include "controller/eliminarObra_ctl.php";
+//                break;
+        }
+        break;
+
+    case "trabajador":
+        switch ($act) {
+            case "MostrarDatos":
+                include "controller/MostrarDatosCliente_ctl.php";
+                break;
+
+            case "mostrarAgenda":
+                include "controller/mostrarAgenda_ctl.php";
                 break;
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
@@ -102,7 +128,9 @@ switch ($ctl) {
         }
         break;
 
-
+    case "altaEvento":
+            include "controller/altaEvento_ctl.php";
+            break;
 
 
 

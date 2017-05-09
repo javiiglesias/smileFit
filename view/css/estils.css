@@ -1,7 +1,7 @@
 html,body{padding: 0 0 0px;margin: 0;font-family: 'Muli', sans-serif;}
 footer{width: 100%;bottom: 0; margin-top: 15px}
 
-h1{font-family: 'Gloria Hallelujah', cursive;}
+h1{font-family: 'Gloria Hallelujah', cursive !important;}
 
 /*font-family: 'Josefin Sans', sans-serif;*//*usarla para descripcion*/
 
@@ -16,7 +16,7 @@ h1{font-family: 'Gloria Hallelujah', cursive;}
 .mb614{margin-bottom: 800px;}
 .recuadro {-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 /*-----------------*/
 /*   BackGrounds */
 /*----------------*/

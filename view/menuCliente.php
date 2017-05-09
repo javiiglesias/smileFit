@@ -8,7 +8,7 @@
 
             </div>
             <div class="col-xs-12 col-md-6">
-                <h1>info trabajadores</h1>
+                <h1>Info Cliente</h1>
                 <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>
                 <li><a href="?ctl=cliente&act=mostrarAgenda">Visualizar Mi Agenda</a></li>
                 <?require_once('partials/contentNews.php');?>
