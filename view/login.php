@@ -5,6 +5,10 @@ if (isset($_COOKIE['usuario'])) {
 }
 ?>
 <html>
+
+        <script src="view/js/validaLoginUsuario.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/validaciones.css" media="screen" />
+
 <body class="login">
 <div class="container-fluid">
     <div class="container">
@@ -12,23 +16,25 @@ if (isset($_COOKIE['usuario'])) {
         </div>
         <div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3 ">
             <div class="container-login">
-                <form action="?ctl=login" method="POST" class="login-form">
+                <form id="form" action="?ctl=login" method="post" class="login-form">
                     <img src="view/images/original3.png" class="img-responsive">
                     <h1 class="text-center transparent-heading">Iniciar Sesión</h1>
                     <div class="form-group">
                         <label><strong>Usuario:</strong></label>
-                        <input type="text" name="usuario" value="<?php echo $guardarUsuario; ?>" class="form-control">
+                        <input type="text" id="usuario" name="usuario" value="<?php echo $guardarUsuario; ?>" class="form-control">
+                        <span id='usuario_error' class=errorMsg >Introduce un nombre de usuario valido (letras y numeros)</span>
                     </div>
                     <div class="form-group">
                         <label><strong>Contraseña:</strong></label>
-                        <input type="password" name="pass" class="form-control">
+                        <input type="password" id="pass" name="pass" class="form-control">
+                        <span id='pass_error' class=errorMsg >Introduce una contraseña valida (4-15) caracteres</span>
                     </div>
                     <p>Recordar usuario <input type="checkbox" name="recordarUsuario"><p>
                     <p><a href="?ctl=usuari&act=registre">Registrarse como  usuario</a></p>
                     <div class="text-center">
-                        <button name="Submit" class="btn btn-warning"> Entrar <image class="btn-icon imagen-button-login"  src="view/images/login.ico"/> </button>
+                        <input type="submit" name="Submit" class="btn btn-info" value="Enviar"> <image class="btn-icon imagen-button-login"  src="view/images/login.ico"/> </input>
                     </div>
-                    <form>
+                </form>
             </div>
         </div>
     </div>
