@@ -42,7 +42,7 @@ class eventosdb {
         $con = new db();
 
         $query = $con->prepare("SELECT id,descripcion,fechaInicio,fechaFin,clase,url,clienteId,trabajadorId FROM eventos where trabajadorId=".$trabajador);
-        $query->bindValue(":user", $user);
+        $query->bindValue(":user", $trabajador);
         $resutado = $con->consultarObjectes($query);
         $eventos = array();
       
