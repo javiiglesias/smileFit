@@ -13,7 +13,7 @@ class trabajadordb{
 
     public function consultarTrabajadorDB($trabajador){
         $con = new db();
-        $query=$con->prepare("SELECT nombre,apellidos,edad,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
+        $query=$con->prepare("SELECT nombre,apellidos,fechaNacimiento,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
         $query->bindValue(":trabajador", $trabajador);
         $resultado = $con->consultarObjectes($query);
 
@@ -30,7 +30,7 @@ class trabajadordb{
         if($resultado){
             $trabajador = $resultado[0];
 
-            return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['edad'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
+            return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
         }
         return false;      
     }
@@ -64,20 +64,6 @@ class trabajadordb{
       
         return $resultado;
 
-    }
-
-    public function consultarTrabajadorPorUserIdDB($user){
-        $con = new db();
-        $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM trabajador WHERE IdUsuario= :user");
-        $query->bindValue(":user", $user);
-        $resultado = $con->consultarObjectes($query);
-        var_dump($resultado);
-
-        if($resultado){
-            $user = $resultado[0];
-            return  new trabajador($user['id'], $user['nombre'], $user['apellidos'], $user['edad'], $user['email'],$user['telefono'],$user['foto']);
-        }
-        return false;
     }
 
 /*
