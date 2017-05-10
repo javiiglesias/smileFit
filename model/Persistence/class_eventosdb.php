@@ -49,14 +49,14 @@ class eventosdb {
         $eventos = array();
 
         foreach ($resultado as $row) {
-                $id = $row["Id"];
-                $descripcion = $row["Descripcion"];
-                $fechaInicio = $row["FechaInicio"];
-                $fechaFin = $row["FechaFin"];    
-                $clase = $row["Clase"];             
-                $url = $row["Url"];
-                $clienteId = $row['ClienteId'];
-                $trabajadorId = $row['TrabajadorId'];
+                $id = $row["id"];
+                $descripcion = $row["descripcion"];
+                $fechaInicio = $row["fechaInicio"];
+                $fechaFin = $row["fechaFin"];    
+                $clase = $row["clase"];             
+                $url = $row["url"];
+                $clienteId = $row['clienteId'];
+                $trabajadorId = $row['trabajadorId'];
                 $evento = new evento($id,$descripcion,$fechaInicio,$fechaFin,$clase,$url,$clienteId,$trabajadorId);
                 array_push($eventos,$evento);
         }

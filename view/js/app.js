@@ -16,8 +16,7 @@
 	var year = date.getFullYear();
 
 	var options = {
-		//events_source: 'events.json.php',
-		events_source: 'mostrarAgenda_ctl.php/',
+		events_source: 'view/events.json.php',
 		view: 'month',
 		tmpl_path: 'view/tmpls/',
 		tmpl_cache: false,
@@ -84,16 +83,16 @@
 		calendar.setOptions({format12: val});
 		calendar.view();
 	});
-	$('#show_wbn').change(function(){
-		var val = $(this).is(':checked') ? true : false;
-		calendar.setOptions({display_week_numbers: val});
-		calendar.view();
-	});
-	$('#show_wb').change(function(){
-		var val = $(this).is(':checked') ? true : false;
-		calendar.setOptions({weekbox: val});
-		calendar.view();
-	});
+	// $('#show_wbn').change(function(){
+	// 	var val = $(this).is(':checked') ? true : false;
+	// 	calendar.setOptions({display_week_numbers: val});
+	// 	calendar.view();
+	// });
+	// $('#show_wb').change(function(){
+	// 	var val = $(this).is(':checked') ? true : false;
+	// 	calendar.setOptions({weekbox: val});
+	// 	calendar.view();
+	// });
 	$('#events-modal .modal-header, #events-modal .modal-footer').click(function(e){
 		//e.preventDefault();
 		//e.stopPropagation();

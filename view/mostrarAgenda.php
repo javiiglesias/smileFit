@@ -57,4 +57,4 @@
 			<ul id="eventlist" class="nav nav-list"></ul>
 		</div>
 	</div>
-	</div>
+</div>
