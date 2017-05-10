@@ -16,19 +16,30 @@
                     </div>
                       <div class="form-group">
                         <label>Apellidos</label>
-                        <input type="text" name="apellido" class="form-control">
+                        <input type="text" name="apellidos" class="form-control">
                     </div>
                      <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email" class="form-control">
                     </div>
-                      <div class="form-group">
+                    <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" max-lenght="10" name="telefono" class="form-control">
+                        <input type="text"  maxlength="10" name="telefono" class="form-control">
+                    </div>
+                    <div class="form-group"  id='from'>
+                        <label>fecha de nacimiento</label>
+                       
+                        <input type='text' name="from" class="form-control" readonly />
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+               
                     </div>
                       <div class="form-group">
                         <label>foto</label>
                         <input type="text"  name="foto" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo Trabajador:</label>
+                        <input type="text" name="rol" placeholder="<?php echo $rol?>" readonly class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Contraseña:</label>
@@ -37,9 +48,16 @@
                   
                    
                     <div class="col-md-offset-3 col-xs-offset-2">
-                        <button name="Submit" class="btn btn-info">  Registrarse    <image class="btn-icon" src="view/images/registre.png"/></button>
+                        <button name="Submit" class="btn btn-info">  Completar Registrarse    <image class="btn-icon" src="view/images/registre.png"/></button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+        <script type="text/javascript">
+        $(function () {
+            $('#from').datetimepicker({
+                language: 'es',
+                minDate: new Date()
+            });
+            </script>
