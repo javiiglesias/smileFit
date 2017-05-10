@@ -2,7 +2,9 @@
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<meta charset="UTF-8">
+<script type="text/javascript" src="view/js/jquery.min.js"></script>
    <script src="view/js/test.js"></script>
 
 <script defer src="view/js/jquery.flexslider-min.js"></script>
