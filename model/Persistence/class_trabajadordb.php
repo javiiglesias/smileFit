@@ -15,7 +15,7 @@ class trabajadordb{
         $con = new db();
         $query=$con->prepare("SELECT nombre,apellidos,edad,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
         $query->bindValue(":trabajador", $trabajador);
-        $resutado = $con->consultarObjectes($query);
+        $resultado = $con->consultarObjectes($query);
 
 //        private $id;
 //        private $nombre;
@@ -27,8 +27,8 @@ class trabajadordb{
 //        private $idUsuario;
     
 
-        if($resutado){
-            $trabajador = $resutado[0];
+        if($resultado){
+            $trabajador = $resultado[0];
 
             return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['edad'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
         }
@@ -59,10 +59,10 @@ class trabajadordb{
         $con = new db();
        
         $query=$con->prepare("SELECT Descripcion from rol where id=".$rol);
-        $resutado = $con->consultarObjectes($query);
-        var_dump($resutado);
+        $resultado = $con->consultarObjectes($query);
+        var_dump($resultado);
       
-        return $resutado;
+        return $resultado;
 
     }
 
@@ -70,22 +70,12 @@ class trabajadordb{
         $con = new db();
         $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM trabajador WHERE IdUsuario= :user");
         $query->bindValue(":user", $user);
-        $resutado = $con->consultarObjectes($query);
-        var_dump($resutado);
-//        private $id;
-//        private $nombre;
-//        private $apellidos;
-//        private $edad;
-//        private $email;
-//        private $telefono;
-//        private $foto;
-//        private $idUsuario;
-    
+        $resultado = $con->consultarObjectes($query);
+        var_dump($resultado);
 
-        if($resutado){
-            $user = $resutado[0];
-
-            return  new trabajador($user['nombre'], $user['apellidos'], $user['edad'], $user['email'],$user['telefono'],$user['foto']);
+        if($resultado){
+            $user = $resultado[0];
+            return  new trabajador($user['id'], $user['nombre'], $user['apellidos'], $user['edad'], $user['email'],$user['telefono'],$user['foto']);
         }
         return false;
     }

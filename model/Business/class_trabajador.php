@@ -35,8 +35,6 @@ class trabajador{
                 $this->setIdUsuario(func_get_arg(7));
                 break;
         }
-
-
     }
 
 
@@ -65,12 +63,10 @@ class trabajador{
         return $this->apellidos;
     }
 
-
     public function setApellidos($apellidos)
     {
         $this->apellidos = $apellidos;
     }
-
 
     public function getEdad()
     {
@@ -91,7 +87,6 @@ class trabajador{
     {
         $this->email = $email;
     }
-
 
     public function getTelefono()
     {
@@ -139,6 +134,7 @@ class trabajador{
     public function getTrabajadorPorIdUser($idUser){
         $trabajadorDB = new trabajadordb();
         $trabajador = $trabajadorDB->consultarTrabajadorPorUserIdDB($idUser); 
+        echo "<br>trabajador: ";
         var_dump($trabajador);
         return $trabajador->getId();
     }
