@@ -101,9 +101,9 @@ switch ($ctl) {
             case "EliminarCliente":
                 include "controller/EliminarCliente_ctl.php";
                 break;
-//            case "eliminar":
-//                include "controller/eliminarObra_ctl.php";
-//                break;
+            case "AñadirDatos":
+                include "controller/AñadirDatosCliente_ctl.php";
+                break;
         }
         break;
 

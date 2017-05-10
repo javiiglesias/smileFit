@@ -61,6 +61,31 @@ class clientedb{
 
     }
 
+    public function añadirClienteDB($nombre,$apellidos,$edad,$email,$telefono,$foto, $idUser){
+
+        $con = new db();
+        $query=$con->prepare("INSERT INTO cliente(Nombre, Apellidos, Edad, Email, Telefono, Foto, IdUsuario) VALUES (:nombre,:apellidos,:edad,:email,:telefono,:foto,:idUser)");
+
+        $query->bindValue(":nombre", $nombre);
+        $query->bindValue(":apellidos", $apellidos);
+        $query->bindValue(":edad", $edad);
+        $query->bindValue(":email", $email);
+        $query->bindValue(":telefono", $telefono);
+        $query->bindValue(":foto", $foto);
+        $query->bindValue(":idUser", $idUser);
+        $resutado = $con->consulta($query);
+
+        if($resutado){
+            $cliente = $resutado[0];
+
+            return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
+        }
+        return false;
+
+
+
+    }
+
 
 
 
