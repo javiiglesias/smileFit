@@ -107,11 +107,17 @@ class usuario
         $user = $usuarioDB->consultarUsuarioDB($name);
         return $user->getDescripcion();
     }
+    public function getUserPorId($id){
+        $usuarioDB = new usuariodb;
+        $user = $usuarioDB->consultarUsuarioPorIdDB($id);
+        return $user->getDescripcion();
+    }
     public function getIDUser($name){
         $usuarioDB = new usuariodb;
         $user = $usuarioDB->consultarUsuarioDB($name);
         return $user->getId();
     }
+
 
     /*Metodo para comparar si los paswords introducidos en el registro de los diferentes tipos de usuarios, es igual
       Devuelve true o false */

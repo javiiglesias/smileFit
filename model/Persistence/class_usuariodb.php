@@ -23,8 +23,23 @@ class usuariodb{
             $descripcion = $resutado[0]["descripcion"];
 
             return $user = new usuario($id, $username, $password, $descripcion);*/
-$user = $resutado[0];
-return  new usuario($user['id'], $user['username'], $user['password'], $user['descripcion']);
+            $user = $resutado[0];
+            return  new usuario($user['id'], $user['username'], $user['password'], $user['descripcion']);
+        }
+
+        return false;
+    }
+
+    public function consultarUsuarioPorIdDB($user){
+        $con = new db();
+        $query=$con->prepare("SELECT id, username, password, descripcion FROM usuario WHERE id= :user");
+        $query->bindValue(":user", $user);
+        $resutado = $con->consultarObjectes($query);
+
+
+        if($resutado){
+            $user = $resutado[0];
+            return  new usuario($user['id'], $user['username'], $user['password'], $user['descripcion']);
         }
 
         return false;

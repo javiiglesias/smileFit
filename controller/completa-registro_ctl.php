@@ -1,11 +1,9 @@
 <?
 require_once("controller/function_AutoLoad.php");
-if(isset($_REQUEST['param'])){
 
-$maria=$_REQUEST['param'];
-echo "hol";
-var_dump($maria);
-}
+$trabajador= new trabajador();
+
+$worker= $trabajador->addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
 echo"hola";
 die();
 
