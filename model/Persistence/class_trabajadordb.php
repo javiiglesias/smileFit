@@ -35,23 +35,23 @@ class trabajadordb{
         return false;      
     }
 
-    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol){
-                  $con = new db();     
-      $query=$con->prepare("INSERT INTO trabajador (Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdRol) VALUES (:nombre,:apellidos,:fechaNacimiento,:email,:telefono,:foto,:rol)");
-
-      
-       
-        $query->bindValue(":nombre", $nombre);
-        $query->bindValue(":apellidos", $apellidos);
-        $query->bindValue(":fechaNacimiento", $fechaNacimiento);
-        $query->bindValue(":email", $email);
-        $query->bindValue(":telefono", $telefono);
-        $query->bindValue(":foto", $foto);
-        $query->bindValue(":rol", $rol);
-           $resultado = $con->consulta($query);
-        var_dump($resultado);
-        echo "hollaaaaaa";
-        
+    public function insertarUsuariosdb($name, $pass,$rol){
+     
+         
+           $descr=$rol;
+           $description=$descr;
+           var_dump($description);
+     
+          
+        $query = "INSERT INTO trabajador (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
+        $con = new db();
+        $resultado = $con->prepare($query);
+        $user = $name;
+        $password = $pass;
+        $resultado->bindValue(":user", $user);
+        $resultado->bindValue(":password", $password);
+        $resultado->bindValue(":description", $description);
+        $resultado->execute();
         $con = null;
     }
     

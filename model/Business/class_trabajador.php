@@ -124,11 +124,11 @@ class trabajador{
     }
 
 
-    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol){
-        $trabajadorDB = new trabajadordb();
-        $trabajador = $trabajadorDB->addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol);
+    public function getTrabajador($id){
+        $clienteDB = new clientedb();
+        $cliente = $clienteDB->consultarTrabajadorDB($cliente);
  
-        return $trabajador;
+        return $cliente;
     }
 
     public function getTrabajadorPorIdUser($idUser){

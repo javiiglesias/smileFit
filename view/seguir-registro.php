@@ -1,5 +1,3 @@
-<?php require_once('partials/header-altaEvento.php');?>
-
 <div class="container-fluid">
     <div class="container">
         <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-5">
@@ -28,10 +26,10 @@
                         <label>Telefono</label>
                         <input type="text"  maxlength="10" name="telefono" class="form-control">
                     </div>
-                    <div class="form-group"  id='fechaNacimiento'>
+                    <div class="form-group"  id='from'>
                         <label>fecha de nacimiento</label>
                        
-                        <input type='text' name="fechaNacimiento" class="form-control"  />
+                        <input type='text' name="from" class="form-control" readonly />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                
                     </div>
@@ -58,7 +56,7 @@
     </div>
         <script type="text/javascript">
         $(function () {
-            $('#fechaNacimiento').datetimepicker({
+            $('#from').datetimepicker({
                 language: 'es',
                 minDate: new Date()
             });
