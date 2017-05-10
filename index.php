@@ -125,7 +125,7 @@ switch ($ctl) {
         }
         break;
 
-    case "altaEvento":
+    case "evento":
             include "controller/altaEvento_ctl.php";
             break;
 
