@@ -27,7 +27,7 @@ if($usuarioRol == 'Trabajador')
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
 	//obtener eventos por el idTrabajador
 	$eventos = new evento();
-	$evento = $eventos->getEventosPorTrabajador($idTrabajador);
+	$eventosObtenidos = $eventos->getEventosPorTrabajador($idTrabajador);
 	//mostrar eventos
 	//$eventosTrabajador = $eventos->muestraEvento($evento);
 
@@ -37,7 +37,7 @@ if($usuarioRol == 'Trabajador')
 	return json_encode(
                 array(
                 'success' => 1, 
-                'result' => $nEventos)
+                'result' => $eventosObtenidos)
             ); 
 }
 //si es cliente
