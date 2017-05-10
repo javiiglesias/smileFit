@@ -4,7 +4,7 @@ class trabajador{
     private $id;
     private $nombre;
     private $apellidos;
-    private $edad;
+    private $fechaNacimiento;
     private $email;
     private $telefono;
     private $foto;
@@ -18,7 +18,7 @@ class trabajador{
                 $this->setId(null);
                 $this->setNombre(func_get_arg(0));
                 $this->setApellidos(func_get_arg(1));
-                $this->setEdad(func_get_arg(2));
+                $this->setFechaNacimento(func_get_arg(2));
                 $this->setEmail(func_get_arg(3));
                 $this->setTelefono(func_get_arg(4));
                 $this->setFoto(func_get_arg(5));
@@ -28,7 +28,7 @@ class trabajador{
                 $this->setId(func_get_arg(0));
                 $this->setNombre(func_get_arg(1));
                 $this->setApellidos(func_get_arg(2));
-                $this->setEdad(func_get_arg(3));
+                $this->setFechaNacimento(func_get_arg(3));
                 $this->setEmail(func_get_arg(4));
                 $this->setTelefono(func_get_arg(5));
                 $this->setFoto(func_get_arg(6));
@@ -68,14 +68,14 @@ class trabajador{
         $this->apellidos = $apellidos;
     }
 
-    public function getEdad()
+    public function getFechaNacimento()
     {
-        return $this->edad;
+        return $this->fechaNacimiento;
     }
 
-    public function setEdad($edad)
+    public function setFechaNacimento($fechaNacimiento)
     {
-        $this->edad = $edad;
+        $this->fechaNacimiento = $fechaNacimiento;
     }
 
     public function getEmail()
@@ -133,7 +133,7 @@ class trabajador{
 
     public function getTrabajadorPorIdUser($idUser){
         $trabajadorDB = new trabajadordb();
-        $trabajador = $trabajadorDB->consultarTrabajadorPorUserIdDB($idUser); 
+        $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser); 
         echo "<br>trabajador: ";
         var_dump($trabajador);
         return $trabajador->getId();
