@@ -22,15 +22,20 @@ $usuarioRol = $usuarios->getUserPorId($idUser);
 //si es trabajador
 if($usuarioRol == 'Trabajador')
 {
-	echo " (es trabajador)<br>";
+	//echo " (es trabajador)<br>";
 	//buscar idTrabajador para buscar sus eventos
 	$trabajadores = new trabajador();
-	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);
-	var_dump($idTrabajador);
-
+	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
+	//obtener eventos por el idTrabajador
 	$eventos = new evento();
 	$evento = $eventos->getEventosPorTrabajador($idTrabajador);
-	var_dump($evento);
+	//mostrar eventos
+	//$eventosTrabajador = $eventos->muestraEvento($evento);
+	echo json_encode(
+		array(
+			'success' => 1, 
+			'result' => $evento)
+	);
 }
 //si es cliente
 else{
@@ -45,7 +50,7 @@ else{
 	// var_dump($evento);
 }
 
-//$evento = $eventos->muestraEvento();
+
 
 require_once 'view/footer.php';
 ob_end_flush();

@@ -13,7 +13,7 @@ class trabajadordb{
 
     public function consultarTrabajadorDB($trabajador){
         $con = new db();
-        $query=$con->prepare("SELECT nombre,apellidos,fechaNacimiento,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
+        $query=$con->prepare("SELECT id,nombre,apellidos,fechaNacimiento,email,telefono,foto,idUsuario FROM trabajador WHERE IdUsuario= :trabajador");
         $query->bindValue(":trabajador", $trabajador);
         $resultado = $con->consultarObjectes($query);
 
@@ -30,7 +30,7 @@ class trabajadordb{
         if($resultado){
             $trabajador = $resultado[0];
 
-            return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
+            return  new trabajador($trabajador['id'],$trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto'],$trabajador['idUsuario']);
         }
         return false;      
     }
