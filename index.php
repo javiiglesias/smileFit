@@ -76,9 +76,9 @@ switch ($ctl) {
             case "completa-registro":    
                 include "controller/completa-registro_ctl.php";
                 break;
-//            case "detalls":
-//                include "controller/detallObra_ctl.php";
-//                break;
+            case "detalls":
+                include "controller/detallObra_ctl.php";
+                break;
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
@@ -94,16 +94,13 @@ switch ($ctl) {
             case "mostrarAgenda":
                 include "controller/mostrarAgenda_ctl.php";
                 break;
-            case "cercar":
-                include "controller/test.php";
 
             case "ModificarDatos":
                 include "controller/ModificarDatosCliente_ctl.php";
-
                 break;            
-//            case "detalls":
-//                include "controller/detallObra_ctl.php";
-//                break;
+            case "EliminarCliente":
+                include "controller/EliminarCliente_ctl.php";
+                break;
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
