@@ -12,16 +12,13 @@ $usuarios = new usuario();
 if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
 }
-//echo "user: $user";
 
 //obtenemos el usuario actual
 $usuarioRol = $usuarios->getUserPorId($idUser);
-//echo "usuario: $usuarioRol ";
 
 //si es trabajador
 if($usuarioRol == 'Trabajador')
 {
-	//echo " (es trabajador)<br>";
 	//buscar idTrabajador para buscar sus eventos
 	$trabajadores = new trabajador();
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
@@ -42,11 +39,11 @@ if($usuarioRol == 'Trabajador')
 }
 //si es cliente
 else{
-	echo "(es cliente)";
+	//echo "(es cliente)";
 	//buscar idCliente para buscar sus eventos
-	// $clientes = new cliente();
-	// $idCliente = $clientes->getClientePorIdUser($idUser);
-	// var_dump($idCliente);
+	//$clientes = new cliente();
+	//$idCliente = $clientes->getClientePorIdUser($idUser);
+	//var_dump($idCliente);
 
 	// $eventos = new evento();
 	// $evento = $eventos->getEventosPorCliente($idCliente);

@@ -41,7 +41,7 @@ switch ($ctl) {
         include "controller/contacto_ctl.php";
     break;
 
-   case"menu":
+   case "menu":
       switch ($act) {
             case "admin":
               include "controller/menuAdmin_ctl.php";
@@ -49,13 +49,16 @@ switch ($ctl) {
            case "cliente":
                include "controller/menuCliente_ctl.php";
                break;
+            case "trabajador":
+               include "controller/menuTrabajador_ctl.php";
+               break;
            case"salir";
                include "controller/logout_ctl.php";
               break;
        }
         break;
 
-    case"noticias":
+    case "noticias":
         switch ($act) {
             case "detalle":
                 include "controller/noticiasDetalle_ctl.php";
