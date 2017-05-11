@@ -150,11 +150,14 @@ class evento
     }
 
 
-    // public function muestraEvento($nEventos) {
+    // public function muestraEventos($nEventos) {
     //     if($nEventos!= null){
-    //         echo "nevento != null";
             
-            
+    //         return json_encode(
+    //             array(
+    //             'success' => 1, 
+    //             'result' => $nEventos)
+    //         ); 
     //     }
     //     else{
     //         return null;
