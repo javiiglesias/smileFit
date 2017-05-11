@@ -26,16 +26,17 @@ if($usuarioRol == 'Trabajador')
 	$eventos = new evento();
 	$eventosObtenidos = $eventos->getEventosPorTrabajador($idTrabajador);
 	//mostrar eventos
-	//$eventosTrabajador = $eventos->muestraEvento($evento);
 
 	//$eventoObtenidos = $eventos->muestraEventos($evento);
 	//echo $eventoObtenidos;
-
-	return json_encode(
-                array(
-                'success' => 1, 
-                'result' => $eventosObtenidos)
-            ); 
+	//var_dump($eventosObtenidos);
+	// $a = json_encode(
+ //                 array(
+ //                 'success' => 1, 
+ //                 'result' => $eventosObtenidos)
+ //             ); 
+	// var_dump($a);
+	// return $a;
 }
 //si es cliente
 else{

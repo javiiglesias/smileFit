@@ -33,6 +33,9 @@ switch ($ctl) {
             case "panel":
                 include "controller/panel_ctl.php";
                 break;
+            case "enviarMail":
+                include "controller/contactoEnviarMail_ctl.php";
+                break;
         }
         break;
         
