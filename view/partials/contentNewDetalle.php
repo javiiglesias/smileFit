@@ -7,4 +7,4 @@
 		<img  class="img-responsive " src='view/images/<?echo $noticias->getImagen();?>'></div>
 		<div class="col-xs-12 col-sm-8"><span ><? echo $noticias->getContenido();?></span></div>
 
-	 <?endforeach ?>
+	 <?php endforeach ?>
