@@ -1,3 +1,4 @@
+
 <?php require_once('partials/header-altaEvento.php');?>
 
 <div class="container-fluid">
@@ -63,3 +64,11 @@
                 minDate: new Date()
             });
             </script>
+            
+            
+            
+            
+            
+            
+            
+            

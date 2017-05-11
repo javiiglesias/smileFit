@@ -1,3 +1,5 @@
+
+}
 <?php
 require_once("controller/function_AutoLoad.php");
 class trabajador{
@@ -134,6 +136,8 @@ class trabajador{
     public function getTrabajadorPorIdUser($idUser){
         $trabajadorDB = new trabajadordb();
         $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser); 
+        echo "<br>trabajador: ";
+        var_dump($trabajador);
         return $trabajador->getId();
     }
 }
