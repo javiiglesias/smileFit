@@ -145,24 +145,8 @@ class evento
 
     public function getEventosPorTrabajador($idTrabajador){
         $evento = new eventosdb;
-        $arrayEventos= $evento->getEventosPorTrabajadordb($idTrabajador);
-        return $arrayEventos;
-    }
-
-
-    // public function muestraEventos($nEventos) {
-    //     if($nEventos!= null){
-            
-    //         return json_encode(
-    //             array(
-    //             'success' => 1, 
-    //             'result' => $nEventos)
-    //         ); 
-    //     }
-    //     else{
-    //         return null;
-    //     }
-    // }
-  
+        $eventos= $evento->getEventosPorTrabajadordb($idTrabajador);
+        return $eventos;
+    }  
 }
 ?>

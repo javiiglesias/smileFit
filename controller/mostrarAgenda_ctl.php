@@ -14,6 +14,7 @@ if(isset($_SESSION["test2"])){
 }
 
 //obtenemos el usuario actual
+
 $usuarioRol = $usuarios->getUserPorId($idUser);
 
 //si es trabajador
@@ -25,21 +26,19 @@ if($usuarioRol == 'Trabajador')
 	//obtener eventos por el idTrabajador
 	$eventos = new evento();
 	$eventosObtenidos = $eventos->getEventosPorTrabajador($idTrabajador);
+
 	//mostrar eventos
 
-	//$eventoObtenidos = $eventos->muestraEventos($evento);
-	//echo $eventoObtenidos;
-	//var_dump($eventosObtenidos);
-	// $a = json_encode(
- //                 array(
- //                 'success' => 1, 
- //                 'result' => $eventosObtenidos)
- //             ); 
-	// var_dump($a);
-	// return $a;
+	// echo json_encode(
+ //                array(
+ //                    "success" => 1,
+ //                    "result" => $eventosObtenidos
+ //                )
+ //            );
 }
-//si es cliente
+
 else{
+	//si es cliente
 	//echo "(es cliente)";
 	//buscar idCliente para buscar sus eventos
 	//$clientes = new cliente();
@@ -50,7 +49,6 @@ else{
 	// $evento = $eventos->getEventosPorCliente($idCliente);
 	// var_dump($evento);
 
-	//this.muestraEventos($evento);
 }
 
 // public function muestraEventos($eventos){
