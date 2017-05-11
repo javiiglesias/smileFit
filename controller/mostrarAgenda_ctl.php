@@ -7,7 +7,6 @@ require_once 'view/header.php';
 require_once 'view/mostrarAgenda.php';
 require_once 'view/partials/header-calendar.php';
 
-$eventos = new evento();
 $usuarios = new usuario();
 
 if(isset($_SESSION["test2"])){
@@ -22,15 +21,24 @@ $usuarioRol = $usuarios->getUserPorId($idUser);
 //si es trabajador
 if($usuarioRol == 'Trabajador')
 {
-	echo " (es trabajador)<br>";
+	//echo " (es trabajador)<br>";
 	//buscar idTrabajador para buscar sus eventos
 	$trabajadores = new trabajador();
-	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);
-	var_dump($idTrabajador);
-
+	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
+	//obtener eventos por el idTrabajador
 	$eventos = new evento();
-	$evento = $eventos->getEventosPorTrabajador($idTrabajador);
-	var_dump($evento);
+	$eventosObtenidos = $eventos->getEventosPorTrabajador($idTrabajador);
+	//mostrar eventos
+	//$eventosTrabajador = $eventos->muestraEvento($evento);
+
+	//$eventoObtenidos = $eventos->muestraEventos($evento);
+	//echo $eventoObtenidos;
+
+	return json_encode(
+                array(
+                'success' => 1, 
+                'result' => $eventosObtenidos)
+            ); 
 }
 //si es cliente
 else{
@@ -43,9 +51,18 @@ else{
 	// $eventos = new evento();
 	// $evento = $eventos->getEventosPorCliente($idCliente);
 	// var_dump($evento);
+
+	//this.muestraEventos($evento);
 }
 
-//$evento = $eventos->muestraEvento();
+// public function muestraEventos($eventos){
+
+// 	echo json_encode(
+// 		array(
+// 			'success' => 1, 
+// 			'result' => $eventos)
+// 	);
+// }
 
 require_once 'view/footer.php';
 ob_end_flush();
