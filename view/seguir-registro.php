@@ -1,3 +1,6 @@
+
+<?php require_once('partials/header-altaEvento.php');?>
+
 <div class="container-fluid">
     <div class="container">
         <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-5">
@@ -10,6 +13,10 @@
                     <small class="col-md-offset-1">Por favor,rellenar todos los campos. </small>
 
                     <span> <? if(isset($error)){echo $error;}?></span>
+                    <div class="form-group space-top">
+                        <label>Numero de Usuario:</label>
+                        <input type="text" name="idUser" value="<?php echo $idUser?>" readonly class="form-control">
+                    </div>
                     <div class="form-group space-top">
                         <label>Nombre de Usuario:</label>
                         <input type="text" name="nombre" class="form-control">
@@ -26,10 +33,10 @@
                         <label>Telefono</label>
                         <input type="text"  maxlength="10" name="telefono" class="form-control">
                     </div>
-                    <div class="form-group"  id='from'>
+                    <div class="form-group"  id='fechaNacimiento'>
                         <label>fecha de nacimiento</label>
                        
-                        <input type='text' name="from" class="form-control" readonly />
+                        <input type='text' name="fechaNacimiento" class="form-control"  />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                
                     </div>
@@ -39,11 +46,11 @@
                     </div>
                     <div class="form-group">
                         <label>Tipo Trabajador:</label>
-                        <input type="text" name="rol" placeholder="<?php echo $rol?>" readonly class="form-control">
+                        <input type="text" name="rol" value="<?php echo $rol?>" readonly class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Contraseña:</label>
-                        <input type="text" name="pass" placeholder="<?php echo $password?>" readonly class="form-control">
+                        <input type="text" name="pass" value="<?php echo $password?>" readonly class="form-control">
                     </div>
                   
                    
@@ -56,8 +63,16 @@
     </div>
         <script type="text/javascript">
         $(function () {
-            $('#from').datetimepicker({
+            $('#fechaNacimiento').datetimepicker({
                 language: 'es',
                 minDate: new Date()
             });
             </script>
+            
+            
+            
+            
+            
+            
+            
+            

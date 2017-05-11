@@ -33,6 +33,9 @@ switch ($ctl) {
             case "panel":
                 include "controller/panel_ctl.php";
                 break;
+            case "enviarMail":
+                include "controller/contactoEnviarMail_ctl.php";
+                break;
         }
         break;
         
@@ -41,7 +44,7 @@ switch ($ctl) {
         include "controller/contacto_ctl.php";
     break;
 
-   case"menu":
+   case "menu":
       switch ($act) {
             case "admin":
               include "controller/menuAdmin_ctl.php";
@@ -49,13 +52,16 @@ switch ($ctl) {
            case "cliente":
                include "controller/menuCliente_ctl.php";
                break;
+            case "trabajador":
+               include "controller/menuTrabajador_ctl.php";
+               break;
            case"salir";
                include "controller/logout_ctl.php";
               break;
        }
         break;
 
-    case"noticias":
+    case "noticias":
         switch ($act) {
             case "detalle":
                 include "controller/noticiasDetalle_ctl.php";
@@ -101,9 +107,9 @@ switch ($ctl) {
             case "EliminarCliente":
                 include "controller/EliminarCliente_ctl.php";
                 break;
-//            case "eliminar":
-//                include "controller/eliminarObra_ctl.php";
-//                break;
+            case "AñadirDatos":
+                include "controller/AñadirDatosCliente_ctl.php";
+                break;
         }
         break;
 
@@ -125,7 +131,7 @@ switch ($ctl) {
         }
         break;
 
-    case "altaEvento":
+    case "evento":
             include "controller/altaEvento_ctl.php";
             break;
 

@@ -1,3 +1,5 @@
+
+
 <?php
 require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
@@ -9,6 +11,7 @@ class trabajadordb{
     public function __construct() {
         $trabajadores = array();
     }
+
 
 
     public function consultarTrabajadorDB($trabajador){
@@ -35,23 +38,25 @@ class trabajadordb{
         return false;      
     }
 
-    public function insertarUsuariosdb($name, $pass,$rol){
-     
-         
-           $descr=$rol;
-           $description=$descr;
-           var_dump($description);
-     
-          
-        $query = "INSERT INTO trabajador (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
-        $con = new db();
-        $resultado = $con->prepare($query);
-        $user = $name;
-        $password = $pass;
-        $resultado->bindValue(":user", $user);
-        $resultado->bindValue(":password", $password);
-        $resultado->bindValue(":description", $description);
-        $resultado->execute();
+    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
+        var_dump($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
+
+                  $con = new db();     
+      $query=$con->prepare("INSERT INTO trabajador (Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdRol,IdUsuario) VALUES (:nombre,:apellidos,:fechaNacimiento,:email,:telefono,:foto,:rol,:idUser)");
+
+      
+        $query->bindValue(":idUser", $idUser);
+        $query->bindValue(":nombre", $nombre);
+        $query->bindValue(":apellidos", $apellidos);
+        $query->bindValue(":fechaNacimiento", $fechaNacimiento);
+        $query->bindValue(":email", $email);
+        $query->bindValue(":telefono", $telefono);
+        $query->bindValue(":foto", $foto);
+        $query->bindValue(":rol", $rol);
+           $resultado = $con->consulta($query);
+        var_dump($resultado);
+        echo "hollaaaaaa";
+        
         $con = null;
     }
     
@@ -65,7 +70,5 @@ class trabajadordb{
         return $resultado;
 
     }
-/*
-*/
-
 }
+?>

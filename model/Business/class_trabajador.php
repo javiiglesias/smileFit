@@ -1,3 +1,5 @@
+
+}
 <?php
 require_once("controller/function_AutoLoad.php");
 class trabajador{
@@ -124,11 +126,11 @@ class trabajador{
     }
 
 
-    public function getTrabajador($id){
-        $clienteDB = new clientedb();
-        $cliente = $clienteDB->consultarTrabajadorDB($cliente);
+    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
+        $trabajadorDB = new trabajadordb();
+        $trabajador = $trabajadorDB->addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
  
-        return $cliente;
+        return $trabajador;
     }
 
     public function getTrabajadorPorIdUser($idUser){

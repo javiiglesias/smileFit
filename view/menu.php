@@ -83,7 +83,7 @@
                                             <li><a href="?ctl=menu&act=cliente"> Ir a mi Panel</a></li>
                                            <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
                                          <?php }elseif(isset($_SESSION['test']) && $_SESSION['test'] =="Trabajador") { ?>
-                                            <li><a href="?ctl=menu&act=cliente"> Ir al Panel del Trabajador</a></li>
+                                            <li><a href="?ctl=menu&act=trabajador"> Ir al Panel del Trabajador</a></li>
                                            <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
                                            <?php } ?>
                                     <?php } else { ?>

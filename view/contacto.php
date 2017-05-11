@@ -11,7 +11,7 @@
  <div class="container " id="main">
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mT30 mR0 mB35" id="contactar">  
-    <form  name="form" id="form" method="POST" action="#">
+    <form  name="form" id="form" method="POST" action="?ctl=usuario&act=enviarMail">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mT10" >
         <input type="text" class="form-control lite required" id="nom" name="nom" placeholder="Nombre y Apellidos">
@@ -51,7 +51,7 @@
       </div>
 
       <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 mT10 mB70 mB15 text-center pL0sm">
-        <input type="submit" name="enviar" id="enviar" value="enviar" class="btn fontBold bcolor font14 mayus bold">
+        <input type="submit" name="enviar" id="enviar" value="Enviar" class="btn fontBold bcolor font14 mayus bold">
       </div>
     </form>
   </div> 
