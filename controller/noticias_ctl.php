@@ -10,7 +10,7 @@ require_once 'view/header.php';
 	si segun url estamos en el admin y su página inicial tan solo se mostrará el contenido de las noticias
 	en caso opuesto se mostraá la vista de las noticias entera puesto que el controlador carga la clase noticia, debemos cargar este ctl en las dos vistas
 */
-if($_GET['ctl']=="menu" && $_GET['act']=="admin" || $_GET['ctl']=="menu" && $_GET['act']=="cliente" ){
+if($_GET['ctl']=="menu" && $_GET['act']=="admin" || $_GET['ctl']=="menu" && $_GET['act']=="cliente" || $_GET['ctl']=="menu" && $_GET['act']=="trabajador" ){
 
 	require_once('view/partials/contentNews.php');
 }else{
