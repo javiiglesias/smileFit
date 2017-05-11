@@ -19,6 +19,7 @@ if (isset($_REQUEST['Submit'])) {
                 $rol=$_REQUEST['rol'];
         //        $UsuarisDA0->registrarUsuari($usuari, $clau);
                 $Usuarios->registrarUsuario($usuario, $password,$rol);
+                $idUser=$Usuarios->getIDUser($usuario);
                 require_once 'view/header.php';
                 //$mensaje = "Te has registrado correctamente, Puedes iniciar Session";
                 require_once 'view/seguir-registro.php';

@@ -38,12 +38,14 @@ class trabajadordb{
         return false;      
     }
 
-    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol){
+    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
+        var_dump($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
+
                   $con = new db();     
-      $query=$con->prepare("INSERT INTO trabajador (Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdRol) VALUES (:nombre,:apellidos,:fechaNacimiento,:email,:telefono,:foto,:rol)");
+      $query=$con->prepare("INSERT INTO trabajador (Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdRol,IdUsuario) VALUES (:nombre,:apellidos,:fechaNacimiento,:email,:telefono,:foto,:rol,:idUser)");
 
       
-       
+        $query->bindValue(":idUser", $idUser);
         $query->bindValue(":nombre", $nombre);
         $query->bindValue(":apellidos", $apellidos);
         $query->bindValue(":fechaNacimiento", $fechaNacimiento);
@@ -68,5 +70,6 @@ class trabajadordb{
         return $resultado;
 
     }
-/*
-*/
+}
+?>
+
