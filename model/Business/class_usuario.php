@@ -163,7 +163,7 @@ class usuario
 
 //            $ok = false;
 
-        }
+    }
 
 //        $this->llista[] = new Usuari($nom, $pas);
 

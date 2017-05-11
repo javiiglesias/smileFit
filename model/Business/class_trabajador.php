@@ -1,5 +1,3 @@
-
-}
 <?php
 require_once("controller/function_AutoLoad.php");
 class trabajador{
@@ -163,6 +161,6 @@ class trabajador{
             echo "<br>trabajador: ";
             var_dump($trabajador);
             return $trabajador->getId();
-        }
+
     }
 }

@@ -8,37 +8,6 @@ class eventosdb {
         $eventos = array();
     }
   
-    // public function mostrarEventodb($nEventos){
-    //     //$con = new db();
-    //     if($nEvento!= null){
-    //         echo "nevento != null";
-    //         // $query = $con->prepare("SELECT * FROM eventos where id=".$nEventos);
-        
-    //         // $eventos = array();
-            
-    //         // $resultado=$con->consultarObjectes($query);
-          
-    //         // foreach ($resultado as $row) {
-    //         //         $id=$row["Id"];
-    //         //         $descripcion = $row["Descripcion"];
-    //         //         $fechaInicio = $row["FechaInicio"];
-    //         //         $fechaFin = $row["FechaFin"];    
-    //         //         $clase = $row["Clase"];             
-    //         //         $url = $row["Url"];
-    //         //         $clienteId = $row["ClienteId"];
-    //         //         $trabajadorId = $row["TrabajadorId"];
-    //         //         array_push($eventos,$evento);
-    //         // }
-        
-    //         //$con = null;
-    //     echo json_encode(array('success' => 1, 'result' => $nEventos));
-    //         return $eventos;
-    //     }
-    //     else{
-    //         return null;
-    //     }
-    // }
-
     public function getEventosPorTrabajadordb($trabajador){
         $con = new db();
 
@@ -60,6 +29,7 @@ class eventosdb {
                 $evento = new evento($id,$descripcion,$fechaInicio,$fechaFin,$clase,$url,$clienteId,$trabajadorId);
                 array_push($eventos,$evento);
         }
+
         return $eventos;
     }
 }
