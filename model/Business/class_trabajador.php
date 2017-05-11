@@ -11,6 +11,7 @@ class trabajador{
     private $telefono;
     private $foto;
     private $idUsuario;
+     private $idRol;
 
     public function __construct()
     {
@@ -26,7 +27,7 @@ class trabajador{
                 $this->setFoto(func_get_arg(5));
                 $this->setIdUsuario(null);
                 break;
-            case 8:
+            case 9:
                 $this->setId(func_get_arg(0));
                 $this->setNombre(func_get_arg(1));
                 $this->setApellidos(func_get_arg(2));
@@ -35,6 +36,7 @@ class trabajador{
                 $this->setTelefono(func_get_arg(5));
                 $this->setFoto(func_get_arg(6));
                 $this->setIdUsuario(func_get_arg(7));
+                 $this->setIdUsuario(func_get_arg(8));
                 break;
         }
     }
@@ -119,8 +121,23 @@ class trabajador{
         return $this->idUsuario;
     }
 
+    function getFechaNacimiento() {
+        return $this->fechaNacimiento;
+    }
 
-    public function setIdUsuario($idUsuario)
+    function getIdRol() {
+        return $this->idRol;
+    }
+
+    function setFechaNacimiento($fechaNacimiento) {
+        $this->fechaNacimiento = $fechaNacimiento;
+    }
+
+    function setIdRol($idRol) {
+        $this->idRol = $idRol;
+    }
+
+        public function setIdUsuario($idUsuario)
     {
         $this->idUsuario = $idUsuario;
     }
@@ -133,11 +150,19 @@ class trabajador{
         return $trabajador;
     }
 
-    public function getTrabajadorPorIdUser($idUser){
-        $trabajadorDB = new trabajadordb();
-        $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser); 
-        echo "<br>trabajador: ";
-        var_dump($trabajador);
-        return $trabajador->getId();
+    public function getTrabajadorPorIdUser($idUser=null){
+             $trabajadorDB = new trabajadordb();
+      if($idUser==null){
+        $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB($idUser);
+        var_dump($arrayTrabajadores);
+        return $arrayTrabajadores;
+        } else {
+
+            $trabajadorDB = new trabajadordb();
+            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser); 
+            echo "<br>trabajador: ";
+            var_dump($trabajador);
+            return $trabajador->getId();
+        }
     }
 }
