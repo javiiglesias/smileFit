@@ -14,6 +14,10 @@
 
                     <span> <? if(isset($error)){echo $error;}?></span>
                     <div class="form-group space-top">
+                        <label>Numero de Usuario:</label>
+                        <input type="text" name="idUser" value="<?php echo $idUser?>" readonly class="form-control">
+                    </div>
+                    <div class="form-group space-top">
                         <label>Nombre de Usuario:</label>
                         <input type="text" name="nombre" class="form-control">
                     </div>
@@ -42,11 +46,11 @@
                     </div>
                     <div class="form-group">
                         <label>Tipo Trabajador:</label>
-                        <input type="text" name="rol" placeholder="<?php echo $rol?>" readonly class="form-control">
+                        <input type="text" name="rol" value="<?php echo $rol?>" readonly class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Contraseña:</label>
-                        <input type="text" name="pass" placeholder="<?php echo $password?>" readonly class="form-control">
+                        <input type="text" name="pass" value="<?php echo $password?>" readonly class="form-control">
                     </div>
                   
                    
