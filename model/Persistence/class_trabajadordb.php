@@ -1,3 +1,5 @@
+
+
 <?php
 require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
@@ -11,9 +13,10 @@ class trabajadordb{
     }
 
 
+
     public function consultarTrabajadorDB($trabajador){
         $con = new db();
-        $query=$con->prepare("SELECT id,nombre,apellidos,fechaNacimiento,email,telefono,foto,idUsuario FROM trabajador WHERE IdUsuario= :trabajador");
+        $query=$con->prepare("SELECT nombre,apellidos,fechaNacimiento,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
         $query->bindValue(":trabajador", $trabajador);
         $resultado = $con->consultarObjectes($query);
 
@@ -30,28 +33,28 @@ class trabajadordb{
         if($resultado){
             $trabajador = $resultado[0];
 
-            return  new trabajador($trabajador['id'],$trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto'],$trabajador['idUsuario']);
+            return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
         }
         return false;      
     }
 
-    public function insertarUsuariosdb($name, $pass,$rol){
-     
-         
-           $descr=$rol;
-           $description=$descr;
-           var_dump($description);
-     
-          
-        $query = "INSERT INTO trabajador (UserName, Password, Descripcion) VALUES (:user, :password, :description)";
-        $con = new db();
-        $resultado = $con->prepare($query);
-        $user = $name;
-        $password = $pass;
-        $resultado->bindValue(":user", $user);
-        $resultado->bindValue(":password", $password);
-        $resultado->bindValue(":description", $description);
-        $resultado->execute();
+    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol){
+                  $con = new db();     
+      $query=$con->prepare("INSERT INTO trabajador (Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdRol) VALUES (:nombre,:apellidos,:fechaNacimiento,:email,:telefono,:foto,:rol)");
+
+      
+       
+        $query->bindValue(":nombre", $nombre);
+        $query->bindValue(":apellidos", $apellidos);
+        $query->bindValue(":fechaNacimiento", $fechaNacimiento);
+        $query->bindValue(":email", $email);
+        $query->bindValue(":telefono", $telefono);
+        $query->bindValue(":foto", $foto);
+        $query->bindValue(":rol", $rol);
+           $resultado = $con->consulta($query);
+        var_dump($resultado);
+        echo "hollaaaaaa";
+        
         $con = null;
     }
     
@@ -67,5 +70,3 @@ class trabajadordb{
     }
 /*
 */
-
-}
