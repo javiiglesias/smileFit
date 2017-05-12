@@ -67,6 +67,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .pT15{padding-top: 15px;padding-bottom: 15px}
 .pB15{padding-bottom: 120px;display: block;}
 .h226{height: 226px;}
+.h115{height: 115px;}
 @media(max-width: 992px){
 	.bBlau2{background-color: red!important;}
     .pL0sm{padding-left: 0px;}
