@@ -122,6 +122,12 @@ switch ($ctl) {
             case "mostrarAgenda":
                 include "controller/mostrarAgenda_ctl.php";
                 break;
+            case "mostrarSolicitudes":
+                include "controller/mostrarSolicitudes_ctl.php";
+                break;
+            case "asignarSolicitud":
+                include "controller/asignarSolicitud_ctl.php";
+                break;
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;

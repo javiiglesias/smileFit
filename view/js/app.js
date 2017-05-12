@@ -16,7 +16,7 @@
 	var year = date.getFullYear();
 
 	var options = {
-		events_source: 'view/events.json.php',
+		events_source: 'controller/mostrarAgenda_ctl.php',
 		view: 'month',
 		tmpl_path: 'view/tmpls/',
 		tmpl_cache: false,
