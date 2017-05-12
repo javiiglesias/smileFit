@@ -1,8 +1,13 @@
 <?php if($worker){?>
+
     <script type="text/javascript" src="view/js/validaModificaCliente.js"></script>
     <link rel="stylesheet" type="text/css" href="view/css/validaciones.css" media="screen" />
+    <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
-    <?php echo "$worker";?>
+    
+<?php foreach ($worker as $worker): ?>
+    <?php
+     echo $worker->getNombre();?>
     <form id="form" name="form" method="post" action="?ctl=cliente&act=ModificarDatos&param=<?php echo $worker->getId();?>" >
             <div class="form-group">
                 <input name="id" type="hidden" class="form-control" value="<?php echo $worker->getId(); ?>" />
@@ -25,11 +30,13 @@
 
     </form>
 
+
+
         <form action="?ctl=cliente&act=EliminarCliente&param=<?php echo $worker->getId();?> "method="post">
             <input type="submit" id="eliminar" class="btn btn-danger" name="eliminar" value="Dar de baja la cuenta" onclick="window.confirm('¿Estás Seguro que quieres borrar la cuenta?')"/>
         </form>
 
-
+<?php endforeach;?>
 
     </div>
     <?php } ?>
@@ -47,3 +54,4 @@
         }
 
     </script>
+    </div>
