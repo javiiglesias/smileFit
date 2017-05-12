@@ -12,9 +12,8 @@ $workers = new trabajador();
 //   $rol2= $_SESSION["test2"];
 //}
 
-$worker=$workers->getTrabajadorPorIdUser();
-
 require_once 'view/header.php';
+$worker=$workers->getTrabajadorPorIdUser();
 require_once 'view/mostrarDatosTrabajador.php';
 require_once 'view/footer.php';
 
