@@ -150,14 +150,25 @@ class trabajador{
     }
 
     public function getTrabajadorPorIdUser($idUser=null){
-             $trabajadorDB = new trabajadordb();
-      if($idUser==null){
-        $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
-        return $arrayTrabajadores;
+        $trabajadorDB = new trabajadordb();
+        if($idUser==null){
+            $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
+            return $arrayTrabajadores;
         } else {
             $trabajadorDB = new trabajadordb();
             $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
             return $trabajador->getId();
+        }
+    }
+        public function getTrabajador($idUser=null){
+        $trabajadorDB = new trabajadordb();
+        if($idUser==null){
+            $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
+            return $arrayTrabajadores;
+        } else {
+            $trabajadorDB = new trabajadordb();
+            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+            return $trabajador;
         }
     }
 
