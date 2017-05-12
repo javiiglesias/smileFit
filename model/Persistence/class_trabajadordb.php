@@ -27,7 +27,7 @@ class trabajadordb{
                 $nombre = $row["Nombre"];
                 $apellidos = $row["Apellidos"];
                 $fechaNacimiento = $row["FechaNacimiento"];    
-                $email = $row["Email"];  
+                $email = $row["Email"];
                 $telefono = $row["Telefono"];    
                 $foto = $row["Foto"]; 
                 $idUsuario = $row["IdUsuario"];   
@@ -36,8 +36,8 @@ class trabajadordb{
                 $worker = new trabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$idUsuario,$idRol);
                 array_push($workers,$worker);
             }
-            var_dump($query);
-            var_dump($worker);
+            // var_dump($query);
+            // var_dump($worker);
             return $workers;
         }else{
         $query=$con->prepare("SELECT nombre,apellidos,fechaNacimiento,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
