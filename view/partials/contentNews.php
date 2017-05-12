@@ -18,5 +18,5 @@
 	</div>
 	<!--echo $noticias->getContenido();-->			
 
-	<?endforeach ?>
+	<?php endforeach ?>
 	 

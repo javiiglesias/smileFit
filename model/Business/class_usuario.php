@@ -134,7 +134,9 @@ class usuario
         $descripcion=null;
         $usuarioDB = new usuariodb;
         $usuario= $usuarioDB->consultarUsuarioDB($name);
-
+        if($rol=="Trabajador"){
+            $descripcion=$rol;
+        }
         if ($usuario == null){
             $descr= $usuarioDB->consultarRol($rol);
                 if($descr!=null){
@@ -161,7 +163,7 @@ class usuario
 
 //            $ok = false;
 
-        }
+    }
 
 //        $this->llista[] = new Usuari($nom, $pas);
 

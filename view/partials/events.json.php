@@ -15,7 +15,7 @@
 	$e['Clase'] = $all['Clase'];
 	$e['Url'] = $all['Url'];
 	$e['ClienteId'] = $all['ClienteId'];
-	$e['TrabajadorId'] = $all['TrabajadorId']
+	$e['TrabajadorId'] = $all['TrabajadorId'];
 	$result[] = $e;
 	}
 

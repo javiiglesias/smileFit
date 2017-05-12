@@ -13,33 +13,53 @@ class trabajadordb{
     }
 
 
-
     public function consultarTrabajadorDB($trabajador){
         $con = new db();
+
+        if($trabajador== null){
+            $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador order by IdUsuario");
+            $workers = array();
+
+            $resultado=$con->consultarObjectes($query);
+
+            foreach ($resultado as $row) {
+                $id=$row["Id"];
+                $nombre = $row["Nombre"];
+                $apellidos = $row["Apellidos"];
+                $fechaNacimiento = $row["FechaNacimiento"];    
+                $email = $row["Email"];
+                $telefono = $row["Telefono"];    
+                $foto = $row["Foto"]; 
+                $idUsuario = $row["IdUsuario"];   
+                $idRol = $row["IdRol"];  
+                    
+                $worker = new trabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$idUsuario,$idRol);
+                array_push($workers,$worker);
+            }
+            // var_dump($query);
+            // var_dump($worker);
+            return $workers;
+        }else{
         $query=$con->prepare("SELECT nombre,apellidos,fechaNacimiento,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
         $query->bindValue(":trabajador", $trabajador);
         $resultado = $con->consultarObjectes($query);
 
-//        private $id;
-//        private $nombre;
-//        private $apellidos;
-//        private $edad;
-//        private $email;
-//        private $telefono;
-//        private $foto;
-//        private $idUsuario;
-    
+        $query=$con->prepare("SELECT id,nombre,apellidos,fechaNacimiento,email,telefono,foto,idUsuario FROM trabajador WHERE IdUsuario= :trabajador");
+        $query->bindValue(":trabajador", $trabajador);
+        $resultado = $con->consultarObjectes($query);
+
 
         if($resultado){
             $trabajador = $resultado[0];
 
-            return  new trabajador($trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto']);
+            return  new trabajador($trabajador['id'],$trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto'],$trabajador['idUsuario']);
+        }
         }
         return false;      
     }
 
     public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
-        var_dump($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
+       
 
                   $con = new db();     
       $query=$con->prepare("INSERT INTO trabajador (Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdRol,IdUsuario) VALUES (:nombre,:apellidos,:fechaNacimiento,:email,:telefono,:foto,:rol,:idUser)");

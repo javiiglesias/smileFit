@@ -1,4 +1,4 @@
-<?
+<?php
 
 $titlePage = "Crear un nuevo evento";
 
