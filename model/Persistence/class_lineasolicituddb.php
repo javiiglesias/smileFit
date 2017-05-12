@@ -3,107 +3,35 @@ require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class solicituddb{
+class lineasolicituddb{
 
-    private $solicitudes;
+    private $lineasSolicitud;
     public function __construct() {
-        $solicitudes = array();
+        $lineasSolicitud = array();
     }
 
-    public function mostrarSolicitudesPendientesdb($nNoticia){
+    public function mostrarLineasPorIdSolicitudDb($idSolicitud){
         $con = new db();
-        if($nNoticia== null){
-             $query = $con->prepare("SELECT a.Id,a.Descripcion,a.Fecha FROM solicitud AS a INNER JOIN lineasolicitud AS b ON a.Id = b.IdSolicitud WHERE b.IdTrabajdor = NULL");
-        }else{
-                $query = $con->prepare("SELECT * FROM noticias where id=".$nNoticia);
-        }
-        $noticias = array();
+
+        $query = $con->prepare("SELECT a.id,a.descripcion,a.idSolicitud,a.idTrabajador,a.idCliente FROM lineasolicitud as a WHERE a.IdSolicitud =:idSolicitud");
+        $query->bindValue(":idSolicitud", $idSolicitud);
+
+        $lineasSolicitudes = array();
         
         $resultado=$con->consultarObjectes($query);
-      
+
         foreach ($resultado as $row) {
-                $id=$row["Id"];
-                $titulo = $row["Titulo"];
-                $imagen = $row["Imagen"];
-                $descripcion = $row["Descripcion"];    
-                $contenido = $row["Contenido"];             
-                $noticia = new noticia($id,$titulo,$imagen,$descripcion,$contenido);
-                array_push($noticias,$noticia);
+                $id=$row["id"];
+                $descripcion = $row["descripcion"];
+                $idSolicitud = $row["idSolicitud"];
+                $idTrabajador = $row["idTrabajador"];
+                $idCliente = $row["idCliente"];            
+                $lineasSolicitud = new lineasolicitud($id,$descripcion,$idSolicitud,$idTrabajador,$idCliente);
+                array_push($lineasSolicitudes,$lineasSolicitud);
         }
-  
+
         $con = null;
         
-        return $noticias;
+        return $lineasSolicitud;
     }
-
-    // public function consultarSolicitudDB(){
-    //     $con = new db();
-    //     $query=$con->prepare("SELECT id,descripcion,fecha FROM solicitud");
-    //     $resutado = $con->consultarObjectes($query);
-
-
-    //     if($resutado){
-    //         $cliente = $resutado[0];
-
-    //         return  new cliente($cliente['id'], $cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto']);
-    //     }
-
-    //     return false;
-    // }
-
-    // public function setClienteDB($id,$nombre,$apellidos,$edad,$email,$telefono,$foto){
-    //     $con = new db();
-    //     $query=$con->prepare("UPDATE cliente set nombre=:nombre , apellidos=:apellidos , edad=:edad ,email=:email, telefono=:telefono , foto=:foto where id= :cliente");
-    //     $query->bindValue(":cliente", $id);
-    //     $query->bindValue(":nombre", $nombre);
-    //     $query->bindValue(":apellidos", $apellidos);
-    //     $query->bindValue(":edad", $edad);
-    //     $query->bindValue(":email", $email);
-    //     $query->bindValue(":telefono", $telefono);
-    //     $query->bindValue(":foto", $foto);
-    //     $resutado = $con->consulta($query);
-
-    //     if($resutado){
-    //         $cliente = $resutado[0];
-
-    //         return  new cliente($cliente['id'], $cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto']);
-    //     }
-    //     return false;
-
-    // }
-
-    // public function eliminarClienteDB($id){
-    //     $con = new db();
-    //     $query=$con->prepare("DELETE FROM cliente WHERE id=:cliente");
-    //     $query->bindValue(":cliente", $id);
-    //     $resutado = $con->consulta($query);
-
-    //     if($resutado){
-    //        return true;
-    //     }
-    //     return false;
-
-    // }
-
-    // public function añadirClienteDB($nombre,$apellidos,$edad,$email,$telefono,$foto, $idUser){
-
-    //     $con = new db();
-    //     $query=$con->prepare("INSERT INTO cliente(Nombre, Apellidos, Edad, Email, Telefono, Foto, IdUsuario) VALUES (:nombre,:apellidos,:edad,:email,:telefono,:foto,:idUser)");
-
-    //     $query->bindValue(":nombre", $nombre);
-    //     $query->bindValue(":apellidos", $apellidos);
-    //     $query->bindValue(":edad", $edad);
-    //     $query->bindValue(":email", $email);
-    //     $query->bindValue(":telefono", $telefono);
-    //     $query->bindValue(":foto", $foto);
-    //     $query->bindValue(":idUser", $idUser);
-    //     $resutado = $con->consulta($query);
-
-    //     if($resutado){
-    //         $cliente = $resutado[0];
-
-    //         return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
-    //     }
-    //     return false;
-    // }
 }
