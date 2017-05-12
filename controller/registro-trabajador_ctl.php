@@ -12,6 +12,9 @@ if (isset($_REQUEST['Submit'])) {
         $usuario = htmlentities(addslashes($_REQUEST['nuevo_Trabajador']));
     }
     if (isset($_REQUEST['pass']) && isset($_REQUEST['pass2'])) {
+//        if(isset($_REQUEST['pass'])>= ){//Comprobar que su longitud es igual o superior a 4
+//            
+//        }
        if($Usuarios->compPass($_REQUEST['pass'],$_REQUEST['pass2'])){
          $password = htmlentities(addslashes($_REQUEST['pass']));
       

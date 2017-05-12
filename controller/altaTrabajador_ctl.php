@@ -1,4 +1,4 @@
-<?$titlePage = "Alta Trabajador";
+<?php $titlePage = "Alta Trabajador";
 
 require_once 'view/header.php';
 require_once("controller/function_AutoLoad.php");
