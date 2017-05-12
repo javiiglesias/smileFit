@@ -152,15 +152,13 @@ class trabajador{
              $trabajadorDB = new trabajadordb();
       if($idUser==null){
         $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB($idUser);
-        var_dump($arrayTrabajadores);
+        //var_dump($arrayTrabajadores);
         return $arrayTrabajadores;
         } else {
 
             $trabajadorDB = new trabajadordb();
             $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser); 
-            echo "<br>trabajador: ";
-            var_dump($trabajador);
             return $trabajador->getId();
-
+        }
     }
 }
