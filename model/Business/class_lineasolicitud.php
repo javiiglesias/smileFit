@@ -74,8 +74,8 @@ class lineasolicitud{
 
 
     public function muestraLineasPorIdSolicitud($idSolicitud) {
-        $lineasolicitud = new lineasolicituddb;
-        $lineas = $lineasolicitud->mostrarLineasPorIdSolicitudDb($idSolicitud);
+        $lineaSolicitud = new lineasolicituddb;
+        $lineas = $lineaSolicitud->mostrarLineasPorIdSolicitudDb($idSolicitud);
         return $lineas;
     }
 }
