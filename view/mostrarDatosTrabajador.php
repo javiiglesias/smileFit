@@ -19,7 +19,7 @@
                 <span id='email_error' class=errorMsg>Introduce un email válido<br/></span>
                 Telefono:  <input id="telefono" name="telefono" class="form-control" type="text" value="<?php echo $worker->getTelefono() ?>" readonly />
                 <span id='telefono_error' class=errorMsg >Introduce un número de teléfono válido (9 dígitos)<br/></span>
-                Foto:   <img src="<?php echo $worker->getFoto()?>" id="foto" name="foto" alt="" /> <br/>
+                Foto:   <img src="images/<?php echo $worker->getFoto()?>" id="foto" name="foto" alt="" /> <br/>
 
                     <input id="button" class="btn btn-default" onclick="can()" value="Modificar Datos"/> <br/>
                     <input type="submit" id="Submit" class="btn btn-default" name="modificar" value="Guardar Cambios" style="visibility : hidden" />
