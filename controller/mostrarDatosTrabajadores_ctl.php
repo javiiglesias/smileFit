@@ -16,6 +16,7 @@ require_once ('view/header.php');
 $worker=$workers->getTrabajadorPorIdUser();
 
 if($_GET['ctl']!="menu" && $_GET['act']!="admin" ){
+	
     require_once ('view/partials/trabajadores.php');
     require_once ('view/footer.php');
 }
