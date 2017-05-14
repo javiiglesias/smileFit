@@ -13,10 +13,11 @@ class trabajadordb{
     }
 
 
-    public function consultarTrabajadorDB($trabajador){
+    public function consultarTrabajadorDB($trabajador=null){
         $con = new db();
 
         if($trabajador== null){
+
             $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador order by IdUsuario");
             $workers = array();
 
@@ -40,20 +41,16 @@ class trabajadordb{
             // var_dump($worker);
             return $workers;
         }else{
-        $query=$con->prepare("SELECT nombre,apellidos,fechaNacimiento,email,telefono,foto FROM trabajador WHERE IdUsuario= :trabajador");
-        $query->bindValue(":trabajador", $trabajador);
-        $resultado = $con->consultarObjectes($query);
 
-        $query=$con->prepare("SELECT id,nombre,apellidos,fechaNacimiento,email,telefono,foto,idUsuario FROM trabajador WHERE IdUsuario= :trabajador");
-        $query->bindValue(":trabajador", $trabajador);
-        $resultado = $con->consultarObjectes($query);
+            $query=$con->prepare("SELECT id,nombre,apellidos,fechaNacimiento,email,telefono,foto,idUsuario,idRol FROM trabajador WHERE IdUsuario= :trabajador");
+            $query->bindValue(":trabajador", $trabajador);
+            $resultado = $con->consultarObjectes($query);
 
-
-        if($resultado){
-            $trabajador = $resultado[0];
-
-            return  new trabajador($trabajador['id'],$trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto'],$trabajador['idUsuario']);
-        }
+            if($resultado){
+                $trabajador = $resultado[0];
+                
+                return new trabajador($trabajador['id'],$trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto'],$trabajador['idUsuario'],$trabajador['idRol']);
+            }
         }
         return false;      
     }
@@ -74,8 +71,7 @@ class trabajadordb{
         $query->bindValue(":foto", $foto);
         $query->bindValue(":rol", $rol);
            $resultado = $con->consulta($query);
-        var_dump($resultado);
-        echo "hollaaaaaa";
+  
         
         $con = null;
     }
@@ -84,11 +80,8 @@ class trabajadordb{
         $con = new db();
        
         $query=$con->prepare("SELECT Descripcion from rol where id=".$rol);
-        $resultado = $con->consultarObjectes($query);
-        var_dump($resultado);
-      
+        $resultado = $con->consultarObjectes($query);      
         return $resultado;
-
     }
 }
 ?>

@@ -5,15 +5,17 @@ class solicitud{
     private $id;
     private $descripcion;
     private $fecha;
+    private $idRol;
 
     public function __construct()
     {
 
         switch (func_num_args()) {
-            case 3:
+            case 4:
                 $this->setId(func_get_arg(0));
                 $this->setDescripcion(func_get_arg(1));
                 $this->setFecha(func_get_arg(2));
+                $this->setIdRol(func_get_arg(3));
                 break;
         }
     }
@@ -46,41 +48,21 @@ class solicitud{
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
-    }   
+    }  
 
+    public function getIdRol()
+    {
+        return $this->idRol;
+    }
 
-    // public function altaSolicitud($descripcion,$fecha){
-    //     $solicitudDB = new solicituddb(); 
-    //     $solicitud = $trabajadorDB->altaSolicitudDb($descripcion,$fecha); 
-    //     return $solicitud;
-    // }
+    public function setIdRol($idRol)
+    {
+        $this->idRol = $idRol;
+    }
 
-    // public function getSolicitudesPendientes(){
-
-    //     $solicitudDB = new solicituddb();
-    //     $solicitud = $solicitudDB->consultarSolicitudDB($solicitud);
-    //     return $solicitud;
-
-    // }
-
-    // public function setCliente($id,$descripcion,$fecha){
-    //     $solicitudDB= new solicituddb();
-    //     $solicitud = $solicitudDB->setSolicitudDB($id,$descripcion,$fecha);
-    //     return $solicitud;
-
-    // }
-
-    // public function eliminarSolicitud($id){
-    //     $solicitudDB= new solicituddb();
-    //     $solicitud = $solicitudDB->eliminarSolicitudDB($id);
-    //     return $solicitud;
-
-    // }
-
-    public function muestraSolicitudesPendientes($nSolicitud=null) {
+    public function muestraSolicitudesPendientes($idRol, $nSolicitud=null) {
         $solicitud = new solicituddb;
-        $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($nSolicitud);
-
+        $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nSolicitud);
         return $arraySolicitudes;
     }
 }

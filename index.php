@@ -123,10 +123,10 @@ switch ($ctl) {
                 include "controller/mostrarAgenda_ctl.php";
                 break;
             case "mostrarSolicitudes":
-                include "controller/mostrarSolicitudes_ctl.php";
+                include "controller/solicitudes_ctl.php";
                 break;
-            case "asignarSolicitud":
-                include "controller/asignarSolicitud_ctl.php";
+            case "mostrarLineasSolicitud":
+                include "controller/lineasSolicitud_ctl.php";
                 break;
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
