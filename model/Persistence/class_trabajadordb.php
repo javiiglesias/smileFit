@@ -12,10 +12,39 @@ class trabajadordb{
         $trabajadores = array();
     }
 
+    public function getTrabajadoresDb(){
+
+        $con = new db();
+
+        $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador");
+        $workers = array();
+
+        $resultado=$con->consultarObjectes($query);
+
+        foreach ($resultado as $row) {
+            $id=$row["Id"];
+            $nombre = $row["Nombre"];
+            $apellidos = $row["Apellidos"];
+            $fechaNacimiento = $row["FechaNacimiento"];    
+            $email = $row["Email"];
+            $telefono = $row["Telefono"];    
+            $foto = $row["Foto"]; 
+            $idUsuario = $row["IdUsuario"];   
+            $idRol = $row["IdRol"];  
+                
+            $worker = new trabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$idUsuario,$idRol);
+            array_push($workers,$worker);
+        }
+        // var_dump($query);
+        //var_dump($workers);
+        return $workers;
+
+    }
+
 
     public function consultarTrabajadorDB($trabajador=null){
         $con = new db();
-
+        
         if($trabajador== null){
 
             $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador order by IdUsuario");
@@ -38,7 +67,7 @@ class trabajadordb{
                 array_push($workers,$worker);
             }
             // var_dump($query);
-            // var_dump($worker);
+            //var_dump($workers);
             return $workers;
         }else{
 
