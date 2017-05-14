@@ -5,13 +5,13 @@ $titlePage = " Mostrar Mis Datos ";
 
 
 
-$clientes = new cliente();
+$workers = new trabajador();
 
 if(isset($_SESSION["test2"])){
    $rol2= $_SESSION["test2"];
 }
 
-$cliente=$clientes->getCliente($rol2);
+$workers=$workers->getTrabajador($rol2);
 
 
 
