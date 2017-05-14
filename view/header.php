@@ -2,7 +2,9 @@
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<meta charset="UTF-8">
+<script type="text/javascript" src="view/js/jquery.min.js"></script>
    <script src="view/js/test.js"></script>
 
 <script defer src="view/js/jquery.flexslider-min.js"></script>
@@ -26,7 +28,7 @@
 <link href="view/css/estils.css" rel="stylesheet" type="text/css">
 <link href="view/css/prueba.css" rel="stylesheet" type="text/css">
 
-    <title>Guia de continguts</title>
+    <title>Smile Fit S.L</title>
 </head>
 <body>
 <div class="w100">
@@ -37,9 +39,9 @@
   ?>
   <?php if ($titlePage != "Inicio" && $titlePage != "Iniciar Sesión" && $titlePage != "Registrarse") { ?>
     <header class="container-header">
-      <div class="container bgGreenTitle">
-        <h1><?php echo $titlePage ?></h1>
-        <hr class="featurette-divider">
+      <div class="container">
+        <h1 class="bgGreenTitle"><?php echo $titlePage ?></h1>
+<!--        <hr class="featurette-divider">-->
       </div>
     </header>
   <?php } ?>

@@ -79,9 +79,13 @@
                                        <?php if (isset($_SESSION['test']) && $_SESSION['test'] =="administrador") { ?>
                                         <li><a href="?ctl=menu&act=admin"> Ir al Panel de Administracion</a></li>
                                         <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
-                                           <?php }else{ ?>
+                                           <?php }elseif(isset($_SESSION['test']) && $_SESSION['test'] =="cliente"){ ?>
+                                            <li><a href="?ctl=menu&act=cliente"> Ir a mi Panel</a></li>
                                            <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
-                                         <?php } ?>
+                                         <?php }elseif(isset($_SESSION['test']) && $_SESSION['test'] =="Trabajador") { ?>
+                                            <li><a href="?ctl=menu&act=trabajador"> Ir al Panel del Trabajador</a></li>
+                                           <li><a href="?ctl=usuario&act=salir">Cerrar Sesión</a></li>
+                                           <?php } ?>
                                     <?php } else { ?>
                                         <li><a href="?ctl=usuario&act=login">Iniciar Sesión</a></li>
                                         <li><a href="?ctl=usuario&act=registro">Registrarse</a></li>
