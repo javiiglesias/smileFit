@@ -178,4 +178,12 @@ class trabajador{
         $trabajador = $trabajadorDB->consultarTrabajadorDB($idRol);
         return $trabajador->getIdRol();
     }
+      public function setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto){
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->setTrabajadorDB($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
+
+        return $trabajador;
+
+    }
 }

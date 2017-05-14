@@ -83,5 +83,26 @@ class trabajadordb{
         $resultado = $con->consultarObjectes($query);      
         return $resultado;
     }
+    
+    public function setTrabajadorDB($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto){
+        $con = new db();
+        $query=$con->prepare("UPDATE trabajador set nombre=:nombre , apellidos=:apellidos , fechaNacimiento=:fechaNacimiento ,email=:email, telefono=:telefono , foto=:foto where id= :idTrabajador");
+        $query->bindValue(":idTrabajador", $id);
+        $query->bindValue(":nombre", $nombre);
+        $query->bindValue(":apellidos", $apellidos);
+        $query->bindValue(":fechaNacimiento", $fechaNacimiento);
+        $query->bindValue(":email", $email);
+        $query->bindValue(":telefono", $telefono);
+        $query->bindValue(":foto", $foto);
+        $resutado = $con->consulta($query);
+
+        if($resutado){
+            $worker = $resutado[0];
+
+            return  new trabajador($worker['id'], $worker['nombre'], $worker['apellidos'], $worker['fechaNacimiento'], $worker['email'],$worker['telefono'],$worker['foto']);
+        }
+        return false;
+
+    }
 }
 ?>

@@ -15,7 +15,7 @@ $workers = new trabajador();
 require_once ('view/header.php');
 $worker=$workers->getTrabajadorPorIdUser();
 
-require_once ('view/mostrarDatosTrabajador.php');
+require_once ('view/mostrarDatosTrabajadores.php');
 require_once ('view/footer.php');
 
 
