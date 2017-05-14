@@ -1,7 +1,9 @@
 <div id="wrapper">
     <div class="overlay"></div>
 
-    <?include("navigationAdmin.php");?>
+    <?php include("partials/navigationAdmin.php");?>
+     <a href="?ctl=admin&act=visualizarTrabajadores">Visualizar trabajadores</a>
+                  <a href="?ctl=admin&act=altaTrabajador">Alta Trabajadores</a>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
