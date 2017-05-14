@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                 <h1>info trabajadores</h1>
-          <?require_once('partials/contentNews.php');?>
+          <?require_once('partials/mostrarTrabajadores.php');?>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <h1>Aqui podras ver información varia.</h1>
