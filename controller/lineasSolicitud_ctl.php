@@ -22,11 +22,14 @@ if($usuarioRol == 'Trabajador')
 	//buscar idTrabajador para buscar sus eventos
 	$trabajadores = new trabajador();
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
+	$trabajador = $trabajadores->getTrabajador($idUser);	
 
 	//mostrar lineas solicitud
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idTrabajador);
 
+	//$nombreTrabajador=$idTrabajador->getNombre();
+	//var_dump($trabajador->getNombre());
 }
 
 require_once 'view/lineasSolicitud.php';

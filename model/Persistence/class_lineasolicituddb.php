@@ -29,9 +29,8 @@ class lineasolicituddb{
                 $lineasSolicitud = new lineasolicitud($id,$descripcion,$idSolicitud,$idTrabajador,$idCliente);
                 array_push($lineasSolicitudes,$lineasSolicitud);
         }
-
         $con = null;
         
-        return $lineasSolicitud;
+        return $lineasSolicitudes;
     }
 }
