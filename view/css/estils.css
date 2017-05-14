@@ -68,6 +68,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .mAuto{left: 0; margin: auto; position: absolute; right: 0;}
 .prelative{position: relative;}
 .mL15{margin-left: 15px;}
+.mR15{margin-right: 15px;}
 .pT15{padding-top: 15px;padding-bottom: 15px}
 .pB15{padding-bottom: 120px;display: block;}
 .h226{height: 226px;}
