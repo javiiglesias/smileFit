@@ -193,7 +193,7 @@ class trabajador{
 
         return $trabajador;
 
-
+      }
 
     public function getTrabajadorNombreRol($idRol){
 
