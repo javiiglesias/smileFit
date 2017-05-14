@@ -24,7 +24,7 @@ require_once 'view/header.php';
 $workers = new trabajador();
 
 
-$workers->getAllTrabajadores();
+$workers->getTrabajadores();
 $idRol=$workers->getIdRol();
 $nombreRol=$workers->getTrabajadorNombreRol($idRol);
 

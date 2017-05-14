@@ -197,7 +197,7 @@ class trabajador{
 
     public function getTrabajadorNombreRol($idRol){
 
-        $trabajadorDB = new trabajadodb();
+        $trabajadorDB = new trabajadordb();
         $rolDescripcion = $trabajadorDB->consultarRol($idRol);
         return $rolDescripcion;
 
