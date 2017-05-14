@@ -82,12 +82,16 @@ switch ($ctl) {
             case "completa-registro":    
                 include "controller/completa-registro_ctl.php";
                 break;
-            case "detalls":
-                include "controller/detallObra_ctl.php";
+            case "ModificarDatosTrabajador":
+                include "controller/ModificarDatosTrabajador_ctl.php";
                 break;
             case "visualizarTrabajadores":
-                include "controller/mostrarDatosTrabajador_ctl.php";
+                include "controller/mostrarDatosTrabajadores_ctl.php";
                 break;
+            case "MostrarDatos":
+                include "controller/MostrarDatosTrabajador_ctl.php";
+                break;
+            
         }
         break;
 

@@ -186,10 +186,20 @@ class trabajador{
         return $trabajador->getIdRol();
     }
 
+      public function setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto){
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->setTrabajadorDB($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
+
+        return $trabajador;
+
+
+
     public function getTrabajadorNombreRol($idRol){
 
         $trabajadorDB = new trabajadodb();
         $rolDescripcion = $trabajadorDB->consultarRol($idRol);
         return $rolDescripcion;
+
     }
 }
