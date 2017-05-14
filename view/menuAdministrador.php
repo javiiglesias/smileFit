@@ -10,7 +10,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                 <h1>info trabajadores</h1>
-          <?php require_once('partials/trabajadores.php');?>
+
+          <?php/* require_once('partials/trabajadores.php');*/?>
+
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <h1>Aqui debe ir el calendario ( una vez tengamos el de eventos)</h1>
