@@ -1,7 +1,7 @@
 <div id="wrapper">
     <div class="overlay"></div>
 
-    <? require_once("navigationCliente.php"); ?>
+    <?php require_once("partials/navigationCliente.php"); ?>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -9,10 +9,12 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <h1>Info Cliente</h1>
+                <ul>
                 <li><a href="?ctl=cliente&act=AñadirDatos">Añadir Ficha Personal</a></li>
                 <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>
                 <li><a href="?ctl=cliente&act=mostrarAgenda">Visualizar Mi Agenda</a></li>
-                <?require_once('partials/contentNews.php');?>
+                </ul>
+                <?php require_once('partials/contentNews.php');?>
             </div>
             <div class="col-xs-12 col-md-6">
                 <h1>Aqui podras ver información varia.</h1>
