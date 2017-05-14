@@ -16,14 +16,14 @@ class evento
 
         switch (func_num_args()) {
             case 8:
-                $this->setId(null);
-                $this->setDescripcion(func_get_arg(0));
-                $this->setFechaInicio(func_get_arg(1));
-                $this->setFechaFin(func_get_arg(2));
-                $this->setClase(func_get_arg(3));
-                $this->setUrl(func_get_arg(4));
-                $this->setClienteId(func_get_arg(5));
-                $this->setTrabajadorId(func_get_arg(6));
+                $this->setId(func_get_arg(0));
+                $this->setDescripcion(func_get_arg(1));
+                $this->setFechaInicio(func_get_arg(2));
+                $this->setFechaFin(func_get_arg(3));
+                $this->setClase(func_get_arg(4));
+                $this->setUrl(func_get_arg(5));
+                $this->setClienteId(func_get_arg(6));
+                $this->setTrabajadorId(func_get_arg(7));
                 break;
         }      
     }
@@ -144,20 +144,9 @@ class evento
      */
 
     public function getEventosPorTrabajador($idTrabajador){
-
         $evento = new eventosdb;
-        $arrayEventos= $evento->getEventosPorTrabajadordb($idTrabajador);
-        var_dump($arrayEventos);
-        return $arrayEventos;
-    }
-
-
-    public function muestraEvento($nEvento=null) {
-        $evento = new eventosdb;
-        $arrayEventos= $evento->mostrarEventodb($nEvento);
-
-        return $arrayEventos;
-    }
-  
+        $eventos= $evento->getEventosPorTrabajadordb($idTrabajador);
+        return $eventos;
+    }  
 }
 ?>

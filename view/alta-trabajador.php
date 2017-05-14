@@ -15,11 +15,11 @@
                  
                     <div class="form-group">
                         <label>Contraseña:</label>
-                        <input type="password" name="pass"  class="form-control">
+                        <input minlength="4"  type="password" name="pass"  class="form-control">
                     </div>
                        <div class="form-group">
                         <label>Introduce nuevamente una  Contraseña:</label>
-                        <input type="password" name="pass2" class="form-control">
+                        <input minlength="4" type="password" name="pass2" class="form-control">
                     </div>
                     
                     <p><a href="?ctl=usuari&act=login">Iniciar Sesión</a></p>

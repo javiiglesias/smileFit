@@ -12,13 +12,18 @@ if (isset($_REQUEST['Submit'])) {
         $usuario = htmlentities(addslashes($_REQUEST['nuevo_Trabajador']));
     }
     if (isset($_REQUEST['pass']) && isset($_REQUEST['pass2'])) {
+//        if(isset($_REQUEST['pass'])>= ){//Comprobar que su longitud es igual o superior a 4
+//            
+//        }
        if($Usuarios->compPass($_REQUEST['pass'],$_REQUEST['pass2'])){
          $password = htmlentities(addslashes($_REQUEST['pass']));
       
             if ($usuario != null && $password != null) {
-                $rol=$_REQUEST['rol'];
+                $trabajador="Trabajador";
         //        $UsuarisDA0->registrarUsuari($usuari, $clau);
-                $Usuarios->registrarUsuario($usuario, $password,$rol);
+                $Usuarios->registrarUsuario($usuario, $password,$trabajador);
+                $rol=$_REQUEST['rol'];
+                $idUser=$Usuarios->getIDUser($usuario);
                 require_once 'view/header.php';
                 //$mensaje = "Te has registrado correctamente, Puedes iniciar Session";
                 require_once 'view/seguir-registro.php';

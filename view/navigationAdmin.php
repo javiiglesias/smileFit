@@ -14,8 +14,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trabajador <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="#">Visualizar trabajadores</a></li>
-                    <li><a href="?ctl=admin&act=altaTrabajador"">Alta Trabajadores</a></li>
+                    <li><a href="?ctl=admin&act=visualizarTrabajadores">Visualizar trabajadores</a></li>
+                    <li><a href="?ctl=admin&act=altaTrabajador">Alta Trabajadores</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">One more separated link</a></li>

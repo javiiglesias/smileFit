@@ -4,11 +4,12 @@ class trabajador{
     private $id;
     private $nombre;
     private $apellidos;
-    private $edad;
+    private $fechaNacimiento;
     private $email;
     private $telefono;
     private $foto;
     private $idUsuario;
+    private $idRol;
 
     public function __construct()
     {
@@ -18,21 +19,23 @@ class trabajador{
                 $this->setId(null);
                 $this->setNombre(func_get_arg(0));
                 $this->setApellidos(func_get_arg(1));
-                $this->setEdad(func_get_arg(2));
+                $this->setFechaNacimento(func_get_arg(2));
                 $this->setEmail(func_get_arg(3));
                 $this->setTelefono(func_get_arg(4));
                 $this->setFoto(func_get_arg(5));
                 $this->setIdUsuario(null);
+                $this->setIdRol(null);
                 break;
-            case 8:
+            case 9:
                 $this->setId(func_get_arg(0));
                 $this->setNombre(func_get_arg(1));
                 $this->setApellidos(func_get_arg(2));
-                $this->setEdad(func_get_arg(3));
+                $this->setFechaNacimento(func_get_arg(3));
                 $this->setEmail(func_get_arg(4));
                 $this->setTelefono(func_get_arg(5));
                 $this->setFoto(func_get_arg(6));
                 $this->setIdUsuario(func_get_arg(7));
+                 $this->setIdRol(func_get_arg(8));
                 break;
         }
     }
@@ -68,14 +71,14 @@ class trabajador{
         $this->apellidos = $apellidos;
     }
 
-    public function getEdad()
+    public function getFechaNacimento()
     {
-        return $this->edad;
+        return $this->fechaNacimiento;
     }
 
-    public function setEdad($edad)
+    public function setFechaNacimento($fechaNacimiento)
     {
-        $this->edad = $edad;
+        $this->fechaNacimiento = $fechaNacimiento;
     }
 
     public function getEmail()
@@ -117,25 +120,62 @@ class trabajador{
         return $this->idUsuario;
     }
 
+    function getFechaNacimiento() {
+        return $this->fechaNacimiento;
+    }
 
-    public function setIdUsuario($idUsuario)
+    function setFechaNacimiento($fechaNacimiento) {
+        $this->fechaNacimiento = $fechaNacimiento;
+    }
+
+    function getIdRol() {
+        return $this->idRol;
+    }
+
+    function setIdRol($idRol) {
+        $this->idRol = $idRol;
+    }
+
+        public function setIdUsuario($idUsuario)
     {
         $this->idUsuario = $idUsuario;
     }
 
 
-    public function getTrabajador($id){
-        $clienteDB = new clientedb();
-        $cliente = $clienteDB->consultarTrabajadorDB($cliente);
+    public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
+        $trabajadorDB = new trabajadordb();
+        $trabajador = $trabajadorDB->addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
  
-        return $cliente;
+        return $trabajador;
     }
 
-    public function getTrabajadorPorIdUser($idUser){
+    public function getTrabajadorPorIdUser($idUser=null){
         $trabajadorDB = new trabajadordb();
-        $trabajador = $trabajadorDB->consultarTrabajadorPorUserIdDB($idUser); 
-        echo "<br>trabajador: ";
-        var_dump($trabajador);
-        return $trabajador->getId();
+        if($idUser==null){
+            $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
+            return $arrayTrabajadores;
+        } else {
+            $trabajadorDB = new trabajadordb();
+            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+            return $trabajador->getId();
+        }
+    }
+        public function getTrabajador($idUser=null){
+        $trabajadorDB = new trabajadordb();
+        if($idUser==null){
+            $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
+            return $arrayTrabajadores;
+        } else {
+            $trabajadorDB = new trabajadordb();
+            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+            return $trabajador;
+        }
+    }
+
+    public function getTrabajadorRol($idRol){
+
+        $trabajadorDB = new trabajadordb();
+        $trabajador = $trabajadorDB->consultarTrabajadorDB($idRol);
+        return $trabajador->getIdRol();
     }
 }
