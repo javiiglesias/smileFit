@@ -4,5 +4,5 @@
 
 
     </div>
-    <?php include('view/partials/solicitarEntrenamiento.php'); ?>
+    <?php include('view/partials/solicitar.php'); ?>
 </div>

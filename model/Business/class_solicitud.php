@@ -72,4 +72,11 @@ class solicitud{
         $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nSolicitud);
         return $arraySolicitudes;
     }
+
+    public function muestraSolicitudesCliente($idCliente, $nLineasSolicitud=null) {
+        
+        $solicitud = new solicituddb;
+        $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nLineasSolicitud);
+        return $arraySolicitudes;
+    }
 }
