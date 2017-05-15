@@ -39,16 +39,16 @@
 
 
 
-                <form action="?ctl=admmin&act=EliminarTrabajador&param=<?php echo $worker->getId(); ?> "method="post">
+                <form action="?ctl=admmin&act=EliminarTrabajador&param=<?php echo $worker->getId(); ?>" method="post">
                     <input type="submit" id="eliminar" class="btn btn-danger" name="eliminar" value="Dar de baja la cuenta" onclick="window.confirm('¿Estás Seguro que quieres borrar la cuenta?')"/>
                 </form>
             <script type="application/javascript">
 
         function can() {
-        document.getElementsByTagName("input").readOnly=false;
-        
+
+        document.getElementsByTagName("input").readOnly=false;        
         document.getElementById("button").style.visibility='hidden';
-        document.getElementById("Submit").style.visibility='visible';
+        document.getElementById("submit").style.visibility='visible';
 
         }
 
