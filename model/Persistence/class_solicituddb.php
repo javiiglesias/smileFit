@@ -22,7 +22,6 @@ class solicituddb{
 
         if($resutado){
             $solicitud = $resutado[0];
-
             return  new solicitud($solicitud['descripcion'], $solicitud['fecha'], $solicitud['idRol']);
         }
         return false;
