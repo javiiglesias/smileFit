@@ -43,12 +43,10 @@ function isFile(elem){
 }
 function validatorIsFile(str){
     if(!str.length==0){
-        if (/.pdf$/i.test(str.value)){
             return true;
         }else{
             return false;
         }
-    }
 }
 
 function isAlphabet(elem){
