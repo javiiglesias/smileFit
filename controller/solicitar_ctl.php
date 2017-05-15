@@ -16,7 +16,7 @@ if (isset($_REQUEST['solicitar'])){
     $rol=$_REQUEST['rol'];
     $solicitud->altaSolicitud($descripcion,$fecha,$rol);
 
-
+    $lineaSolicitud
 
     $mensaje = "Tu solicitud se ha enviado correctamente, en breves recibiras respuesta";
     require_once 'view/confirmacion.php';
