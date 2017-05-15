@@ -47,7 +47,7 @@ class trabajadordb{
         
         if($trabajador== null){
 
-            $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador order by IdUsuario");
+            $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador order by Id");
             $workers = array();
 
             $resultado=$con->consultarObjectes($query);
@@ -70,18 +70,18 @@ class trabajadordb{
             //var_dump($workers);
             return $workers;
         }else{
-
-            $query=$con->prepare("SELECT id,nombre,apellidos,fechaNacimiento,email,telefono,foto,idUsuario,idRol FROM trabajador WHERE IdUsuario= :trabajador");
+            var_dump($trabajador);
+            $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador WHERE Id= :trabajador");
             $query->bindValue(":trabajador", $trabajador);
             $resultado = $con->consultarObjectes($query);
-
+            var_dump($resultado);
             if($resultado){
                 $trabajador = $resultado[0];
                 
-                return new trabajador($trabajador['id'],$trabajador['nombre'], $trabajador['apellidos'], $trabajador['fechaNacimiento'], $trabajador['email'],$trabajador['telefono'],$trabajador['foto'],$trabajador['idUsuario'],$trabajador['idRol']);
+                return new trabajador($trabajador['Id'],$trabajador['Nombre'], $trabajador['Apellidos'], $trabajador['FechaNacimiento'], $trabajador['Email'],$trabajador['Telefono'],$trabajador['Foto'],$trabajador['IdUsuario'],$trabajador['IdRol']);
             }
         }
-        return false;      
+       return false;      
     }
 
     public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){

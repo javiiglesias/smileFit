@@ -89,7 +89,7 @@ switch ($ctl) {
                 include "controller/mostrarDatosTrabajadores_ctl.php";
                 break;
             case "MostrarDatos":
-                include "controller/MostrarDatosTrabajador_ctl.php";
+                include "controller/gestionaTrabajador_ctl.php";
                 break;
             case "EliminarTrabajador":
                 include "controller/eliminarTrabajador.php";
@@ -116,6 +116,15 @@ switch ($ctl) {
                 break;
             case "AñadirDatos":
                 include "controller/AñadirDatosCliente_ctl.php";
+                break;
+            case "Entrenamiento":
+                include "controller/entrenamiento_ctl.php";
+                break;
+            case "solicitar":
+                include "controller/solicitar_ctl.php";
+                break;
+            case "MostrarSolicitudes":
+                include "controller/solicitudes_ctl.php";
                 break;
         }
         break;

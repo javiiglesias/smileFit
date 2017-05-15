@@ -10,6 +10,23 @@ class solicituddb{
         $solicitudes = array();
     }
 
+    public function altaSolicitudDb($descripcion,$fecha,$idRol){
+
+        $con = new db();
+        $query=$con->prepare("INSERT INTO solicitud(Descripcion, Fecha, IdRol) VALUES (:descripcion,:fecha,:idRol)");
+
+        $query->bindValue(":descripcion", $descripcion);
+        $query->bindValue(":fecha", $fecha);
+        $query->bindValue(":idRol", $idRol);
+        $resutado = $con->consulta($query);
+
+        if($resutado){
+            $solicitud = $resutado[0];
+            return  new solicitud($solicitud['descripcion'], $solicitud['fecha'], $solicitud['idRol']);
+        }
+        return false;
+    }
+
     public function mostrarSolicitudesPendientesdb($idRol,$nSolicitud){
         $con = new db();
         if($nSolicitud== null){

@@ -60,9 +60,23 @@ class solicitud{
         $this->idRol = $idRol;
     }
 
+    public function altaSolicitud($descripcion,$fecha,$idRol){
+
+        $solicitudDB= new solicituddb();
+        $solicitud = $solicitudDB->altaSolicitudDB($descripcion,$fecha,$idRol);
+        return $solicitud;
+    }
+
     public function muestraSolicitudesPendientes($idRol, $nSolicitud=null) {
         $solicitud = new solicituddb;
         $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nSolicitud);
+        return $arraySolicitudes;
+    }
+
+    public function muestraSolicitudesCliente($idCliente, $nLineasSolicitud=null) {
+        
+        $solicitud = new solicituddb;
+        $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nLineasSolicitud);
         return $arraySolicitudes;
     }
 }
