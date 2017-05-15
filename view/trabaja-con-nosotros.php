@@ -42,7 +42,7 @@
                 </div>
             </div>
             <input type="file" id="file" name="file" size="40" class="btn fontBold bcolor font14 mayus bold">
-            <span id='file_error' class=errorMsg>Tienes que seleccionar un archivo (pdf)</span>
+            <span id='file_error' class=errorMsg>Tienes que seleccionar un archivo</span>
             <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 mT10 mB70 mB15 text-center pL0sm">
                 <input type="submit" name="enviar" id="enviar" value="enviar" class="btn fontBold bcolor font14 mayus bold">
             </div>
