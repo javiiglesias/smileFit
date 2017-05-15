@@ -14,10 +14,10 @@ class lineasolicitud{
         switch (func_num_args()) {
             case 5:
                 $this->setId(func_get_arg(0));
-                $this->setIdSolicitud(func_get_arg(1));
-                $this->setIdTrabajador(func_get_arg(2));
-                $this->setIdCliente(func_get_arg(3));
-                $this->setDescripcion(func_get_arg(4));
+                $this->setDescripcion(func_get_arg(1));
+                $this->setIdSolicitud(func_get_arg(2));
+                $this->setIdTrabajador(func_get_arg(3));
+                $this->setIdCliente(func_get_arg(4));
                 break;
         }
     }
@@ -34,32 +34,32 @@ class lineasolicitud{
 
     public function getIdSolicitud()
     {
-        return $this->solicitud;
+        return $this->idSolicitud;
     }
 
-    public function setIdSolicitud($fecha)
+    public function setIdSolicitud($idSolicitud)
     {
-        $this->solicitud = $solicitud;
+        $this->idSolicitud = $idSolicitud;
     } 
 
     public function getIdTrabajador()
     {
-        return $this->trabajador;
+        return $this->idTrabajador;
     }
 
-    public function setTrabajador($trabajador)
+    public function setIdTrabajador($idTrabajador)
     {
-        $this->trabajador = $trabajador;
+        $this->idTrabajador = $idTrabajador;
     } 
 
     public function getIdCliente()
     {
-        return $this->cliente;
+        return $this->idCliente;
     }
 
-    public function setIdCliente($cliente)
+    public function setIdCliente($idCliente)
     {
-        $this->cliente = $cliente;
+        $this->idCliente = $idCliente;
     } 
 
     public function getDescripcion()
@@ -73,10 +73,16 @@ class lineasolicitud{
     }  
 
 
-    public function muestraLineaSolicitud($idSolicitud) {
-        $lineasolicitud = new lineasolicituddb;
-        $lineas = $lineasolicitud->mostrarLineasSolicituddb($idSolicitud);
+    public function altaLineaSolicitud($idSolicitud,$idTrabajador,$idCliente,$descripcion){
 
+        $lineaSolicitudDB= new lineasolicituddb();
+        $lineaSolicitud = $lineaSolicitudDB->altaLineaSolicitudDB($idSolicitud,$idTrabajador,$idCliente,$descripcion);
+        return $lineaSolicitud;
+    }
+
+    public function muestraLineasPorIdSolicitud($idSolicitud) {
+        $lineaSolicitud = new lineasolicituddb;
+        $lineas = $lineaSolicitud->mostrarLineasPorIdSolicitudDb($idSolicitud);
         return $lineas;
     }
 }

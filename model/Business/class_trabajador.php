@@ -9,7 +9,7 @@ class trabajador{
     private $telefono;
     private $foto;
     private $idUsuario;
-     private $idRol;
+    private $idRol;
 
     public function __construct()
     {
@@ -24,6 +24,7 @@ class trabajador{
                 $this->setTelefono(func_get_arg(4));
                 $this->setFoto(func_get_arg(5));
                 $this->setIdUsuario(null);
+                $this->setIdRol(null);
                 break;
             case 9:
                 $this->setId(func_get_arg(0));
@@ -34,7 +35,7 @@ class trabajador{
                 $this->setTelefono(func_get_arg(5));
                 $this->setFoto(func_get_arg(6));
                 $this->setIdUsuario(func_get_arg(7));
-                 $this->setIdUsuario(func_get_arg(8));
+                 $this->setIdRol(func_get_arg(8));
                 break;
         }
     }
@@ -123,12 +124,12 @@ class trabajador{
         return $this->fechaNacimiento;
     }
 
-    function getIdRol() {
-        return $this->idRol;
-    }
-
     function setFechaNacimiento($fechaNacimiento) {
         $this->fechaNacimiento = $fechaNacimiento;
+    }
+
+    function getIdRol() {
+        return $this->idRol;
     }
 
     function setIdRol($idRol) {
@@ -141,6 +142,12 @@ class trabajador{
     }
 
 
+    public function getTrabajadores(){
+        $trabajadorDB = new trabajadordb();
+        $trabajadores = $trabajadorDB->getTrabajadoresDb();
+        return $trabajadores;
+    }    
+
     public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
         $trabajadorDB = new trabajadordb();
         $trabajador = $trabajadorDB->addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
@@ -149,16 +156,73 @@ class trabajador{
     }
 
     public function getTrabajadorPorIdUser($idUser=null){
-             $trabajadorDB = new trabajadordb();
-      if($idUser==null){
-        $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB($idUser);
-        //var_dump($arrayTrabajadores);
-        return $arrayTrabajadores;
+        $trabajadorDB = new trabajadordb();
+        if($idUser==null){
+            $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
+            return $arrayTrabajadores;
         } else {
-
             $trabajadorDB = new trabajadordb();
-            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser); 
+            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
             return $trabajador->getId();
         }
+    }
+    
+    public function getTrabajador($idUser=null){
+        $trabajadorDB = new trabajadordb();
+        if($idUser==null){
+            $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
+            return $arrayTrabajadores;
+        } else {
+            $trabajadorDB = new trabajadordb();
+            $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+            var_dump($trabajador);
+            return $trabajador;
+        }
+    }
+
+    public function getTrabajadorRol($idRol){
+
+        $trabajadorDB = new trabajadordb();
+        $trabajador = $trabajadorDB->consultarTrabajadorDB($idRol);
+        return $trabajador->getIdRol();
+    }
+
+      public function setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto){
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->setTrabajadorDB($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
+
+        return $trabajador;
+
+      }
+
+    public function getTrabajadorNombreRol($idRol){
+
+        $trabajadorDB = new trabajadordb();
+        $rolDescripcion = $trabajadorDB->consultarRol($idRol);
+        return $rolDescripcion;
+
+    }
+
+    public function eliminarTrabajador($id){
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->eliminarTrabajadorDB($id);
+
+        return $trabajador;
+
+    }
+
+    public function eliminarTrabajadorDB($id){
+        $con = new db();
+        $query=$con->prepare("DELETE FROM trabajador WHERE id=:trabajador");
+        $query->bindValue(":trabajador", $id);
+        $resutado = $con->consulta($query);
+
+        if($resutado){
+           return true;
+        }
+        return false;
+
     }
 }

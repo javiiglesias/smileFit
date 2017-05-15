@@ -82,12 +82,19 @@ switch ($ctl) {
             case "completa-registro":    
                 include "controller/completa-registro_ctl.php";
                 break;
-            case "detalls":
-                include "controller/detallObra_ctl.php";
+            case "ModificarDatosTrabajador":
+                include "controller/ModificarDatosTrabajador_ctl.php";
                 break;
             case "visualizarTrabajadores":
-                include "controller/mostrarDatosTrabajador_ctl.php";
+                include "controller/mostrarDatosTrabajadores_ctl.php";
                 break;
+            case "MostrarDatos":
+                include "controller/gestionaTrabajador_ctl.php";
+                break;
+            case "EliminarTrabajador":
+                include "controller/eliminarTrabajador.php";
+                break;
+
         }
         break;
 
@@ -110,6 +117,12 @@ switch ($ctl) {
             case "AñadirDatos":
                 include "controller/AñadirDatosCliente_ctl.php";
                 break;
+            case "Entrenamiento":
+                include "controller/entrenamiento_ctl.php";
+                break;
+            case "solicitarEntrenamiento":
+                include "controller/solicitarEntrenamiento_ctl.php";
+                break;
         }
         break;
 
@@ -123,10 +136,10 @@ switch ($ctl) {
                 include "controller/mostrarAgenda_ctl.php";
                 break;
             case "mostrarSolicitudes":
-                include "controller/mostrarSolicitudes_ctl.php";
+                include "controller/solicitudes_ctl.php";
                 break;
-            case "asignarSolicitud":
-                include "controller/asignarSolicitud_ctl.php";
+            case "mostrarLineasSolicitud":
+                include "controller/lineasSolicitud_ctl.php";
                 break;
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
