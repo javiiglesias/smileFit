@@ -14,6 +14,13 @@ function formValidator() {
 
     var validation = true;
 
+    if(document.getElementById('file')){
+        var fichero = document.getElementById('file');
+        if (!isFile(fichero)) {
+            validation = false;
+        }
+    }
+
     if (!isAlphabet(poblacio)) {
         validation = false;
     }
@@ -27,6 +34,21 @@ function formValidator() {
         validation = false;
     }
     return validation;
+}
+
+function isFile(elem){
+    var resultat=validatorIsFile(elem.value);
+    marcaError(elem, resultat);
+    return resultat;
+}
+function validatorIsFile(str){
+    if(!str.length==0){
+        if (/.pdf$/i.test(str.value)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 function isAlphabet(elem){
