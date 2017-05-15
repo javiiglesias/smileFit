@@ -38,7 +38,7 @@
                         <?php if ($titlePage == "Entrenamientos") { ?>
                             <li class="active"><a href="?ctl=entrenamientos">Entrenamientos</a></li>
                         <?php } else { ?>
-                            <li><a href="?ctl=entrenamientos">Entrenamientos</a></li>
+                            <li><a href="?ctl=solicitarEntrenamiento">Entrenamientos</a></li>
                         <?php } ?>
                         <?php if ($titlePage == "Noticias") { ?>
                             <li class="active"><a href="?ctl=noticias">Noticias</a></li>
