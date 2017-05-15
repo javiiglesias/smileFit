@@ -5,7 +5,7 @@ $worker= new trabajador();
 
 
 if (isset($_REQUEST['modificar'])){
-    $id= $_REQUEST['id'];
+    $id= $_REQUEST['param'];
     $nombre = $_REQUEST['name'];
     $apellidos=$_REQUEST['lastname'];
     $fechaNacimiento=$_REQUEST['fechaNacimiento'];
@@ -13,7 +13,7 @@ if (isset($_REQUEST['modificar'])){
     $telefono=$_REQUEST['telefono'];
     $foto=$_REQUEST['foto'];
     $worker->setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
-    header('Location: index.php?ctl=admin&act=MostrarDatos');
+    header('Location: index.php?ctl=admin&act=MostrarDatos&param='.$id);
 }
 
 

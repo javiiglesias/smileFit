@@ -1,5 +1,7 @@
 <?php require_once("controller/mostrarDatosTrabajadores_ctl.php");?>
-<?php foreach ($worker as $trabajador): ?>
+
+    
+    <?php foreach ($worker as $trabajador): ?>
    
     <div class="mTB30 targetaUsuario col-xs-12">  
             <div class="col-sm-4 col-xs-12">
@@ -25,8 +27,9 @@
               
                 <a  class="btn btn-success" href="?ctl=admin&act=MostrarDatos&param=<?php echo $trabajador->getId(); ?>" >Modificar</a>
             </div>
-    </div>
+  
 
    
 
 <?php endforeach; ?>
+</div>

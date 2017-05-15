@@ -213,16 +213,5 @@ class trabajador{
 
     }
 
-    public function eliminarTrabajadorDB($id){
-        $con = new db();
-        $query=$con->prepare("DELETE FROM trabajador WHERE id=:trabajador");
-        $query->bindValue(":trabajador", $id);
-        $resutado = $con->consulta($query);
-
-        if($resutado){
-           return true;
-        }
-        return false;
-
-    }
+    
 }
