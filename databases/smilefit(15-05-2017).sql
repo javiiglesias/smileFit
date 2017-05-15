@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Temps de generació: 15-05-2017 a les 16:31:54
+-- Temps de generació: 15-05-2017 a les 16:47:06
 -- Versió del servidor: 10.1.10-MariaDB
 -- Versió de PHP: 7.0.2
 
@@ -465,7 +465,9 @@ ALTER TABLE `diadieta`
 -- Index de la taula `dieta`
 --
 ALTER TABLE `dieta`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idTrabajador` (`idTrabajador`);
 
 --
 -- Index de la taula `ejercicio`
@@ -484,7 +486,9 @@ ALTER TABLE `empresa`
 -- Index de la taula `entrenamiento`
 --
 ALTER TABLE `entrenamiento`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IdCliente` (`IdCliente`),
+  ADD KEY `IdTrabajador` (`IdTrabajador`);
 
 --
 -- Index de la taula `eventos`
@@ -682,6 +686,13 @@ ALTER TABLE `diadieta`
 --
 ALTER TABLE `ejercicio`
   ADD CONSTRAINT `ejercicio_ibfk_1` FOREIGN KEY (`IdTipoEjercicio`) REFERENCES `tipoejercicio` (`Id`) ON DELETE CASCADE;
+
+--
+-- Restriccions per la taula `entrenamiento`
+--
+ALTER TABLE `entrenamiento`
+  ADD CONSTRAINT `entrenamiento_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`Id`),
+  ADD CONSTRAINT `entrenamiento_ibfk_2` FOREIGN KEY (`IdTrabajador`) REFERENCES `trabajador` (`Id`);
 
 --
 -- Restriccions per la taula `fichamedica`
