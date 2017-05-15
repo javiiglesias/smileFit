@@ -1,16 +1,16 @@
-
+    <?require_once("controller/solicitarEntrenamiento_ctl.php");?>
         <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-5">
             <img src="view/images/Logo.png" class="img-responsive img-Logologin">
         </div>
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
-                <form action="?ctl=usuario&act=altaSolicitud" method="post">
+                <form action="?ctl=cliente&act=solicitarEntrenamiento" method="post">
                     
                     <span> <? if(isset($error)){echo $error;}?></span>
                     <hidden></hidden>
                     <div class="form-group space-top">
                         <label>Descripción Entrenamiento</label>
-                        <input type="text" name="descripcionEntrenamiento" class="form-control" placeholder="Describe entrenamiento a realizar">
+                        <input type="text" name="descripcionEntrenamiento" class="form-control" placeholder="Descripción">
                     </div>                 
                     <div class="form-group">
                         <label>Fecha inicio del entrenamiento:</label>

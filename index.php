@@ -117,6 +117,9 @@ switch ($ctl) {
             case "AñadirDatos":
                 include "controller/AñadirDatosCliente_ctl.php";
                 break;
+            case "Entrenamiento":
+                include "controller/entrenamiento_ctl.php";
+                break;
             case "solicitarEntrenamiento":
                 include "controller/solicitarEntrenamiento_ctl.php";
                 break;

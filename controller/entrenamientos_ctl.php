@@ -2,7 +2,7 @@
 
 ob_start();
 
-$titlePage = "Solicitar Entrenamiento";
+$titlePage = "Entrenamientos";
 
 require_once 'view/header.php';
 
@@ -12,9 +12,7 @@ if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
 }
 
-
-
-require_once 'view/solicitarEntrenamiento.php';
+require_once 'view/entrenamientos.php';
 
 require_once 'view/footer.php';
 
