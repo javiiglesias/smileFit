@@ -175,6 +175,7 @@ class trabajador{
         } else {
             $trabajadorDB = new trabajadordb();
             $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+            var_dump($trabajador);
             return $trabajador;
         }
     }

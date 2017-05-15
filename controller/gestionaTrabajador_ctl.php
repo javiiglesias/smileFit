@@ -7,16 +7,16 @@ $titlePage = " Mostrar Mis Datos ";
 
 $workers = new trabajador();
 
-if(isset($_SESSION["test2"])){
-   $rol2= $_SESSION["test2"];
-}
 
-$workers=$workers->getTrabajador($rol2);
+   $idUser= $_REQUEST['param'] ;
+
+
+$worker=$workers->getTrabajador($idUser);
 
 
 
 require_once 'view/header.php';
-require_once 'view/mostrarDatosCliente.php';
+require_once 'view/mostrarDatosTrabajador.php';
 require_once 'view/footer.php';
 
 
