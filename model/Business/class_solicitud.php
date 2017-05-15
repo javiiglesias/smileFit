@@ -63,11 +63,8 @@ class solicitud{
     public function altaSolicitud($descripcion,$fecha,$idRol){
 
         $solicitudDB= new solicituddb();
-
         $solicitud = $solicitudDB->altaSolicitudDB($descripcion,$fecha,$idRol);
-
         return $solicitud;
-
     }
 
     public function muestraSolicitudesPendientes($idRol, $nSolicitud=null) {
