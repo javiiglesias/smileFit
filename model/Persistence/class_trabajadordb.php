@@ -110,7 +110,7 @@ class trabajadordb{
         $query->bindValue(":telefono", $telefono);
         $query->bindValue(":foto", $foto);
         $query->bindValue(":rol", $rol);
-           $resultado = $con->consulta($query);
+        $resultado = $con->consulta($query);
   
         
         $con = null;
