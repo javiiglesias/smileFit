@@ -12,6 +12,13 @@ class solicitud{
     {
 
         switch (func_num_args()) {
+            case 4:
+                $this->setId(func_get_arg(null));
+                $this->setTitulo(func_get_arg(0));
+                $this->setDescripcion(func_get_arg(1));
+                $this->setFecha(func_get_arg(2));
+                $this->setIdRol(func_get_arg(3));
+                break;
             case 5:
                 $this->setId(func_get_arg(0));
                 $this->setTitulo(func_get_arg(1));
@@ -75,6 +82,7 @@ class solicitud{
     public function altaSolicitud($titulo,$descripcion,$fecha,$idRol){
 
         $solicitudDB= new solicituddb();
+        $solicitud=array();
         $solicitud = $solicitudDB->altaSolicitudDB($titulo,$descripcion,$fecha,$idRol);
         return $solicitud;
     }
