@@ -2,7 +2,7 @@
 ob_start();
 require_once("controller/function_AutoLoad.php");
 //require_once ("../model/Business/class_usuario.php");
-$titlePage = "Iniciar Sesion";
+$titlePage = " ";
 $Usuarios = new usuario();
 if (isset($_REQUEST['recordarUsuario'])) {
     setcookie("usuario", $_REQUEST['usuario'], time() + 3600, "/");
@@ -17,8 +17,12 @@ if (isset($_REQUEST['Submit'])) {
     $password = htmlentities(addslashes($_REQUEST['pass']));
     $usuarioValidado = $Usuarios->validateUser($usuario, $password);
     if ($usuarioValidado == true) {
+        $rol= $Usuarios->getUser($usuario,$password);
+        $rol2=$Usuarios->getIDUser($usuario,$password);
         $_SESSION["login"] = true;
         $_SESSION["usuario"] = $usuario;
+        $_SESSION["test"]=$rol;
+        $_SESSION["test2"]=$rol2;
         header("Location: index.php");
     } else {
         $_SESSION["usuario"] = "";

@@ -80,13 +80,19 @@ class usuario
         $this->Descripcion = $Descripcion;
     }
     public function validateUser($name, $pass) {
-        $usuario = new usuariodb;
-        $arrayUsuarios= $usuario->consultarUsuariosdb($name, $pass);
-        $ok = false;
-        $numero_registro=$arrayUsuarios->rowCount();
-        if($numero_registro!=0){
-            $ok = true;
+        $usuarioDB = new usuariodb;
+        $usuario= $usuarioDB->consultarUsuarioDB($name);
+
+        if ($usuario->getPassword() == $pass){
+            return true;
         }else{
+
+        //$usuario= $usuarioDB->consultarUsuariosdb($name, $pass);
+        //$ok = false;
+
+        //if($usuario!=null){
+        //    $ok = true;
+        //}else{
             header("location:index.php?ctl=usuario&act=login");
         }
 //        foreach ($arrayUsuaris as $usuari) {
@@ -95,24 +101,71 @@ class usuario
 //                $ok = true;
 //            }
 //        }
-        return $ok;
     }
-    function registrarUsuario($name, $pass) {
-        $usuario = new usuariodb;
-        $arrayUsuarios= $usuario->consultarUsuariosdb($name);
-        $ok = false;
-        $numero_registro=$arrayUsuarios->rowCount();
-        if($numero_registro==0){
-            $ok = true;
-            $arrayUsuarios= $usuario->insertarUsuariosdb($name, $pass);
+    public function getUser($name){
+        $usuarioDB = new usuariodb;
+        $user = $usuarioDB->consultarUsuarioDB($name);
+        return $user->getDescripcion();
+    }
+    public function getUserPorId($id){
+        $usuarioDB = new usuariodb;
+        $user = $usuarioDB->consultarUsuarioPorIdDB($id);
+        return $user->getDescripcion();
+    }
+    public function getIDUser($name){
+        $usuarioDB = new usuariodb;
+        $user = $usuarioDB->consultarUsuarioDB($name);
+        return $user->getId();
+    }
+
+
+    /*Metodo para comparar si los paswords introducidos en el registro de los diferentes tipos de usuarios, es igual
+      Devuelve true o false */
+
+    function compPass($pass,$pass2){
+        if($pass == $pass2){
+            return true;
         }else{
+            return false;
+        }
+    }
+
+    function registrarUsuario($name, $pass,$rol=null) {
+        $descripcion=null;
+        $usuarioDB = new usuariodb;
+        $usuario= $usuarioDB->consultarUsuarioDB($name);
+        if($rol=="Trabajador"){
+            $descripcion=$rol;
+        }
+        if ($usuario == null){
+            $descr= $usuarioDB->consultarRol($rol);
+                if($descr!=null){
+            $descripcion=implode($descr[0]);
+
+        }
+            
+        
+            $usuarioDB->insertarUsuariosdb($name, $pass,$descripcion);
+            return true;
+        }else {
             header("location:index.php?ctl=usuario&act=registro");
+        }
+
+//        $usuarioDB = new usuariodb;
+//        $usuario= $usuarioDB->consultarUsuarioDB($name);
+//        if($usuario->getPassword() == $pass){
+//            h
+//
+//        }else{
+//
+//            return true;
+//
 
 //            $ok = false;
 
-        }
-        return $ok;
-//        $this->llista[] = new Usuari($nom, $pas);
     }
+
+//        $this->llista[] = new Usuari($nom, $pas);
+
 }
 ?>

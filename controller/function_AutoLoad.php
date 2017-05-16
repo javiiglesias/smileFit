@@ -4,8 +4,8 @@ function __autoload($class_name) {
     $root = $_SERVER['DOCUMENT_ROOT'];
     $curdir = getcwd();
 
-    chdir("$root/M12/smileFit");
-
+    chdir("$root/M12/smileFit/");
+/**/
     $nomFile = "class_" . $class_name . ".php";
     $arxiuPersistence = "model/Persistence/" . $nomFile;
     $arxiuBusiness = "model/Business/" . $nomFile;
