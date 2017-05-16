@@ -70,11 +70,11 @@ class trabajadordb{
             //var_dump($workers);
             return $workers;
         }else{
-            var_dump($trabajador);
+            
             $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador WHERE Id= :trabajador");
             $query->bindValue(":trabajador", $trabajador);
             $resultado = $con->consultarObjectes($query);
-            var_dump($resultado);
+            
             if($resultado){
                 $trabajador = $resultado[0];
                 
@@ -83,7 +83,18 @@ class trabajadordb{
         }
        return false;      
     }
+ public function eliminarTrabajadorDB($id){
+        $con = new db();
+        $query=$con->prepare("DELETE FROM trabajador WHERE id=:trabajador");
+        $query->bindValue(":trabajador", $id);
+        $resutado = $con->consulta($query);
 
+        if($resutado){
+           return true;
+        }
+        return false;
+
+    }
     public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
        
 
@@ -99,7 +110,7 @@ class trabajadordb{
         $query->bindValue(":telefono", $telefono);
         $query->bindValue(":foto", $foto);
         $query->bindValue(":rol", $rol);
-           $resultado = $con->consulta($query);
+        $resultado = $con->consulta($query);
   
         
         $con = null;

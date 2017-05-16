@@ -3,6 +3,7 @@ require_once("controller/function_AutoLoad.php");
 
 class solicitud{
     private $id;
+    private $titulo;
     private $descripcion;
     private $fecha;
     private $idRol;
@@ -12,10 +13,18 @@ class solicitud{
 
         switch (func_num_args()) {
             case 4:
-                $this->setId(func_get_arg(0));
+                $this->setId(func_get_arg(null));
+                $this->setTitulo(func_get_arg(0));
                 $this->setDescripcion(func_get_arg(1));
                 $this->setFecha(func_get_arg(2));
                 $this->setIdRol(func_get_arg(3));
+                break;
+            case 5:
+                $this->setId(func_get_arg(0));
+                $this->setTitulo(func_get_arg(1));
+                $this->setDescripcion(func_get_arg(2));
+                $this->setFecha(func_get_arg(3));
+                $this->setIdRol(func_get_arg(4));
                 break;
         }
     }
@@ -28,6 +37,16 @@ class solicitud{
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
     }
 
     public function getDescripcion()
@@ -60,19 +79,24 @@ class solicitud{
         $this->idRol = $idRol;
     }
 
-    public function altaSolicitud($descripcion,$fecha,$idRol){
+    public function altaSolicitud($titulo,$descripcion,$fecha,$idRol){
 
         $solicitudDB= new solicituddb();
-
-        $solicitud = $solicitudDB->altaSolicitudDB($descripcion,$fecha,$idRol);
-
+        $solicitud=array();
+        $solicitud = $solicitudDB->altaSolicitudDB($titulo,$descripcion,$fecha,$idRol);
         return $solicitud;
-
     }
 
     public function muestraSolicitudesPendientes($idRol, $nSolicitud=null) {
         $solicitud = new solicituddb;
         $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nSolicitud);
+        return $arraySolicitudes;
+    }
+
+    public function muestraSolicitudesCliente($idCliente, $nLineasSolicitud=null) {
+        
+        $solicitud = new solicituddb;
+        $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nLineasSolicitud);
         return $arraySolicitudes;
     }
 }

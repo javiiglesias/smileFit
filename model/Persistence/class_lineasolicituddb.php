@@ -10,7 +10,7 @@ class lineasolicituddb{
         $lineasSolicitud = array();
     }
 
-    public function altaSolicitudDb($idSolicitud,$idTrabajador,$idCliente,$descripcion){
+    public function altaLineaSolicitudDb($idSolicitud,$idTrabajador,$idCliente,$descripcion){
 
         $con = new db();
         $query=$con->prepare("INSERT INTO lineasolicitud(IdSolicitud,IdTrabajador,IdCliente,Descripcion) VALUES (:idSolicitud,:idTrabajador,:idCliente,:descripcion)");
