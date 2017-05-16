@@ -5,7 +5,7 @@ function __autoload($class_name) {
     $curdir = getcwd();
 
     chdir("$root/M12/smileFit/");
-
+/**/
     $nomFile = "class_" . $class_name . ".php";
     $arxiuPersistence = "model/Persistence/" . $nomFile;
     $arxiuBusiness = "model/Business/" . $nomFile;

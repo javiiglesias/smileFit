@@ -19,12 +19,11 @@ class solicituddb{
         $query->bindValue(":descripcion", $descripcion);
         $query->bindValue(":fecha", $fecha);
         $query->bindValue(":idRol", $idRol);
-        $resutado = $con->consultar($query);
-
+        $resutado = $con->consulta($query);
+        var_dump($resutado);
         if($resutado){
-            $solicitud = $resutado[0];
-            
-            return  new solicitud($solicitud['titulo'], $solicitud['descripcion'], $solicitud['fecha'], $solicitud['idRol']);
+       
+            return  new solicitud($titulo, $descripcion, $fecha, $idRol);
         }
         return false;
     }
