@@ -10,6 +10,24 @@ class lineasolicituddb{
         $lineasSolicitud = array();
     }
 
+    public function altaSolicitudDb($idSolicitud,$idTrabajador,$idCliente,$descripcion){
+
+        $con = new db();
+        $query=$con->prepare("INSERT INTO lineasolicitud(IdSolicitud,IdTrabajador,IdCliente,Descripcion) VALUES (:idSolicitud,:idTrabajador,:idCliente,:descripcion)");
+        $query->bindValue(":idSolicitud", $idSolicitud);
+        $query->bindValue(":idTrabajador", $idTrabajador);
+        $query->bindValue(":idCliente", $idCliente);
+        $query->bindValue(":descripcion", $descripcion);
+        $resutado = $con->consulta($query);
+
+        if($resutado){
+            $lineaSolicitud = $resutado[0];
+
+            return  new lineasolicitud($lineaSolicitud['idSolicitud'],$lineaSolicitud['idTrabajador'],$lineaSolicitud['idCliente'],$lineaSolicitud['descripcion']);
+        }
+        return false;
+    }
+
     public function mostrarLineasPorIdSolicitudDb($idSolicitud){
         $con = new db();
 

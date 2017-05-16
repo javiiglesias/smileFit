@@ -73,6 +73,13 @@ class lineasolicitud{
     }  
 
 
+    public function altaLineaSolicitud($idSolicitud,$idTrabajador,$idCliente,$descripcion){
+
+        $lineaSolicitudDB= new lineasolicituddb();
+        $lineaSolicitud = $lineaSolicitudDB->altaLineaSolicitudDB($idSolicitud,$idTrabajador,$idCliente,$descripcion);
+        return $lineaSolicitud;
+    }
+
     public function muestraLineasPorIdSolicitud($idSolicitud) {
         $lineaSolicitud = new lineasolicituddb;
         $lineas = $lineaSolicitud->mostrarLineasPorIdSolicitudDb($idSolicitud);
