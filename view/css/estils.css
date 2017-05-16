@@ -18,6 +18,7 @@ h1{font-family: 'Gloria Hallelujah', cursive !important;}
 .recuadro {-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
+.fz20{font-size: 20px;}
 /*-----------------*/
 /*   BackGrounds */
 /*----------------*/
@@ -67,6 +68,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .mB50{margin-bottom: 50px;}
 .mTB30{    margin-top: 30px;margin-bottom: 30px;}
 .mAuto{left: 0; margin: auto; position: absolute; right: 0;}
+.marginAutoInlineBlock{margin: 0 auto;display: inline-block;}
 .prelative{position: relative;}
 .mL15{margin-left: 15px;}
 .mR15{margin-right: 15px;}
