@@ -28,7 +28,9 @@ if (isset($_REQUEST['solicitar'])){
     $idSolicitud = $sol->getId();
     //var_dump($idSolicitud);
     //buscar idCliente para buscar sus solicitudes
-	$idCliente = $clientes->getCliente($idUser);
+	$cli = $clientes->getCliente($idUser);
+    $idCliente = $cli->getId();
+
 	//var_dump($idCliente);
     $lin = $lineaSolicitud->altaLineaSolicitud($descripcion,$idSolicitud,$idTrabajador=null,$idCliente);
 
