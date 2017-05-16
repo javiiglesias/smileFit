@@ -5,8 +5,9 @@
                 
         <div class="col-xs-12 col-md-9 col-sm-6 col-lg-8pB35 h115 mB15">
             <a href="?ctl=trabajador&act=mostrarLineasSolicitud&param=<?php echo $solicitudes->getId();?>" >
-                <h3> <?php echo $solicitudes->getDescripcion();?></h3><br>
+                <h3><?php echo $solicitudes->getTitulo();?></h3><br>
             </a>
+            <span class="lite fz13"><?php echo $solicitudes->getDescripcion();?></span><br>
             <span class="lite fz13"><?php echo $solicitudes->getFecha();?></span><br>
         </div>
     </div>
