@@ -39,6 +39,7 @@
                         <span id='telf_error' class=errorMsg >Introduce un telefpmp valido (9 numeros)</span>
                     </div>
                     <div class="form-group"  id='fechaNacimiento'>
+
                         <label>fecha de nacimiento</label>
                         <input type='text' id="fechaNacimiento" name="fechaNacimiento" class="form-control"  />
                         <span id='fechaNacimiento_error' class=errorMsg >Introduce una fecha valida (YYYY/MM/DD)</span>
