@@ -143,9 +143,15 @@ class evento
      * @return mixed
      */
 
-    public function getEventosPorTrabajador($idTrabajador){
+    // public function getEventosPorTrabajador($idTrabajador){
+    //     $evento = new eventosdb;
+    //     $eventos= $evento->getEventosPorTrabajadordb($idTrabajador);
+    //     return $eventos;
+    // }  
+
+    public function getEventos($date){
         $evento = new eventosdb;
-        $eventos= $evento->getEventosPorTrabajadordb($idTrabajador);
+        $eventos= $evento->getEvents($date);
         return $eventos;
     }  
 }
