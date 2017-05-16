@@ -13,7 +13,7 @@
             </div>
             <div class="col-xs-12 col-sm-6 bgdada ">
                 <input name="id" type="hidden" class="form-control" value="<?php echo $trabajador->getId(); ?>" />
-               <?php var_dump($trabajador)?>
+      
                 <span>Nombre:</span><br>
                     <input id="name" name="name" class="form-control" type="text" value="<?php echo $trabajador->getNombre() ?>" readonly />
                
@@ -30,6 +30,5 @@
   
 
    
-
-<?php endforeach; ?>
 </div>
+<?php endforeach; ?>
