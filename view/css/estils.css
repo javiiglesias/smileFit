@@ -1,6 +1,7 @@
 html,body{padding: 0 0 0px;margin: 0;font-family: 'Muli', sans-serif;}
+.bgPrin{background-image: url("../images/original.png"); background-position: center;background-size: cover;background-repeat: no-repeat;background-attachment: fixed; }
 footer{width: 100%;bottom: 0; margin-top: 15px}
-
+.bgprinop{background-color: #fff;opacity: 0.8}
 h1{font-family: 'Gloria Hallelujah', cursive !important;}
 
 /*font-family: 'Josefin Sans', sans-serif;*//*usarla para descripcion*/
@@ -30,7 +31,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .tophome{ position: absolute; top: 0;  z-index: 9;  background-image: url('../images/playa.jpg');height: 930px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%}
-
+.bgBlanc{background-color: #fff;}
 .bgOpacitat{background-color: pink; opacity: 0.8}
 .bgOpacitat1{background-color: #A5DCA8; opacity: 0.8}
 .bgOpacitat2{background-color: pink; opacity: 0.8}
