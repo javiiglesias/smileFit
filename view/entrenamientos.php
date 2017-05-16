@@ -12,12 +12,11 @@
                 <span>El Jiu-jitsu brasileño es un deporte de combate y también una forma de defensa personal. Las técnicas que recoge tienen su origen en el Ju Jutsu, un antiguo arte marcial japonés.
 
                     Ven a descubrir esta arte marcial de la mano de los mejores profesionales. En nuestro gimnasio, te podemos dar todos los detalles que necesitas para saber cómo practicar este deporte con facilidad. ¿Te animas? Ven a practicar Brazilian Jiu-Jitsu a Odyssey! ¿Hablamos?
-                  </span>
+                </span>
                 <h2>  HORARIOS</h2>
                 <table class="table table-striped">
                     <tr>
                         <td colspan="4">MAÑANAS: </td>
-
                     </tr>
                     <tr>
                         <td >Lunes: </td>
@@ -31,18 +30,16 @@
                         <td >(Alba Casas)</td>
                     </tr>
                     <tr>
-                        <td colspan="4">tardes: </td>
-
+                        <td colspan="4">TARDES: </td>
                     </tr>
                     <tr>
-                        <td >jueves: </td>
+                        <td >Jueves: </td>
                         <td >de 11:00 a 12:30 h: </td>
                         <td >de 10:30 a 12:00 h </td>
                         <td>(Alba Casas)</td>
                     </tr>
                 </table>
                 <span>
-
                     ¡Consulta todos nuestros horarios y actividades!
                 </span>
             </div>
@@ -51,59 +48,55 @@
 
                 <div class="col-lg-9">
 
-
                     <span class="text-lowercase">Ven a practicar Judo con nosotros! La primera clase es gratuita!<br>
                     SI QUIERES COMBATIR LA ACUMULACIÓN DE GRASAS Y LA FLACIDEZ DE PIERNAS, GLÚTEOS Y ABDOMINALES, VEN Y TONIFICA PERDIENDO VOLUMEN CON LAS CLASES DE G.A.P
 
-ADEMÁS COMPLEMENTAREMOS CON 30 MINUTOS DE ESTIRAMIENTOS, NO PIERDAS TU FLEXIBILIDAD Y EVITA TENSIONES MUSCULARES, MEJORA TU SALUD.</span>
-                <h2>  HORARIOS</h2>
-                <table class="table table-striped">
-                    <tr>
-                        <td colspan="4">MAÑANAS: </td>
+                    ADEMÁS COMPLEMENTAREMOS CON 30 MINUTOS DE ESTIRAMIENTOS, NO PIERDAS TU FLEXIBILIDAD Y EVITA TENSIONES MUSCULARES, MEJORA TU SALUD.</span>
+                    <h2>  HORARIOS</h2>
+                    <table class="table table-striped">
+                        <tr>
+                            <td colspan="4">MAÑANAS: </td>
 
-                    </tr>
-                    <tr>
-                        <td >Miercoles: </td>
-                        <td colspan="2" >de 10:30 a 12:00 h </td>
-                        <td >(Juan Hernandez)</td>
-                    </tr>
-                    <tr>
-                        <td >Lunes: </td>
-                        <td >de 11:00 a 12:30 h: </td>
-                        <td >de 10:30 a 12:00 h </td>
-                        <td >(Alba Casas)</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">tardes: </td>
+                        </tr>
+                        <tr>
+                            <td >Miercoles: </td>
+                            <td colspan="2" >de 10:30 a 12:00 h </td>
+                            <td >(Juan Hernandez)</td>
+                        </tr>
+                        <tr>
+                            <td >Lunes: </td>
+                            <td >de 11:00 a 12:30 h: </td>
+                            <td >de 10:30 a 12:00 h </td>
+                            <td >(Alba Casas)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">tardes: </td>
 
-                    </tr>
-                    <tr>
-                        <td >jueves: </td>
-                        <td >de 11:00 a 12:30 h: </td>
-                        <td >de 10:30 a 12:00 h </td>
-                        <td>(Mario Alcazar)</td>
-                    </tr>
-                </table>
+                        </tr>
+                        <tr>
+                            <td >jueves: </td>
+                            <td >de 11:00 a 12:30 h: </td>
+                            <td >de 10:30 a 12:00 h </td>
+                            <td>(Mario Alcazar)</td>
+                        </tr>
+                    </table>
                 
                 </div>
                 <div class="col-lg-3">
                     <img src="view/images/judo.jpg" class="img-responsive"  alt="ejercicio 1"/><br>
                 </div>
             </div>
-          
-
         </div>
     </div>
     <div class="text-center col-xs-12 bgdada">
     <h2 class="text-blanc">Solicita un entrenamiento</h2>
     </div>
-  <?php if(isset($_SESSION['test'])){?>
-    <?php include('view/partials/solicitar.php'); ?>
-    <?}else{?>
-    <div class="text-center col-xs-12 bgBlanc">
-    <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
-    <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
-    </div>
-    <?}?>
-    
+    <?php if(isset($_SESSION['test'])){ ?>
+        <?php include('view/partials/solicitar.php'); ?>
+    <?php }else{ ?>
+        <div class="text-center col-xs-12 bgBlanc">
+            <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
+            <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
+        </div>
+    <?php } ?>    
 </div>
