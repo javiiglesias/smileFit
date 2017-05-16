@@ -94,8 +94,16 @@ ADEMÁS COMPLEMENTAREMOS CON 30 MINUTOS DE ESTIRAMIENTOS, NO PIERDAS TU FLEXIBIL
 
         </div>
     </div>
-    
-  
+    <div class="text-center col-xs-12 bgdada">
+    <h2 class="text-blanc">Solicita un entrenamiento</h2>
+    </div>
+  <?php if(isset($_SESSION['test'])){?>
     <?php include('view/partials/solicitar.php'); ?>
+    <?}else{?>
+    <div class="text-center col-xs-12 bgBlanc">
+    <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
+    <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
+    </div>
+    <?}?>
     
 </div>
