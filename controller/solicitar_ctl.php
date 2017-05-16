@@ -26,7 +26,7 @@ if (isset($_REQUEST['solicitar'])){
     $sol = $solicitud->altaSolicitud($titulo,$descripcion,$fecha,$rol);
     //buscar idSolicitud creada
     $idSolicitud = $sol->getId();
-    //var_dump($idSolicitud);
+    var_dump($idSolicitud);
     //buscar idCliente para buscar sus solicitudes
 	$cli = $clientes->getCliente($idUser);
     $idCliente = $cli->getId();
@@ -36,7 +36,7 @@ if (isset($_REQUEST['solicitar'])){
 
     if($sol != null && $lin != null){
     	$enviado = true;
-    	echo "hola";
+    	
     }
     else{
     	$enviado = false;
