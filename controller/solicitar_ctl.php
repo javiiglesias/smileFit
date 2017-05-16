@@ -7,23 +7,49 @@ $titlePage = "Solicitud";
 require_once 'view/header.php';
 
 $solicitud= new solicitud();
+$lineaSolicitud = new lineasolicitud();
+$clientes = new cliente();
+
+$hoy = date('Y/m/d');
+$enviado = false;
+$usuarios = new usuario();
+
+if(isset($_SESSION["test2"])){
+   $idUser= $_SESSION["test2"];
+}
 
 if (isset($_REQUEST['solicitar'])){
+	$titulo = $_REQUEST['titulo'];
     $descripcion = $_REQUEST['descripcion'];
-    $fechaInicio=$_REQUEST['fechaInicio'];
-    $fechaFin=$_REQUEST['fechaFin'];
+    $fecha= $hoy;
     $rol=$_REQUEST['rol'];
-    $solicitud->altaSolicitud($descripcion,$fechaInicio,$fechaFin,$rol);
-    
-    $mensaje = "Tu solicitud se ha enviado correctamente, en breves recibiras respuesta";
-    require_once 'view/confirmacion.php';
-    //header('Location: index.php?ctl=cliente&act=AltaSolicitud');
+    $sol = $solicitud->altaSolicitud($titulo,$descripcion,$fecha,$rol);
+    //buscar idSolicitud creada
+    $idSolicitud = $sol->getId();
+    //var_dump($idSolicitud);
+    //buscar idCliente para buscar sus solicitudes
+	$cli = $clientes->getCliente($idUser);
+    $idCliente = $cli->getId();
 
-    //añadir linea solicitud
-    require_once 'view/altaLineaSolicitud.php';
+	//var_dump($idCliente);
+    $lin = $lineaSolicitud->altaLineaSolicitud($descripcion,$idSolicitud,$idTrabajador=null,$idCliente);
+
+    if($sol != null && $lin != null){
+    	$enviado = true;
+    	echo "hola";
+    }
+    else{
+    	$enviado = false;
+    }
+
+    if($enviado == true){
+    	$mensaje = "Tu solicitud se ha enviado correctamente, en breves recibiras respuesta";
+    	require_once 'view/confirmacion.php';
+	}
+    require_once 'view/entrenamientos.php';
     
 }else{
-    require_once 'view/altaSolicitud.php';
+    // require_once 'view/altaSolicitud.php';
 }
 
 require_once 'view/footer.php';

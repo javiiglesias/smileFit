@@ -10,20 +10,21 @@ class solicituddb{
         $solicitudes = array();
     }
 
-    public function altaSolicitudDb($descripcion,$fecha,$idRol){
+    public function altaSolicitudDb($titulo,$descripcion,$fecha,$idRol){
 
         $con = new db();
-        $query=$con->prepare("INSERT INTO solicitud(Descripcion, Fecha, IdRol) VALUES (:descripcion,:fecha,:idRol)");
+        $query=$con->prepare("INSERT INTO solicitud (Titulo, Descripcion, Fecha, IdRol) VALUES (:titulo,:descripcion,:fecha,:idRol)");
 
+        $query->bindValue(":titulo", $titulo);
         $query->bindValue(":descripcion", $descripcion);
         $query->bindValue(":fecha", $fecha);
         $query->bindValue(":idRol", $idRol);
-        $resutado = $con->consulta($query);
-
+        $resutado = $con->consultarObjectes($query);
+        var_dump($resutado);
         if($resutado){
             $solicitud = $resutado[0];
-
-            return  new solicitud($solicitud['descripcion'], $solicitud['fecha'], $solicitud['idRol']);
+            var_dump($solicitud);
+            return  new solicitud($solicitud['titulo'], $solicitud['descripcion'], $solicitud['fecha'], $solicitud['idRol']);
         }
         return false;
     }

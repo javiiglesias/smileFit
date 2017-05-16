@@ -34,11 +34,8 @@
                         <input type="text"  maxlength="10" name="telefono" class="form-control">
                     </div>
                     <div class="form-group"  id='fechaNacimiento'>
-                        <label>fecha de nacimiento</label>
-                       
-                        <input type='text' name="fechaNacimiento" class="form-control"  />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-               
+                        <label>fecha de nacimiento</label>                       
+                        <input minlength="4"  type="date" name="fechaInicio" class="form-control">             
                     </div>
                       <div class="form-group">
                         <label>foto</label>
