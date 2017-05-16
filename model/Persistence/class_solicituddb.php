@@ -19,11 +19,11 @@ class solicituddb{
         $query->bindValue(":descripcion", $descripcion);
         $query->bindValue(":fecha", $fecha);
         $query->bindValue(":idRol", $idRol);
-        $resutado = $con->consultarObjectes($query);
-        var_dump($resutado);
+        $resutado = $con->consultar($query);
+
         if($resutado){
             $solicitud = $resutado[0];
-            var_dump($solicitud);
+            
             return  new solicitud($solicitud['titulo'], $solicitud['descripcion'], $solicitud['fecha'], $solicitud['idRol']);
         }
         return false;
@@ -32,7 +32,7 @@ class solicituddb{
     public function mostrarSolicitudesPendientesdb($idRol,$nSolicitud){
         $con = new db();
         if($nSolicitud== null){
-             $query = $con->prepare("SELECT a.Id,a.Descripcion,a.Fecha,a.IdRol FROM solicitud AS a WHERE a.IdRol=".$idRol);
+             $query = $con->prepare("SELECT a.Id,a.Titulo,a.Descripcion,a.Fecha,a.IdRol FROM solicitud AS a WHERE a.IdRol=".$idRol);
         }else{
                 $query = $con->prepare("SELECT * FROM solicitud where id=".$nSolicitud);
         }
@@ -43,13 +43,14 @@ class solicituddb{
 
         foreach ($resultado as $row) {
                 $id=$row["Id"];
+                $titulo = $row["Titulo"];
                 $descripcion = $row["Descripcion"];
                 $fecha = $row["Fecha"]; 
                 $idRol = $row["IdRol"];           
-                $solicitud = new solicitud($id,$descripcion,$fecha,$idRol);
+                $solicitud = new solicitud($id,$titulo,$descripcion,$fecha,$idRol);
                 array_push($solicitudes,$solicitud);
         }
-  
+
         $con = null;
         
         return $solicitudes;

@@ -8,6 +8,8 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
+$nSolicitud=$_REQUEST['param'];
+
 if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
 }
@@ -24,15 +26,13 @@ if($usuarioRol == 'Trabajador')
 	$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol);
+	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol,$nSolicitud);
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
 	//buscar idCliente para buscar sus solicitudes
 	$clientes = new cliente();
 	$idCliente = $clientes->getCliente($idUser);	
-	var_dump($idCliente);
-	die();
 
 	//mostrar lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();

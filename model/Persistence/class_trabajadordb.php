@@ -70,11 +70,11 @@ class trabajadordb{
             //var_dump($workers);
             return $workers;
         }else{
-            var_dump($trabajador);
+            
             $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador WHERE Id= :trabajador");
             $query->bindValue(":trabajador", $trabajador);
             $resultado = $con->consultarObjectes($query);
-            var_dump($resultado);
+            
             if($resultado){
                 $trabajador = $resultado[0];
                 
