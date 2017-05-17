@@ -36,7 +36,7 @@ if($usuarioRol == 'Trabajador')
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
 }
-else{
+else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	//si es cliente
 	//buscar idCliente para buscar sus solicitudes
 	$clientes = new cliente();

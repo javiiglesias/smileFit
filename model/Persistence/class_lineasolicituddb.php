@@ -52,4 +52,24 @@ class lineasolicituddb{
         
         return $lineasSolicitudes;
     }
+
+    public function getIdSolicitudClienteDb($idCliente){
+        $con = new db();
+
+        $query = $con->prepare("SELECT DISTINCT a.idSolicitud FROM lineasolicitud as a WHERE a.IdCliente =:idCliente");
+        $query->bindValue(":idCliente", $idCliente);
+
+        $lineasSolicitudes = array();
+        
+        $resultado=$con->consultarObjectes($query);
+
+        foreach ($resultado as $row) {
+                $idSolicitud = $row["idSolicitud"];           
+                $lineasSolicitud = new lineasolicitud($idSolicitud);
+                array_push($lineasSolicitudes,$lineasSolicitud);
+        }
+        $con = null;
+        
+        return $lineasSolicitudes;
+    }
 }
