@@ -14,10 +14,7 @@
                         <option value="2">Dieta</option>                                           
                     </select>
                 </div>
-                <div class="form-group space-top">
-                    <label>Título de la solicitud:</label>
-                    <input type="text" name="titulo" class="form-control" placeholder="Título para tu solicitud">
-                </div>
+                <input type="hidden" name="titulo" value="solicitud">
                 <div class="form-group space-top">
                     <label>Descripción de la solicitud:</label>
                     <input type="text" name="descripcion" class="form-control" placeholder="Escribe aquí tu solicitud">

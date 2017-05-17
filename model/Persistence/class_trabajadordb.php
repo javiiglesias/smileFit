@@ -83,7 +83,8 @@ class trabajadordb{
         }
        return false;      
     }
- public function eliminarTrabajadorDB($id){
+    
+    public function eliminarTrabajadorDB($id){
         $con = new db();
         $query=$con->prepare("DELETE FROM trabajador WHERE id=:trabajador");
         $query->bindValue(":trabajador", $id);
@@ -95,6 +96,7 @@ class trabajadordb{
         return false;
 
     }
+    
     public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
        
 

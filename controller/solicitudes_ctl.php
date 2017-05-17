@@ -8,7 +8,6 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
-$nSolicitud=$_REQUEST['param'];
 
 if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
@@ -26,7 +25,7 @@ if($usuarioRol == 'Trabajador')
 	$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol,$nSolicitud);
+	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol);
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
