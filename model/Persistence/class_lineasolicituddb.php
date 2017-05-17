@@ -20,9 +20,9 @@ class lineasolicituddb{
         $query->bindValue(":idCliente", $idCliente);
         $query->bindValue(":descripcion", $descripcion);
         $resutado = $con->consulta($query);
-
-        $con = null;
-
+        
+   
+        var_dump($resutado);
         if($resutado){
 
             return  new lineasolicitud($idSolicitud, $idTrabajador, $idCliente, $descripcion);

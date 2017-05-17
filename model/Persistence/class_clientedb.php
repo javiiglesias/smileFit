@@ -9,28 +9,7 @@ class clientedb{
     public function __construct() {
         $clientes = array();
     }
-    public function consultarClienteSolicitudesDB($cliente){
-        $con = new db();
-        $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente WHERE IdUsuario= :cliente");
-        $query->bindValue(":cliente", $cliente);
-        $resutado = $con->consultarObjectes($query);
-//var_dump($resutado);
-        if($resutado){
-            //$clienteNuevo = $resutado[0];
-            $id=$resutado[0]["id"];
-            $nombre = $resutado[0]["nombre"];
-            $apellidos =$resutado[0]["apellidos"];
-            $edad =$resutado[0]["edad"];    
-            $email = $resutado[0]["email"];
-            $telefono =$resutado[0]["telefono"];    
-            $foto = $resutado[0]["foto"]; 
-           
-                
-            return  new cliente($id, $nombre , $apellidos, $edad,$email,$telefono,$foto);
-        }
-
-        return false;
-    }
+    
 
 
     public function consultarClienteDB($cliente){
