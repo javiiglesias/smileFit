@@ -29,9 +29,9 @@
                         <?php } ?>
 
                         <?php if ($titlePage == "Dietas") { ?>
-                            <li class="active"><a href="?ctl=agencia&act=detall">Dietas</a></li>
+                            <li class="active"><a href="?ctl=dietas">Dietas</a></li>
                         <?php } else { ?>
-                            <li><a href="?ctl=agencia&act=detall">Dietas</a></li>
+                            <li><a href="?ctl=dietas">Dietas</a></li>
                         <?php } ?>
 
 

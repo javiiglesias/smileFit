@@ -10,22 +10,51 @@ class solicituddb{
         $solicitudes = array();
     }
 
-    public function altaSolicitudDb($titulo,$descripcion,$fecha,$idRol){
+    public function altaSolicitudDb($id,$titulo,$descripcion,$fecha,$idRol){
 
         $con = new db();
-        $query=$con->prepare("INSERT INTO solicitud (Titulo, Descripcion, Fecha, IdRol) VALUES (:titulo,:descripcion,:fecha,:idRol)");
-
+        $query=$con->prepare("INSERT INTO solicitud (Id, Titulo, Descripcion, Fecha, IdRol) VALUES (:id,:titulo,:descripcion,:fecha,:idRol)");
+        $query->bindValue(":id", $id);
         $query->bindValue(":titulo", $titulo);
         $query->bindValue(":descripcion", $descripcion);
         $query->bindValue(":fecha", $fecha);
         $query->bindValue(":idRol", $idRol);
         $resutado = $con->consulta($query);
-        var_dump($resutado);
+
         if($resutado){
        
-            return  new solicitud($titulo, $descripcion, $fecha, $idRol);
+            return  new solicitud($id, $titulo, $descripcion, $fecha, $idRol);
         }
         return false;
+    }
+
+    public function consultarSolicitudDb($titulo,$descripcion,$fecha,$idRol){
+        $con = new db();
+        
+        if($trabajador== null){
+
+            $query=$con->prepare("SELECT Id,Nombre,Apellidos,FechaNacimiento,Email,Telefono,Foto,IdUsuario,IdRol FROM trabajador order by Id");
+            $workers = array();
+
+            $resultado=$con->consultarObjectes($query);
+
+            foreach ($resultado as $row) {
+                $id=$row["Id"];
+                $nombre = $row["Nombre"];
+                $apellidos = $row["Apellidos"];
+                $fechaNacimiento = $row["FechaNacimiento"];    
+                $email = $row["Email"];
+                $telefono = $row["Telefono"];    
+                $foto = $row["Foto"]; 
+                $idUsuario = $row["IdUsuario"];   
+                $idRol = $row["IdRol"];  
+                    
+                $worker = new trabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$idUsuario,$idRol);
+                array_push($workers,$worker);
+            }
+
+            return $workers;
+        }
     }
 
     public function mostrarSolicitudesPendientesdb($idRol,$nSolicitud){
@@ -53,5 +82,21 @@ class solicituddb{
         $con = null;
         
         return $solicitudes;
+    }
+
+    public function ObtenerUltimoIdSolicitudDb(){
+
+        $con = new db();
+        $query = $con->prepare("SELECT MAX(id) FROM solicitud");
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
+    }
+
+    public function GetTituloSolicitudDb($idSolicitud){
+        $con = new db();
+        $query = $con->prepare("SELECT Titulo FROM solicitud WHERE Id = ".$idSolicitud);
+        $query->bindValue(":idSolicitud", $idSolicitud);
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
     }
 }

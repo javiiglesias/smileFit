@@ -1,6 +1,7 @@
 html,body{padding: 0 0 0px;margin: 0;font-family: 'Muli', sans-serif;}
+.bgPrin{background-image: url("../images/original.png"); background-position: center;background-size: cover;background-repeat: no-repeat;background-attachment: fixed; }
 footer{width: 100%;bottom: 0; margin-top: 15px}
-
+.bgprinop{background-color: #fff;opacity: 0.8}
 h1{font-family: 'Gloria Hallelujah', cursive !important;}
 
 /*font-family: 'Josefin Sans', sans-serif;*//*usarla para descripcion*/
@@ -17,11 +18,12 @@ h1{font-family: 'Gloria Hallelujah', cursive !important;}
 .recuadro {-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
+.fz20{font-size: 20px;}
 /*-----------------*/
 /*   BackGrounds */
 /*----------------*/
 .bGfooter{background-color: rgba(12, 85, 64, 0.19)!important;border-radius: 0px;border: none;background-image: none; height: 160px;margin-top: 50px;padding-top: 10px;}
-
+.bgdada{background-color: #dadada;margin-bottom: 15px;}
 .bgVerd{background-color: green;}
 .bgGris{background-color: grey;}
 .bgGreenTitle{background-color: #77c679}
@@ -30,7 +32,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .bgSlide3{background-image: url('../images/ejercicio3.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .bgSlide4{background-image: url('../images/ejercicio4.jpg');height: 800px; background-size:cover;background-repeat: no-repeat;}
 .tophome{ position: absolute; top: 0;  z-index: 9;  background-image: url('../images/playa.jpg');height: 930px; margin-bottom:50px;background-size:cover;background-repeat: no-repeat; width: 100%}
-
+.bgBlanc{background-color: #fff;}
 .bgOpacitat{background-color: pink; opacity: 0.8}
 .bgOpacitat1{background-color: #A5DCA8; opacity: 0.8}
 .bgOpacitat2{background-color: pink; opacity: 0.8}
@@ -39,6 +41,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .targetaUsuario{    background-color: #dadada;
     padding: 20px;
     border-radius: 33px;}
+.mensaje{
+	height: auto;
+	background-color: #4ed98a;
+	border-radius: 0px 78px 78px 78px;
+	-moz-border-radius: 0px 78px 78px 78px;
+	-webkit-border-radius: 0px 78px 78px 78px;
+	border: 0px solid #000000;
+}
 /*--------------*/
 /*    Border   */
 /*------------*/
@@ -66,6 +76,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .mB50{margin-bottom: 50px;}
 .mTB30{    margin-top: 30px;margin-bottom: 30px;}
 .mAuto{left: 0; margin: auto; position: absolute; right: 0;}
+.marginAutoInlineBlock{margin: 0 auto;display: inline-block;}
 .prelative{position: relative;}
 .mL15{margin-left: 15px;}
 .mR15{margin-right: 15px;}
@@ -87,6 +98,8 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .mT50nXS{margin-top: 0px}
 .pL0 {padding-left: 0px}
 }
+
+.text-blanc{color: #fff; font-weight: bold;}
 .mT50nXS {
     margin-top: 50px;
 }
@@ -100,3 +113,11 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .login-form a,.login-form a:hover {color: #FFF;text-decoration: none;}
 .imagen-login{height: 150px; width: 150px;text-align:center;}
 .imagen-button-login{height: 15px; width: 15px;}
+
+
+.registro {background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/registro.jpg') no-repeat center fixed; background-size: cover;}
+
+.transparent-heading {background-color: rgba(255, 255, 255, 0.15);color: #FFF;padding: 10px;text-align: center;}
+.registro-form {background-color: rgba(255, 255, 255, 0.3);color: #FFF;padding: 15px; margin: 0 auto;}
+.registro-form a,.login-form a:hover {color: #FFF;text-decoration: none;}
+.imagen-registro{height: 150px; width: 150px;text-align:center;}
