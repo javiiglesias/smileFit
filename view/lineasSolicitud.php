@@ -3,13 +3,13 @@
         <h3><?php echo $titulo; ?></h3>
         <?php foreach ($lineasSolicitud as $lineasSolicitudes): ?>
             <!-- <div class="alert alert-success"> -->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0 mensaje">
             <!--Si es trabajador -->
                 <?php if(isset($trabajador)){ ?>
-                <span><?= $trabajador->getNombre() . " " . $trabajador->getApellidos(). ": "; ?></span>
+                <span><b><?= $trabajador->getNombre() . " " . $trabajador->getApellidos(). ": "; ?></b></span>
                 <?php } else{?>
                 <!-- Si es cliente-->
-                <span><?= $cliente->getNombre() . " " . $cliente->getApellidos(). ": "; ?></span>
+                <span><b><?= $cliente->getNombre() . " " . $cliente->getApellidos(). ": "; ?></b></span>
                 <?php } ?>
                 <span><?php echo $lineasSolicitudes->getDescripcion(); ?></span>
             </div>
