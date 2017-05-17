@@ -122,7 +122,6 @@ class usuariodb{
        
         $query=$con->prepare("SELECT Descripcion from rol where id=".$rol);
         $resutado = $con->consultarObjectes($query);
-        var_dump($resutado);
       
         return $resutado;
 
