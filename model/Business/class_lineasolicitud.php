@@ -85,4 +85,17 @@ class lineasolicitud{
         $lineas = $lineaSolicitud->mostrarLineasPorIdSolicitudDb($idSolicitud);
         return $lineas;
     }
+
+    public function getIdSolicitudCliente($idCliente) {
+        $lineaSolicitud = new lineasolicituddb;
+        $lineas = $lineaSolicitud->getIdSolicitudClienteDb($idCliente);
+        var_dump($lineas);
+        return $lineas;
+    }
+
+    // public function muestraLineasSolicitudesCliente($idCliente) {
+    //     $lineaSolicitud = new lineasolicituddb;
+    //     $lineas = $lineaSolicitud->mostrarLineasSolicitudesClienteDb($idCliente);
+    //     return $lineas;
+    // }
 }

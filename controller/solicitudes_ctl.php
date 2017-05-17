@@ -36,8 +36,9 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
 	//mostrar lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();
-	$solicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
-	var_dump($solicitud);
+	//$lineasSolicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
+	$idSolicitudes = $lineaSolicitudes->getIdSolicitudCliente($idCliente);
+
 
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
