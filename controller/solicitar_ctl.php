@@ -23,23 +23,31 @@ if (isset($_REQUEST['solicitar'])){
     $descripcion = $_REQUEST['descripcion'];
     $fecha= $hoy;
     $rol=$_REQUEST['rol'];
-    $sol = $solicitud->altaSolicitud($titulo,$descripcion,$fecha,$rol);
-    //buscar idSolicitud creada
-    $idSolicitud = $sol->getId();
-    //var_dump($idSolicitud);
+
+    //consulta para sacar el id ultimo de solicitud
+    $solic = $solicitud->ObtenerUltimoIdSolicitud();
+
+    $key = array_values($solic[0]); 
+    $idSolicitud = $key[0];
+    //idSolicitud+1 y le pasamos el Id
+    $idSolicitud++;    
+    $titulo = $titulo.' '.$idSolicitud;
+    $sol = $solicitud->altaSolicitud($idSolicitud,$titulo,$descripcion,$fecha,$rol);
+
     //buscar idCliente para buscar sus solicitudes
 	$cli = $clientes->getCliente($idUser);
     $idCliente = $cli->getId();
 
-	//var_dump($idCliente);
     $lin = $lineaSolicitud->altaLineaSolicitud($descripcion,$idSolicitud,$idTrabajador=null,$idCliente);
-
+    // var_dump($lin);
+    // die();
     if($sol != null && $lin != null){
     	$enviado = true;
-    	echo "hola";
+        echo $enviado;    	
     }
     else{
     	$enviado = false;
+        echo $enviado;
     }
 
     if($enviado == true){

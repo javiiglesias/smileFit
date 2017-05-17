@@ -8,7 +8,8 @@ require_once 'view/header.php';
 
 
 $usuarios = new usuario();
-$idSolicitud=$_REQUEST['param'];
+$idCurrent=$_REQUEST['param'];
+$descripcion=$_REQUEST['linea_solicitud'];
 
 if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
@@ -22,7 +23,7 @@ if($usuarioRol == 'Trabajador')
 {
 	//buscar idTrabajador para buscar sus solicitudes
 	$trabajadores = new trabajador();
-	//$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
+	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
 	$trabajador = $trabajadores->getTrabajador($idUser);	
 
 	//obtener titulo solicitud
@@ -34,8 +35,10 @@ if($usuarioRol == 'Trabajador')
 
 	//mostrar lineas solicitud
 	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+	$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,$idTrabajador,$descripcion);
+
 }
+
 else{
 	//si es cliente
 	//buscar idCliente para buscar sus solicitudes
@@ -52,7 +55,7 @@ else{
 
 	//mostrar lineas solicitud
 	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+	$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,$idCliente,$descripcion);
 
 }
 

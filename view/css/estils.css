@@ -41,6 +41,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .targetaUsuario{    background-color: #dadada;
     padding: 20px;
     border-radius: 33px;}
+.mensaje{
+	height: auto;
+	background-color: #4ed98a;
+	border-radius: 0px 78px 78px 78px;
+	-moz-border-radius: 0px 78px 78px 78px;
+	-webkit-border-radius: 0px 78px 78px 78px;
+	border: 0px solid #000000;
+}
 /*--------------*/
 /*    Border   */
 /*------------*/

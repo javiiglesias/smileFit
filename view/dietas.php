@@ -25,12 +25,12 @@
     </div>
   <?php if(isset($_SESSION['test'])){?>
     <?php include('view/partials/solicitar.php'); ?>
-    <?}else{?>
+    <?php }else{ ?>
     <div class="text-center col-xs-12 bgBlanc">
     <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
     <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
     </div>
-    <?}?>
+    <?php } ?>
       
 </div>
     </div>
