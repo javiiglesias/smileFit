@@ -93,10 +93,10 @@ class solicitud{
         return $arraySolicitudes;
     }
 
-    public function muestraSolicitudesCliente($idCliente, $nLineasSolicitud=null) {
+    public function muestraSolicitudesCliente($nidSolicitudes=null) {
         
         $solicitud = new solicituddb;
-        $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nLineasSolicitud);
+        $arraySolicitudes= $solicitud->mostrarSolicitudesClienteDb($nidSolicitudes);
         return $arraySolicitudes;
     }
 

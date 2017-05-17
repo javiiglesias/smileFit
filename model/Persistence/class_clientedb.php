@@ -9,6 +9,7 @@ class clientedb{
     public function __construct() {
         $clientes = array();
     }
+    
 
 
     public function consultarClienteDB($cliente){
@@ -16,7 +17,6 @@ class clientedb{
         $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente WHERE IdUsuario= :cliente");
         $query->bindValue(":cliente", $cliente);
         $resutado = $con->consultarObjectes($query);
-
 
         if($resutado){
             $cliente = $resutado[0];
@@ -81,46 +81,5 @@ class clientedb{
             return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
         }
         return false;
-    }
-
-    public function consultarClienteDB($cliente=null){
-        $con = new db();
-        
-        if($cliente== null){
-
-            $query=$con->prepare("SELECT Id,Nombre,Apellidos,Edad,Email,Telefono,Foto,IdUsuario,IdRol FROM cliente order by Id");
-            $clientes = array();
-
-            $resultado=$con->consultarObjectes($query);
-
-            foreach ($resultado as $row) {
-                $id=$row["Id"];
-                $nombre = $row["Nombre"];
-                $apellidos = $row["Apellidos"];
-                $edad = $row["Edad"];    
-                $email = $row["Email"];
-                $telefono = $row["Telefono"];    
-                $foto = $row["Foto"]; 
-                $idUsuario = $row["IdUsuario"];   
-                $idRol = $row["IdRol"];  
-                    
-                $cliente = new cliente($id,$nombre,$apellidos,$edad,$email,$telefono,$foto,$idUsuario,$idRol);
-                array_push($clientes,$cliente);
-            }
-
-            return $clientes;
-        }else{
-            
-            $query=$con->prepare("SELECT Id,Nombre,Apellidos,Edad,Email,Telefono,Foto,IdUsuario,IdRol FROM cliente WHERE Id= :cliente");
-            $query->bindValue(":cliente", $cliente);
-            $resultado = $con->consultarObjectes($query);
-            
-            if($resultado){
-                $cliente = $resultado[0];
-                
-                return new cliente($cliente['Id'],$cliente['Nombre'], $cliente['Apellidos'], $cliente['Edad'], $cliente['Email'],$cliente['Telefono'],$cliente['Foto'],$cliente['IdUsuario'],$cliente['IdRol']);
-            }
-        }
-       return false;      
     }
 }

@@ -14,13 +14,12 @@ class lineasolicituddb{
 
         $con = new db();
         $query=$con->prepare("INSERT INTO lineasolicitud(IdSolicitud,IdTrabajador,IdCliente,Descripcion) VALUES (:idSolicitud,:idTrabajador,:idCliente,:descripcion)");
-        var_dump($idSolicitud.''.$idTrabajador.''.$idCliente.''.$descripcion);
-        die();
+
         $query->bindValue(":idSolicitud", $idSolicitud);
         $query->bindValue(":idTrabajador", $idTrabajador);
         $query->bindValue(":idCliente", $idCliente);
         $query->bindValue(":descripcion", $descripcion);
-        $resutado = $con->consultaObjectes($query);
+        $resutado = $con->consulta($query);
         
         if($resutado){
 
@@ -46,6 +45,27 @@ class lineasolicituddb{
                 $idTrabajador = $row["idTrabajador"];
                 $idCliente = $row["idCliente"];            
                 $lineasSolicitud = new lineasolicitud($id,$descripcion,$idSolicitud,$idTrabajador,$idCliente);
+                array_push($lineasSolicitudes,$lineasSolicitud);
+        }
+        $con = null;
+        
+        return $lineasSolicitudes;
+    }
+
+    public function getIdSolicitudClienteDb($idCliente){
+
+        $con = new db();
+
+        $query = $con->prepare("SELECT DISTINCT a.idSolicitud FROM lineasolicitud as a WHERE a.IdCliente =:idCliente");
+        $query->bindValue(":idCliente", $idCliente);
+
+        $lineasSolicitudes = array();
+        
+        $resultado=$con->consultarObjectes($query);
+
+        foreach ($resultado as $row) {
+                $idSolicitud = $row["idSolicitud"];           
+                $lineasSolicitud = $idSolicitud;
                 array_push($lineasSolicitudes,$lineasSolicitud);
         }
         $con = null;
