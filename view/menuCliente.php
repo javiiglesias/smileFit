@@ -12,6 +12,7 @@
                 <ul>
                 <li><a href="?ctl=cliente&act=AñadirDatos">Añadir Ficha Personal</a></li>
                 <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>
+                <li><a href="?ctl=cliente&act=MostrarSolicitudes">Mostrar Solicitudes</a></li>
                 <li><a href="?ctl=cliente&act=mostrarAgenda">Visualizar Mi Agenda</a></li>
                 </ul>
                 <?php require_once('partials/contentNews.php');?>
