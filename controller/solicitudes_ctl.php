@@ -34,15 +34,16 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$cli = $clientes->getCliente($idUser);
 	$idCliente = $cli->getId();
 
-	//mostrar lineas solicitudes
+	//ids lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();
 	//$lineasSolicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
 	$idSolicitudes = $lineaSolicitudes->getIdSolicitudCliente($idCliente);
+	var_dump($idSolicitudes);
 
-
-	//mostrar solicitudes
-	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
+	//mostrar solicitudes devolverá array de arrays
+	$solicitud = new solicitud();
+	$solicitudes = $solicitud->muestraSolicitudesCliente($idSolicitudes);
+	var_dump($solicitudes);
 }
 
 require_once 'view/solicitudes.php';

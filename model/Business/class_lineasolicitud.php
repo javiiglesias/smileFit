@@ -92,9 +92,10 @@ class lineasolicitud{
         return $lineas;
     }
 
-    // public function muestraLineasSolicitudesCliente($idCliente) {
-    //     $lineaSolicitud = new lineasolicituddb;
-    //     $lineas = $lineaSolicitud->mostrarLineasSolicitudesClienteDb($idCliente);
-    //     return $lineas;
-    // }
+    public function muestraLineasSolicitudesCliente($idCliente) {
+        $lineaSolicitud = new lineasolicituddb;
+        $lineas = $lineaSolicitud->mostrarLineasSolicitudesClienteDb($idCliente);
+        //var_dump($lineas);
+        return $lineas;
+    }
 }
