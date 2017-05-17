@@ -31,11 +31,13 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
 	//buscar idCliente para buscar sus solicitudes
 	$clientes = new cliente();
-	$idCliente = $clientes->getCliente($idUser);	
+	$cli = $clientes->getCliente($idUser);
+	$idCliente = $cli->getId();
 
 	//mostrar lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();
 	$solicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
+	var_dump($solicitud);
 
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
