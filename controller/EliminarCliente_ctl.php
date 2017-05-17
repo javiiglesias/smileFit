@@ -9,3 +9,4 @@ if (isset($_REQUEST['eliminar'])){
     $cliente->eliminarCliente($id);
     header('Location: index.php?ctl=cliente&act=MostrarDatos');
 }
+?>

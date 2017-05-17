@@ -79,11 +79,11 @@ class solicitud{
         $this->idRol = $idRol;
     }
 
-    public function altaSolicitud($titulo,$descripcion,$fecha,$idRol){
+    public function altaSolicitud($idSolicitud,$titulo,$descripcion,$fecha,$idRol){
 
         $solicitudDB= new solicituddb();
         $solicitud=array();
-        $solicitud = $solicitudDB->altaSolicitudDB($titulo,$descripcion,$fecha,$idRol);
+        $solicitud = $solicitudDB->altaSolicitudDB($idSolicitud,$titulo,$descripcion,$fecha,$idRol);
         return $solicitud;
     }
 
@@ -98,5 +98,19 @@ class solicitud{
         $solicitud = new solicituddb;
         $arraySolicitudes= $solicitud->mostrarSolicitudesPendientesdb($idRol,$nLineasSolicitud);
         return $arraySolicitudes;
+    }
+
+    public function ObtenerUltimoIdSolicitud(){
+
+        $solicitud = new solicituddb;
+        $idSolicitud= $solicitud->ObtenerUltimoIdSolicitudDb();
+        return $idSolicitud;
+    }
+
+    public function GetTituloSolicitud($idSolicitud){
+
+        $solicitud = new solicituddb;
+        $titulo= $solicitud->GetTituloSolicitudDb($idSolicitud);
+        return $titulo;
     }
 }

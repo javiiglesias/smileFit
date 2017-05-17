@@ -81,12 +81,5 @@ class clientedb{
             return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
         }
         return false;
-
-
-
     }
-
-
-
-
 }
