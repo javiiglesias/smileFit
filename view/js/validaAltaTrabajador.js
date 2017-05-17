@@ -72,7 +72,8 @@ function isDate(elem){
 }
 
 function validatorIsDate(str){
-    var alphaExp = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+    var alphaExp = /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
+    // var alphaExp = /^\d{4}-\d{2}-\d{2}$/;;
     return alphaExp.test(str);
 }
 
