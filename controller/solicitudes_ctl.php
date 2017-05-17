@@ -8,7 +8,6 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
-
 if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
 }
@@ -38,12 +37,10 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$lineaSolicitudes = new lineasolicitud();
 	//$lineasSolicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
 	$idSolicitudes = $lineaSolicitudes->getIdSolicitudCliente($idCliente);
-	var_dump($idSolicitudes);
 
 	//mostrar solicitudes devolverá array de arrays
-	$solicitud = new solicitud();
-	$solicitudes = $solicitud->muestraSolicitudesCliente($idSolicitudes);
-	var_dump($solicitudes);
+	$solicitudes = new solicitud();
+	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
 }
 
 require_once 'view/solicitudes.php';

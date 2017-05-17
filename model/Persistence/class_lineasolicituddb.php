@@ -21,8 +21,6 @@ class lineasolicituddb{
         $query->bindValue(":descripcion", $descripcion);
         $resutado = $con->consulta($query);
         
-   
-        var_dump($resutado);
         if($resutado){
 
             return  new lineasolicitud($idSolicitud, $idTrabajador, $idCliente, $descripcion);
@@ -55,6 +53,7 @@ class lineasolicituddb{
     }
 
     public function getIdSolicitudClienteDb($idCliente){
+
         $con = new db();
 
         $query = $con->prepare("SELECT DISTINCT a.idSolicitud FROM lineasolicitud as a WHERE a.IdCliente =:idCliente");
@@ -66,7 +65,7 @@ class lineasolicituddb{
 
         foreach ($resultado as $row) {
                 $idSolicitud = $row["idSolicitud"];           
-                $lineasSolicitud = new lineasolicitud($idSolicitud);
+                $lineasSolicitud = $idSolicitud;
                 array_push($lineasSolicitudes,$lineasSolicitud);
         }
         $con = null;
