@@ -22,7 +22,7 @@ class lineasolicituddb{
         $query->bindValue(":descripcion", $descripcion);
         $resutado = $con->consulta($query);
         
-        $con = null;
+   
         var_dump($resutado);
         if($resutado){
 
