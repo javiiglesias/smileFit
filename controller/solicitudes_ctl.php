@@ -42,7 +42,7 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesCliente($idRol);
+	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
 }
 
 require_once 'view/solicitudes.php';

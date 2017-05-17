@@ -89,7 +89,6 @@ class lineasolicitud{
     public function getIdSolicitudCliente($idCliente) {
         $lineaSolicitud = new lineasolicituddb;
         $lineas = $lineaSolicitud->getIdSolicitudClienteDb($idCliente);
-        var_dump($lineas);
         return $lineas;
     }
 

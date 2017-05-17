@@ -35,13 +35,11 @@ if (isset($_REQUEST['solicitar'])){
     $sol = $solicitud->altaSolicitud($idSolicitud,$titulo,$descripcion,$fecha,$rol);
 
     //buscar idCliente para buscar sus solicitudes
-	$cli = $clientes->getCliente($idUser);
-    var_dump($cli);
-    $idCliente = $cli->getId();
-
+	$idCliente = $clientes->getClientePorIdUser($idUser);
+    //alta Linea Solicitud
     $lin = $lineaSolicitud->altaLineaSolicitud($descripcion,$idSolicitud,$idTrabajador=null,$idCliente);
-    // var_dump($lin);
-    // die();
+    var_dump($lin);
+
     if($sol != null && $lin != null){
     	$enviado = true;
         echo $enviado;    	

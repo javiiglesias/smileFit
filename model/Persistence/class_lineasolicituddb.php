@@ -14,14 +14,16 @@ class lineasolicituddb{
 
         $con = new db();
         $query=$con->prepare("INSERT INTO lineasolicitud(IdSolicitud,IdTrabajador,IdCliente,Descripcion) VALUES (:idSolicitud,:idTrabajador,:idCliente,:descripcion)");
-        var_dump($idSolicitud.''.$idTrabajador.''.$idCliente.''.$descripcion);
-        die();
+        // var_dump($idSolicitud.''.$idTrabajador.''.$idCliente.''.$descripcion);
+        // die();
         $query->bindValue(":idSolicitud", $idSolicitud);
         $query->bindValue(":idTrabajador", $idTrabajador);
         $query->bindValue(":idCliente", $idCliente);
         $query->bindValue(":descripcion", $descripcion);
-        $resutado = $con->consultaObjectes($query);
+        $resutado = $con->consulta($query);
         
+        $con = null;
+        var_dump($resutado);
         if($resutado){
 
             return  new lineasolicitud($idSolicitud, $idTrabajador, $idCliente, $descripcion);

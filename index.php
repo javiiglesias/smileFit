@@ -123,7 +123,7 @@ switch ($ctl) {
             case "solicitar":
                 include "controller/solicitar_ctl.php";
                 break;
-            case "MostrarSolicitudes":
+            case "mostrarSolicitudes":
                 include "controller/solicitudes_ctl.php";
                 break;
         }
