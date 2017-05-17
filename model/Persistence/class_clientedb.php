@@ -15,9 +15,8 @@ class clientedb{
         $con = new db();
         $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente WHERE IdUsuario= :cliente");
         $query->bindValue(":cliente", $cliente);
-        $resutado = $con->consultarObjectes($query);
-
-
+        $resutado = $con->consulta($query);
+//var_dump($resutado);
         if($resutado){
             $cliente = $resutado[0];
 

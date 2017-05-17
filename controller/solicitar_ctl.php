@@ -36,6 +36,7 @@ if (isset($_REQUEST['solicitar'])){
 
     //buscar idCliente para buscar sus solicitudes
 	$cli = $clientes->getCliente($idUser);
+    var_dump($cli);
     $idCliente = $cli->getId();
 
     $lin = $lineaSolicitud->altaLineaSolicitud($descripcion,$idSolicitud,$idTrabajador=null,$idCliente);
