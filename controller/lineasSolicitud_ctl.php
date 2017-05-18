@@ -8,6 +8,8 @@ require_once 'view/header.php';
 
 
 $usuarios = new usuario();
+
+//if($idSolicitud == null)
 $idSolicitud=$_REQUEST['param'];
 
 if(isset($_SESSION["test2"])){
@@ -36,7 +38,7 @@ if($usuarioRol == 'Trabajador')
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
 }
-else{
+else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	//si es cliente
 	//buscar idCliente para buscar sus solicitudes
 	$clientes = new cliente();

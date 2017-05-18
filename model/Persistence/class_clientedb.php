@@ -9,6 +9,7 @@ class clientedb{
     public function __construct() {
         $clientes = array();
     }
+    
 
 
     public function consultarClienteDB($cliente){
@@ -16,7 +17,6 @@ class clientedb{
         $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente WHERE IdUsuario= :cliente");
         $query->bindValue(":cliente", $cliente);
         $resutado = $con->consultarObjectes($query);
-
 
         if($resutado){
             $cliente = $resutado[0];
