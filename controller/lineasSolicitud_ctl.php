@@ -9,7 +9,7 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
-if($idSolicitud == null)
+//if($idSolicitud == null)
 $idSolicitud=$_REQUEST['param'];
 
 if(isset($_SESSION["test2"])){
@@ -24,7 +24,7 @@ if($usuarioRol == 'Trabajador')
 {
 	//buscar idTrabajador para buscar sus solicitudes
 	$trabajadores = new trabajador();
-	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
+	//$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
 	$trabajador = $trabajadores->getTrabajador($idUser);	
 
 	//obtener titulo solicitud
@@ -42,7 +42,7 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	//si es cliente
 	//buscar idCliente para buscar sus solicitudes
 	$clientes = new cliente();
-	$idCliente = $clientes->getClientePorIdUser($idUser);	
+	//$idCliente = $clientes->getClientePorIdUser($idUser);	
 	$cliente = $clientes->getCliente($idUser);	
 
 	//obtener titulo solicitud
