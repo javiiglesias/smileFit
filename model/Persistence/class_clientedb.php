@@ -26,6 +26,28 @@ class clientedb{
 
         return false;
     }
+    public function consultarClientesDB(){
+        $con = new db();
+        $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente ");
+    
+        $resutado = $con->consultarObjectes($query);
+           $clientes = array();
+        foreach ($resutado as $row) {
+            $id=$row["id"];
+            $nombre = $row["nombre"];
+            $apellidos = $row["apellidos"];
+            $edad= $row["edad"];    
+            $email = $row["email"];
+            $telefono = $row["telefono"];    
+            $foto = $row["foto"]; 
+                           
+            $customer = new cliente($id,$nombre,$apellidos,$edad,$email,$telefono,$foto);
+            array_push($clientes,$customer);
+        }
+      
+        return $clientes;
+    }
+
 
     public function setClienteDB($id,$nombre,$apellidos,$edad,$email,$telefono,$foto){
         $con = new db();
