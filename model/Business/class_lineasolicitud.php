@@ -73,7 +73,7 @@ class lineasolicitud{
     }  
 
 
-    public function altaLineaSolicitud($idSolicitud,$idTrabajador=null,$idCliente,$descripcion){
+    public function altaLineaSolicitud($idSolicitud,$idTrabajador=null,$idCliente=null,$descripcion){
 
         $lineaSolicitudDB= new lineasolicituddb();
         $lineaSolicitud = $lineaSolicitudDB->altaLineaSolicitudDb($idSolicitud,$idTrabajador,$idCliente,$descripcion);
@@ -92,9 +92,9 @@ class lineasolicitud{
         return $lineas;
     }
 
-    // public function muestraLineasSolicitudesCliente($idCliente) {
-    //     $lineaSolicitud = new lineasolicituddb;
-    //     $lineas = $lineaSolicitud->mostrarLineasSolicitudesClienteDb($idCliente);
-    //     return $lineas;
-    // }
+    public function muestraLineasSolicitudesCliente($idCliente) {
+        $lineaSolicitud = new lineasolicituddb;
+        $lineas = $lineaSolicitud->mostrarLineasSolicitudesClienteDb($idCliente);
+        return $lineas;
+    }
 }

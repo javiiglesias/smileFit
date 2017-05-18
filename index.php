@@ -131,6 +131,9 @@ switch ($ctl) {
             case "mostrarSolicitudes":
                 include "controller/solicitudes_ctl.php";
                 break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
         }
         break;
 

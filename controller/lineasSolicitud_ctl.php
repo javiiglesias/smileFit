@@ -8,6 +8,8 @@ require_once 'view/header.php';
 
 
 $usuarios = new usuario();
+
+//if($idSolicitud == null)
 $idSolicitud=$_REQUEST['param'];
 
 if(isset($_SESSION["test2"])){
