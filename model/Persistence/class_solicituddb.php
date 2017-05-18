@@ -84,6 +84,33 @@ class solicituddb{
         return $solicitudes;
     }
 
+    public function mostrarSolicitudesClienteDb($nidSolicitudes){
+        $con = new db();
+
+        if($nidSolicitudes!= null){
+            $solicitudes = array();
+
+            foreach ($nidSolicitudes as $row) {
+                $query = $con->prepare("SELECT a.Id,a.Titulo,a.Descripcion,a.Fecha,a.IdRol FROM solicitud AS a WHERE a.Id=".$row);
+
+                $resultado=$con->consultarObjectes($query);
+
+                foreach ($resultado as $row) {
+                    $id=$row["Id"];
+                    $titulo = $row["Titulo"];
+                    $descripcion = $row["Descripcion"];
+                    $fecha = $row["Fecha"]; 
+                    $idRol = $row["IdRol"];           
+                    $solicitud = new solicitud($id,$titulo,$descripcion,$fecha,$idRol);
+                    array_push($solicitudes,$solicitud);
+                }
+            }             
+        }
+
+        
+        return $solicitudes;
+    }
+
     public function ObtenerUltimoIdSolicitudDb(){
 
         $con = new db();
