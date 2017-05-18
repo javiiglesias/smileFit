@@ -1,5 +1,7 @@
 <?require_once("controller/lineasSolicitud_ctl.php");?>
 <div class="container">
+        <h3><?php var_dump($trabajador); ?></h3>
+        <h3><?php var_dump($cliente); ?></h3>
         <h3><?php echo $titulo; ?></h3>
         <?php foreach ($lineasSolicitud as $lineasSolicitudes): ?>
             <!-- <div class="alert alert-success"> -->
@@ -7,7 +9,7 @@
             <!--Si es trabajador -->
                 <?php if(isset($trabajador)){ ?>
                 <span><b><?= $trabajador->getNombre() . " " . $trabajador->getApellidos(). ": "; ?></b></span>
-                <?php } else if($cliente){?>
+                <?php } else if(isset($cliente)){?>
                 <!-- Si es cliente-->
                 <span><b><?= $cliente->getNombre() . " " . $cliente->getApellidos(). ": "; ?></b></span>
                 <?php } ?>
