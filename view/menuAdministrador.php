@@ -24,7 +24,7 @@
                     
                     Queda por lo tanto sobre trabajador, que Funcione. Las vistas ya estan y los controladores tambien.
                     Lo que faltará editarlos para que funcione correctamente. -->
-                    <?php require_once('partials/calendar.php'); ?>
+                    <?/*php require_once('partials/calendar.php'); */?>
                     
                 </div>
             </div>
