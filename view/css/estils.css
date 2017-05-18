@@ -6,7 +6,7 @@ h1{font-family: 'Gloria Hallelujah', cursive !important;}
 
 /*font-family: 'Josefin Sans', sans-serif;*//*usarla para descripcion*/
 
-
+.nVisible{visibility: hidden;}
 .navbar-default{z-index: 99;  background-color: rgba(12, 85, 64, 0.19)!important;border-radius: 0px;border: none; background-image: none;}
 .navbar-default .navbar-nav>li>a{color:#fff;font-size: 20px;line-height: 125px;font-weight: bold;}
 .pAbsoluteB0{position: absolute; bottom: 0; width: 100%}

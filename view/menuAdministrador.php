@@ -9,7 +9,7 @@
                   
                 </div>
                 <div class="col-xs-12 col-md-6">
-                <h1>info trabajadores</h1>
+                <h2 class="text-center">info trabajadores</h2>
 
           <?php require_once('partials/trabajadores.php'); ?>
 
@@ -24,7 +24,8 @@
                     
                     Queda por lo tanto sobre trabajador, que Funcione. Las vistas ya estan y los controladores tambien.
                     Lo que faltará editarlos para que funcione correctamente. -->
-                    <?php require_once('partials/calendar.php'); ?>
+<h2 class="text-center"> info Clientes</h2>
+          <?php require_once('partials/clientes.php'); ?>
                     
                 </div>
             </div>
