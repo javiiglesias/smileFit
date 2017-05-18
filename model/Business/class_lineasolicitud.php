@@ -13,11 +13,11 @@ class lineasolicitud{
 
         switch (func_num_args()) {
             case 5:
-                $this->setId(func_get_arg(0));
-                $this->setDescripcion(func_get_arg(1));
-                $this->setIdSolicitud(func_get_arg(2));
-                $this->setIdTrabajador(func_get_arg(3));
-                $this->setIdCliente(func_get_arg(4));
+                $this->setId(func_get_arg(0));                
+                $this->setIdSolicitud(func_get_arg(1));
+                $this->setIdTrabajador(func_get_arg(2));
+                $this->setIdCliente(func_get_arg(3));
+                $this->setDescripcion(func_get_arg(4));
                 break;
         }
     }
