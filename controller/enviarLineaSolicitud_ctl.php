@@ -10,6 +10,8 @@ $idSolicitud=$_REQUEST['idSolicitud'];
 $idEmisor=$_REQUEST['idEmisor'];
 $descripcion=$_REQUEST['linea_solicitud'];
 
+//var_dump($idSolicitud." ".$idEmisor." ".$descripcion);
+
 $usuarios = new usuario();
 
 if(isset($_SESSION["test2"])){
@@ -33,7 +35,9 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	//mostrar lineas solicitud
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,null,$idEmisor,$descripcion);
-
+	//var_dump($lineasSolicitud);
+	$mensaje = "Tu mensaje se ha enviado correctamente";
+    require_once 'view/confirmacion.php';
 }
 
 require_once 'view/lineasSolicitud.php';
