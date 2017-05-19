@@ -2,7 +2,7 @@
 
 ob_start();
 
-$titlePage = "Solicitudes pendientes de asignar";
+$titlePage = "Solicitudes Asignadas";
 
 require_once 'view/header.php';
 
@@ -24,6 +24,24 @@ if($usuarioRol == 'Trabajador')
 	$entrenamientos = new entrenamiento();
 	$entrenamiento = $entrenamientos->getEntrenamientosTrabajador($idTrabajador);	
 	//var_dump($entrenamiento);
+
+	//nombre cliente
+	// $clientes = new cliente();
+	// $cli = $clientes->getClientePorUserId($idUser);
+	// $idCliente = $cli->getId();
+
+	//$client = $clientes->getClientePorId($idCliente);
+	//var_dump($client);
+	// $nombreCliente = $cli->getNombre();
+	// var_dump($nombreCliente);
+	// $apellidosCliente = $cli->getApellidos();
+	// var_dump($apellidosCliente);
+
+	//nombre trabajador
+	// $trabajadores = new trabajador();
+	// $tra = $trabajadores->getTrabajadorPorIdUser($idUser);
+	// $nombreTrabajador = $tra->getNombre();
+	// $apellidosTrabajador = $tra->getApellidos();
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 

@@ -7,7 +7,15 @@
                 $idC = $lineasSolicitudes->getIdCliente();
                 $idT = $lineasSolicitudes->getIdTrabajador();
                 //FALTA SACAR EL NOMBRE DEL EMISOR CORRECTO DEL MENSAJE
+                //var_dump($idT);
 
+                // if(isset($idT)){ 
+                //     $nombreT = $tr->getNombreApellidos($idT);
+                //     var_dump($nombreT);
+                // } else if(isset($idC)){
+                //     $nombreC = $cl->getNombreApellidos($idC);
+                //     var_dump($nombreC);
+                // }
             ?>
             <!-- <div class="alert alert-success"> -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0 mensaje">
@@ -18,6 +26,15 @@
                 <!-- Si es cliente-->
                 <span><b><?= $cliente->getNombre() . " " . $cliente->getApellidos(). ": "; ?></b></span>
                 <?php } ?>
+
+<!-- 
+                <?php if(isset($nombreT)){ ?>
+                <span><b><?php echo $nombreT;": " ?></b></span>
+                <?php } else if(isset($nombreC)){?>
+                <span><b><?php echo $nombreC;": " ?></b></span>
+                <?php } ?> -->
+
+
                 <span><?php echo $lineasSolicitudes->getDescripcion(); ?></span>
             </div>
         <?php endforeach ?>
@@ -36,7 +53,8 @@
                     <input type="submit" name="enviar" class="btn btn-warning mT20" value="Enviar Mensaje">
                 </div>                   
             </form>
-            <?php if(isset($idTrabajador)){             
+            <?php if($asignado == false) {
+                if(isset($idTrabajador)){             
                     if($_SESSION['test']){ ?>
             <form action="?ctl=trabajador&act=asignarSolicitud" method="post">
                     <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud; ?>">
@@ -45,7 +63,8 @@
                     <input type="submit" name="asignar" class="btn btn-success mT20" value="Asignar Solicitud">  
             </form>
                     <?php }
-                    } ?>
+                    }
+                } ?>
 
         </div>
   

@@ -18,6 +18,7 @@ class clientedb{
         $query->bindValue(":cliente", $cliente);
         $resutado = $con->consultarObjectes($query);
 
+        var_dump($resutado);
         if($resutado){
             $cliente = $resutado[0];
 
@@ -103,5 +104,14 @@ class clientedb{
             return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
         }
         return false;
+    }
+
+    public function getNombreApellidosDb($idCliente) {
+        $con = new db();
+
+        $query = $con->prepare("SELECT concat_ws(' ', Nombre, Apellidos) as nombreApellidos FROM cliente WHERE Id =" . $idCliente);
+        $resultado = $con->consultarObjectes($query);
+
+        return $resultado;
     }
 }
