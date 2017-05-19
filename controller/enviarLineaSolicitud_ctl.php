@@ -52,9 +52,9 @@ if($descripcion != null){
 	}
 }
 
-require_once 'view/lineasSolicitud.php';
-/*if($_GET['act']=="mostrarLineasSolicitud"||$_GET['act']=="enviarLineaSolicitud"){
+include 'view/lineasSolicitud.php';
+
 require_once 'view/footer.php';
-}*/
+
 ob_end_flush();
 ?>
