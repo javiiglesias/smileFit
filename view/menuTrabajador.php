@@ -12,7 +12,8 @@
                 <ul>
                 <!-- <li><a href="?ctl=trabajador&act=VerDatosClientes">Ver Ficha Personal Clientes</a></li> -->
                 <li><a href="?ctl=trabajador&act=MostrarDatos">Visualizar Mis Datos</a></li>
-                <li><a href="?ctl=trabajador&act=mostrarSolicitudes">Mostrar Solicitudes</a></li>
+                <li><a href="?ctl=trabajador&act=mostrarSolicitudes">Mostrar Solicitudes Pendientes</a></li>
+                <li><a href="?ctl=trabajador&act=mostrarSolicitudesAsignadas">Mostrar Solicitudes En Curso</a></li>
                 <li><a href="?ctl=trabajador&act=mostrarAgenda">Visualizar Mi Agenda</a></li>
                 </ul>
                 <?php require_once('partials/contentNews.php');?>

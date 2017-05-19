@@ -149,10 +149,10 @@ class cliente{
             return $cliente->getId();
         }
     }
-}
+
     public function getCustomers(){
         $clienteDB = new clientedb();
         $cliente = $clienteDB->consultarClientesDB();
         return $cliente;
     }
-
+}

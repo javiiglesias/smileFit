@@ -3,8 +3,12 @@
 <div class="container">     
         <h3><?php echo $titulo; ?></h3>
         <?php foreach ($lineasSolicitud as $lineasSolicitudes): ?>
-            <?php $idC = $lineasSolicitudes->getIdCliente();
-                    $idT = $lineasSolicitudes->getIdTrabajador(); ?>
+            <?php 
+                $idC = $lineasSolicitudes->getIdCliente();
+                $idT = $lineasSolicitudes->getIdTrabajador();
+                //FALTA SACAR EL NOMBRE DEL EMISOR CORRECTO DEL MENSAJE
+
+            ?>
             <!-- <div class="alert alert-success"> -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0 mensaje">
             <!--Si es trabajador -->
@@ -26,14 +30,18 @@
                     <input type="hidden" name="idEmisor" value="<?php echo $idCliente ?>">
                 <?php } ?>                
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 pL0">
-                    <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud ?>">
+                    <input type="hidden" name="titulo" value="<?php echo $titulo; ?>">
+                    <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud; ?>">
                     <input type="text" name="linea_solicitud" placeholder="Enviar mensaje" class="form-control">
                     <input type="submit" name="enviar" class="btn btn-warning mT20" value="Enviar Mensaje">
                 </div>                   
             </form>
             <?php if(isset($idTrabajador)){             
                     if($_SESSION['test']){ ?>
-            <form action="?ctl=trabajador&act=asignarSolicitud&param=<?php echo $idSolicitud; ?>">
+            <form action="?ctl=trabajador&act=asignarSolicitud" method="post">
+                    <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud; ?>">
+                    <input type="hidden" name="idTrabajador" value="<?php echo $idTrabajador; ?>">
+                    <input type="hidden" name="idCliente" value="<?php echo $idClienteSolicitador; ?>">
                     <input type="submit" name="asignar" class="btn btn-success mT20" value="Asignar Solicitud">  
             </form>
                     <?php }
