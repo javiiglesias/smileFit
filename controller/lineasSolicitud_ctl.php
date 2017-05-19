@@ -81,10 +81,11 @@ $clientes = new cliente();
 $cl = $clientes->getCustomers();
 //var_dump($cl);
 
-require_once 'view/lineasSolicitud.php';
 
-	require_once 'view/footer.php';
-
+if($_GET['act']=='mostrarLineasSolicitud'){
+	require_once 'view/lineasSolicitud.php';
+        require_once 'view/footer.php';
+}
 
 ob_end_flush();
 ?>
