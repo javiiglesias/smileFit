@@ -28,7 +28,7 @@ if ($rol != null){
     require_once 'view/confirmacion.php';
 }
 
-//$titlePage = "Lineas de Solicitud";
+
 //require_once 'view/lineasSolicitud.php';
 require_once 'view/footer.php';
 
