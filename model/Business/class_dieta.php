@@ -1,6 +1,6 @@
 <?php
 require_once("controller/function_AutoLoad.php");
-class entrenamiento{
+class dieta{
     private $id;
     private $descripcion;
     private $fechaInicio;
@@ -99,34 +99,34 @@ class entrenamiento{
     }
 
 
-    public function getEntrenamientos(){
-        $entrenamientoDB = new entrenamientodb();
-        $entrenamientos = $entrenamientoDB->getEntrenamientosDb();
-        return $entrenamientos;
+    public function getDietas(){
+        $dietaDB = new dietadb();
+        $dietas = $dietaDB->getDietasDb();
+        return $dietas;
     }    
 
-    public function altaEntrenamiento($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud){
-        $entrenamientoDB = new entrenamientodb();
-        $entrenamiento = $entrenamientoDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
+    public function altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud){
+        $dietaDB = new dietadb();
+        $dietas = $dietaDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
+        return $dietas;
+    }
+
+    public function eliminarDieta($id){
+        $dietaDB= new dietadb();
+        $entrenamiento = $dietaDB->eliminarEntrenamientoDB($id);
         return $entrenamiento;
-    }
-
-    public function eliminarEntrenamiento($id){
-        $entrenamientoDB= new entrenamientodb();
-        $entrenamiento = $entrenamientoDB->eliminarEntrenamientoDB($id);
-        return $entrenamiento;
 
     }
 
-    public function getEntrenamientosTrabajador($idTrabajador){
-        $entrenamientoDB = new entrenamientodb;
-        $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosTrabajadorDb($idTrabajador);
-        return $arrayEntrenamientos;
+    public function getDietasTrabajador($idTrabajador){
+        $dietaDB = new dietadb;
+        $arrayDietas= $dietaDB->getDietasTrabajadorDb($idTrabajador);
+        return $arrayDietas;
     }
 
-    public function getEntrenamientosCliente($idCliente){
-        $entrenamientoDB = new entrenamientodb;
-        $arrayEntrenamientos= $dietaDB->getEntrenamientosClienteDb($idCliente);
-        return $arrayEntrenamientos;
+    public function getDietasCliente($idCliente){
+        $dietaDB = new dietadb;
+        $arrayDietas= $dietaDB->getDietasClienteDb($idCliente);
+        return $arrayDietas;
     }
 }
