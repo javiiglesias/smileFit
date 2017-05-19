@@ -34,10 +34,10 @@ if($usuarioRol == 'Trabajador')
 
 	$key = array_values($tit[0]); 
     $titulo = $key[0];
-
 	//mostrar lineas solicitud
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	//si es cliente
@@ -62,10 +62,11 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	// 	if($row[2]!= null)
 	// 		var_dump($row[2]);
 	// }
-	// $idT = $lineasSolicitud[0]->getIdCliente();
-	// var_dump($idT);
 	
 }
+
+$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
+//var_dump($idClienteSolicitador);
 
 require_once 'view/lineasSolicitud.php';
 //if(isset($enviar)){

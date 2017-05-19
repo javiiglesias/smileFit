@@ -158,6 +158,15 @@ switch ($ctl) {
             case "enviarLineaSolicitud":
                 include "controller/enviarLineaSolicitud_ctl.php";
                 break;
+            case "asignarSolicitud":
+                include "controller/altaSolicitud_ctl.php";
+                break;
+            case "altaSolicitudForm":
+                include "controller/altaSolicitudForm_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;  
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;

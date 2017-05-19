@@ -45,6 +45,17 @@
 
                 </div>
             <?php } ?>
+
+            <?php if (strpos($mensaje, "creado")) { ?>
+                <div class="alert alert-dismissible alert-success text-center">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h3> <?php echo $mensaje; ?>  <img src="view/images/confirm.png" class="icon"></h3>
+
+
+                    <p><a class="alert-link" href='?ctl=trabajador&act=mostrarSolicitudesAsignadas'>Ver Solicitudes En Curso</a></p>
+
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>
