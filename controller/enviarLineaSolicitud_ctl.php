@@ -11,7 +11,7 @@ $idSolicitud=$_REQUEST['idSolicitud'];
 $idEmisor=$_REQUEST['idEmisor'];
 $descripcion=$_REQUEST['linea_solicitud'];
 
-$enviado = false;
+//$enviado = false;
 
 //var_dump($idSolicitud." ".$idEmisor." ".$descripcion);
 
@@ -42,6 +42,8 @@ if($descripcion != null){
 		$enviado = true;
 		//var_dump($lineasSolicitud);
 
+	}else{
+		//$enviado=false;
 	}
 
 	if($enviado == true){
@@ -50,7 +52,8 @@ if($descripcion != null){
 	}
 }
 
-require_once 'view/lineasSolicitud.php';
+include 'view/lineasSolicitud.php';
+
 require_once 'view/footer.php';
 
 ob_end_flush();

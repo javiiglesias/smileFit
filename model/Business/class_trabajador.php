@@ -213,5 +213,11 @@ class trabajador{
 
     }
 
-    
+    public function getNombreApellidos($idTrabajador){
+
+        $trabajadorDB = new trabajadordb();
+        $nombreApellidos = $trabajadorDB->getNombreApellidosDb($idTrabajador);
+        return $nombreApellidos;
+
+    }
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Temps de generació: 15-05-2017 a les 16:47:06
+-- Temps de generació: 19-05-2017 a les 20:19:49
 -- Versió del servidor: 10.1.10-MariaDB
 -- Versió de PHP: 7.0.2
 
@@ -42,7 +42,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`Id`, `Nombre`, `Apellidos`, `Edad`, `Email`, `Telefono`, `Foto`, `IdUsuario`) VALUES
-(1, 'Marta', 'Garrido Giménez', 27, 'marta.garrido@hotmail.com', 645879524, '', 5),
+(1, 'Marta', 'Garrido Martinez', 22, 'marta@gmail.com', 627896548, '', 5),
 (2, 'Pablo', 'Forni Requena', 19, 'pablo.forni@hotmail.com', 698564414, '', 6);
 
 -- --------------------------------------------------------
@@ -77,18 +77,19 @@ CREATE TABLE `dieta` (
   `FechaInicio` date NOT NULL,
   `FechaFin` date NOT NULL,
   `idCliente` bigint(20) NOT NULL,
-  `idTrabajador` bigint(20) NOT NULL
+  `idTrabajador` bigint(20) NOT NULL,
+  `IdSolicitud` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Bolcant dades de la taula `dieta`
 --
 
-INSERT INTO `dieta` (`Id`, `Descripcion`, `FechaInicio`, `FechaFin`, `idCliente`, `idTrabajador`) VALUES
-(1, 'Ganar peso', '0000-00-00', '0000-00-00', 0, 0),
-(2, 'Perder peso', '0000-00-00', '0000-00-00', 0, 0),
-(3, 'Ganar músculo', '0000-00-00', '0000-00-00', 2, 4),
-(4, 'Dieta Paleo', '0000-00-00', '0000-00-00', 0, 0);
+INSERT INTO `dieta` (`Id`, `Descripcion`, `FechaInicio`, `FechaFin`, `idCliente`, `idTrabajador`, `IdSolicitud`) VALUES
+(1, 'Ganar peso', '0000-00-00', '0000-00-00', 0, 0, 0),
+(2, 'Perder peso', '0000-00-00', '0000-00-00', 0, 0, 0),
+(3, 'Ganar músculo', '0000-00-00', '0000-00-00', 2, 4, 0),
+(4, 'Dieta Paleo', '0000-00-00', '0000-00-00', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -147,16 +148,16 @@ CREATE TABLE `entrenamiento` (
   `FechaInicio` date NOT NULL,
   `FechaFin` date NOT NULL,
   `IdCliente` bigint(20) NOT NULL,
-  `IdTrabajador` bigint(20) NOT NULL
+  `IdTrabajador` bigint(20) NOT NULL,
+  `IdSolicitud` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Bolcant dades de la taula `entrenamiento`
 --
 
-INSERT INTO `entrenamiento` (`id`, `Descripcion`, `FechaInicio`, `FechaFin`, `IdCliente`, `IdTrabajador`) VALUES
-(1, 'Ganar masa muscular', '0000-00-00', '0000-00-00', 1, 4),
-(2, 'Mejorar resistencia', '0000-00-00', '0000-00-00', 1, 4);
+INSERT INTO `entrenamiento` (`id`, `Descripcion`, `FechaInicio`, `FechaFin`, `IdCliente`, `IdTrabajador`, `IdSolicitud`) VALUES
+(10, 'pruebaaaaaa', '2017-05-19', '2017-05-26', 1, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -204,7 +205,6 @@ CREATE TABLE `fichamedica` (
 --
 
 INSERT INTO `fichamedica` (`Id`, `IdCliente`, `IMC`, `Peso`, `Altura`, `Metabolismo`) VALUES
-(1, 1, 20, 57, 169, 'normal'),
 (2, 2, 25, 75, 176, 'lento');
 
 -- --------------------------------------------------------
@@ -241,7 +241,7 @@ CREATE TABLE `lineasolicitud` (
   `IdSolicitud` bigint(20) NOT NULL,
   `IdTrabajador` bigint(20) DEFAULT NULL,
   `IdCliente` bigint(20) DEFAULT NULL,
-  `Descripcion` varchar(150) COLLATE utf8_spanish2_ci NOT NULL
+  `Descripcion` varchar(800) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -249,11 +249,51 @@ CREATE TABLE `lineasolicitud` (
 --
 
 INSERT INTO `lineasolicitud` (`Id`, `IdSolicitud`, `IdTrabajador`, `IdCliente`, `Descripcion`) VALUES
-(1, 1, 2, 1, 'Dieta de mantenimiento'),
+(1, 1, 4, NULL, 'trhdrstyhdr'),
 (2, 2, 4, 2, 'Ganar masa muscular'),
-(3, 3, NULL, 2, 'asdf'),
-(4, 4, NULL, 2, 'fdsa'),
-(5, 4, NULL, 2, 'fdsa232323233');
+(3, 3, NULL, 1, 'asdf'),
+(4, 4, NULL, 1, 'fdsa'),
+(5, 4, NULL, 1, 'fdsa232323233'),
+(6, 3, 4, NULL, 'hola'),
+(7, 3, 4, NULL, 'adios'),
+(8, 3, 4, NULL, 'Como se hace?'),
+(9, 3, 4, NULL, 'cokswfvdfg'),
+(10, 3, 4, NULL, 'cokswfvdfg'),
+(11, 3, 4, NULL, 'hola es una pruba'),
+(12, 3, 4, NULL, 'holaaaaa'),
+(13, 3, 4, NULL, 'holaaaaa'),
+(14, 3, 4, NULL, 'holaaaaa'),
+(15, 3, 4, NULL, 'alba'),
+(16, 3, 4, NULL, 'alba'),
+(17, 3, 4, NULL, 'alba'),
+(18, 3, 4, NULL, 'alba'),
+(19, 3, 4, NULL, 'alba'),
+(20, 3, 4, NULL, 'alba'),
+(21, 3, 4, NULL, 'aa'),
+(22, 3, 4, NULL, 'alba'),
+(23, 3, 4, NULL, 'alba'),
+(24, 3, 4, NULL, 'alba'),
+(25, 3, 4, NULL, 'alba'),
+(26, 3, 4, NULL, 'mio'),
+(27, 3, 4, NULL, 'mio'),
+(28, 3, 4, NULL, 'mio'),
+(29, 3, 4, NULL, 'mio'),
+(30, 3, 4, NULL, 'mio'),
+(31, 3, 4, NULL, 'mio'),
+(32, 3, 4, NULL, 'mio'),
+(33, 3, 4, NULL, 'mio'),
+(34, 3, 4, NULL, 'mio'),
+(35, 3, 4, NULL, 'mio'),
+(36, 3, 4, NULL, 'mio'),
+(37, 3, 4, NULL, 'mio'),
+(38, 3, 4, NULL, 'mio'),
+(39, 3, 4, NULL, 'mio'),
+(40, 3, 4, NULL, 'mio'),
+(41, 3, 4, NULL, 'qq'),
+(42, 3, 4, NULL, 'wefsf'),
+(43, 3, 4, NULL, 'wefsf'),
+(44, 3, 4, NULL, 'wefsf'),
+(45, 3, 4, NULL, 'wefsf');
 
 -- --------------------------------------------------------
 
@@ -324,7 +364,8 @@ INSERT INTO `rol` (`Id`, `Descripcion`) VALUES
 
 CREATE TABLE `solicitud` (
   `Id` bigint(20) NOT NULL,
-  `Descripcion` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `Titulo` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Descripcion` varchar(800) COLLATE utf8_spanish2_ci NOT NULL,
   `Fecha` date NOT NULL,
   `IdRol` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -333,12 +374,13 @@ CREATE TABLE `solicitud` (
 -- Bolcant dades de la taula `solicitud`
 --
 
-INSERT INTO `solicitud` (`Id`, `Descripcion`, `Fecha`, `IdRol`) VALUES
-(1, 'solicitud 1', '0000-00-00', 1),
-(2, 'solicitud 2', '0000-00-00', 2),
-(3, 'Entreno ganar musculatura', '2017-05-13', 1),
-(4, 'Dieta perder peso', '2017-05-14', 2),
-(5, 'Entreno piernas', '2017-05-15', 1);
+INSERT INTO `solicitud` (`Id`, `Titulo`, `Descripcion`, `Fecha`, `IdRol`) VALUES
+(1, 'Solicitud 1', 'asasd asd asd asd asd das', '0000-00-00', 1),
+(2, 'Solicitud 2', 'adasdasdasd', '0000-00-00', 2),
+(3, 'Solicitud 3', 'asdfg asdfsda f sfd ', '2017-05-13', 1),
+(4, 'Solicitud 4', 'Dieta perder peso', '2017-05-14', 2),
+(5, 'Solicitud 5', 'Entreno piernas', '2017-05-15', 1),
+(6, 'solicitud 6', 'Hola asadasdas marta', '2017-05-19', 1);
 
 -- --------------------------------------------------------
 
@@ -467,7 +509,8 @@ ALTER TABLE `diadieta`
 ALTER TABLE `dieta`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `idCliente` (`idCliente`),
-  ADD KEY `idTrabajador` (`idTrabajador`);
+  ADD KEY `idTrabajador` (`idTrabajador`),
+  ADD KEY `IdSolicitud` (`IdSolicitud`);
 
 --
 -- Index de la taula `ejercicio`
@@ -488,7 +531,8 @@ ALTER TABLE `empresa`
 ALTER TABLE `entrenamiento`
   ADD PRIMARY KEY (`id`),
   ADD KEY `IdCliente` (`IdCliente`),
-  ADD KEY `IdTrabajador` (`IdTrabajador`);
+  ADD KEY `IdTrabajador` (`IdTrabajador`),
+  ADD KEY `IdSolicitud` (`IdSolicitud`);
 
 --
 -- Index de la taula `eventos`
@@ -604,7 +648,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT per la taula `entrenamiento`
 --
 ALTER TABLE `entrenamiento`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT per la taula `eventos`
 --
@@ -624,7 +668,7 @@ ALTER TABLE `lineadieta`
 -- AUTO_INCREMENT per la taula `lineasolicitud`
 --
 ALTER TABLE `lineasolicitud`
-  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT per la taula `noticias`
 --
@@ -644,7 +688,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT per la taula `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT per la taula `tipocomida`
 --
@@ -691,8 +735,9 @@ ALTER TABLE `ejercicio`
 -- Restriccions per la taula `entrenamiento`
 --
 ALTER TABLE `entrenamiento`
-  ADD CONSTRAINT `entrenamiento_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`Id`),
-  ADD CONSTRAINT `entrenamiento_ibfk_2` FOREIGN KEY (`IdTrabajador`) REFERENCES `trabajador` (`Id`);
+  ADD CONSTRAINT `entrenamiento_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`Id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `entrenamiento_ibfk_2` FOREIGN KEY (`IdTrabajador`) REFERENCES `trabajador` (`Id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `entrenamiento_ibfk_3` FOREIGN KEY (`IdSolicitud`) REFERENCES `solicitud` (`Id`) ON DELETE CASCADE;
 
 --
 -- Restriccions per la taula `fichamedica`

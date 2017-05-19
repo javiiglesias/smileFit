@@ -17,6 +17,7 @@
                     </div>
                     <input type="hidden" name="idTrabajador" value="<?php echo $idTrabajador; ?>">
                     <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
+                    <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud; ?>">
                     <div class="form-group space-top">
                         <label>Descripción de la solicitud:</label>
                         <input type="text" name="descripcion" class="form-control" placeholder="Escribe el propósito de la solicitud">
