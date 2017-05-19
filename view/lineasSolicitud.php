@@ -1,5 +1,4 @@
-<?require_once("controller/lineasSolicitud_ctl.php");?>
-
+<?php require_once("controller/lineasSolicitud_ctl.php");?>
 <div class="container">     
         <h3><?php echo $titulo; ?></h3>
         <?php foreach ($lineasSolicitud as $lineasSolicitudes): ?>
