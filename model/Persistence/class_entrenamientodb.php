@@ -48,15 +48,17 @@ class entrenamientodb {
         return false;
     }
 
-    public function altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador) {
+    public function altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud) {
+        var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
         $con = new db();
-        $query = $con->prepare("INSERT INTO entrenamiento (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador)");
+        $query = $con->prepare("INSERT INTO entrenamiento (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador,:idSolicitud)");
 
         $query->bindValue(":descripcion", $descripcion);
         $query->bindValue(":fechaInicio", $fechaInicio);
         $query->bindValue(":fechaFin", $fechaFin);
         $query->bindValue(":idCliente", $idCliente);
         $query->bindValue(":idTrabajador", $idTrabajador);
+        $query->bindValue(":idSolicitud", $idSolicitud);
         $resultado = $con->consulta($query);
 
         $con = null;
@@ -67,7 +69,7 @@ class entrenamientodb {
     public function getEntrenamientosTrabajadorDb($idTrabajador){
 
         $con = new db();
-        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador FROM entrenamiento WHERE IdTrabajador=".$idTrabajador);
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento WHERE IdTrabajador=".$idTrabajador);
 
         $trainings = array();
         
@@ -80,7 +82,8 @@ class entrenamientodb {
                 $fechaFin = $row["FechaFin"]; 
                 $idCliente = $row["IdCliente"];           
                 $idTrabajador = $row["IdTrabajador"];  
-                $training = new entrenamiento($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador);
+                $idSolicitud = $row["IdSolicitud"];  
+                $training = new entrenamiento($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
                 array_push($trainings,$training);
         }
 

@@ -10,6 +10,7 @@
             <span class="lite fz13"><b>&nbsp; Fecha Fin: </b><?php echo $entrenamientos->getFechaFin();?></span><br>
             <span class="lite fz13"><b>Cliente: </b><?php echo $entrenamientos->getIdCliente();?></span>
             <span class="lite fz13"><b>&nbsp; Trabajador: </b><?php echo $entrenamientos->getIdTrabajador();?></span><br>
+            <span class="lite fz13"><b>Solicitud: </b><?php echo $entrenamientos->getIdSolicitud();?></span>
         </div>
     </div>
     <?php endforeach ?>

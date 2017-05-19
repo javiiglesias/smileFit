@@ -6,10 +6,8 @@ $titlePage = "Lineas de Solicitud";
 
 require_once 'view/header.php';
 
-
 $usuarios = new usuario();
 
-$enviado  = false;
 $idSolicitud=$_REQUEST['param'];
 
 $asignado = false;
@@ -39,8 +37,6 @@ if($usuarioRol == 'Trabajador')
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
 
-	//$enviado = false;
-
 
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
@@ -60,18 +56,10 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	//mostrar lineas solicitud
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
-
-	//$enviado = false;
-
-	//var_dump($lineasSolicitud);
-	// foreach ($lineasSolicitud as $row) {
-	// 	if($row[2]!= null)
-	// 		var_dump($row[2]);
-	// }
 	
 }
-//$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
-//var_dump($idClienteSolicitador);
+
+$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
 
 $trabajadores = new trabajador();
 $tr = $trabajadores->getTrabajadores();
