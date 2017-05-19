@@ -24,7 +24,7 @@
                     <input minlength="4" type="date" name="fecha" class="form-control" placeholder="<?php $fecha ?>" value="<?php echo $fecha ?>" />
                 </div> -->                
                 <div class="col-md-offset-3 col-xs-offset-2">
-                    <button name="solicitar" class="btn btn-info mT20">  Solicitar    <image class="btn-icon" src="view/images/registre.png"/></button>
+                    <button name="Solicitar" class="btn btn-info mT20">  Solicitar    <image class="btn-icon" src="view/images/registre.png"/></button>
                 </div>
             </form>
         </div>
