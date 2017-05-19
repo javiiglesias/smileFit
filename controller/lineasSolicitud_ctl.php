@@ -9,9 +9,9 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
-
-$idSolicitud=$_REQUEST['param'];
 $enviado  = false;
+$idSolicitud=$_REQUEST['param'];
+
 $asignado = false;
 
 if(isset($_SESSION["test2"])){
@@ -39,7 +39,7 @@ if($usuarioRol == 'Trabajador')
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
 
-	$enviado = true;
+	//$enviado = false;
 
 
 }
@@ -61,7 +61,7 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$lineasSolicitudes = new lineasolicitud();
 	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
 
-	$enviado = true;
+	//$enviado = false;
 
 	//var_dump($lineasSolicitud);
 	// foreach ($lineasSolicitud as $row) {
@@ -70,7 +70,6 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	// }
 	
 }
-
 //$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
 //var_dump($idClienteSolicitador);
 
@@ -83,9 +82,9 @@ $cl = $clientes->getCustomers();
 //var_dump($cl);
 
 require_once 'view/lineasSolicitud.php';
-if($enviado == false){
+
 	require_once 'view/footer.php';
-}
+
 
 ob_end_flush();
 ?>
