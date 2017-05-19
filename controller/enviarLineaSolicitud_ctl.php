@@ -6,34 +6,48 @@ $titlePage = "Lineas de Solicitud";
 
 require_once 'view/header.php';
 
+$titulo=$_REQUEST['titulo'];
 $idSolicitud=$_REQUEST['idSolicitud'];
 $idEmisor=$_REQUEST['idEmisor'];
 $descripcion=$_REQUEST['linea_solicitud'];
 
-$usuarios = new usuario();
+$enviado = false;
 
-if(isset($_SESSION["test2"])){
-   $idUser= $_SESSION["test2"];
-}
+//var_dump($idSolicitud." ".$idEmisor." ".$descripcion);
 
-//obtenemos el usuario actual
-$usuarioRol = $usuarios->getUserPorId($idUser);
+if($descripcion != null){
+	$usuarios = new usuario();
 
-//si es trabajador
-if($usuarioRol == 'Trabajador')
-{
-	//mostrar lineas solicitud
-	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,$idEmisor,null,$descripcion);
+	if(isset($_SESSION["test2"])){
+	   $idUser= $_SESSION["test2"];
+	}
 
-}
+	//obtenemos el usuario actual
+	$usuarioRol = $usuarios->getUserPorId($idUser);
 
-else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
+	//si es trabajador
+	if($usuarioRol == 'Trabajador')
+	{
+		//mostrar lineas solicitud
+		$lineasSolicitudes = new lineasolicitud();
+		$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,$idEmisor,null,$descripcion);
+		$enviado = true;
+	}
 
-	//mostrar lineas solicitud
-	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,null,$idEmisor,$descripcion);
+	else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
+		//mostrar lineas solicitud
+		$lineasSolicitudes = new lineasolicitud();
+		$lineasSolicitud = $lineasSolicitudes->altaLineaSolicitud($idSolicitud,null,$idEmisor,$descripcion);
+		$enviado = true;
+		//var_dump($lineasSolicitud);
+
+	}
+
+	if($enviado == true){
+		$mensaje = "Tu mensaje se ha enviado correctamente";
+	    require_once 'view/confirmacion.php';
+	}
 }
 
 require_once 'view/lineasSolicitud.php';
