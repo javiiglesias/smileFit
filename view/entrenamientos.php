@@ -1,12 +1,12 @@
 <div class="container bgPrin">
-    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
+    <div class="bgprinop col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
 
         <div class="col-lg-12">
             <h1>Practica juyitsu</h1>
-            <div class="col-sm-3 text-center">
-                <img src="view/images/juyitsu.jpg" class="img-responsive imgAuto" alt="ejercicio 1"/><br>
+            <div class="col-lg-3">
+                <img src="view/images/juyitsu.jpg" class="img-responsive" alt="ejercicio 1"/><br>
             </div>
-            <div class="col-sm-9">
+            <div class="col-lg-9">
 
 
                 <span>El Jiu-jitsu brasileño es un deporte de combate y también una forma de defensa personal. Las técnicas que recoge tienen su origen en el Ju Jutsu, un antiguo arte marcial japonés.
@@ -46,7 +46,7 @@
             <div class="col-lg-12">
                 <h1>Practica judo</h1>
 
-                <div class="col-sm-9">
+                <div class="col-lg-9">
 
                     <span class="text-lowercase">Ven a practicar Judo con nosotros! La primera clase es gratuita!<br>
                     SI QUIERES COMBATIR LA ACUMULACIÓN DE GRASAS Y LA FLACIDEZ DE PIERNAS, GLÚTEOS Y ABDOMINALES, VEN Y TONIFICA PERDIENDO VOLUMEN CON LAS CLASES DE G.A.P
@@ -82,8 +82,8 @@
                     </table>
                 
                 </div>
-                <div class="col-sm-3 GetDescripcionSolicitudDb text-center">
-                    <img src="view/images/judo.jpg" class="img-responsive imgAuto"  alt="ejercicio 1"/><br>
+                <div class="col-lg-3">
+                    <img src="view/images/judo.jpg" class="img-responsive"  alt="ejercicio 1"/><br>
                 </div>
             </div>
         </div>
@@ -91,7 +91,5 @@
     <div class="text-center col-xs-12 bgdada">
     <h2 class="text-blanc">Solicita un entrenamiento</h2>
     </div>
-    <div class="col-xs-12 bgprinop">
-     <?php  include('view/partials/solicitar.php');?>
-  </div>
-</div>
+     <?php  include('view/partials/solicitar.php');
+  
