@@ -110,7 +110,7 @@ class clientedb{
 
         $query = $con->prepare("SELECT concat_ws(' ', Nombre, Apellidos) as nombreApellidos FROM cliente WHERE Id =" . $idCliente);
         $resultado = $con->consultarObjectes($query);
-
+        
         return $resultado;
     }
 }

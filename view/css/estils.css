@@ -41,8 +41,20 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .targetaUsuario{    background-color: #dadada;
     padding: 20px;
     border-radius: 33px;}
+.mensaje1{
+    height: auto;
+    text-align: right;
+    background-color: #8fc6d9;
+    padding:25px;
+    border-radius: 78px 0px 78px 78px;
+-moz-border-radius: 78px 0px 78px 78px;
+-webkit-border-radius: 78px 0px 78px 78px;
+border: 0px solid #000000;
+}
 .mensaje{
 	height: auto;
+        text-align: left;
+        padding:25px;
 	background-color: #4ed98a;
 	border-radius: 0px 78px 78px 78px;
 	-moz-border-radius: 0px 78px 78px 78px;
@@ -93,6 +105,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 	.foter{text-align: center;margin-top: 10px;}
 }
 @media(max-width: 767px){
+    .mensaje>span{
+        
+        padding: 45px;
+    }   
+    .navbar-default .navbar-nav>li>a{
+    background-color: #000000;
+       line-height: 18px!important;
+   }
 .mB15xs{margin-bottom: 15px}
 .pB20xs{padding-bottom: 20px}
 .mT50nXS{margin-top: 0px}

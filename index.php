@@ -141,7 +141,7 @@ switch ($ctl) {
                 include "controller/mostrarSolicitudesAsignadas_ctl.php";
                 break;
         }
-        break;
+            break;
 
     case "trabajador":
         switch ($act) {
