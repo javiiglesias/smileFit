@@ -8,9 +8,7 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
-
 $idSolicitud = $_REQUEST['param'];
-
 
 $asignado = false;
 
@@ -33,13 +31,32 @@ if ($usuarioRol == 'Trabajador') {
     $solicitud = new solicitud();
     $tit = $solicitud->getTituloSolicitud($idSolicitud);
 
-
     $key = array_values($tit[0]);
     $titulo = $key[0];
     //mostrar lineas solicitud
     $lineasSolicitudes = new lineasolicitud();
     $lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
     $clientes = new cliente();
+	
+	//comprobar si solicitud existe o no para la visualizacion del boton de asignar la solicitud
+    $idRol = $trabajadores->getTrabajadorRol($idTrabajador); 
+    
+    if($idRol == 1){
+    	$entrenamientos = new entrenamiento();
+    	$existeEntreno = $entrenamientos->comprobarEntrenamiento($idSolicitud);
+    	if($existeEntreno == true){
+    		$asignado=true;
+    	}
+    }
+    else{
+    	$dietas = new dieta();
+    	$existeDieta = $dietas->comprobarDieta($idSolicitud);
+    	if($existeDieta){
+    		$asignado=true;
+    	}
+    }
+
+
 } else if ($usuarioRol == 'Cliente' || $usuarioRol == 'cliente') {
     //si es cliente
     //buscar idCliente para buscar sus solicitudes
@@ -59,16 +76,8 @@ if ($usuarioRol == 'Trabajador') {
     $lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
     $trabajadores = new trabajador();
 }
-
-  $idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
-
-
-
-
-
-
-
-
+	
+  	$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
 
 if ($_GET['act'] == 'mostrarLineasSolicitud') {
     require_once 'view/lineasSolicitud.php';

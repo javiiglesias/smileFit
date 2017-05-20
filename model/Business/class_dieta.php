@@ -118,6 +118,12 @@ class dieta{
 
     }
 
+    public function comprobarDieta($idSolicitud){
+        $dietaDB = new dietadb;
+        $existe= $dietaDB->comprobarDietaDb($idSolicitud);
+        return $existe;
+    }
+
     public function getDietasTrabajador($idTrabajador){
         $dietaDB = new dietadb;
         $arrayDietas= $dietaDB->getDietasTrabajadorDb($idTrabajador);

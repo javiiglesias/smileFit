@@ -14,8 +14,6 @@
         ?>
         <!-- <div class="alert alert-success"> -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0  <?php if (isset($nombreT)) { ?> mensaje<?php } else { ?> mensaje1 <?php } ?>">
-
-
             <?php if (isset($nombreT)) { ?>
                 <span><b><?php
                 echo $nombreT;
@@ -26,9 +24,7 @@
                         echo $nombreC;
                         ": "
                         ?></b></span>
-    <?php } ?> 
-
-
+            <?php } ?> 
             <span><?php echo $lineasSolicitudes->getDescripcion(); ?></span>
         </div>
         <?php endforeach ?>
