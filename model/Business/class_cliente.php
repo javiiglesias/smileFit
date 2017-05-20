@@ -166,7 +166,8 @@ class cliente{
 
         $clienteDB = new clientedb();
         $nombreApellidos = $clienteDB->getNombreApellidosDb($idCliente);
-        return $nombreApellidos;
+        $nombreApellidosCliente=implode($nombreApellidos[0]);
+        return $nombreApellidosCliente;
 
     }
 

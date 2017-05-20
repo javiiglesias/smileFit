@@ -217,7 +217,8 @@ class trabajador{
 
         $trabajadorDB = new trabajadordb();
         $nombreApellidos = $trabajadorDB->getNombreApellidosDb($idTrabajador);
-        return $nombreApellidos;
+        $nombreApellidosTrabajador=implode($nombreApellidos[0]);
+        return $nombreApellidosTrabajador;
 
     }
 }
