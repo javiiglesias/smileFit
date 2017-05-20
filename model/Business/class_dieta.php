@@ -107,7 +107,7 @@ class dieta{
 
     public function altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud){
         $dietaDB = new dietadb();
-        $dietas = $dietaDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
+        $dietas = $dietaDB->altaDietaDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
         return $dietas;
     }
 
