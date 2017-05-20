@@ -1,4 +1,6 @@
-<?php require_once("controller/entrenamientos_ctl.php");?>
+
+ <?php if(isset($_SESSION['test']) && $_SESSION['test']=='cliente'){ 
+ require_once("controller/entrenamientos_ctl.php");?>
 <div class="col-xs-12 bgprinop">
     <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-5">
         <img src="view/images/Logo.png" class="img-responsive img-Logologin">
@@ -25,4 +27,10 @@
             </form>
         </div>
     </div>
+<?php }else{ ?>
+        <div class="text-center col-xs-12 bgBlanc">
+            <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
+            <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
+        </div>
+    <?php } ?>    
 </div>
