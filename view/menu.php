@@ -20,7 +20,7 @@
                     <a class="" href="?ctl=inicio"><img class="img-responsive" src="view/images/original3.png"/></a>
                 </div>
 
-                <div id="navbar" class="navbar-collapse collapse col-sm-6 col-sm-12">
+                <div id="navbar" class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <?php if ($titlePage == "Inicio") { ?>
                             <li class="active"><a href="?ctl=inicio">Inicio</a></li>
