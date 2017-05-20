@@ -8,13 +8,13 @@
             <div class="container-login">
                 <form action="?ctl=trabajador&act=altaSolicitudForm" method="post">
                     <span> <?php if(isset($error)){echo $error;}?></span>
-                    <div class="form-group space-top">
+                   <!-- <div class="form-group space-top">
                         <label>Tipo de solicitud:</label><br/>
                         <select name="rol">
                             <option value="1">Entrenamiento</option>
                             <option value="2">Dieta</option>                                           
                         </select>
-                    </div>
+                    </div>-->
                     <input type="hidden" name="idTrabajador" value="<?php echo $idTrabajador; ?>">
                     <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
                     <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud; ?>">
