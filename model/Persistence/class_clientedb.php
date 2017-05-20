@@ -18,7 +18,6 @@ class clientedb{
         $query->bindValue(":cliente", $cliente);
         $resutado = $con->consultarObjectes($query);
 
-        var_dump($resutado);
         if($resutado){
             $cliente = $resutado[0];
 
