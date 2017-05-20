@@ -61,6 +61,12 @@ class solicituddb{
         $con = new db();
         if($nSolicitud== null){
              $query = $con->prepare("SELECT a.Id,a.Titulo,a.Descripcion,a.Fecha,a.IdRol FROM solicitud AS a WHERE a.IdRol=".$idRol);
+             if($idRol == 1){
+                $query = $con->prepare("SELECT a.Id,a.Titulo,a.Descripcion,a.Fecha,a.IdRol FROM solicitud AS a WHERE a.Id NOT IN (SELECT IdSolicitud FROM entrenamiento) AND a.IdRol =".$idRol);
+            }
+            else{
+                $query = $con->prepare("SELECT a.Id,a.Titulo,a.Descripcion,a.Fecha,a.IdRol FROM solicitud AS a WHERE a.Id NOT IN (SELECT IdSolicitud FROM dieta) AND a.IdRol =".$idRol);
+            }
         }else{
                 $query = $con->prepare("SELECT * FROM solicitud where id=".$nSolicitud);
         }
