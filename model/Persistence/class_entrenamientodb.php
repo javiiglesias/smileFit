@@ -119,4 +119,20 @@ class entrenamientodb {
         return $trainings;
     }
 
+    public function comprobarEntrenamientoDb($idSolicitud) {
+
+        $con = new db();
+
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento WHERE IdSolicitud=".$idSolicitud);
+
+        $resultado = $con->consultarObjectes($query);
+
+        if(count($resultado)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 } ?>

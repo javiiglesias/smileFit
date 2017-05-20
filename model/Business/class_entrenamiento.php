@@ -118,6 +118,12 @@ class entrenamiento{
 
     }
 
+    public function comprobarEntrenamiento($idSolicitud){
+        $entrenamientoDB = new entrenamientodb;
+        $existe= $entrenamientoDB->comprobarEntrenamientoDb($idSolicitud);
+        return $existe;
+    }
+
     public function getEntrenamientosTrabajador($idTrabajador){
         $entrenamientoDB = new entrenamientodb;
         $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosTrabajadorDb($idTrabajador);

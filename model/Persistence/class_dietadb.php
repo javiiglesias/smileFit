@@ -119,4 +119,19 @@ class dietadb {
         return $diets;
     }
 
+    public function comprobarDietaDb($idSolicitud) {
+
+        $con = new db();
+
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM dieta WHERE IdSolicitud=".$idSolicitud);
+
+        $resultado = $con->consultarObjectes($query);
+        
+        if(isset($resultado)){
+            return true;
+        }
+        else{}
+            return false;
+        }
+
 } ?>
