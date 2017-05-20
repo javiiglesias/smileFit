@@ -29,13 +29,13 @@ if($usuarioRol == 'Trabajador')
    	if($idRol == 1){
 		//mostrar entrenamientos
 		$entrenamientos = new entrenamiento();
-		$entrenamiento = $entrenamientos->getEntrenamientosTrabajador($idTrabajador);	
+		$gen = $entrenamientos->getEntrenamientosTrabajador($idTrabajador);	
 		//var_dump($entrenamiento);
 	}
 	else{
 		//mostrar dietas
 		$dietas = new dieta();
-		$dieta = $dietas->getDietasTrabajador($idTrabajador);	
+		$gen = $dietas->getDietasTrabajador($idTrabajador);	
 		//var_dump($entrenamiento);
 	}
 
