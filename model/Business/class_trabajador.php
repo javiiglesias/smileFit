@@ -142,6 +142,12 @@ class trabajador{
     }
 
 
+    public function getTrabajadores(){
+        $trabajadorDB = new trabajadordb();
+        $trabajadores = $trabajadorDB->getTrabajadoresDb();
+        return $trabajadores;
+    }    
+
     public function addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser){
         $trabajadorDB = new trabajadordb();
         $trabajador = $trabajadorDB->addWorker($nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto,$rol,$idUser);
@@ -160,7 +166,8 @@ class trabajador{
             return $trabajador->getId();
         }
     }
-        public function getTrabajador($idUser=null){
+    
+    public function getTrabajador($idUser=null){
         $trabajadorDB = new trabajadordb();
         if($idUser==null){
             $arrayTrabajadores= $trabajadorDB->consultarTrabajadorDB();
@@ -168,6 +175,7 @@ class trabajador{
         } else {
             $trabajadorDB = new trabajadordb();
             $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+            
             return $trabajador;
         }
     }
@@ -177,5 +185,39 @@ class trabajador{
         $trabajadorDB = new trabajadordb();
         $trabajador = $trabajadorDB->consultarTrabajadorDB($idRol);
         return $trabajador->getIdRol();
+    }
+
+      public function setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto){
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->setTrabajadorDB($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
+
+        return $trabajador;
+
+      }
+
+    public function getTrabajadorNombreRol($idRol){
+
+        $trabajadorDB = new trabajadordb();
+        $rolDescripcion = $trabajadorDB->consultarRol($idRol);
+        return $rolDescripcion;
+
+    }
+
+    public function eliminarTrabajador($id){
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->eliminarTrabajadorDB($id);
+
+        return $trabajador;
+
+    }
+
+    public function getNombreApellidos($idTrabajador){
+
+        $trabajadorDB = new trabajadordb();
+        $nombreApellidos = $trabajadorDB->getNombreApellidosDb($idTrabajador);
+        return $nombreApellidos;
+
     }
 }

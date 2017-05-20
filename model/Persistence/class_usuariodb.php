@@ -7,14 +7,27 @@ class usuariodb{
     public function __construct() {
         $usuaris = array();
     }
+
+    public function validaAñadirDatosCliente($idUser){
+        $con = new db();
+        $query=$con->prepare("SELECT Nombre FROM cliente WHERE IdUsuario= :idUsuario");
+        $query->bindValue(":IdUsuario", $idUser);
+        $resultado = $con->consultarObjectes($query);
+
+        if($resultado){
+            $idUser = $resultado[0];
+            return  new usuario($idUser['idUsuario'], $idUser['Nombre']);
+        }
+        return false;
+    }
     public function consultarUsuarioDB($user){
         $con = new db();
         $query=$con->prepare("SELECT id, username, password, descripcion FROM usuario WHERE UserName= :user");
         $query->bindValue(":user", $user);
-        $resutado = $con->consultarObjectes($query);
+        $resultado = $con->consultarObjectes($query);
 
 
-        if($resutado){
+        if($resultado){
 
 //Cambiado por if($resultat)-> si hay datos entrará si no no debolverá nada, tal y como lo hacemos aqui recorremos con un foreach un tan solo un resultado, ya que el return para la interacción. por loq ue estamos usando un foreach para recorrer 1 vez, cosa que con un if lo tenemos igual.(solo hará una iteracion aunque encuentres 200000 usuarios ...valdría con un if y entrando en el valor del primer elemento del array) antes   foreach ($resutalt as $row)
       /*      $id = $resutado[0]["id"];
@@ -23,7 +36,7 @@ class usuariodb{
             $descripcion = $resutado[0]["descripcion"];
 
             return $user = new usuario($id, $username, $password, $descripcion);*/
-            $user = $resutado[0];
+            $user = $resultado[0];
             return  new usuario($user['id'], $user['username'], $user['password'], $user['descripcion']);
         }
 
@@ -122,7 +135,6 @@ class usuariodb{
        
         $query=$con->prepare("SELECT Descripcion from rol where id=".$rol);
         $resutado = $con->consultarObjectes($query);
-        var_dump($resutado);
       
         return $resutado;
 

@@ -82,12 +82,27 @@ switch ($ctl) {
             case "completa-registro":    
                 include "controller/completa-registro_ctl.php";
                 break;
-            case "detalls":
-                include "controller/detallObra_ctl.php";
+            case "ModificarDatosTrabajador":
+                include "controller/ModificarDatosTrabajador_ctl.php";
                 break;
             case "visualizarTrabajadores":
-                include "controller/mostrarDatosTrabajador_ctl.php";
+                include "controller/mostrarDatosTrabajadores_ctl.php";
                 break;
+            case "MostrarDatos":
+                include "controller/gestionaTrabajador_ctl.php";
+                break;
+            case "EliminarTrabajador":
+                include "controller/eliminarTrabajador_ctl.php";
+                break;
+            case "mostrarClientes":
+                include "controller/mostrarClientes_ctl.php";
+                break;
+              case "ModificarDatos":
+                include "controller/ModificarDatosCliente_ctl.php";
+                break;
+            
+            
+
         }
         break;
 
@@ -110,6 +125,21 @@ switch ($ctl) {
             case "AñadirDatos":
                 include "controller/AñadirDatosCliente_ctl.php";
                 break;
+            case "Entrenamiento":
+                include "controller/entrenamiento_ctl.php";
+                break;
+            case "solicitar":
+                include "controller/solicitar_ctl.php";
+                break;
+            case "mostrarSolicitudes":
+                include "controller/solicitudes_ctl.php";
+                break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;
         }
         break;
 
@@ -128,6 +158,18 @@ switch ($ctl) {
             case "mostrarLineasSolicitud":
                 include "controller/lineasSolicitud_ctl.php";
                 break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
+            case "asignarSolicitud":
+                include "controller/altaSolicitud_ctl.php";
+                break;
+            case "altaSolicitudForm":
+                include "controller/altaSolicitudForm_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;  
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;

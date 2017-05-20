@@ -9,6 +9,7 @@ class clientedb{
     public function __construct() {
         $clientes = array();
     }
+    
 
 
     public function consultarClienteDB($cliente){
@@ -16,7 +17,6 @@ class clientedb{
         $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente WHERE IdUsuario= :cliente");
         $query->bindValue(":cliente", $cliente);
         $resutado = $con->consultarObjectes($query);
-
 
         if($resutado){
             $cliente = $resutado[0];
@@ -26,6 +26,28 @@ class clientedb{
 
         return false;
     }
+    public function consultarClientesDB(){
+        $con = new db();
+        $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente ");
+    
+        $resutado = $con->consultarObjectes($query);
+           $clientes = array();
+        foreach ($resutado as $row) {
+            $id=$row["id"];
+            $nombre = $row["nombre"];
+            $apellidos = $row["apellidos"];
+            $edad= $row["edad"];    
+            $email = $row["email"];
+            $telefono = $row["telefono"];    
+            $foto = $row["foto"]; 
+                           
+            $customer = new cliente($id,$nombre,$apellidos,$edad,$email,$telefono,$foto);
+            array_push($clientes,$customer);
+        }
+      
+        return $clientes;
+    }
+
 
     public function setClienteDB($id,$nombre,$apellidos,$edad,$email,$telefono,$foto){
         $con = new db();
@@ -81,12 +103,14 @@ class clientedb{
             return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
         }
         return false;
-
-
-
     }
 
+    public function getNombreApellidosDb($idCliente) {
+        $con = new db();
 
+        $query = $con->prepare("SELECT concat_ws(' ', Nombre, Apellidos) as nombreApellidos FROM cliente WHERE Id =" . $idCliente);
+        $resultado = $con->consultarObjectes($query);
 
-
+        return $resultado;
+    }
 }
