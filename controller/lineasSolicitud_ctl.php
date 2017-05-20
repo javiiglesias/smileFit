@@ -39,6 +39,7 @@ if ($usuarioRol == 'Trabajador') {
     //mostrar lineas solicitud
     $lineasSolicitudes = new lineasolicitud();
     $lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+    $clientes = new cliente();
 } else if ($usuarioRol == 'Cliente' || $usuarioRol == 'cliente') {
     //si es cliente
     //buscar idCliente para buscar sus solicitudes
@@ -53,14 +54,21 @@ if ($usuarioRol == 'Trabajador') {
     $key = array_values($tit[0]);
     $titulo = $key[0];
 
-
-	//mostrar lineas solicitud
-	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
-	
+    //mostrar lineas solicitud
+    $lineasSolicitudes = new lineasolicitud();
+    $lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+    $trabajadores = new trabajador();
 }
 
   $idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
+
+
+
+
+
+
+
+
 
 if ($_GET['act'] == 'mostrarLineasSolicitud') {
     require_once 'view/lineasSolicitud.php';

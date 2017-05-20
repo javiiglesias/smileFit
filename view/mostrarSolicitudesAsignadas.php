@@ -1,6 +1,9 @@
 <?require_once("controller/mostrarSolicitudesAsignadas_ctl.php"); ?>
 <div class="container">
     <?php if($usuarioRol == "Trabajador"):
+        if(isset($dieta)){
+           $entrenamiento= $dieta;
+        }
         foreach ($entrenamiento as $entrenamientos): ?>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0">
      
