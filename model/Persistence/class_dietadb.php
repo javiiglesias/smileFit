@@ -50,7 +50,7 @@ class dietadb {
     }
 
     public function altaDietaDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud) {
-        var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
+        //var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
         $con = new db();
         $query = $con->prepare("INSERT INTO dieta (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador,:idSolicitud)");
 

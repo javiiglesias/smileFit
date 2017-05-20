@@ -2,7 +2,7 @@
 
 ob_start();
 
-$titlePage = "Solicitudes Asignadas";
+$titlePage = "Solicitudes en Curso";
 
 require_once 'view/header.php';
 
@@ -14,16 +14,30 @@ if(isset($_SESSION["test2"])){
 
 //obtenemos el usuario actual
 $usuarioRol = $usuarios->getUserPorId($idUser);
+
 //si es trabajador
 if($usuarioRol == 'Trabajador')
 {
+
 	//buscar idTrabajador para buscar sus solicitudes
 	$trabajadores = new trabajador();
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
-	//mostrar entrenamientos
-	$entrenamientos = new entrenamiento();
-	$entrenamiento = $entrenamientos->getEntrenamientosTrabajador($idTrabajador);	
-	//var_dump($entrenamiento);
+
+	//buscar idRol del trabajador para saber si es entrenador o dietista
+   	$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
+
+   	if($idRol == 1){
+		//mostrar entrenamientos
+		$entrenamientos = new entrenamiento();
+		$entrenamiento = $entrenamientos->getEntrenamientosTrabajador($idTrabajador);	
+		//var_dump($entrenamiento);
+	}
+	else{
+		//mostrar dietas
+		$dietas = new dieta();
+		$dieta = $dietas->getDietasTrabajador($idTrabajador);	
+		//var_dump($entrenamiento);
+	}
 
 	//nombre cliente
 	// $clientes = new cliente();
@@ -50,6 +64,15 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$cli = $clientes->getCliente($idUser);
 	$idCliente = $cli->getId();
 
+	//var_dump($idCliente);
+
+	//mostrar entrenamientos
+	$entrenamientos = new entrenamiento();
+	$entrenamiento = $entrenamientos->getEntrenamientosCliente($idCliente);	
+
+	//mostrar dietas
+	$dietas = new dieta();
+	$dieta = $dietas->getDietasCliente($idCliente);
 
 }
 

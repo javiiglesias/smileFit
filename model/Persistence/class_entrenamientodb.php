@@ -20,7 +20,7 @@ class entrenamientodb {
         $trainings = array();
 
         $resultado = $con->consultarObjectes($query);
-
+        
         foreach ($resultado as $row) {
             $id = $row["Id"];
             $descripcion = $row["Descripcion"];
@@ -50,7 +50,7 @@ class entrenamientodb {
     }
 
     public function altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud) {
-        var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
+        //var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
         $con = new db();
         $query = $con->prepare("INSERT INTO entrenamiento (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador,:idSolicitud)");
 

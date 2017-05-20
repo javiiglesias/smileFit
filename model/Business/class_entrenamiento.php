@@ -126,7 +126,7 @@ class entrenamiento{
 
     public function getEntrenamientosCliente($idCliente){
         $entrenamientoDB = new entrenamientodb;
-        $arrayEntrenamientos= $dietaDB->getEntrenamientosClienteDb($idCliente);
+        $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosClienteDb($idCliente);
         return $arrayEntrenamientos;
     }
 }

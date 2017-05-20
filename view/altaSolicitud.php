@@ -7,7 +7,7 @@
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
                 <form action="?ctl=trabajador&act=altaSolicitudForm" method="post">
-                    <span> <? if(isset($error)){echo $error;}?></span>
+                    <span> <?php if(isset($error)){echo $error;}?></span>
                     <div class="form-group space-top">
                         <label>Tipo de solicitud:</label><br/>
                         <select name="rol">
