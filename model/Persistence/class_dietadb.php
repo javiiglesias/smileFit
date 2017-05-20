@@ -127,11 +127,11 @@ class dietadb {
 
         $resultado = $con->consultarObjectes($query);
         
-        if(isset($resultado)){
+        if(count($resultado)){
             return true;
         }
-        else{}
+        else{
             return false;
         }
-
+    }
 } ?>
