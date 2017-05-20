@@ -1,8 +1,9 @@
-<?php require_once("controller/mostrarDatosTrabajadores_ctl.php");?>
+<?php require_once("controller/mostrarDatosTrabajadores_ctl.php");
 
-    
-    <?php foreach ($worker as $trabajador): ?>
-   
+?>
+<a href="javascript:history.back(1)" >Volver Atrás</a>
+   <?php foreach ($worker as $trabajador): ?>
+  
     <div class="mTB30 targetaUsuario col-xs-12">  
             <div class="col-sm-4 col-xs-12">
                 <?php if ($trabajador->getFoto()) { ?>

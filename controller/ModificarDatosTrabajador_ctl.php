@@ -13,6 +13,7 @@ if (isset($_REQUEST['modificar'])){
     $telefono=$_REQUEST['telefono'];
     $foto=$_REQUEST['foto'];
     $worker->setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto);
+    
     header('Location: index.php?ctl=admin&act=MostrarDatos&param='.$id);
 }
 
