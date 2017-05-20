@@ -96,6 +96,7 @@ border: 0px solid #000000;
 .pB15{padding-bottom: 120px;display: block;}
 .h226{height: 226px;}
 .h115{height: 115px;}
+.h175{height: 175px;}
 @media(max-width: 992px){
 	.bBlau2{background-color: red!important;}
     .pL0sm{padding-left: 0px;}
