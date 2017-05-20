@@ -113,4 +113,11 @@ class solicitud{
         $titulo= $solicitud->GetTituloSolicitudDb($idSolicitud);
         return $titulo;
     }
+
+    public function GetSolicitudDescripcion($idSolicitud){
+        $solicitud = new solicituddb;
+        $descripcion= $solicitud->GetDescripcionSolicitudDb($idSolicitud);
+        $descripcionSol=implode($descripcion[0]);
+        return $descripcionSol;
+    }
 }

@@ -132,4 +132,12 @@ class solicituddb{
         $resultado = $con->consultarObjectes($query);   
         return $resultado;
     }
+
+    public function GetDescripcionSolicitudDb($idSolicitud){
+        $con = new db();
+        $query = $con->prepare("SELECT Descripcion FROM solicitud WHERE Id = ".$idSolicitud);
+        $query->bindValue(":idSolicitud", $idSolicitud);
+        $resultado = $con->consultarObjectes($query); 
+        return $resultado;
+    }
 }
