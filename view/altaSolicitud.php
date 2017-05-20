@@ -24,11 +24,11 @@
                     </div>                 
                     <div class="form-group">
                         <label>Fecha Inicio:</label>
-                        <input minlength="4" type="date" name="fechaInicio" class="form-control" placeholder="<?php $fecha ?>" value="<?php echo $fecha ?>" />
+                        <input  type="date" name="fechaInicio" class="form-control"  />
                     </div>    
                     <div class="form-group">
                         <label>Fecha Fin:</label>
-                        <input minlength="4" type="date" name="fechaFin" class="form-control" placeholder="<?php $fecha ?>" value="<?php echo $fecha ?>" />
+                        <input  type="date" name="fechaFin" class="form-control"  />
                     </div>             
                     <div class="col-md-offset-3 col-xs-offset-2">
                         <button name="solicitar" class="btn btn-info mT20">  Solicitar    <image class="btn-icon" src="view/images/registre.png"/></button>
