@@ -14,9 +14,7 @@ $fechaInicio=$_REQUEST['fechaInicio'];
 $fechaFin=$_REQUEST['fechaFin'];
 $descripcion=$_REQUEST['descripcion'];
 $rol=$trab->getTrabajadorRol($_SESSION["test2"]);
-var_dump($rol);
-// var_dump($idSolicitud." ".$idTrabajador." ".$idCliente);
-// die();
+
 if ($rol != null){
 	if($rol == 1){
 		$entrenamiento = new entrenamiento();
