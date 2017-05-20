@@ -169,7 +169,10 @@ switch ($ctl) {
                 break;
             case "mostrarSolicitudesAsignadas":
                 include "controller/mostrarSolicitudesAsignadas_ctl.php";
-                break;  
+                break;
+            case "mostrarEntrenamiento":
+                include "controller/mostrarEntrenamiento_ctl.php";
+                break; 
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;
