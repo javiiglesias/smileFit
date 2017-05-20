@@ -4,23 +4,23 @@ require_once("controller/function_AutoLoad.php");
 require_once("config/config.inc.php");
 require_once("config/db.inc.php");
 
-class entrenamientodb {
+class dietadb {
 
-    private $entrenamientos;
+    private $dietas;
 
     public function __construct() {
-        $entrenamientos = array();
+        $dietas = array();
     }
 
-    public function getEntrenamientosDb() {
+    public function getDietasDb() {
 
         $con = new db();
 
-        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento");
-        $trainings = array();
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM dieta");
+        $diets = array();
 
         $resultado = $con->consultarObjectes($query);
-        
+
         foreach ($resultado as $row) {
             $id = $row["Id"];
             $descripcion = $row["Descripcion"];
@@ -29,18 +29,18 @@ class entrenamientodb {
             $idCliente = $row["IdCliente"];
             $idTrabajador = $row["IdTrabajador"];
             $idSolicitud = $row["IdSolicitud"];
-            $training = new entrenamiento($id, $descripcion, $fechaInicio, $fechaFin, $idCliente, $idTrabajador,$idSolicitud);
-            array_push($trainings, $training);
+            $diet = new dieta($id, $descripcion, $fechaInicio, $fechaFin, $idCliente, $idTrabajador,$idSolicitud);
+            array_push($diets, $diet);
         }
 
-        return $trainings;
+        return $diets;
     }
 
     
-    public function eliminarEntrenamientoDB($id) {
+    public function eliminarDietaDB($id) {
         $con = new db();
-        $query = $con->prepare("DELETE FROM entrenamiento WHERE id=:entrenamiento");
-        $query->bindValue(":entrenamiento", $id);
+        $query = $con->prepare("DELETE FROM dieta WHERE id=:dieta");
+        $query->bindValue(":dieta", $id);
         $resutado = $con->consulta($query);
 
         if ($resutado) {
@@ -49,10 +49,10 @@ class entrenamientodb {
         return false;
     }
 
-    public function altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud) {
+    public function altaDietaDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud) {
         //var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
         $con = new db();
-        $query = $con->prepare("INSERT INTO entrenamiento (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador,:idSolicitud)");
+        $query = $con->prepare("INSERT INTO dieta (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador,:idSolicitud)");
 
         $query->bindValue(":descripcion", $descripcion);
         $query->bindValue(":fechaInicio", $fechaInicio);
@@ -67,12 +67,12 @@ class entrenamientodb {
         return $resultado;
     }
 
-    public function getEntrenamientosTrabajadorDb($idTrabajador){
+    public function getDietasTrabajadorDb($idTrabajador){
 
         $con = new db();
-        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento WHERE IdTrabajador=".$idTrabajador);
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM dieta WHERE IdTrabajador=".$idTrabajador);
 
-        $trainings = array();
+        $diets = array();
         
         $resultado=$con->consultarObjectes($query);
 
@@ -84,21 +84,21 @@ class entrenamientodb {
                 $idCliente = $row["IdCliente"];           
                 $idTrabajador = $row["IdTrabajador"];  
                 $idSolicitud = $row["IdSolicitud"];  
-                $training = new entrenamiento($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
-                array_push($trainings,$training);
+                $diet = new dieta($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
+                array_push($diets,$diet);
         }
 
         $con = null;
         
-        return $trainings;
+        return $diets;
     }
 
-    public function getEntrenamientosClienteDb($idCliente){
+    public function getDietasClienteDb($idCliente){
 
         $con = new db();
-        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento WHERE IdCliente=".$idCliente);
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM dieta WHERE IdCliente=".$idCliente);
 
-        $trainings = array();
+        $diets = array();
         
         $resultado=$con->consultarObjectes($query);
 
@@ -110,13 +110,13 @@ class entrenamientodb {
                 $idCliente = $row["IdCliente"];           
                 $idTrabajador = $row["IdTrabajador"];  
                 $idSolicitud = $row["IdSolicitud"];  
-                $training = new entrenamiento($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
-                array_push($trainings,$training);
+                $diet = new dieta($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
+                array_push($diets,$diet);
         }
 
         $con = null;
         
-        return $trainings;
+        return $diets;
     }
 
 } ?>

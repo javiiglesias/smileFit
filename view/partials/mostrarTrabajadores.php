@@ -10,7 +10,7 @@
 			<a href="?ctl=workers&act=detalle&param=<?php echo $workers->getId();?>" >
 				<h1> <?=$workers->getNombre()." ".$workers->getApellidos(); ?></h1><br>
 			</a>
-			<span class="lite fz13"><? echo $nombreRol; ?></span><br>
+			<span class="lite fz13"><?php echo $nombreRol; ?></span><br>
 		</div>
 	</div>		
 

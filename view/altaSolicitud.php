@@ -7,7 +7,7 @@
         <div class="col-xs-11 col-md-4 col-xs-offset-1 col-md-offset-4 ">
             <div class="container-login">
                 <form action="?ctl=trabajador&act=altaSolicitudForm" method="post">
-                    <span> <? if(isset($error)){echo $error;}?></span>
+                    <span> <?php if(isset($error)){echo $error;}?></span>
                     <div class="form-group space-top">
                         <label>Tipo de solicitud:</label><br/>
                         <select name="rol">
@@ -17,6 +17,7 @@
                     </div>
                     <input type="hidden" name="idTrabajador" value="<?php echo $idTrabajador; ?>">
                     <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
+                    <input type="hidden" name="idSolicitud" value="<?php echo $idSolicitud; ?>">
                     <div class="form-group space-top">
                         <label>Descripción de la solicitud:</label>
                         <input type="text" name="descripcion" class="form-control" placeholder="Escribe el propósito de la solicitud">
