@@ -28,6 +28,11 @@
 <link href="view/css/estils.css" rel="stylesheet" type="text/css">
 <link href="view/css/prueba.css" rel="stylesheet" type="text/css">
 
+    <!-- Include the stylesheet -->
+    <link type="text/css" rel="stylesheet" href="view/calendar/style.css"/>
+    <!-- Include the jQuery library -->
+    <script src="view/calendar/jquery.min.js"></script>
+
     <title>Smile Fit S.L</title>
 </head>
 <body>
