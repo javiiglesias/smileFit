@@ -135,4 +135,12 @@ class dieta{
         $arrayDietas= $dietaDB->getDietasClienteDb($idCliente);
         return $arrayDietas;
     }
+
+    public function ObtenerUltimoIdDieta(){
+
+        $dieta = new dietadb;
+        $idDieta= $dieta->ObtenerUltimoIdEntrenamientoDb();
+        $idDie=implode($idDieta[0]);
+        return $idDie;
+    }
 }
