@@ -1,18 +1,21 @@
 <?php
- foreach ($entrenamiento as $entreno): ?>
+echo "Tu historial de Entrenamiento/Dietas es el siguiente: "."</br>";
+
+foreach ($entreno as $entrenamiento):
 
 
+?>
 
 
-            <input id="name" name="name" class="form-control" type="text" value="<?php echo $entrenamiento->getIdTrabajador() ?>" readonly />
+ <?php echo $entrenamiento->getDescripcion() ?>
 
-            <span>Apellidos:</span> <br> <input id="lastname" name="lastname" class="form-control" type="text" value="<?php echo $entrenamiento->getApellidos() ?>" readonly />
+<!---->
+<!--           <span>Nombre del Entreno: <input id="name" name="name" class="form-control" type="text" value="--><?php //echo $entrenamiento->getDescripcion() ?><!--" readonly />-->
+<!---->
+<!--            <span>Fecha Inicio:</span> <br> <input id="lastname" name="lastname" class="form-control" type="text" value="--><?php //echo $entrenamiento->getFechaInicio() ?><!--" readonly />-->
+<!---->
+<!--            <span> Fecha Fin:</span><br>  <input id="fechaNacimiento" name="fechaNacimiento" class="form-control" type="text" value="--><?php //echo $entrenamiento->getFechaFin() ?><!--" readonly />-->
 
-            <span> Fecha nacimiento:</span><br>  <input id="fechaNacimiento" name="fechaNacimiento" class="form-control" type="text" value="<?php echo $trabajador->getFechaNacimiento() ?>" readonly />
-
-            <span>Email:</span> <br> <input id="email" name="email" class="form-control" type="text" value="<?php echo $trabajador->getEmail() ?>" readonly />
-
-            <span>Telefono:</span><br>  <input id="telefono" name="telefono" class="form-control" type="text" value="<?php echo $trabajador->getTelefono() ?>" readonly />
 
 
 
