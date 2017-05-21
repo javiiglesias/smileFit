@@ -147,5 +147,21 @@ class trabajadordb {
         return $resultado;
     }
 
+    public function getTrabajadorPorTablaUsuarioDB($id){
+        $con = new db();
+        $query=$con->prepare("SELECT Id FROM trabajador WHERE IdUsuario= ".$id);
+        $resultado = $con->consultarObjectes($query);
+
+        $test=implode($resultado[0]);
+
+
+
+        return $test;
+
+
+
+
+    }
+
 }
 ?>
