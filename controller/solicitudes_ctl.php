@@ -8,8 +8,6 @@ require_once 'view/header.php';
 
 $usuarios = new usuario();
 
-$nSolicitud=$_REQUEST['param'];
-
 if(isset($_SESSION["test2"])){
    $idUser= $_SESSION["test2"];
 }
@@ -26,25 +24,28 @@ if($usuarioRol == 'Trabajador')
 	$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol,$nSolicitud);
+	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol);
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
 	//buscar idCliente para buscar sus solicitudes
 	$clientes = new cliente();
-	$idCliente = $clientes->getCliente($idUser);	
+	$cli = $clientes->getCliente($idUser);
+	$idCliente = $cli->getId();
 
-	//mostrar lineas solicitudes
+	//ids lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();
-	$solicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
+	//$lineasSolicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
+	$idSolicitudes = $lineaSolicitudes->getIdSolicitudCliente($idCliente);
 
-	//mostrar solicitudes
+	//mostrar solicitudes devolverá array de arrays
 	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesCliente($idRol);
+	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
 }
-
+if ($_GET['act'] == 'mostrarSolicitudes') {
 require_once 'view/solicitudes.php';
 require_once 'view/footer.php';
+}
 
 ob_end_flush();
 ?>

@@ -36,13 +36,14 @@
                     <div class="form-group">
                         <label>Telefono</label>
                         <input type="text"  maxlength="10" id="telf" name="telefono" class="form-control">
-                        <span id='telf_error' class=errorMsg >Introduce un telefpmp valido (9 numeros)</span>
+                        <span id='telf_error' class=errorMsg >Introduce un telefono valido (9 numeros)</span>
                     </div>
-                    <div class="form-group"  id='fechaNacimiento'>
+
+                    <div class="form-group">
 
                         <label>fecha de nacimiento</label>
                         <input type='text' id="fechaNacimiento" name="fechaNacimiento" class="form-control"  />
-                        <span id='fechaNacimiento_error' class=errorMsg >Introduce una fecha valida (YYYY/MM/DD)</span>
+                        <span id='fechaNacimiento_error' class=errorMsg >Introduce una fecha valida (YYYY-MM-DD)</span>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                
                     </div>

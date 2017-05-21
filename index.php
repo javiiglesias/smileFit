@@ -94,6 +94,14 @@ switch ($ctl) {
             case "EliminarTrabajador":
                 include "controller/eliminarTrabajador_ctl.php";
                 break;
+            case "mostrarClientes":
+                include "controller/mostrarClientes_ctl.php";
+                break;
+              case "ModificarDatos":
+                include "controller/ModificarDatosCliente_ctl.php";
+                break;
+            
+            
 
         }
         break;
@@ -123,11 +131,17 @@ switch ($ctl) {
             case "solicitar":
                 include "controller/solicitar_ctl.php";
                 break;
-            case "MostrarSolicitudes":
+            case "mostrarSolicitudes":
                 include "controller/solicitudes_ctl.php";
                 break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;
         }
-        break;
+            break;
 
     case "trabajador":
         switch ($act) {
@@ -144,6 +158,24 @@ switch ($ctl) {
             case "mostrarLineasSolicitud":
                 include "controller/lineasSolicitud_ctl.php";
                 break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
+            case "asignarSolicitud":
+                include "controller/altaSolicitud_ctl.php";
+                break;
+            case "altaSolicitudForm":
+                include "controller/altaSolicitudForm_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;
+            case "mostrarEntrenamiento":
+                include "controller/mostrarEntrenamiento_ctl.php";
+                break;
+            case "altaEjercicio":
+                include "controller/altaEjercicio_ctl.php";
+                break;  
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;

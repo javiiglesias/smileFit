@@ -213,5 +213,12 @@ class trabajador{
 
     }
 
-    
+    public function getNombreApellidos($idTrabajador){
+
+        $trabajadorDB = new trabajadordb();
+        $nombreApellidos = $trabajadorDB->getNombreApellidosDb($idTrabajador);
+        $nombreApellidosTrabajador=implode($nombreApellidos[0]);
+        return $nombreApellidosTrabajador;
+
+    }
 }

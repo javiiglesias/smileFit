@@ -79,6 +79,7 @@ class usuario
     {
         $this->Descripcion = $Descripcion;
     }
+
     public function validateUser($name, $pass) {
         $usuarioDB = new usuariodb;
         $usuario= $usuarioDB->consultarUsuarioDB($name);
