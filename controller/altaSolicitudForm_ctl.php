@@ -19,16 +19,21 @@ if ($rol != null){
 	if($rol == 1){
 		$entrenamiento = new entrenamiento();
 		$entrenamientos = $entrenamiento->altaEntrenamiento($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
-	}
+                require_once 'view/altaEjercicio.php';
+                
+        }
 	else{
 		$dieta = new dieta();
 		$dietas = $dieta->altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
+                echo "hola!";
+                die();
+                require_once 'view/altaDieta.php';
 	}
 	
 }
 
 
-require_once 'view/altaEjercicio.php';
+
 require_once 'view/footer.php';
 
 ob_end_flush();
