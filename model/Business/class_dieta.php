@@ -148,4 +148,9 @@ class dieta{
         $idDie=implode($idDieta[0]);
         return $idDie;
     }
+    public function cantidadTiposComida(){
+        $dieta =new dietadb;
+        $cantidadTipoDieta=$dieta->cantidadTiposComida();
+        return $cantidadTipoDieta;
+    }
 }

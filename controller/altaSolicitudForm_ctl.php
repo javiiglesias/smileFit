@@ -33,6 +33,7 @@ if ($rol != null){
                 $fecha=$dietas[0]->getFechaInicio();
                 $resta=strtotime( $fechaFin) - strtotime($fecha);
                 $diferencia_dias=intval($resta/60/60/24);
+                $tipoComida=$dieta->cantidadTiposComida();
                 //echo "La cantidad de días entre el ".$fecha." y".$fechaFin."  es <b>".$diferencia_dias."</b>";
                  //var_dump($diasTotales);
                 //die();

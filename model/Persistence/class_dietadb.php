@@ -169,5 +169,18 @@ public function getDietasTrabajadorDb($idTrabajador){
         $resultado = $con->consultarObjectes($query);   
         return $resultado;
     }
+    public function cantidadTiposComida(){
+        
+        $con = new db();
+        $query = $con->prepare("SELECT Id,Descripcion from tipocomida");
+
+        $diets = array();
+        
+        $resultado=$con->consultarObjectes($query);
+
+        foreach ($resultado as $row) {
+            
+        }
+    }
 
 } ?>

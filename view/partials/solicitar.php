@@ -29,8 +29,8 @@
     </div>
 <?php }else{ ?>
         <div class="text-center col-xs-12 bgBlanc">
-            <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
-            <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
+            <a href="index.php?ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
+            <a href="index.php?ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
         </div>
     <?php } ?>    
 </div>
