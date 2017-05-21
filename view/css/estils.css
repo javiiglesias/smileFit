@@ -38,16 +38,9 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .bgOpacitat2{background-color: pink; opacity: 0.8}
 .bgOpacitat3{background-color: #6784BC; opacity: 0.8}
 .bgOpacitat4{background-color:#F5C366;opacity: 0.8}
-.targetaUsuario{    background-color: #dadada;
-    padding: 20px;
-    border-radius: 33px;}
-.mensaje1{
-    height: auto;
-    text-align: right;
-    background-color: #8fc6d9;
-    padding:25px;
-    border-radius: 78px 0px 78px 78px;
--moz-border-radius: 78px 0px 78px 78px;
+.targetaUsuario{    background-color: #dadada; padding: 20px;border-radius: 33px;}
+.mensaje1{height: auto;text-align: right; background-color: #8fc6d9; padding:25px;
+    border-radius: 78px 0px 78px 78px;-moz-border-radius: 78px 0px 78px 78px;
 -webkit-border-radius: 78px 0px 78px 78px;
 border: 0px solid #000000;
 }
@@ -60,6 +53,9 @@ border: 0px solid #000000;
 	-moz-border-radius: 0px 78px 78px 78px;
 	-webkit-border-radius: 0px 78px 78px 78px;
 	border: 0px solid #000000;
+}
+.O0-2{
+    background-color: #A5DCA8; opacity: 0.9;
 }
 /*--------------*/
 /*    Border   */
@@ -75,6 +71,7 @@ border: 0px solid #000000;
 /*-----------*/
 .w100{width: 100%}
 .h75{height: 20%}
+.hAuto{height: auto}
 /*--------------*/
 /* pd i mg     */
 /*------------*/
@@ -96,6 +93,7 @@ border: 0px solid #000000;
 .pB15{padding-bottom: 120px;display: block;}
 .h226{height: 226px;}
 .h115{height: 115px;}
+.h175{height: 175px;}
 @media(max-width: 992px){
 	.bBlau2{background-color: red!important;}
     .pL0sm{padding-left: 0px;}
@@ -141,3 +139,45 @@ border: 0px solid #000000;
 .registro-form {background-color: rgba(255, 255, 255, 0.3);color: #FFF;padding: 15px; margin: 0 auto;}
 .registro-form a,.login-form a:hover {color: #FFF;text-decoration: none;}
 .imagen-registro{height: 150px; width: 150px;text-align:center;}
+@media (max-width: 1200px) {
+       .navbar-default .navbar-nav>li>a{
+    background-color: #000000;
+       line-height: 18px!important;
+   }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        width: 100%;
+           margin-top: 230px!important;
+        display:block !important;
+    }
+}

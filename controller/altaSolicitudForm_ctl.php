@@ -24,12 +24,11 @@ if ($rol != null){
 		$dieta = new dieta();
 		$dietas = $dieta->altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
 	}
-	$mensaje = "Tu solicitud se ha creado correctamente!";
-    require_once 'view/confirmacion.php';
+	
 }
 
 
-//require_once 'view/lineasSolicitud.php';
+require_once 'view/altaEjercicio.php';
 require_once 'view/footer.php';
 
 ob_end_flush();
