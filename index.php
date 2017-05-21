@@ -160,7 +160,6 @@ switch ($ctl) {
             case "MostrarDatos":
                 include "controller/MostrarDatosCliente_ctl.php";
                 break;
-
             case "mostrarAgenda":
                 include "controller/mostrarAgenda_ctl.php";
                 break;
