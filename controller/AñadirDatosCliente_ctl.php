@@ -7,11 +7,15 @@ $cliente= new cliente();
 
 if (isset($_REQUEST['añadir'])){
     $existeCliente = $cliente->getCliente($_REQUEST['idUser']);
-    if ($existeCliente == true) {
-        $mensaje = "Te has registrado correctamente, Puedes iniciar Session";
-        require_once 'view/confirmacion.php';
+    if ($existeCliente == true) { ?>
+                    <div class="alert alert-dismissible alert-danger text-center">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h3> <?php echo "Ya hay una ficha Creada"; ?></h3>
 
-    }else{
+<p><a class="alert-link" href='?ctl=cliente&act=MostrarDatos'>Mostrar Datos</a></p>
+</div>
+
+  <?php  }else{
         $nombre = $_REQUEST['name'];
         $apellidos=$_REQUEST['lastname'];
         $edad=$_REQUEST['age'];

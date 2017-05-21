@@ -125,8 +125,20 @@ switch ($ctl) {
             case "AñadirDatos":
                 include "controller/AñadirDatosCliente_ctl.php";
                 break;
+            case "AñadirFichaMedica":
+                include "controller/AñadirFichaMedica_ctl.php";
+                break;
+            case "MostrarFichaMedica":
+                include "controller/MostrarFichaMedica_ctl.php";
+                break;
+            case "ModificarDatosFicha":
+                include "controller/ModificarDatosFicha_ctl.php";
+                break;
+
+            case "historial":
+                include "controller/Historial_ctl.php";
             case "Entrenamiento":
-                include "controller/entrenamiento_ctl.php";
+                include "controller/entrenamientos_ctl.php";
                 break;
             case "solicitar":
                 include "controller/solicitar_ctl.php";
@@ -175,9 +187,9 @@ switch ($ctl) {
             case "altaEjercicio":
                 include "controller/altaEjercicio_ctl.php";
                 break;  
-//            case "detalls":
-//                include "controller/detallObra_ctl.php";
-//                break;
+            case "MostrarMisClientes":
+                include "controller/mostrarMisClientes_ctl.php";
+                break;
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
