@@ -21,15 +21,10 @@ if($usuarioRol == 'Trabajador')
 	$trabajadores = new trabajador();
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
 	//buscar idRol del trabajador
-        if($idTrabajador){
 	$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
-         
 	//mostrar solicitudes
 	$solicitudes = new solicitud();
 	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol);
-         }else{
-             $msg="no tienes solicitudes";
-         }
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 

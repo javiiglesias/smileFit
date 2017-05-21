@@ -1,6 +1,5 @@
 <?php require_once("controller/mostrarSolicitudesAsignadas_ctl.php"); ?>  
-<?php if(isset($usuarioRol) && isset($gen)){
-  if($usuarioRol == "Trabajador"){
+<?php  if($usuarioRol == "Trabajador"){
        
         foreach ($gen as $entrenamientos): 
             $idC = $entrenamientos->getIdCliente();
@@ -72,8 +71,4 @@
         <?php endforeach;?>
     </div>
 
-    <?php }
-    
-}else{
-    echo $msg;
-}?>
+    <?php }?>
