@@ -18,16 +18,16 @@ class FichaMedica
 
         switch (func_num_args()) {
             case 6:
-                $this->setId(null);
-                $this->setIdCliente(func_get_arg(0));
+                $this->setId(func_get_arg(0));
                 $this->setIMC(func_get_arg(1));
                 $this->setPeso(func_get_arg(2));
                 $this->setAltura(func_get_arg(3));
                 $this->setMetabolismo(func_get_arg(4));
+                $this->setIdCliente(func_get_arg(5));
                 break;
             case 5:
-                $this->setId(func_get_arg(0));
-                $this->setIdCliente(null);
+                $this->setId(null);
+                $this->setIdCliente(func_get_arg(0));
                 $this->setIMC(func_get_arg(1));
                 $this->setPeso(func_get_arg(2));
                 $this->setAltura(func_get_arg(3));
@@ -159,9 +159,9 @@ class FichaMedica
     }
 
 
-    public function añadirFichaMedica($nombre,$apellidos,$edad,$email,$idUser){
+    public function añadirFichaMedica($IMC,$Peso,$Altura,$Metabolismo,$idCliente){
         $FichaMedicaDB= new FichaMedicadb();
-        $ficha = $FichaMedicaDB->añadirFichaMedicaDB($nombre,$apellidos,$edad,$email,$idUser);
+        $ficha = $FichaMedicaDB->añadirFichaMedicaDB($IMC,$Peso,$Altura,$Metabolismo,$idCliente);
         return $ficha;
     }
 

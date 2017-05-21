@@ -15,8 +15,8 @@
                 Metabolismo:  <input id="Metabolismo" name="Metabolismo" class="form-control" type="text" value="<?php echo $ficha->getMetabolismo() ?>" readonly />
                 <span id='Metabolismo_error' class=errorMsg>Introduce un email valido<br/></span> </br>
 
-                <input id="button" class="btn btn-default" onclick="can()" value="Modificar Datos"/> </br>
-                <input type="submit" id="Submit" class="btn btn-default" name="modificar" value="Guardar Cambios"  style="visibility : hidden" />
+<!--                <input id="button" class="btn btn-default" onclick="can()" value="Modificar Datos"/> </br>-->
+<!--                <input type="submit" id="Submit" class="btn btn-default" name="modificar" value="Guardar Cambios"  style="visibility : hidden" />-->
 
             </div>
 
@@ -27,19 +27,7 @@
 
 
     </div>
-    <script type="application/javascript">
 
-        function can() {
-            document.getElementById("IMC").readOnly=false;
-            document.getElementById("Peso").readOnly=false;
-            document.getElementById("Altura").readOnly=false;
-            document.getElementById("Metabolismo").readOnly=false;
-            document.getElementById("button").style.visibility='hidden';
-            document.getElementById("Submit").style.visibility='visible';
-
-        }
-
-    </script>
 
 
 <?php } ?>

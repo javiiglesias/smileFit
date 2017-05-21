@@ -5,20 +5,16 @@ $titlePage = " Mi Historial ";
 
 $clientes = new cliente();
 $entrenamiento = new entrenamiento();
+$dieta = new dieta();
 
 if(isset($_SESSION["test2"])){
     $rol2= $_SESSION["test2"];
 }
-
 $cliente=$clientes->getCliente($rol2);
 
-
-
-
-
 $test=$cliente->getId();
-
 $entreno=$entrenamiento->getEntrenamientosCliente($test);
+$dietas = $dieta->getDietasCliente($test);
 
 
 
