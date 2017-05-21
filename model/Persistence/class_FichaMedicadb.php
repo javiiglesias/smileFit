@@ -57,22 +57,22 @@ class FichaMedicadb{
 
 
 
-    public function añadirFichaMedicaDB($nombre,$apellidos,$edad,$email,$idUser){
+    public function añadirFichaMedicaDB($IMC,$Peso,$Altura,$Metabolismo,$idCliente){
 
         $con = new db();
-        $query=$con->prepare("INSERT INTO fichamedica(imc, peso, altura, metabolismo, IdCliente) VALUES (:nombre,:apellidos,:edad,:email,:idUser)");
+        $query=$con->prepare("INSERT INTO fichamedica(imc, peso, altura, metabolismo, IdCliente) VALUES (:imc,:peso,:altura,:metabolismo,:idCliente)");
 
-        $query->bindValue(":nombre", $nombre);
-        $query->bindValue(":apellidos", $apellidos);
-        $query->bindValue(":edad", $edad);
-        $query->bindValue(":email", $email);
-        $query->bindValue(":idUser", $idUser);
+        $query->bindValue(":imc", $IMC);
+        $query->bindValue(":peso", $Peso);
+        $query->bindValue(":altura", $Altura);
+        $query->bindValue(":metabolismo", $Metabolismo);
+        $query->bindValue(":idCliente", $idCliente);
         $resutado = $con->consulta($query);
 
         if($resutado){
-            $cliente = $resutado[0];
+            $ficha = $resutado[0];
 
-            return  new FichaMedica($cliente['id'],$cliente['imc'], $cliente['peso'], $cliente['altura'], $cliente['metabolismo'], $cliente['IdCliente']);
+            return  new FichaMedica($ficha['imc'], $ficha['peso'], $ficha['altura'], $ficha['metabolismo'], $ficha['IdCliente']);
         }
         return false;
     }
