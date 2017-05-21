@@ -48,15 +48,19 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$clientes = new cliente();
 	$cli = $clientes->getCliente($idUser);
 	$idCliente = $cli->getId();
-
+ if($idCliente){
 	//ids lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();
+        
 	//$lineasSolicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
 	$idSolicitudes = $lineaSolicitudes->getIdSolicitudCliente($idCliente);
 
 	//mostrar solicitudes devolverá array de arrays
 	$solicitudes = new solicitud();
 	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
+ }else{
+         $msg="no tienes solicitudes";
+ }
 }
 if ($_GET['act'] == 'mostrarSolicitudes') {
 require_once 'view/solicitudes.php';
