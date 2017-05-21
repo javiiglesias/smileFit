@@ -105,7 +105,7 @@ function getCalender($year = '',$month = '')
         function getCalendar(target_div,year,month){
             $.ajax({
                 type:'POST',
-                url:'functions.php',
+                url:'view/calendar/functions.php',
                 data:'func=getCalender&year='+year+'&month='+month,
                 success:function(html){
                     $('#'+target_div).html(html);
@@ -116,7 +116,7 @@ function getCalender($year = '',$month = '')
         function getEvents(date){
             $.ajax({
                 type:'POST',
-                url:'functions.php',
+                url:'view/calendar/functions.php',
                 data:'func=getEvents&date='+date,
                 success:function(html){
                     $('#event_list').html(html);
@@ -138,7 +138,7 @@ function getCalender($year = '',$month = '')
                 var title = $('#eventTitle').val();
                 $.ajax({
                     type:'POST',
-                    url:'functions.php',
+                    url:'view/calendar/functions.php',
                     data:'func=addEvent&date='+date+'&title='+title,
                     success:function(msg){
                         if(msg == 'ok'){
