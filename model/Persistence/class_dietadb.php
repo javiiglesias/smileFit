@@ -134,4 +134,13 @@ class dietadb {
             return false;
         }
     }
+
+    public function ObtenerUltimoIdDietaDb(){
+
+        $con = new db();
+        $query = $con->prepare("SELECT MAX(id) FROM dieta");
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
+    }
+
 } ?>

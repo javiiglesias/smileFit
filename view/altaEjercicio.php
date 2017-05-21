@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group space-top">
                     <label>Descanso:</label>
-                    <input type="number" id="descanso" name="descanso" class="form-control" placeholder="Tiempo entremedio de descanso">
+                    <input type="text" id="descanso" name="descanso" class="form-control" placeholder="Tiempo entremedio de descanso">
                     <!-- <span id='descanso_error' class="errorMsg" >Introduce un descanso mayor de 0</span> -->
                 </div>                    
                 <div class="col-md-offset-3 col-xs-offset-2">

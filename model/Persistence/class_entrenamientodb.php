@@ -135,4 +135,12 @@ class entrenamientodb {
         }
     }
 
+    public function ObtenerUltimoIdEntrenamientoDb(){
+
+        $con = new db();
+        $query = $con->prepare("SELECT MAX(id) FROM entrenamiento");
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
+    }
+
 } ?>

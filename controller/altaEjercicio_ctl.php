@@ -10,7 +10,6 @@ $duracion=$_REQUEST['duracion'];
 $descanso=$_REQUEST['descanso'];
 
 
-
 $mensaje = "Tu solicitud se ha creado correctamente!";
 require_once 'view/confirmacion.php';
 

@@ -19,14 +19,14 @@ if ($rol != null){
 	if($rol == 1){
 		$entrenamiento = new entrenamiento();
 		$entrenamientos = $entrenamiento->altaEntrenamiento($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
+		$idEntrenamiento = $entrenamiento->ObtenerUltimoIdEntrenamiento();
                 require_once 'view/altaEjercicio.php';
                 
         }
 	else{
 		$dieta = new dieta();
 		$dietas = $dieta->altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
-                echo "hola!";
-                die();
+		$idDieta = $dieta->ObtenerUltimoIdDieta();
                 require_once 'view/altaDieta.php';
 	}
 	
