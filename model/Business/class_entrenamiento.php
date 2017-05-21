@@ -135,4 +135,12 @@ class entrenamiento{
         $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosClienteDb($idCliente);
         return $arrayEntrenamientos;
     }
+
+    public function ObtenerUltimoIdEntrenamiento(){
+
+        $entrenamiento = new entrenamientodb;
+        $idEntrenamiento= $entrenamiento->ObtenerUltimoIdEntrenamientoDb();
+        $idEnt=implode($idEntrenamiento[0]);
+        return $idEnt;
+    }
 }
