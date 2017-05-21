@@ -1,8 +1,7 @@
-<?php  require_once('partials/header-calendar.php');
-include_once('partials/functions.php');
-         ?>
-    <!-- Display event calendar -->
-    <div id="calendar_div">
-        <?php echo getCalender(); ?>
-    </div>
-
+<?php
+/**
+ * Created by PhpStorm.
+ * User: javi
+ * Date: 21/05/17
+ * Time: 17:14
+ */
