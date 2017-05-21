@@ -1,5 +1,15 @@
 
 <div class="container">
-    
-<?php require_once 'view/partials/solicitudesAsignadas.php';?>
+   <?php if(isset($gen)){
+ 
+        require_once 'view/partials/solicitudesAsignadas.php';
+ 
+       
+ 
+    }else{
+ 
+  echo $msg;
+ 
+    }?>
+ 
 </div>

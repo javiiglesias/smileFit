@@ -180,7 +180,16 @@ class trabajador{
         } else {
             $trabajadorDB = new trabajadordb();
             $trabajador = $trabajadorDB->consultarTrabajadorDB($idUser);
+             if(!$trabajador){
+ 
+                return false;
+ 
+            }else{
+ 
             return $trabajador->getId();
+ 
+            }
+ ;
         }
     }
     
@@ -201,7 +210,14 @@ class trabajador{
 
         $trabajadorDB = new trabajadordb();
         $trabajador = $trabajadorDB->consultarTrabajadorDB($idRol);
-        return $trabajador->getIdRol();
+         if(count($trabajador )<1){
+ 
+            return false;
+ 
+        }else{
+            return $trabajador->getIdRol();
+        }
+ 
     }
 
       public function setTrabajador($id,$nombre,$apellidos,$fechaNacimiento,$email,$telefono,$foto){
