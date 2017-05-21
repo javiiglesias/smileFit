@@ -42,9 +42,10 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$solicitudes = new solicitud();
 	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
 }
-
+if ($_GET['act'] == 'mostrarSolicitudes') {
 require_once 'view/solicitudes.php';
 require_once 'view/footer.php';
+}
 
 ob_end_flush();
 ?>
