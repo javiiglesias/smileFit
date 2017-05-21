@@ -1,14 +1,20 @@
 <?php
 var_dump($diferencia_dias);
 ?>
-<span>Periodo de dieta desde <?php echo $fechaInicio ?> hasta <?php echo $fechaFin ?><br> totales de la dieta <?php $diferencia_dias ?></span>  
+<div class="container">
+<span>Periodo de dieta desde <?php echo $fechaInicio ?> hasta <?php echo $fechaFin ?><br> totales de la dieta <?php echo $diferencia_dias ?></span>  
 <?php for ($index = 0; $index < $diferencia_dias; $index++) { ?>
-    <label>Tipo Comida</label>
-    <?php for ($index = 0; $index < count($tipoComida); $index++) { ?>
-        <input type="text" value="<?php echo $tipoComida ?>">
-        <?php } ?>
+    <br><label>Tipo Comida</label>
+    <?php for ($index1 = 0; $index1 < count($tipoComida); $index1++) { ?>
+    <input type="text" class="w100px" readonly value="<?php echo implode($tipoComida[$index1]) ?>">
+   
     <?php } ?>
+    <br><label>Producto</label>
+     <?php for ($index1 = 0; $index1 < count($tipoComida); $index1++) { ?>
+    <input type="text" class="w100px" readonly value="yogurt">
+     <?php }?>
+<?php } ?>
 
 
-?>
+</div>
 

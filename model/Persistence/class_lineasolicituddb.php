@@ -13,7 +13,6 @@ class lineasolicituddb{
     public function altaLineaSolicitudDb($idSolicitud,$idTrabajador,$idCliente,$descripcion){
 
         $con = new db();
-
         $query=$con->prepare("INSERT INTO lineasolicitud(IdSolicitud,IdTrabajador,IdCliente,Descripcion) VALUES (:idSolicitud,:idTrabajador,:idCliente,:descripcion)");
 
         $query->bindValue(":idSolicitud", $idSolicitud);

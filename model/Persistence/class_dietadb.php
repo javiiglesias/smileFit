@@ -35,7 +35,7 @@ class dietadb {
 
         return $diets;
     }
-
+    
     
     public function eliminarDietaDB($id) {
         $con = new db();
@@ -169,18 +169,12 @@ public function getDietasTrabajadorDb($idTrabajador){
         $resultado = $con->consultarObjectes($query);   
         return $resultado;
     }
-    public function cantidadTiposComida(){
-        
+    
+    public function cantidadTipoComida(){
         $con = new db();
-        $query = $con->prepare("SELECT Id,Descripcion from tipocomida");
-
-        $diets = array();
-        
-        $resultado=$con->consultarObjectes($query);
-
-        foreach ($resultado as $row) {
-            
-        }
+        $query = $con->prepare("SELECT Descripcion FROM tipocomida");
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
     }
 
 } ?>
