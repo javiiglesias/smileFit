@@ -1,24 +1,44 @@
 <?php
-echo "Tu historial de Entrenamiento/Dietas es el siguiente: "."</br>";
-
-foreach ($entreno as $entrenamiento):
-
-
+    if (count($entreno) > 0) { ?>
+        <div style="text-align:center;">
+            <table border="1" cellspacing="3" cellpadding="0" class="tabla" width="50%">
+            <tr>
+                <th style="text-align: center;">Nombre</th>
+                <th style="text-align: center;">Fecha Inicio</th>
+                <th style="text-align: center;">Fecha Fin  </th>
+            </tr>
+            <?php foreach ($entreno as $entrenamiento): ?>
+                <tr>
+                    <td><?php echo $entrenamiento->getDescripcion(); ?></td>
+                    <td><?php echo $entrenamiento->getFechaInicio(); ?></td>
+                    <td><?php echo $entrenamiento->getFechaFin(); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        </div>
+        <hr>
+        <?php
+    }
+    ?>
+<?php
+    if (count($entreno) > 0) { ?>
+    <div style="text-align:center;">
+        <table border="1" cellspacing="3" cellpadding="0" class="tabla" width="50%">
+            <tr>
+                <th style="text-align: center;">Nombre</th>
+                <th style="text-align: center;">Fecha Inicio</th>
+                <th style="text-align: center;">Fecha Fin  </th>
+            </tr>
+            <?php foreach ($dietas as $nutricion): ?>
+                <tr>
+                    <td><?php echo $nutricion->getDescripcion(); ?></td>
+                    <td><?php echo $nutricion->getFechaInicio(); ?></td>
+                    <td><?php echo $nutricion->getFechaFin(); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+<?php
+}
 ?>
 
-
- <?php echo $entrenamiento->getDescripcion() ?>
-
-<!---->
-<!--           <span>Nombre del Entreno: <input id="name" name="name" class="form-control" type="text" value="--><?php //echo $entrenamiento->getDescripcion() ?><!--" readonly />-->
-<!---->
-<!--            <span>Fecha Inicio:</span> <br> <input id="lastname" name="lastname" class="form-control" type="text" value="--><?php //echo $entrenamiento->getFechaInicio() ?><!--" readonly />-->
-<!---->
-<!--            <span> Fecha Fin:</span><br>  <input id="fechaNacimiento" name="fechaNacimiento" class="form-control" type="text" value="--><?php //echo $entrenamiento->getFechaFin() ?><!--" readonly />-->
-
-
-
-
-
-
-<?php endforeach; ?>

@@ -10,14 +10,14 @@
             <div class="col-xs-12 col-md-6">
                 <h1>Info Cliente</h1>
                 <ul>
-                <li><a href="?ctl=cliente&act=AñadirDatos">Añadir Ficha Personal</a></li>
-                    <li><a href="?ctl=cliente&act=AñadirFichaMedica">Añadir Ficha Medica</a></li>
-                    <li><a href="?ctl=cliente&act=MostrarFichaMedica">Mostrar Mi Ficha Medica</a></li>
-                <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>
-                    <li><a href="?ctl=cliente&act=historial">Ver mi HIstorial de Compras</a></li>
-                <li><a href="?ctl=cliente&act=mostrarSolicitudes">Mostrar Solicitudes Pendientes</a></li>
-                <li><a href="?ctl=cliente&act=mostrarSolicitudesAsignadas">Mostrar Solicitudes En Curso</a></li>
-                <li><a href="?ctl=cliente&act=mostrarAgenda">Visualizar Mi Agenda</a></li>
+<!--                <li><a href="?ctl=cliente&act=AñadirDatos">Añadir Ficha Personal</a></li>-->
+<!--                    <li><a href="?ctl=cliente&act=AñadirFichaMedica">Añadir Ficha Medica</a></li>-->
+<!--                    <li><a href="?ctl=cliente&act=MostrarFichaMedica">Mostrar Mi Ficha Medica</a></li>-->
+<!--                <li><a href="?ctl=cliente&act=MostrarDatos">Visualizar Mis Datos</a></li>-->
+<!--                    <li><a href="?ctl=cliente&act=historial">Ver mi HIstorial de Compras</a></li>-->
+<!--                <li><a href="?ctl=cliente&act=mostrarSolicitudes">Mostrar Solicitudes Pendientes</a></li>-->
+<!--                <li><a href="?ctl=cliente&act=mostrarSolicitudesAsignadas">Mostrar Solicitudes En Curso</a></li>-->
+<!--                <li><a href="?ctl=cliente&act=mostrarAgenda">Visualizar Mi Agenda</a></li>-->
                 </ul>
                 <?php require_once('partials/contentNews.php');?>
             </div>
