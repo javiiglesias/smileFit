@@ -2,7 +2,7 @@
 
 ?>
 <div class="container">
-<span>Periodo de dieta desde <?php echo $fechaInicio ?> hasta <?php echo $fechaFin ?><br> totales de la dieta <?php echo $diferencia_dias ?></span>  
+<span>Periodo de dieta desde <?php echo $fechaInicio ?> hasta <?php echo $fechaFin ?><br> Totales de la dieta <?php echo $diferencia_dias ?></span>  
 <?php for ($index = 0; $index < $diferencia_dias; $index++) { ?>
     <br><label class="w100px">Tipo Comida</label>
     <?php for ($index1 = 0; $index1 < count($tipoComida); $index1++) { ?>
