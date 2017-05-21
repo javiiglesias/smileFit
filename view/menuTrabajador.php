@@ -1,3 +1,12 @@
+<?php
+//include session control
+//include("../controller/checkSession.php");
+include("C:/xampp/htdocs/M12/smileFit/controller/checkSession.php");
+//include("../view/printInvalidMessage.php");
+
+if (checkSession()) {
+?>
+
 <div id="wrapper">
     <div class="overlay"></div>
 
@@ -30,3 +39,8 @@
         </div>
     </div>
 </div>
+    <?php
+} else{
+    header("Location: index.php");
+}
+?>
