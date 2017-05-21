@@ -214,6 +214,8 @@ class trabajador{
  
             return false;
  
+        }else{
+            return $trabajador->getIdRol();
         }
  
     }
