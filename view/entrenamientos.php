@@ -2,7 +2,7 @@
     <div class="bgprinop col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
 
         <div class="col-lg-12 O0-2">
-            <h1>Practica juyitsu</h1>
+            <h1>Practica Jiu-jitsu</h1>
             <div class="col-lg-3">
                 <img src="view/images/juyitsu.jpg" class="img-responsive" alt="ejercicio 1"/><br>
             </div>
@@ -74,7 +74,7 @@
 
                         </tr>
                         <tr>
-                            <td >jueves: </td>
+                            <td >Jueves: </td>
                             <td >de 11:00 a 12:30 h: </td>
                             <td >de 10:30 a 12:00 h </td>
                             <td>(Mario Alcazar)</td>

@@ -26,7 +26,7 @@
     }else{ 
 ?>
 <div class="col-xs-12 col-sm-6" >
-<h2>Soy un listado de Entrenamientos</h2>
+<h2>Entrenamientos</h2>
 <?php        foreach ($entrenamiento as $entrenamientos): 
             $idC = $entrenamientos->getIdCliente();
             $idT = $entrenamientos->getIdTrabajador();
@@ -49,7 +49,7 @@
         <?php endforeach; ?>
 </div>
 <div class="col-xs-12 col-sm-6 borderGris">
-<h2>Soy un listado de dietasssss</h2>
+<h2>Dietas</h2>
 <?php        foreach ($dieta as $dietas): 
             $idC = $dietas->getIdCliente();
             $idT = $dietas->getIdTrabajador();
