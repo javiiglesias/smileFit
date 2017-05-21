@@ -18,12 +18,12 @@ class FichaMedica
 
         switch (func_num_args()) {
             case 6:
-                $this->setId(null);
-                $this->setIdCliente(func_get_arg(0));
-                $this->setIMC(func_get_arg(1));
-                $this->setPeso(func_get_arg(2));
-                $this->setAltura(func_get_arg(3));
-                $this->setMetabolismo(func_get_arg(4));
+                $this->setId(func_get_arg(0));
+                $this->setIdCliente(func_get_arg(1));
+                $this->setIMC(func_get_arg(2));
+                $this->setPeso(func_get_arg(3));
+                $this->setAltura(func_get_arg(4));
+                $this->setMetabolismo(func_get_arg(5));
                 break;
             case 5:
                 $this->setId(func_get_arg(0));

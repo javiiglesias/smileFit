@@ -60,7 +60,7 @@ class FichaMedicadb{
     public function añadirFichaMedicaDB($nombre,$apellidos,$edad,$email,$idUser){
 
         $con = new db();
-        $query=$con->prepare("INSERT INTO fichamedica(imc, peso, Edad, altura, metabolismo, IdUsuario) VALUES (:nombre,:apellidos,:edad,:email,:idUser)");
+        $query=$con->prepare("INSERT INTO fichamedica(imc, peso, altura, metabolismo, IdCliente) VALUES (:nombre,:apellidos,:edad,:email,:idUser)");
 
         $query->bindValue(":nombre", $nombre);
         $query->bindValue(":apellidos", $apellidos);
@@ -72,7 +72,7 @@ class FichaMedicadb{
         if($resutado){
             $cliente = $resutado[0];
 
-            return  new cliente($cliente['nombre'], $cliente['apellidos'], $cliente['edad'], $cliente['email'],$cliente['telefono'],$cliente['foto'],$cliente['idUser']);
+            return  new FichaMedica($cliente['id'],$cliente['imc'], $cliente['peso'], $cliente['altura'], $cliente['metabolismo'], $cliente['IdCliente']);
         }
         return false;
     }

@@ -187,9 +187,9 @@ switch ($ctl) {
             case "altaEjercicio":
                 include "controller/altaEjercicio_ctl.php";
                 break;  
-//            case "detalls":
-//                include "controller/detallObra_ctl.php";
-//                break;
+            case "MostrarMisClientes":
+                include "controller/mostrarMisClientes_ctl.php";
+                break;
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;

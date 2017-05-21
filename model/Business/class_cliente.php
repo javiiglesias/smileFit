@@ -170,5 +170,12 @@ class cliente{
         return $nombreApellidosCliente;
 
     }
+    public function getNombreApellidosArray($idCliente){
+
+        $clienteDB = new clientedb();
+        $nombreApellidos = $clienteDB->getNombreApellidosDb($idCliente);
+        return $nombreApellidos;
+
+    }
 
 }
