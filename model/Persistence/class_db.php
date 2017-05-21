@@ -53,11 +53,11 @@ class db extends PDO {
     }
 
     public function consulta($query){
-        $query->execute();
+        return $query->execute();
     }
 
     //get data of database
-    public function consultarTravels($query) {
+    public function consultarObjectes($query) {
         $query->execute();
         $result = $query->FetchAll(PDO::FETCH_ASSOC);
         return $result;

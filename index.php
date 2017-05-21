@@ -13,6 +13,9 @@ if (isset($_REQUEST['ctl'])) {
     if (isset($_REQUEST['act'])) {
         $act = $_REQUEST['act'];
     }
+    if(isset($_REQUEST['param'])){
+        $parm=($_REQUEST['param']);
+    }
 }
 
 switch ($ctl) {
@@ -30,6 +33,9 @@ switch ($ctl) {
             case "panel":
                 include "controller/panel_ctl.php";
                 break;
+            case "enviarMail":
+                include "controller/contactoEnviarMail_ctl.php";
+                break;
         }
         break;
         
@@ -37,41 +43,154 @@ switch ($ctl) {
     case "contacto":
         include "controller/contacto_ctl.php";
     break;
-//    case"menu":
-//        switch ($act) {
-//            case "admin":
-//                include "controller/menuAdmin_ctl.php";
-//                break;
-////            case "registro":
-////                include "controller/registrarUser_ctl.php";
-////                break;
-////            case"salir";
-////                include "controller/logout_ctl.php";
-////                break;
-//        }
+
+   case "menu":
+      switch ($act) {
+            case "admin":
+              include "controller/menuAdmin_ctl.php";
+              break;
+           case "cliente":
+               include "controller/menuCliente_ctl.php";
+               break;
+            case "trabajador":
+               include "controller/menuTrabajador_ctl.php";
+               break;
+           case"salir";
+               include "controller/logout_ctl.php";
+              break;
+       }
         break;
-//
-//
-//
-//    case "obra":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirObra_ctl.php";
-//                break;
-//            case "cercar":
-//                include "controller/cercarObra_ctl.php";
-//                break;
-//            case "modificar":
-//                include "controller/modificarObra_ctl.php";
-//                break;
+
+    case "noticias":
+        switch ($act) {
+            case "detalle":
+                include "controller/noticiasDetalle_ctl.php";
+                break;
+            default:
+                include"controller/noticias_ctl.php";
+                break;
+            }
+    break;
+    case "admin":
+        switch ($act) {
+            case "altaTrabajador":
+                include "controller/altaTrabajador_ctl.php";
+                break;
+            case "registro-trabajador":
+                include "controller/registro-trabajador_ctl.php";
+                break;
+            case "completa-registro":    
+                include "controller/completa-registro_ctl.php";
+                break;
+            case "ModificarDatosTrabajador":
+                include "controller/ModificarDatosTrabajador_ctl.php";
+                break;
+            case "visualizarTrabajadores":
+                include "controller/mostrarDatosTrabajadores_ctl.php";
+                break;
+            case "MostrarDatos":
+                include "controller/gestionaTrabajador_ctl.php";
+                break;
+            case "EliminarTrabajador":
+                include "controller/eliminarTrabajador_ctl.php";
+                break;
+            case "mostrarClientes":
+                include "controller/mostrarClientes_ctl.php";
+                break;
+              case "ModificarDatos":
+                include "controller/ModificarDatosCliente_ctl.php";
+                break;
+            
+            
+
+        }
+        break;
+
+    case "cliente":
+        switch ($act) {
+            case "MostrarDatos":
+                include "controller/MostrarDatosCliente_ctl.php";
+                break;
+
+            case "mostrarAgenda":
+                include "controller/mostrarAgenda_ctl.php";
+                break;
+
+            case "ModificarDatos":
+                include "controller/ModificarDatosCliente_ctl.php";
+                break;            
+            case "EliminarCliente":
+                include "controller/EliminarCliente_ctl.php";
+                break;
+            case "AñadirDatos":
+                include "controller/AñadirDatosCliente_ctl.php";
+                break;
+            case "Entrenamiento":
+                include "controller/entrenamiento_ctl.php";
+                break;
+            case "solicitar":
+                include "controller/solicitar_ctl.php";
+                break;
+            case "mostrarSolicitudes":
+                include "controller/solicitudes_ctl.php";
+                break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;
+        }
+            break;
+
+    case "trabajador":
+        switch ($act) {
+            case "MostrarDatos":
+                include "controller/MostrarDatosCliente_ctl.php";
+                break;
+
+            case "mostrarAgenda":
+                include "controller/mostrarAgenda_ctl.php";
+                break;
+            case "mostrarSolicitudes":
+                include "controller/solicitudes_ctl.php";
+                break;
+            case "mostrarLineasSolicitud":
+                include "controller/lineasSolicitud_ctl.php";
+                break;
+            case "enviarLineaSolicitud":
+                include "controller/enviarLineaSolicitud_ctl.php";
+                break;
+            case "asignarSolicitud":
+                include "controller/altaSolicitud_ctl.php";
+                break;
+            case "altaSolicitudForm":
+                include "controller/altaSolicitudForm_ctl.php";
+                break;
+            case "mostrarSolicitudesAsignadas":
+                include "controller/mostrarSolicitudesAsignadas_ctl.php";
+                break;
+            case "mostrarEntrenamiento":
+                include "controller/mostrarEntrenamiento_ctl.php";
+                break;
+            case "altaEjercicio":
+                include "controller/altaEjercicio_ctl.php";
+                break;  
 //            case "detalls":
 //                include "controller/detallObra_ctl.php";
 //                break;
 //            case "eliminar":
 //                include "controller/eliminarObra_ctl.php";
 //                break;
-//        }
-//        break;
+        }
+        break;
+
+    case "evento":
+            include "controller/altaEvento_ctl.php";
+            break;
+
+
+
 //
 //    case "director":
 //        switch ($act) {
