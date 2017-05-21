@@ -15,9 +15,9 @@
         <!-- <div class="alert alert-success"> -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0  <?php if (isset($nombreT)) { ?> mensaje<?php } else { ?> mensaje1 <?php } ?>">
             <?php if (isset($nombreT)) { ?>
-                <span><b><?php echo $nombreT;": " ?></b></span>
+                <span><b><?php echo $nombreT.": "; ?></b></span>
             <?php } else if (isset($nombreC)) { ?>
-                <span><b><?php echo $nombreC;": " ?></b></span>
+                <span><b><?php echo $nombreC.": "; ?></b></span>
             <?php } ?> 
             <span><?php echo $lineasSolicitudes->getDescripcion(); ?></span>
         </div>

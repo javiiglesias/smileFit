@@ -1,7 +1,7 @@
 <div class="container bgPrin">
     <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 O0-2">
             <h1>Practica juyitsu</h1>
             <div class="col-sm-3 text-center">
                 <img src="view/images/juyitsu.jpg" class="img-responsive imgAuto" alt="ejercicio 1"/><br>
