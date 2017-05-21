@@ -62,12 +62,39 @@ class dietadb {
         $query->bindValue(":idSolicitud", $idSolicitud);
         $resultado = $con->consulta($query);
 
-        $con = null;
-
+      
         return $resultado;
+       
+    }
+public function obtenerDietaSegunIdSolicitud($idSolicitud){
+ $con = new db();
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM dieta WHERE IdSolicitud=".$idSolicitud);
+
+        $diets = array();
+        
+        $resultado=$con->consultarObjectes($query);
+
+        foreach ($resultado as $row) {
+                $id=$row["Id"];
+                $descripcion = $row["Descripcion"];
+                $fechaInicio = $row["FechaInicio"];
+                $fechaFin = $row["FechaFin"]; 
+                $idCliente = $row["IdCliente"];           
+                $idTrabajador = $row["IdTrabajador"];  
+                $idSolicitud = $row["IdSolicitud"];  
+                $diet = new dieta($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
+                array_push($diets,$diet);
+        }
+
+        $con = null;
+        
+        return $diets;
     }
 
-    public function getDietasTrabajadorDb($idTrabajador){
+    
+
+
+public function getDietasTrabajadorDb($idTrabajador){
 
         $con = new db();
         $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM dieta WHERE IdTrabajador=".$idTrabajador);
@@ -135,7 +162,7 @@ class dietadb {
         }
     }
 
-    public function ObtenerUltimoIdDietaDb(){
+    public function obtenerUltimoIdDietaDb(){
 
         $con = new db();
         $query = $con->prepare("SELECT MAX(id) FROM dieta");

@@ -13,6 +13,7 @@ class dieta{
     {
 
         switch (func_num_args()) {
+        
             case 7:
                 $this->setId(func_get_arg(0));
                 $this->setDescripcion(func_get_arg(1));
@@ -108,6 +109,10 @@ class dieta{
     public function altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud){
         $dietaDB = new dietadb();
         $dietas = $dietaDB->altaDietaDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
+        if($dietas){
+            $dietas=$dietaDB->obtenerDietaSegunIdSolicitud($idSolicitud);
+        }
+        
         return $dietas;
     }
 
@@ -139,7 +144,7 @@ class dieta{
     public function ObtenerUltimoIdDieta(){
 
         $dieta = new dietadb;
-        $idDieta= $dieta->ObtenerUltimoIdEntrenamientoDb();
+        $idDieta= $dieta->obtenerUltimoIdDietaDb();
         $idDie=implode($idDieta[0]);
         return $idDie;
     }

@@ -27,6 +27,16 @@ if ($rol != null){
 		$dieta = new dieta();
 		$dietas = $dieta->altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
 		$idDieta = $dieta->ObtenerUltimoIdDieta();
+                //var_dump($dietas);
+                
+                 $fechaFin=$dietas[0]->getFechaFin();
+                $fecha=$dietas[0]->getFechaInicio();
+                $resta=strtotime( $fechaFin) - strtotime($fecha);
+                $diferencia_dias=intval($resta/60/60/24);
+                //echo "La cantidad de días entre el ".$fecha." y".$fechaFin."  es <b>".$diferencia_dias."</b>";
+                 //var_dump($diasTotales);
+                //die();
+                
                 require_once 'view/altaDieta.php';
 	}
 	
