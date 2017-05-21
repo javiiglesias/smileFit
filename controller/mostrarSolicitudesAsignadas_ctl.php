@@ -58,9 +58,10 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$trabajadores = new trabajador();
 
 }
-
+if ($_GET['act'] == 'mostrarSolicitudesAsignadas') {
 require_once 'view/mostrarSolicitudesAsignadas.php';
 require_once 'view/footer.php';
+}
 
 ob_end_flush();
 ?>
