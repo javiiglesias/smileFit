@@ -252,6 +252,7 @@ class trabajador{
         $nombreApellidos = $trabajadorDB->getNombreApellidosDb($idTrabajador);
         $nombreApellidosTrabajador=implode($nombreApellidos[0]);
         return $nombreApellidosTrabajador;
+<<<<<<< HEAD
 
     }
     public function getIdTrabajadorPorNombre($nombre){
@@ -270,6 +271,20 @@ class trabajador{
         return $trabajador;
 
     }
+=======
+
+    }
+
+    public function getTrabajadorPorTablaUsuario($idUser){
+
+        $trabajadorDB= new trabajadordb();
+
+        $trabajador = $trabajadorDB->getTrabajadorPorTablaUsuarioDB($idUser);
+
+        return $trabajador;
+
+    }
+>>>>>>> Marcos
 
 
 }

@@ -1,6 +1,9 @@
 
 <div class="container">
+<<<<<<< HEAD
       <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
+=======
+>>>>>>> Marcos
     <div class="col-xs-8 col-sm-8  col-md-4 col-xs-offset-3 col-sm-offset-4 col-md-offset-5">
         <img src="view/images/Logo.png" class="img-responsive img-Logologin">
     </div>

@@ -151,6 +151,7 @@ class trabajadordb {
         $con = new db();
         $query=$con->prepare("SELECT Id FROM trabajador WHERE IdUsuario= ".$id);
         $resultado = $con->consultarObjectes($query);
+<<<<<<< HEAD
        
         $test=implode($resultado[0]);
         return $test;
@@ -163,6 +164,18 @@ class trabajadordb {
         $resultado = $con->consultarObjectes($query);
          
         return $resultado;
+=======
+
+        $test=implode($resultado[0]);
+
+
+
+        return $test;
+
+
+
+
+>>>>>>> Marcos
     }
 
 }
