@@ -5,6 +5,9 @@ if(checkSession()) {
 
 
     if (count($entreno) > 0) { ?>
+
+     <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
+<div class="container">
         <div style="text-align:center;">
             <table border="1" cellspacing="3" cellpadding="0" class="tabla" width="50%">
                 <tr>
@@ -25,12 +28,16 @@ if(checkSession()) {
             </table>
         </div>
         <hr>
+</div>
         <?php
     }
 
 
     if (count($dietas) > 0) { ?>
-        <div style="text-align:center;">
+
+     <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
+<div class="container mauto">
+        <div class="col-xs-10 col-xs-offset-4"style="text-align:center;">
             <table border="1" cellspacing="3" cellpadding="0" class="tabla" width="50%">
                 <tr>
                     <th style="text-align: center;">Id del Cliente</th>
@@ -48,7 +55,9 @@ if(checkSession()) {
                 <?php endforeach; ?>
             </table>
         </div>
+</div>
         <?php
+                             
     } else {
 
         header("Location: ?ctl=inicio");

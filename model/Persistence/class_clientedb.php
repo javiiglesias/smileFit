@@ -26,6 +26,14 @@ class clientedb{
 
         return false;
     }
+    public function consultarEmailClienteDB($idCliente){
+         $con = new db();
+
+        $query = $con->prepare("SELECT Email FROM cliente WHERE Id =" . $idCliente);
+        $resultado = $con->consultarObjectes($query);
+       
+        return $resultado;
+    }
     public function consultarClientesDB(){
         $con = new db();
         $query=$con->prepare("SELECT id,nombre,apellidos,edad,email,telefono,foto FROM cliente ");

@@ -1,5 +1,6 @@
 <div class="container-fluid">
     <div class="container" >
+          <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
         <div class="col-xs-12 col-md-12 container-confirmacio">
             <?php if (strpos($mensaje, "modificado") || strpos($mensaje, "eliminat")) { ?>
                 <div class="alert alert-dismissible alert-success text-center">

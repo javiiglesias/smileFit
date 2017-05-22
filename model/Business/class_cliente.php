@@ -155,6 +155,12 @@ class cliente{
         $cliente = $clienteDB->consultarClientesDB();
         return $cliente;
     }
+    public function emailSegunId($idCliente){
+         $clienteDB = new clientedb();
+        $cliente = $clienteDB->consultarEmailClienteDB($idCliente);
+   
+        return $cliente;
+    }
 
     // public function getClientes(){
     //     $clienteDB = new clientedb();

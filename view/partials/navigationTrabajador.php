@@ -12,7 +12,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mis opciones <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header"></li>
-                <li><a href="?ctl=trabajador&act=MostrarDatos">Visualizar Mis Datos</a></li>
+                            
+                <li><a href="?ctl=trabajador&act=MostrarDatos&param=<?php echo $user?>">Visualizar Mis Datos</a></li>
                 <li><a href="?ctl=trabajador&act=MostrarMisClientes">Visualizar Mis Clientes</a></li>
                 <li><a href="?ctl=trabajador&act=mostrarSolicitudes">Mostrar Solicitudes Pendientes</a></li>
                 <li><a href="?ctl=trabajador&act=mostrarSolicitudesAsignadas">Mostrar Solicitudes En Curso</a></li>

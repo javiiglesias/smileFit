@@ -254,6 +254,12 @@ class trabajador{
         return $nombreApellidosTrabajador;
 
     }
+    public function getIdTrabajadorPorNombre($nombre){
+         $trabajadorDB = new trabajadordb();
+        $idTraba = $trabajadorDB->getIdTrabajadorDb($nombre);
+        
+        return $idTraba;
+    }
 
     public function getTrabajadorPorTablaUsuario($idUser){
 

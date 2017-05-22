@@ -155,7 +155,7 @@ switch ($ctl) {
     case "trabajador":
         switch ($act) {
             case "MostrarDatos":
-                include "controller/MostrarDatosCliente_ctl.php";
+                include "controller/gestionaTrabajador_ctl.php";
                 break;
             case "mostrarAgenda":
                 include "controller/mostrarAgenda_ctl.php";
@@ -186,6 +186,9 @@ switch ($ctl) {
                 break;  
             case "MostrarMisClientes":
                 include "controller/mostrarMisClientes_ctl.php";
+                break;
+                case "enviarDieta":
+                include "controller/enviarDieta_ctl.php";
                 break;
         }
         break;

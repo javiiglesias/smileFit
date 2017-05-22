@@ -19,6 +19,7 @@ h1{font-family: 'Gloria Hallelujah', cursive !important;}
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);padding: 15px}
 .fz20{font-size: 20px;}
+.fixed{position: fixed}
 /*-----------------*/
 /*   BackGrounds */
 /*----------------*/

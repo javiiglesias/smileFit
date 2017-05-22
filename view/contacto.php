@@ -9,7 +9,7 @@
 <!--        }-->
 <!--    </style>-->
  <div class="container " id="main">
-
+  <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mT30 mR0 mB35" id="contactar">  
     <form  name="form" id="form" method="POST" action="?ctl=usuario&act=enviarMail">
     <div class="row">
@@ -47,7 +47,7 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
          <span class="error"></span>
         <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
-        <div class="g-recaptcha clear" data-sitekey="6LduLxoUAAAAACtoyiKIKLnnNtGamNf-urxBDn7k"></div>
+        <div class="g-recaptcha clear" data-sitekey="6LcwASIUAAAAALzGy8PQo9el7rM-Gh3Qcz9h3fkc"></div>
       </div>
 
       <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 mT10 mB70 mB15 text-center pL0sm">
