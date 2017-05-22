@@ -155,6 +155,12 @@ class cliente{
         $cliente = $clienteDB->consultarClientesDB();
         return $cliente;
     }
+    public function emailSegunId($idCliente){
+         $clienteDB = new clientedb();
+        $cliente = $clienteDB->consultarEmailClienteDB($idCliente);
+   
+        return $cliente;
+    }
 
     // public function getClientes(){
     //     $clienteDB = new clientedb();
@@ -163,6 +169,14 @@ class cliente{
     // }
 
     public function getNombreApellidos($idCliente){
+
+        $clienteDB = new clientedb();
+        $nombreApellidos = $clienteDB->getNombreApellidosDb($idCliente);
+        $nombreApellidosCliente=implode($nombreApellidos[0]);
+        return $nombreApellidosCliente;
+
+    }
+    public function getNombreApellidosArray($idCliente){
 
         $clienteDB = new clientedb();
         $nombreApellidos = $clienteDB->getNombreApellidosDb($idCliente);

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Function requested by Ajax
  */
@@ -10,6 +9,9 @@ if(isset($_POST['func']) && !empty($_POST['func'])){
             break;
         case 'getEvents':
             getEvents($_POST['date']);
+            break;
+        case 'addEvent':
+            addEvent($_POST['date'],$_POST['title']);
             break;
         default:
             break;
@@ -29,6 +31,12 @@ function getCalender($year = '',$month = '')
     $totalDaysOfMonthDisplay = ($currentMonthFirstDay == 7)?($totalDaysOfMonth):($totalDaysOfMonth + $currentMonthFirstDay);
     $boxDisplay = ($totalDaysOfMonthDisplay <= 35)?35:42;
 ?>
+    <div id="event_add" class="none">
+        <p>Add Event on <span id="eventDateView"></span></p>
+        <p><b>Event Title: </b><input type="text" id="eventTitle" value=""/></p>
+        <input type="hidden" id="eventDate" value=""/>
+        <input type="button" id="addEventBtn" value="Add"/>
+    </div>
     <div id="calender_section">
         <h2>
             <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' - 1 Month')); ?>','<?php echo date("m",strtotime($date.' - 1 Month')); ?>');">&lt;&lt;</a>
@@ -58,14 +66,10 @@ function getCalender($year = '',$month = '')
                         $currentDate = $dateYear.'-'.$dateMonth.'-'.$dayCount;
                         $eventNum = 0;
                         //Include db configuration file
-                        //include 'dbConfig.php';
-                        require_once("../config/config.inc.php");
-                        require_once("../config/db.inc.php");
-                        require_once("../controller/function_AutoLoad.php");
+                        include 'dbConfig.php';
                         //Get number of events based on the current date
-                        $con = new db();
-                        $result =$con->prepare("SELECT title FROM eventos WHERE date = '".$currentDate."' AND status = 1");
-                        $eventNum = $result->rowCount();
+                        $result = $db->query("SELECT title FROM events WHERE date = '".$currentDate."' AND status = 1");
+                        $eventNum = $result->num_rows;
                         //Define date cell color
                         if(strtotime($currentDate) == strtotime(date("Y-m-d"))){
                             echo '<li date="'.$currentDate.'" class="grey date_cell">';
@@ -82,8 +86,9 @@ function getCalender($year = '',$month = '')
                         //Hover event popup
                         echo '<div id="date_popup_'.$currentDate.'" class="date_popup_wrap none">';
                         echo '<div class="date_window">';
-                        echo '<div class="popup_event">Eventos ('.$eventNum.')</div>';
-                        echo ($eventNum > 0)?'<a href="javascript:;" onclick="getEvents('.'$currentDate'.');">view events</a>':'';
+                        echo '<div class="popup_event">Events ('.$eventNum.')</div>';
+                        echo ($eventNum > 0)?'<a href="javascript:;" onclick="getEvents(\''.$currentDate.'\');">view events</a><br>':'';
+                        echo '<a href="javascript:void(0);" onclick="addEvent(\''.$currentDate.'\');">add event</a>';
                         echo '</div></div>';
                         
                         echo '</li>';
@@ -100,7 +105,7 @@ function getCalender($year = '',$month = '')
         function getCalendar(target_div,year,month){
             $.ajax({
                 type:'POST',
-                url:'view/partials/functions.php',
+                url:'view/calendar/functions.php',
                 data:'func=getCalender&year='+year+'&month='+month,
                 success:function(html){
                     $('#'+target_div).html(html);
@@ -111,7 +116,7 @@ function getCalender($year = '',$month = '')
         function getEvents(date){
             $.ajax({
                 type:'POST',
-                url:'view/partials/functions.php',
+                url:'view/calendar/functions.php',
                 data:'func=getEvents&date='+date,
                 success:function(html){
                     $('#event_list').html(html);
@@ -121,16 +126,33 @@ function getCalender($year = '',$month = '')
         }
         
         function addEvent(date){
-            $.ajax({
-                type:'POST',
-                url:'view/partials/functions.php',
-                data:'func=addEvent&date='+date,
-                success:function(html){
-                    $('#event_list').html(html);
-                    $('#event_list').slideDown('slow');
-                }
-            });
+            $('#eventDate').val(date);
+            $('#eventDateView').html(date);
+            $('#event_list').slideUp('slow');
+            $('#event_add').slideDown('slow');
         }
+
+        $(document).ready(function(){
+            $('#addEventBtn').on('click',function(){
+                var date = $('#eventDate').val();
+                var title = $('#eventTitle').val();
+                $.ajax({
+                    type:'POST',
+                    url:'view/calendar/functions.php',
+                    data:'func=addEvent&date='+date+'&title='+title,
+                    success:function(msg){
+                        if(msg == 'ok'){
+                            var dateSplit = date.split("-");
+                            $('#eventTitle').val('');
+                            alert('Event Created Successfully.');
+                            getCalendar('calendar_div',dateSplit[0],dateSplit[1]);
+                        }else{
+                            alert('Some problem occurred, please try again.');
+                        }
+                    }
+                });
+            });
+        });
         
         $(document).ready(function(){
             $('.date_cell').mouseenter(function(){
@@ -187,23 +209,35 @@ function getYearList($selected = ''){
  */
 function getEvents($date = ''){
     //Include db configuration file
-    //include 'dbConfig.php';
-    require_once("../config/config.inc.php");
-    require_once("../config/db.inc.php");    
-    require_once("../controller/function_AutoLoad.php");
+    include 'dbConfig.php';
     $eventListHTML = '';
     $date = $date?$date:date("Y-m-d");
     //Get events based on the current date
-    $result =$con->prepare("SELECT title FROM eventos WHERE date = '".$date."' AND status = 1");
-    if($result->rowCount() > 0){
-        $eventListHTML = '<h2>Eventos on '.date("l, d M Y",strtotime($date)).'</h2>';
+    $result = $db->query("SELECT title FROM events WHERE date = '".$date."' AND status = 1");
+    if($result->num_rows > 0){
+        $eventListHTML = '<h2>Events on '.date("l, d M Y",strtotime($date)).'</h2>';
         $eventListHTML .= '<ul>';
-
-        while($row = $result->FetchAll(PDO::FETCH_ASSOC)){ 
+        while($row = $result->fetch_assoc()){ 
             $eventListHTML .= '<li>'.$row['title'].'</li>';
         }
         $eventListHTML .= '</ul>';
     }
     echo $eventListHTML;
+}
+
+/*
+ * Add event to date
+ */
+function addEvent($date,$title){
+    //Include db configuration file
+    include 'dbConfig.php';
+    $currentDate = date("Y-m-d H:i:s");
+    //Insert the event data into database
+    $insert = $db->query("INSERT INTO events (title,date,created,modified) VALUES ('".$title."','".$date."','".$currentDate."','".$currentDate."')");
+    if($insert){
+        echo 'ok';
+    }else{
+        echo 'err';
+    }
 }
 ?>

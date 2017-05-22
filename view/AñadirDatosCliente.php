@@ -1,6 +1,7 @@
 <script src="view/js/validaAñadirDatosCliente.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="view/css/validaciones.css" media="screen" />
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
+      <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
 
 
     <form id="form" action="?ctl=cliente&act=AñadirDatos&param=<?php echo $_SESSION["test2"] ?>" method="post">

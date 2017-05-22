@@ -26,7 +26,6 @@ if (isset($_REQUEST['solicitar'])){
 
     //consulta para sacar el id ultimo de solicitud
     $solic = $solicitud->ObtenerUltimoIdSolicitud();
-
     $key = array_values($solic[0]); 
     $idSolicitud = $key[0];
     //idSolicitud+1 y le pasamos el Id

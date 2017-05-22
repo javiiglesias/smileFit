@@ -16,11 +16,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="col-xs-2">
+                <div class="col-lg-2 col-xs-4">
                     <a class="" href="?ctl=inicio"><img class="img-responsive" src="view/images/original3.png"/></a>
                 </div>
 
-                <div id="navbar" class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <?php if ($titlePage == "Inicio") { ?>
                             <li class="active"><a href="?ctl=inicio">Inicio</a></li>

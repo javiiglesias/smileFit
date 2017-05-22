@@ -106,9 +106,9 @@ class entrenamiento{
     }    
 
     public function altaEntrenamiento($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud){
-        $trabajadorDB = new entrenamientodb();
-        $trabajador = $trabajadorDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
-        return $trabajador;
+        $entrenamientoDB = new entrenamientodb();
+        $entrenamiento = $entrenamientoDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
+        return $entrenamiento;
     }
 
     public function eliminarEntrenamiento($id){
@@ -118,9 +118,29 @@ class entrenamiento{
 
     }
 
+    public function comprobarEntrenamiento($idSolicitud){
+        $entrenamientoDB = new entrenamientodb;
+        $existe= $entrenamientoDB->comprobarEntrenamientoDb($idSolicitud);
+        return $existe;
+    }
+
     public function getEntrenamientosTrabajador($idTrabajador){
         $entrenamientoDB = new entrenamientodb;
         $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosTrabajadorDb($idTrabajador);
         return $arrayEntrenamientos;
+    }
+
+    public function getEntrenamientosCliente($idCliente){
+        $entrenamientoDB = new entrenamientodb;
+        $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosClienteDb($idCliente);
+        return $arrayEntrenamientos;
+    }
+
+    public function ObtenerUltimoIdEntrenamiento(){
+
+        $entrenamiento = new entrenamientodb;
+        $idEntrenamiento= $entrenamiento->ObtenerUltimoIdEntrenamientoDb();
+        $idEnt=implode($idEntrenamiento[0]);
+        return $idEnt;
     }
 }

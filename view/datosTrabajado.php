@@ -3,6 +3,7 @@
     <script type="text/javascript" src="view/js/validaModificaCliente.js"></script>
     <link rel="stylesheet" type="text/css" href="view/css/validaciones.css" media="screen" />
     <div class="container">
+          <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
 
             <?php foreach ($worker as $worker): ?>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 	<title>Crear un nuevo evento</title>
     <meta charset="utf-8">
 	<head>
@@ -15,6 +16,7 @@
 </head>
 <body>
 <div class="container">
+      <a href="javascript:history.back(1)" class="btn btn-default fixed">Volver Atrás</a>
     <ol class="breadcrumb">
         <li><a href="?ctl=cliente&act=mostrarAgenda">Agenda</a></li>
         <li><a href="?ctl=altaEvento">Añadir evento</a></li>

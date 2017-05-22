@@ -1,14 +1,13 @@
 <script src="view/js/validaContacto.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="view/css/validaciones.css" media="screen" />
 
-<p>
-    ¿Quieres formar parte de nuestro equipo SmileFit*?
-</p>
-<p>
-    (*¡No olvides adjuntar tu CV haciendo click en “Seleccionar archivo”!)
-</p>
-<div class="container " id="main">
 
+<div class="container " id="main">
+    <div class="col-xs-12 text-center">
+        <span class="fz20">
+            ¿Quieres formar parte de nuestro equipo SmileFit*?</span><br><span>(*¡No olvides adjuntar tu CV haciendo click en “Seleccionar archivo”!)
+</span>
+    </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mT30 mR0 mB35" id="contactar">
 <!--        http://html.conclase.net/articulos/mailto INFORMACION PARA ENVIAR EL FORMULARIO-->
         <form  name="form" id="form" method="post" action="mailto:bruyah@hotmail.com" enctype="text/plain">
@@ -49,3 +48,4 @@
 
 </div>
 <div class="clear"></div>
+</div>

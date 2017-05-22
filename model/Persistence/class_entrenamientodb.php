@@ -16,11 +16,11 @@ class entrenamientodb {
 
         $con = new db();
 
-        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador FROM entrenamiento");
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento");
         $trainings = array();
 
         $resultado = $con->consultarObjectes($query);
-
+        
         foreach ($resultado as $row) {
             $id = $row["Id"];
             $descripcion = $row["Descripcion"];
@@ -28,7 +28,8 @@ class entrenamientodb {
             $fechaFin = $row["FechaFin"];
             $idCliente = $row["IdCliente"];
             $idTrabajador = $row["IdTrabajador"];
-            $training = new trabajador($id, $descripcion, $fechaInicio, $fechaFin, $idCliente, $idTrabajador);
+            $idSolicitud = $row["IdSolicitud"];
+            $training = new entrenamiento($id, $descripcion, $fechaInicio, $fechaFin, $idCliente, $idTrabajador,$idSolicitud);
             array_push($trainings, $training);
         }
 
@@ -49,7 +50,7 @@ class entrenamientodb {
     }
 
     public function altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud) {
-        var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
+        //var_dump($descripcion." ".$fechaInicio." ".$fechaFin." ".$idCliente." ".$idTrabajador." ".$idSolicitud);
         $con = new db();
         $query = $con->prepare("INSERT INTO entrenamiento (Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud) VALUES (:descripcion,:fechaInicio,:fechaFin,:idCliente,:idTrabajador,:idSolicitud)");
 
@@ -90,6 +91,56 @@ class entrenamientodb {
         $con = null;
         
         return $trainings;
+    }
+
+    public function getEntrenamientosClienteDb($idCliente){
+
+        $con = new db();
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento WHERE IdCliente=".$idCliente);
+
+        $trainings = array();
+        
+        $resultado=$con->consultarObjectes($query);
+
+        foreach ($resultado as $row) {
+                $id=$row["Id"];
+                $descripcion = $row["Descripcion"];
+                $fechaInicio = $row["FechaInicio"];
+                $fechaFin = $row["FechaFin"]; 
+                $idCliente = $row["IdCliente"];           
+                $idTrabajador = $row["IdTrabajador"];  
+                $idSolicitud = $row["IdSolicitud"];  
+                $training = new entrenamiento($id,$descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
+                array_push($trainings,$training);
+        }
+
+        $con = null;
+        
+        return $trainings;
+    }
+
+    public function comprobarEntrenamientoDb($idSolicitud) {
+
+        $con = new db();
+
+        $query = $con->prepare("SELECT Id,Descripcion,FechaInicio,FechaFin,IdCliente,IdTrabajador,IdSolicitud FROM entrenamiento WHERE IdSolicitud=".$idSolicitud);
+
+        $resultado = $con->consultarObjectes($query);
+
+        if(count($resultado)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function ObtenerUltimoIdEntrenamientoDb(){
+
+        $con = new db();
+        $query = $con->prepare("SELECT MAX(id) FROM entrenamiento");
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
     }
 
 } ?>
