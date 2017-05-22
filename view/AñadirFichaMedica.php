@@ -12,7 +12,7 @@
             Altura:  <input id="Altura" name="Altura" class="form-control" type="text"  />
             <span id='Altura_error' class=errorMsg >Introduce una altura valida en centimetros<br/></span>
             Metabolismo:  <input id="Metabolismo" name="Metabolismo" class="form-control" type="text"  />
-            <span id='Metabolismo_error' class=errorMsg>Introduce un email válido<br/></span>
+            <span id='Metabolismo_error' class=errorMsg>Introduce un Metabolismo válido<br/></span>
             <input type="submit" id="Submit" class="btn btn-default" name="añadir" value="Dar Alta"/>
 
         </div>
