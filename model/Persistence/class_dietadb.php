@@ -177,4 +177,11 @@ public function getDietasTrabajadorDb($idTrabajador){
         return $resultado;
     }
 
+    public function getProductosDietaDb(){
+        $con = new db();
+        $query = $con->prepare("SELECT Id,Descripcion FROM producto");
+        $resultado = $con->consultarObjectes($query);   
+        return $resultado;
+    }
+
 } ?>

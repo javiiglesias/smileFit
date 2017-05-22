@@ -14,8 +14,12 @@
      
             <div class="col-xs-12 col-md-9 col-sm-6 col-lg-8 pB35 h175 mB15" style="height: 240px;">
                 <h2><?php echo $entrenamientos->getDescripcion(); ?></h2>
-                <span class="lite fz13"><b>Fecha Inicio: </b> <?php echo $entrenamientos->getFechaInicio(); ?></span>
-                <span class="lite fz13"><b>&nbsp; Fecha Fin: </b><?php echo $entrenamientos->getFechaFin(); ?></span><br>
+                <span class="lite fz13"><b>Fecha Inicio: </b> <?php $fi = $entrenamientos->getFechaInicio();
+                                                                    $fInicio = date("d-m-Y", strtotime($fi));
+                                                                    echo $fInicio; ?></span>
+                <span class="lite fz13"><b>&nbsp; Fecha Fin: </b><?php $ff = $entrenamientos->getFechaFin();
+                                                                    $fFin = date("d-m-Y", strtotime($ff));
+                                                                    echo $fFin; ?></span><br>
                 <span class="lite fz13"><b>Cliente: </b><?php echo $nombreC; ?></span>
                 <span class="lite fz13"><b>&nbsp; Trabajador: </b><?php echo $nombreT; ?></span><br>
                 <span class="lite fz13"><b>Solicitud: </b><?php echo $nombreS; ?></span>
