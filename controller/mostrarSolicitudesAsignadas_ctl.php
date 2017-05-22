@@ -41,6 +41,7 @@ if ($usuarioRol == 'Trabajador') {
             //mostrar entrenamientos
             $entrenamientos = new entrenamiento();
             $gen = $entrenamientos->getEntrenamientosTrabajador($idTrabajador);
+
         } else {
 
             //mostrar dietas

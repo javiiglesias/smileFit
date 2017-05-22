@@ -1,15 +1,14 @@
 
 <div class="container">
-   <?php if(isset($gen)){
- 
+   <?php if(count($gen) > 0){
+                
         require_once 'view/partials/solicitudesAsignadas.php';
- 
-       
- 
+        
     }else{
+ 		$msg = "No tienes ninguna solicitud asignada"; ?>
+
+  		<h3><?php echo $msg; ?></h3>
  
-  echo $msg;
- 
-    }?>
+    <?php }?>
  
 </div>

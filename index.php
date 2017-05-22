@@ -100,9 +100,6 @@ switch ($ctl) {
               case "ModificarDatos":
                 include "controller/ModificarDatosCliente_ctl.php";
                 break;
-            
-            
-
         }
         break;
 
@@ -190,84 +187,8 @@ switch ($ctl) {
             case "MostrarMisClientes":
                 include "controller/mostrarMisClientes_ctl.php";
                 break;
-//            case "eliminar":
-//                include "controller/eliminarObra_ctl.php";
-//                break;
         }
         break;
-
-    case "evento":
-            include "controller/altaEvento_ctl.php";
-            break;
-
-
-
-//
-//    case "director":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirDirector_ctl.php";
-//                break;
-//            case "cercar":
-//                include "controller/cercarDirector_ctl.php";
-//                break;
-//            case "modificar":
-//                include "controller/modificarDirector_ctl.php";
-//                break;
-//            case "eliminar":
-//                include "controller/eliminarDirector_ctl.php";
-//                break;
-//            case "cercar2":
-//                include "view/cercarDirector.php";
-//                break;
-//            case "detall":
-//                include "controller/detallDirector_ctl.php";
-//                break;
-//        }
-//        break;
-//
-//    case "actor":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirActor_ctl.php";
-//                break;
-//            case "cercar":
-//                include "controller/cercarActor_ctl.php";
-//                break;
-//            case "modificar":
-//                include "controller/modificarActor_ctl.php";
-//                break;
-//            case "eliminar":
-//                include "controller/eliminarActor_ctl.php";
-//                break;
-//        }
-//        break;
-//
-//    case"tipusActor":
-//        switch ($act) {
-//            case "afegir":
-//                include "controller/afegirTipusActor_ctl.php";
-//                break;
-//        }
-//        break;
-//
-//    case"tipusObra":
-//        switch ($act) {
-//            case "mostrar":
-//                include "controller/tipusObra_ctl.php";
-//                break;
-//            case "afegir":
-//                include "controller/afegirTipusObra_ctl.php";
-//                break;
-//            case "modificar":
-//                include "controller/modificarTipusObra_ctl.php";
-//                break;
-//            case "eliminar":
-//                include "controller/eliminarTipusObra_ctl.php";
-//                break;
-//        }
-//        break;
-
 
     default:
         include "controller/" . $ctl . "_ctl.php";
