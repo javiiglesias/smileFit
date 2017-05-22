@@ -7,18 +7,20 @@ class entrenamiento{
     private $fechaFin;
     private $idCliente;
     private $idTrabajador;
+    private $idSolicitud;
 
     public function __construct()
     {
 
         switch (func_num_args()) {
-            case 6:
+            case 7:
                 $this->setId(func_get_arg(0));
                 $this->setDescripcion(func_get_arg(1));
                 $this->setFechaInicio(func_get_arg(2));
                 $this->setFechaFin(func_get_arg(3));
                 $this->setIdCliente(func_get_arg(4));
                 $this->setIdTrabajador(func_get_arg(5));
+                $this->setIdSolicitud(func_get_arg(6));
                 break;
         }
     }
@@ -85,6 +87,17 @@ class entrenamiento{
         $this->idTrabajador = $idTrabajador;
     }
 
+    public function getIdSolicitud()
+    {
+        return $this->idSolicitud;
+    }
+
+
+    public function setIdSolicitud($idSolicitud)
+    {
+        $this->idSolicitud = $idSolicitud;
+    }
+
 
     public function getEntrenamientos(){
         $entrenamientoDB = new entrenamientodb();
@@ -92,10 +105,10 @@ class entrenamiento{
         return $entrenamientos;
     }    
 
-    public function altaEntrenamiento($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador){
-        $trabajadorDB = new entrenamientodb();
-        $trabajador = $trabajadorDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador); 
-        return $trabajador;
+    public function altaEntrenamiento($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud){
+        $entrenamientoDB = new entrenamientodb();
+        $entrenamiento = $entrenamientoDB->altaEntrenamientoDb($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud); 
+        return $entrenamiento;
     }
 
     public function eliminarEntrenamiento($id){
@@ -105,9 +118,29 @@ class entrenamiento{
 
     }
 
+    public function comprobarEntrenamiento($idSolicitud){
+        $entrenamientoDB = new entrenamientodb;
+        $existe= $entrenamientoDB->comprobarEntrenamientoDb($idSolicitud);
+        return $existe;
+    }
+
     public function getEntrenamientosTrabajador($idTrabajador){
         $entrenamientoDB = new entrenamientodb;
         $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosTrabajadorDb($idTrabajador);
         return $arrayEntrenamientos;
+    }
+
+    public function getEntrenamientosCliente($idCliente){
+        $entrenamientoDB = new entrenamientodb;
+        $arrayEntrenamientos= $entrenamientoDB->getEntrenamientosClienteDb($idCliente);
+        return $arrayEntrenamientos;
+    }
+
+    public function ObtenerUltimoIdEntrenamiento(){
+
+        $entrenamiento = new entrenamientodb;
+        $idEntrenamiento= $entrenamiento->ObtenerUltimoIdEntrenamientoDb();
+        $idEnt=implode($idEntrenamiento[0]);
+        return $idEnt;
     }
 }

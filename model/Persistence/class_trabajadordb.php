@@ -1,5 +1,3 @@
-
-
 <?php
 
 require_once("controller/function_AutoLoad.php");
@@ -138,6 +136,31 @@ class trabajadordb {
             return new trabajador($worker['id'], $worker['nombre'], $worker['apellidos'], $worker['fechaNacimiento'], $worker['email'], $worker['telefono'], $worker['foto']);
         }
         return false;
+    }
+
+    public function getNombreApellidosDb($idtrabajador) {
+        $con = new db();
+
+        $query = $con->prepare("SELECT concat_ws(' ', Nombre, Apellidos) as nombreApellidos FROM trabajador WHERE Id =" . $idtrabajador);
+        $resultado = $con->consultarObjectes($query);
+
+        return $resultado;
+    }
+
+    public function getTrabajadorPorTablaUsuarioDB($id){
+        $con = new db();
+        $query=$con->prepare("SELECT Id FROM trabajador WHERE IdUsuario= ".$id);
+        $resultado = $con->consultarObjectes($query);
+
+        $test=implode($resultado[0]);
+
+
+
+        return $test;
+
+
+
+
     }
 
 }

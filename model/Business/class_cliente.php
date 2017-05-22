@@ -155,4 +155,27 @@ class cliente{
         $cliente = $clienteDB->consultarClientesDB();
         return $cliente;
     }
+
+    // public function getClientes(){
+    //     $clienteDB = new clientedb();
+    //     $cliente = $clienteDB->getClientesDb();
+    //     return $cliente;
+    // }
+
+    public function getNombreApellidos($idCliente){
+
+        $clienteDB = new clientedb();
+        $nombreApellidos = $clienteDB->getNombreApellidosDb($idCliente);
+        $nombreApellidosCliente=implode($nombreApellidos[0]);
+        return $nombreApellidosCliente;
+
+    }
+    public function getNombreApellidosArray($idCliente){
+
+        $clienteDB = new clientedb();
+        $nombreApellidos = $clienteDB->getNombreApellidosDb($idCliente);
+        return $nombreApellidos;
+
+    }
+
 }

@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once 'view/header.php';
 require_once("controller/function_AutoLoad.php");
@@ -8,7 +8,7 @@ require_once("controller/function_AutoLoad.php");
 if(isset($_POST['email'])) {
 
 // Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-$email_to = "smilefit@smilefit.com";
+$email_to = "acasasfilella@gmail.com";
 $email_subject = "Contacto desde el sitio web";
 
 // Aquí se deberían validar los datos ingresados por el usuario

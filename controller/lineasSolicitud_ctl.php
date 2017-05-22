@@ -6,72 +6,83 @@ $titlePage = "Lineas de Solicitud";
 
 require_once 'view/header.php';
 
-
 $usuarios = new usuario();
 
-//if($idSolicitud == null)
-$idSolicitud=$_REQUEST['param'];
-//$enviar=$_REQUEST['enviar'];
+$idSolicitud = $_REQUEST['param'];
 
-if(isset($_SESSION["test2"])){
-   $idUser= $_SESSION["test2"];
+$asignado = false;
+
+if (isset($_SESSION["test2"])) {
+    $idUser = $_SESSION["test2"];
 }
 
 //obtenemos el usuario actual
 $usuarioRol = $usuarios->getUserPorId($idUser);
 
 //si es trabajador
-if($usuarioRol == 'Trabajador')
-{
-	//buscar idTrabajador para buscar sus solicitudes
-	$trabajadores = new trabajador();
-	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
-	$trabajador = $trabajadores->getTrabajador($idUser);	
 
-	//obtener titulo solicitud
-	$solicitud = new solicitud();
-	$tit = $solicitud->getTituloSolicitud($idSolicitud);
+if ($usuarioRol == 'Trabajador') {
+    //buscar idTrabajador para buscar sus solicitudes
+    $trabajadores = new trabajador();
+    $idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);
+    $trabajador = $trabajadores->getTrabajador($idUser);
 
-	$key = array_values($tit[0]); 
+    //obtener titulo solicitud
+    $solicitud = new solicitud();
+    $tit = $solicitud->getTituloSolicitud($idSolicitud);
+
+    $key = array_values($tit[0]);
     $titulo = $key[0];
-	//mostrar lineas solicitud
-	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
-
-}
-else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
-	//si es cliente
-	//buscar idCliente para buscar sus solicitudes
-	$clientes = new cliente();
-	$idCliente = $clientes->getClientePorIdUser($idUser);	
-	$cliente = $clientes->getCliente($idUser);	
-
-	//obtener titulo solicitud
-	$solicitud = new solicitud();
-	$tit = $solicitud->getTituloSolicitud($idSolicitud);
-
-	$key = array_values($tit[0]); 
-    $titulo = $key[0];
-
-	//mostrar lineas solicitud
-	$lineasSolicitudes = new lineasolicitud();
-	$lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
-
-	//var_dump($lineasSolicitud);
-	// foreach ($lineasSolicitud as $row) {
-	// 	if($row[2]!= null)
-	// 		var_dump($row[2]);
-	// }
+    //mostrar lineas solicitud
+    $lineasSolicitudes = new lineasolicitud();
+    $lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+    $clientes = new cliente();
 	
+	//comprobar si solicitud existe o no para la visualizacion del boton de asignar la solicitud
+    $idRol = $trabajadores->getTrabajadorRol($idTrabajador); 
+    
+    if($idRol == 1){
+    	$entrenamientos = new entrenamiento();
+    	$existeEntreno = $entrenamientos->comprobarEntrenamiento($idSolicitud);
+    	if($existeEntreno == true){
+    		$asignado=true;
+    	}
+    }
+    else{
+    	$dietas = new dieta();
+    	$existeDieta = $dietas->comprobarDieta($idSolicitud);
+    	if($existeDieta){
+    		$asignado=true;
+    	}
+    }
+
+
+} else if ($usuarioRol == 'Cliente' || $usuarioRol == 'cliente') {
+    //si es cliente
+    //buscar idCliente para buscar sus solicitudes
+    $clientes = new cliente();
+    $idCliente = $clientes->getClientePorIdUser($idUser);
+    $cliente = $clientes->getCliente($idUser);
+
+    //obtener titulo solicitud
+    $solicitud = new solicitud();
+    $tit = $solicitud->getTituloSolicitud($idSolicitud);
+
+    $key = array_values($tit[0]);
+    $titulo = $key[0];
+
+    //mostrar lineas solicitud
+    $lineasSolicitudes = new lineasolicitud();
+    $lineasSolicitud = $lineasSolicitudes->muestraLineasPorIdSolicitud($idSolicitud);
+    $trabajadores = new trabajador();
 }
+	
+  	$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
 
-$idClienteSolicitador = $lineasSolicitud[0]->getIdCliente();
-//var_dump($idClienteSolicitador);
-
-require_once 'view/lineasSolicitud.php';
-//if(isset($enviar)){
-	require_once 'view/footer.php';
-//}
+if ($_GET['act'] == 'mostrarLineasSolicitud') {
+    require_once 'view/lineasSolicitud.php';
+    require_once 'view/footer.php';
+}
 
 ob_end_flush();
 ?>

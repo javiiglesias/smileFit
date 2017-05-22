@@ -1,8 +1,8 @@
 <div class="container bgPrin">
     <div class="bgprinop col-lg-12 col-md-12 col-sm-12 col-xs-12 mT50nXS borderGris pL0" xmlns="http://www.w3.org/1999/html">
 
-        <div class="col-lg-12">
-            <h1>Practica juyitsu</h1>
+        <div class="col-lg-12 O0-2">
+            <h1>Practica Jiu-jitsu</h1>
             <div class="col-lg-3">
                 <img src="view/images/juyitsu.jpg" class="img-responsive" alt="ejercicio 1"/><br>
             </div>
@@ -70,11 +70,11 @@
                             <td >(Alba Casas)</td>
                         </tr>
                         <tr>
-                            <td colspan="4">tardes: </td>
+                            <td colspan="4">TARDES: </td>
 
                         </tr>
                         <tr>
-                            <td >jueves: </td>
+                            <td >Jueves: </td>
                             <td >de 11:00 a 12:30 h: </td>
                             <td >de 10:30 a 12:00 h </td>
                             <td>(Mario Alcazar)</td>
@@ -91,12 +91,5 @@
     <div class="text-center col-xs-12 bgdada">
     <h2 class="text-blanc">Solicita un entrenamiento</h2>
     </div>
-    <?php if(isset($_SESSION['test'])){ ?>
-        <?php include('view/partials/solicitar.php'); ?>
-    <?php }else{ ?>
-        <div class="text-center col-xs-12 bgBlanc">
-            <a href="ctl=usuario&act=registro" class="btn btn-success mR15">No soy cliente, quiero registrarme</a>
-            <a href="ctl=usuario&act=login" class="btn btn-success">Ya soy cliente! Inicia Sesion</a>
-        </div>
-    <?php } ?>    
-</div>
+     <?php  include('view/partials/solicitar.php');
+  

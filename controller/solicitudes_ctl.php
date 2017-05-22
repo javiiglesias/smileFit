@@ -21,10 +21,22 @@ if($usuarioRol == 'Trabajador')
 	$trabajadores = new trabajador();
 	$idTrabajador = $trabajadores->getTrabajadorPorIdUser($idUser);	
 	//buscar idRol del trabajador
-	$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
-	//mostrar solicitudes
-	$solicitudes = new solicitud();
-	$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol);
+    if($idTrabajador){
+ 
+		$idRol = $trabajadores->getTrabajadorRol($idTrabajador);
+
+		//mostrar solicitudes
+
+		$solicitudes = new solicitud();
+
+		$solicitud = $solicitudes->muestraSolicitudesPendientes($idRol);
+ 
+	}else{
+
+		$msg="no tienes solicitudes";
+
+	}
+ 
 }
 else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 
@@ -32,19 +44,24 @@ else if($usuarioRol == 'Cliente' || $usuarioRol == 'cliente'){
 	$clientes = new cliente();
 	$cli = $clientes->getCliente($idUser);
 	$idCliente = $cli->getId();
-
+ if($idCliente){
 	//ids lineas solicitudes
 	$lineaSolicitudes = new lineasolicitud();
+        
 	//$lineasSolicitud = $lineaSolicitudes->muestraLineasSolicitudesCliente($idCliente);
 	$idSolicitudes = $lineaSolicitudes->getIdSolicitudCliente($idCliente);
 
 	//mostrar solicitudes devolverá array de arrays
 	$solicitudes = new solicitud();
 	$solicitud = $solicitudes->muestraSolicitudesCliente($idSolicitudes);
+ }else{
+         $msg="no tienes solicitudes";
+ }
 }
-
+if ($_GET['act'] == 'mostrarSolicitudes') {
 require_once 'view/solicitudes.php';
 require_once 'view/footer.php';
+}
 
 ob_end_flush();
 ?>
