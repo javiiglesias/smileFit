@@ -1,7 +1,7 @@
 <?php
 //include session control
-//include("../controller/checkSession.php");
-include("C:/xampp/htdocs/M12/smileFit/controller/checkSession.php");
+include("controller/checkSession.php");
+//include("C:/xampp/htdocs/M12/smileFit/controller/checkSession.php");
 //include("../view/printInvalidMessage.php");
 
 if (checkSession()) {
