@@ -8,7 +8,9 @@
                 <h3><?php echo $solicitudes->getTitulo();?></h3><br>
             </a>
             <span class="lite fz13"><?php echo $solicitudes->getDescripcion();?></span><br>
-            <span class="lite fz13"><?php echo $solicitudes->getFecha();?></span><br>
+            <span class="lite fz13"><?php $fecha = $solicitudes->getFecha();
+                                            $f = date("d-m-Y", strtotime($fecha));
+                                            echo $f; ?></span><br>
         </div>
     </div>
        <?php endforeach; 

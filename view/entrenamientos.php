@@ -70,7 +70,7 @@
                             <td >(Alba Casas)</td>
                         </tr>
                         <tr>
-                            <td colspan="4">tardes: </td>
+                            <td colspan="4">TARDES: </td>
 
                         </tr>
                         <tr>

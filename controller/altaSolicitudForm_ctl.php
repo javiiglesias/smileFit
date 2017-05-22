@@ -27,23 +27,25 @@ if ($rol != null){
 		$dieta = new dieta();
 		$dietas = $dieta->altaDieta($descripcion,$fechaInicio,$fechaFin,$idCliente,$idTrabajador,$idSolicitud);
 		$idDieta = $dieta->ObtenerUltimoIdDieta();
-                //var_dump($dietas);
-                
-                 $fechaFin=$dietas[0]->getFechaFin();
-                $fecha=$dietas[0]->getFechaInicio();
-                $resta=strtotime( $fechaFin) - strtotime($fecha);
-                $diferencia_dias=intval($resta/60/60/24);
-                
-                $tipoComida=$dieta->cantidadTipoComida();
-             
-               
-                
-                require_once 'view/altaDieta.php';
+        //var_dump($dietas);
+        
+        $fechaFin=$dietas[0]->getFechaFin();
+        $fecha=$dietas[0]->getFechaInicio();
+        $resta=strtotime( $fechaFin) - strtotime($fecha);
+        $diferencia_dias=intval($resta/60/60/24);
+        
+        $tipoComida=$dieta->cantidadTipoComida();
+
+        //Obtener lista de productos
+        $productos=$dieta->getProductosDieta();
+
+        $fInicio = date("d-m-Y", strtotime($fecha));
+        $fFin = date("d-m-Y", strtotime($fechaFin));
+        
+        require_once 'view/altaDieta.php';
 	}
 	
 }
-
-
 
 require_once 'view/footer.php';
 
