@@ -6,7 +6,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Home</a>
+                <a href="?ctl=inicio">Home</a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cliente <span class="caret"></span></a>
