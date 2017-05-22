@@ -1,5 +1,5 @@
 <?php require_once("controller/solicitudes_ctl.php");?>
-<?php if(isset($solicitud)){ 
+<?php if(count($solicitud) > 0){ 
  foreach ($solicitud as $solicitudes): ?> 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mT20 borderGris pL0">
                 
@@ -15,5 +15,6 @@
     </div>
        <?php endforeach; 
     }else{ 
-    echo $msg; 
-}?> 
+        $msg="No hay Solicitudes pendientes"; ?>
+        <h3><?php echo $msg; ?></h3>
+    <?php } ?> 
